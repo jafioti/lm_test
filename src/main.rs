@@ -25,7 +25,7 @@ fn main() {
     let mut train_dataset =
         build_dataset::<5, 10>("/home/jafioti/Datasets/openwebtext", 0, 500_000);
     let dev: Cpu = Default::default();
-    let embedding: Tensor2D<30527, 50> = dev.randn();
+    let embedding: Tensor2D<30527, 50> = dev.sample_uniform();
     let mut model: (TransformerEncoder<50, 2, 100, 2>, Linear<50, 30527>) = dev.build_module();
     model.reset_params();
     let mut sgd: Sgd<(TransformerEncoder<50, 2, 100, 2>, Linear<50, 30527>)> = Sgd::new(SgdConfig {
