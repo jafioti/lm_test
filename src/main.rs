@@ -23,12 +23,11 @@ use crate::bar::ExponentialAverage;
 
 fn main() {
     let mut train_dataset =
-        build_dataset::<5, 10>("/home/jafioti/Datasets/openwebtext", 0, 500_000);
-    let dev: Cpu = Default::default();
-    let embedding: Tensor2D<30527, 50> = dev.sample_uniform();
-    let mut model: (TransformerEncoder<50, 2, 100, 2>, Linear<50, 30527>) = dev.build_module();
-    model.reset_params();
-    let mut sgd: Sgd<(TransformerEncoder<50, 2, 100, 2>, Linear<50, 30527>)> = Sgd::new(SgdConfig {
+        build_dataset::<5, 1>("/home/jafioti/Datasets/openwebtext", 0, 500_000);
+    let dev: Cuda = Default::default();
+    let embedding: Tensor<Rank2<30527, 40>, _, Cuda> = dev.sample_uniform();
+    let mut model: (TransformerEncoder<40, 1, 100, 2, Cuda>, Linear<40, 30527, Cuda>) = dev.build_module();
+    let mut sgd: Sgd<(TransformerEncoder<40, 1, 100, 2, Cuda>, Linear<40, 30527, Cuda>), Cuda> = Sgd::new(SgdConfig {
         lr: 1e-3,
         momentum: Some(Momentum::Nesterov(0.9)),
         weight_decay: None,
@@ -42,12 +41,12 @@ fn main() {
     test(&embedding, &model, dev.clone());
 
     for ((input, target), left) in train_dataset.iter_len() {
-        let embedded: Tensor3D<10, 5, 50, _> = embedding.clone().gather(dev.tensor(input));
-        let embedded: Tensor3D<2, 25, 50, _> = embedded.reshape();
-        let output: Tensor3D<2, 25, 30527, _, OwnedTape<Cpu>> = model.forward_mut(embedded.trace());
-        let output: Tensor2D<50, 30527, OwnedTape<Cpu>> = output.reshape();
+        let embedded: Tensor<Rank3<1, 5, 40>, _, Cuda> = embedding.clone().gather(dev.tensor(input));
+        // let embedded: Tensor3D<1, 5, 40, _> = embedded.reshape();
+        let output: Tensor<Rank3<1, 5, 30527>, _, Cuda, OwnedTape<Cuda>> = model.forward_mut(embedded.trace());
+        let output: Tensor<Rank2<5, 30527>, _, Cuda, OwnedTape<Cuda>> = output.reshape();
 
-        let target: Tensor<(Const<50>, Const<30527>), _> = one_hot_encode(&unsafe {transmute(target)}, dev.clone());
+        let target: Tensor<(Const<5>, Const<30527>), _, Cuda> = one_hot_encode(&unsafe {transmute(target)}, dev.clone());
         // let loss = cross_entropy_with_logits_loss(output, target);
         let loss = mse_loss(output.log_softmax::<Axis<1>>(), target);
         let loss_val: f32 = loss.array();
@@ -56,8 +55,7 @@ fn main() {
         bar.set_message(format!("PPL: {:.2}", loss_avg.value));
 
         let gradients = loss.backward();
-        sgd.update(&mut model, gradients)
-            .expect("Oops, there were some unused params");
+        sgd.update(&mut model, gradients).unwrap();
     }
     drop(bar);
     println!();
@@ -68,14 +66,14 @@ fn main() {
     test(&embedding, &model, dev);
 }
 
-fn test(embedding: &Tensor2D<30527, 50>, model: &(TransformerEncoder<50, 2, 100, 2>, Linear<50, 30527>), dev: Cpu) {
+fn test(embedding: &Tensor<Rank2<30527, 40>, f32, Cuda>, model: &(TransformerEncoder<40, 1, 100, 2, Cuda>, Linear<40, 30527, Cuda>), dev: Cuda) {
     let input = "Hello there, how are you doing";
     let (tokenizer, vocab) = (WordpieceTokenizer::load(), WordPieceVocab::load());
     let tokens = tokenizer.tokenize(input);
     let indexes = vocab.indexes_from_tokens(&tokens).unwrap();
 
     let indexes: [usize; 5] = indexes[..5].try_into().unwrap();
-    let embedded: Tensor2D<5, 50> = embedding.clone().gather(dev.tensor(indexes));
+    let embedded: Tensor<Rank2<5, 40>, _, Cuda> = embedding.clone().gather(dev.tensor(indexes));
     let output = model.forward(embedded);
     let indexes: Vec<usize> = output.array().iter().map(|dist| dist
         .iter()
@@ -131,8 +129,8 @@ fn build_dataset<const SEQ: usize, const BATCH: usize>(
 
 fn one_hot_encode<const B: usize, const T: usize>(
     labels: &[usize; B],
-    dev: Cpu
-) -> Tensor<(Const<B>, Const<T>), f32> {
+    dev: Cuda
+) -> Tensor<(Const<B>, Const<T>), f32, Cuda> {
     let mut data = vec![0.; B * T];
     for (i, l) in labels.iter().enumerate() {
         data[i* *l] = 1.;
