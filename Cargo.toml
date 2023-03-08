@@ -9,7 +9,7 @@ edition = "2021"
 #dfdx = "0.10.0"
 #dfdx = {git="https://github.com/coreylowman/dfdx", features=["test-cuda"]}
 #dfdx = {path="../dfdx-main", features=["cuda", "numpy"]}
-dfdx = {path="../dfdx-new", features=["cuda", "numpy"]}
+dfdx = {path="../dfdx-new-new", features=["cuda", "numpy"]}
 #dataflow = "0.3.2"
 dataflow = {git="https://github.com/Sidekick-AI/dataflow"}
 dataflow_nlp = "0.1.0"

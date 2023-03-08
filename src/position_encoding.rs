@@ -11,7 +11,7 @@ pub mod builder {
 impl<const V: usize, const M: usize, E: Dtype, D: Device<E>> BuildOnDevice<D, E>
     for builder::LearnedPositionalEmbedding<V, M>
 where
-LearnedPositionalEmbedding<V, M, E, D>: BuildModule<D, E>,
+    LearnedPositionalEmbedding<V, M, E, D>: BuildModule<D, E>,
 {
     type Built = LearnedPositionalEmbedding<V, M, E, D>;
     fn try_build_on_device(device: &D) -> Result<Self::Built, D::Err> {
@@ -56,7 +56,7 @@ impl<const MAX_LEN: usize, const DIM: usize, BATCH: Dim, D: Device<f32>, T: Tape
     for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D>
 where
     D: TensorFromVec<usize>,
-    D: dfdx::tensor::storage_traits::TensorToArray<(dfdx::shapes::Const<MAX_LEN>, dfdx::shapes::Const<DIM>), f32>,
+    Tensor<(dfdx::shapes::Const<MAX_LEN>, dfdx::shapes::Const<DIM>), f32, D>: AsArray,
 {
     type Output = Tensor<(BATCH, Const<MAX_LEN>, Const<DIM>), f32, D, T>;
     type Error = D::Err;

@@ -11,7 +11,7 @@ use dataflow_nlp::{
     tokenization::{Tokenizer, WordpieceTokenizer},
     vocab::{Vocab, WordPieceVocab},
 };
-use dfdx::{prelude::{*, storage_traits::TensorToArray}, optim::{Adam, AdamConfig}};
+use dfdx::{prelude::*, optim::{Adam, AdamConfig}};
 
 #[allow(unused)]
 mod bar;
@@ -74,16 +74,17 @@ fn main() {
     }
 }
 
-fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const EMBED: usize, const HEADS: usize, D: Device<f32>>(
+fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const EMBED: usize, const HEADS: usize, D: Device<f32>, O>(
     model: &mut BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, 
     dataset: &mut Dataloader<([[usize; SEQ]; BATCH_SIZE], [[usize; SEQ]; BATCH_SIZE])>, 
-    opt: &mut Adam<BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, f32, D>,
+    opt: &mut O,
     dev: &D,
     tensorboard: &mut Tensorboard,
 ) where 
-    D: Device<f32> + dfdx::optim::AdamKernel<f32> + std::fmt::Debug + dfdx::tensor::TensorFrom<[[usize; SEQ]; BATCH_SIZE], Rank2<BATCH_SIZE, SEQ>, usize>,
+    D: Device<f32> + std::fmt::Debug + dfdx::tensor::TensorFrom<[[usize; SEQ]; BATCH_SIZE], Rank2<BATCH_SIZE, SEQ>, usize>,
     BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>: ModuleMut<Tensor<Rank2<BATCH_SIZE, SEQ>, usize, D, OwnedTape<f32, D>>, Output = Tensor<Rank3<BATCH_SIZE, SEQ, VOCAB>, f32, D, OwnedTape<f32, D>>>,
     Tensor<(), f32, D, OwnedTape<f32, D>>: AsArray<Array = f32>,
+    O: Optimizer<BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, D, f32>,
     [(); EMBED * 2]:
 {
     let total_len = dataset.len();
@@ -100,8 +101,8 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
         };
 
         let loss = match one_hot_encode(&target, dev)
-            .map(|t| try_cross_entropy_with_logits_loss(output, t)) {
-            Ok(Ok(l)) => l,
+            .map(|t| cross_entropy_with_logits_loss(output, t)) {
+            Ok(l) => l,
             r => {
                 println!("Loss Error: {r:?}");
                 continue;
@@ -169,7 +170,8 @@ fn generate<const LAYERS: usize, const VOCAB: usize, const EMBED: usize, const H
     num_tokens: usize,
 ) 
 where 
-    D: TensorToArray<(dfdx::shapes::Const<25>, dfdx::shapes::Const<VOCAB>), f32, Array = [[f32; VOCAB]; 25]>,
+    // D: TensorToArray<(dfdx::shapes::Const<25>, dfdx::shapes::Const<VOCAB>), f32, Array = [[f32; VOCAB]; 25]>,
+    Tensor<(dfdx::shapes::Const<25>, dfdx::shapes::Const<VOCAB>), f32, D>: AsArray<Array = [[f32; VOCAB]; 25]>,
     BuiltModel<VOCAB, EMBED, LAYERS, HEADS, 25, f32, D>: Module<Tensor<Rank1<25>, usize, D>, Output = Tensor<Rank2<25, VOCAB>, f32, D>>,
     D: Device<f32> + dfdx::tensor::TensorFrom<[usize; 25], Rank1<25>, usize> + TensorFrom<[[f32; 25]; 25], Rank2<25, 25>, f32>,
     [(); EMBED * 2]:
@@ -209,17 +211,21 @@ fn build_dataset<const SEQ: usize, const BATCH: usize>(
         .node(Stateful::new(
             (WordpieceTokenizer::load(), WordPieceVocab::load()),
             |strings: Vec<String>, (tokenizer, vocab)| {
+                // Filter / preprocess
                 let strings = strings.into_iter()
                     .filter(|s| !s.is_empty() && !s.contains("\\00"))
-                    .map(|s| s.to_lowercase().replace(['\\', '/', '"'], "")).collect();                
+                    .map(|s| s.to_lowercase().replace(['\\', '/', '"'], "")).collect();
+                // Tokenize
                 let tokens = tokenizer.batch_tokenize(strings);
+                // Convert to indexes
                 let indexes = vocab.batch_indexes_from_tokens(&tokens).unwrap();
 
+                // Convert to training examples
                 indexes.into_iter().filter_map(|indexes| {
                     if indexes.len() > SEQ {
                         Some((
                             TryInto::<[usize; SEQ]>::try_into(indexes[..SEQ].to_vec()).unwrap(),
-                            TryInto::<[usize; SEQ]>::try_into(indexes[1..(SEQ + 1).min(indexes.len())].to_vec()).unwrap(),
+                            TryInto::<[usize; SEQ]>::try_into(indexes[1..(SEQ + 1)].to_vec()).unwrap(),
                         ))
                     } else {
                         None
