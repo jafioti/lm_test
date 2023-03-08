@@ -23,14 +23,14 @@ mod position_encoding;
 
 type Model<const VOCAB: usize, const EMBED: usize, const LAYERS: usize, const HEADS: usize, const SEQ: usize> = (
     Embedding<VOCAB, EMBED>,
-    // position_encoding::builder::LearnedPositionalEmbedding<SEQ, EMBED>,
+    position_encoding::builder::LearnedPositionalEmbedding<SEQ, EMBED>,
     TransformerEncoder<EMBED, HEADS, {EMBED * 2}, LAYERS>,
     Linear<EMBED, VOCAB>,
 );
 
 type BuiltModel<const VOCAB: usize, const EMBED: usize, const LAYERS: usize, const HEADS: usize, const SEQ: usize, E, D> = (
     dfdx::nn::modules::Embedding<VOCAB, EMBED, E, D>,
-    // position_encoding::LearnedPositionalEmbedding<SEQ, EMBED, E, D>,
+    position_encoding::LearnedPositionalEmbedding<SEQ, EMBED, E, D>,
     dfdx::nn::modules::TransformerEncoder<EMBED, HEADS, {EMBED * 2}, LAYERS, E, D>,
     dfdx::nn::modules::Linear<EMBED, VOCAB, E, D>,
 );
