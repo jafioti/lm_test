@@ -82,7 +82,7 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
     tensorboard: &mut Tensorboard,
 ) where 
     D: Device<f32> + std::fmt::Debug + dfdx::tensor::TensorFrom<[[usize; SEQ]; BATCH_SIZE], Rank2<BATCH_SIZE, SEQ>, usize>,
-    BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>: ModuleMut<Tensor<Rank2<BATCH_SIZE, SEQ>, usize, D, OwnedTape<f32, D>>, Output = Tensor<Rank3<BATCH_SIZE, SEQ, VOCAB>, f32, D, OwnedTape<f32, D>>>,
+    BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>: Module<Tensor<Rank2<BATCH_SIZE, SEQ>, usize, D, OwnedTape<f32, D>>, Output = Tensor<Rank3<BATCH_SIZE, SEQ, VOCAB>, f32, D, OwnedTape<f32, D>>>,
     Tensor<(), f32, D, OwnedTape<f32, D>>: AsArray<Array = f32>,
     O: Optimizer<BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, D, f32>,
     [(); EMBED * 2]:
@@ -90,9 +90,13 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
     let total_len = dataset.len();
     let bar = train_progress_bar(dataset.len() as u64);
     let mut loss_avg = ExponentialAverage::<f32>::with_beta(0.999);
-    // let mut gradients = None;
+    let mut gradients = Some(model.alloc_grads());
     for ((input, target), left) in dataset.iter_len() {
-        let output = match model.try_forward_mut(dev.tensor(input).traced()) {
+        let input = match gradients.take() {
+            Some(g) => dev.tensor(input).trace_into(g),
+            None => dev.tensor(input).traced()
+        };
+        let output = match model.try_forward(input) {
             Ok(o) => o,
             Err(e) => {
                 println!("Forward Error: {e:?}");
@@ -115,12 +119,15 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
         bar.set_message(format!("PPL: {:.2}", loss_avg.value));
         tensorboard.record("ppl", loss_avg.value, BATCH_SIZE);
 
-        let gradients = loss.backward();
-        // println!("\n{:?}", gradients.get(&model.1.weight).mean::<Rank0, _>().as_vec());
-        // println!("{:?}\n", gradients.get(&model.3.weight).mean::<Rank0, _>().as_vec());
+        gradients = Some(loss.backward());
 
-        if let Err(e) = opt.update(model, &gradients) {
-            println!("Update error: {e:?}");
+        if left % BATCH_ACCUM == 0 {
+            if let Some(mut gradients) = gradients.take() {
+                if let Err(e) = opt.update(model, &gradients) {
+                    println!("Update error: {e:?}");
+                }
+                model.zero_grads(&mut gradients);
+            }
         }
 
         // if tensorboard.iter * BATCH_SIZE % 100_000 == 0 {
