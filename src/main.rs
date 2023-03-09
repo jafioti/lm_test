@@ -11,7 +11,7 @@ use dataflow_nlp::{
     tokenization::{Tokenizer, WordpieceTokenizer},
     vocab::{Vocab, WordPieceVocab},
 };
-use dfdx::{prelude::*, optim::{Adam, AdamConfig}};
+use dfdx::{prelude::*, optim::{Adam, AdamConfig}, gradients::Tape};
 
 #[allow(unused)]
 mod bar;
@@ -37,21 +37,21 @@ type BuiltModel<const VOCAB: usize, const EMBED: usize, const LAYERS: usize, con
 
 // Training
 const BATCH_SIZE: usize = 32;
-const BATCH_ACCUM: usize = 1;
-const LR: f32 = 3e-4;
+const BATCH_ACCUM: usize = 2;
+const LR: f32 = 2e-5;
 
 // Model
 const LAYERS: usize = 8;
 const SEQ_LEN: usize = 25;
-const EMBED_DIM: usize = 512;
+const EMBED_DIM: usize = 1024;
 const HEADS: usize = 16;
 
 fn main() {
-    let mut train_dataset = build_dataset::<SEQ_LEN, BATCH_SIZE>("/home/jafioti/Datasets/openwebtext", 100_000, 500_000);
+    let mut train_dataset = build_dataset::<SEQ_LEN, BATCH_SIZE>("/home/jafioti/Datasets/openwebtext", 100_000, 5_000_000);
     let mut test_dataset = build_dataset::<SEQ_LEN, BATCH_SIZE>("/home/jafioti/Datasets/openwebtext", 0, 10_000);
     let dev: Cuda = Default::default();
     let mut model = Model::<30527, EMBED_DIM, LAYERS, HEADS, SEQ_LEN>::build_on_device(&dev);
-    // model.load("test_save.npz").unwrap();
+    // model.load("epoch-0.npz").unwrap();
     let mut opt: Adam<_, _, _> = Adam::new(&model, AdamConfig {
         lr: LR,
         ..Default::default()
@@ -68,9 +68,9 @@ fn main() {
 
         generate(&model, &dev, 50);
 
-        // if let Err(e) = model.save(&format!("model-{epoch}.npz")) {
-        //     println!("Error saving model: {e:?}");
-        // }
+        if let Err(e) = model.save(&format!("epoch-{epoch}.npz")) {
+            println!("Error saving model: {e:?}");
+        }
     }
 }
 
@@ -105,8 +105,8 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
         };
 
         let loss = match one_hot_encode(&target, dev)
-            .map(|t| cross_entropy_with_logits_loss(output, t)) {
-            Ok(l) => l,
+            .map(|t| try_cross_entropy_with_logits_loss(output, t)) {
+            Ok(Ok(l)) => l,
             r => {
                 println!("Loss Error: {r:?}");
                 continue;
@@ -125,16 +125,19 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
             if let Some(mut gradients) = gradients.take() {
                 if let Err(e) = opt.update(model, &gradients) {
                     println!("Update error: {e:?}");
+                    println!("Update error: {e:?}");
+                    println!("Update error: {e:?}");
+
                 }
                 model.zero_grads(&mut gradients);
             }
         }
 
-        // if tensorboard.iter * BATCH_SIZE % 100_000 == 0 {
-        //     if let Err(e) = model.save(&format!("step_{}.npz", tensorboard.iter * BATCH_SIZE)) {
-        //         println!("Error saving model: {e:?}");
-        //     }
-        // }
+        if tensorboard.iter * BATCH_SIZE % 100_000 == 0 {
+            if let Err(e) = model.save(&format!("step_{}.npz", tensorboard.iter * BATCH_SIZE)) {
+                println!("Error saving model: {e:?}");
+            }
+        }
     }
     drop(bar);
 
@@ -261,4 +264,19 @@ fn one_hot_encode<const B: usize, const S: usize, const V: usize, D: Device<f32>
         }
     }
     dev.try_tensor_from_vec(data, (Const::<B>, Const::<S>, Const::<V>))
+}
+
+pub fn try_cross_entropy_with_logits_loss<Ax: dfdx::shapes::Axes, S, E: Dtype, D: Device<E>, T: Tape<E, D>>(
+    logits: Tensor<S, E, D, T>,
+    target_probs: Tensor<S, E, D>,
+) -> Result<Tensor<Rank0, E, D, T>, D::Err>
+where
+    S: Shape<LastAxis = Ax> + ReduceShape<Ax>,
+{
+    let last_axis_numel = E::from_usize(<S as HasAxes<Ax>>::size(logits.shape())).unwrap();
+    logits.try_log_softmax::<Ax>()?
+        .try_mul(target_probs)?
+        .try_mean()?
+        .try_negate()?
+        .try_mul(last_axis_numel)
 }
