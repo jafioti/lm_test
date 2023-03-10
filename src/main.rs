@@ -16,6 +16,8 @@ use dfdx::{prelude::*, nn::modules, optim::{Adam, AdamConfig}, gradients::Tape};
 #[allow(unused)]
 mod bar;
 pub use bar::*;
+mod lr_scheduler;
+pub use lr_scheduler::*;
 #[allow(unused)]
 #[allow(clippy::uninlined_format_args)]
 mod indicatif;
@@ -56,6 +58,7 @@ fn main() {
         lr: LR,
         ..Default::default()
     });
+    let mut scheduler = OneCycleScheduler::new(1e-5, 3e-4);
     let mut tensorboard = Tensorboard::new("logdir");
 
     println!("Model Parameters: {}", pretty_print_num(model.num_trainable_params()));
@@ -63,7 +66,7 @@ fn main() {
     generate(&model, &dev, 50);
     for epoch in 0..3 {
         println!("{}", format!("Epoch {}", epoch + 1).bold().cyan());
-        train_epoch(&mut model, &mut train_dataset, &mut opt, &dev, &mut tensorboard);
+        train_epoch(&mut model, &mut train_dataset, &mut opt, &mut scheduler, &dev, &mut tensorboard);
         println!("Test PPL: {}", test_epoch(&model, &mut test_dataset, &dev));
 
         generate(&model, &dev, 50);
@@ -78,6 +81,7 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
     model: &mut BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, 
     dataset: &mut Dataloader<([[usize; SEQ]; BATCH_SIZE], [[usize; SEQ]; BATCH_SIZE])>, 
     opt: &mut O,
+    scheduler: &mut OneCycleScheduler<f32>,
     dev: &D,
     tensorboard: &mut Tensorboard,
 ) where 
@@ -88,7 +92,7 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
         + Module<Tensor<Rank1<SEQ>, usize, D>, Output = Tensor<Rank2<SEQ, VOCAB>, f32, D>>,
     Tensor<(), f32, D, OwnedTape<f32, D>>: AsArray<Array = f32>,
     Tensor<(dfdx::shapes::Const<SEQ>, dfdx::shapes::Const<VOCAB>), f32, D>: AsArray<Array = [[f32; VOCAB]; SEQ]>,
-    O: Optimizer<BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, D, f32>,
+    O: Optimizer<BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, D, f32> + LearningRate<f32>,
     [(); EMBED * 2]:
 {
     let total_len = dataset.len();
@@ -128,6 +132,8 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
         #[allow(clippy::modulo_one)]
         if left % BATCH_ACCUM == 0 {
             if let Some(mut gradients) = Option::take(&mut gradients) {
+                scheduler.set_progress((total_len - left) as f32 / total_len as f32);
+                scheduler.step(opt);
                 if let Err(e) = opt.update(model, &gradients) {
                     println!("{} {e:?}\n", "Update Error:".bold().red());
                 }
