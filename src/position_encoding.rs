@@ -32,14 +32,14 @@ pub struct LearnedPositionalEmbedding<
 
 /// Pass in an unbatched pre-embedded sequence, add positional embeddings in
 impl<const MAX_LEN: usize, const DIM: usize, D: Device<f32>, T: Tape<f32, D>>
-    Module<Tensor<(Const<MAX_LEN>, Const<DIM>), f32, D, T>>
+    Module<Tensor<Rank2<MAX_LEN, DIM>, f32, D, T>>
     for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D>
 where
     D: TensorFromVec<usize>,
 {
-    type Output = Tensor<(Const<MAX_LEN>, Const<DIM>), f32, D, T>;
+    type Output = Tensor<Rank2<MAX_LEN, DIM>, f32, D, T>;
     type Error = D::Err;
-    fn try_forward(&self, input: Tensor<(Const<MAX_LEN>, Const<DIM>), f32, D, T>) -> Result<Self::Output, Self::Error> {
+    fn try_forward(&self, input: Tensor<Rank2<MAX_LEN, DIM>, f32, D, T>) -> Result<Self::Output, Self::Error> {
         let (input, tape) = input.split_tape();
         self.weight
             .clone()

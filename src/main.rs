@@ -40,7 +40,8 @@ type BuiltModel<const VOCAB: usize, const EMBED: usize, const LAYERS: usize, con
 // Training
 const BATCH_SIZE: usize = 64;
 const BATCH_ACCUM: usize = 1;
-const LR: f32 = 3e-5;
+const BASE_LR: f32 = 1e-5;
+const MAX_LR: f32 = 3e-4;
 
 // Model
 const LAYERS: usize = 8;
@@ -49,16 +50,16 @@ const EMBED_DIM: usize = 512;
 const HEADS: usize = 8;
 
 fn main() {
-    let mut train_dataset = build_dataset::<SEQ_LEN, BATCH_SIZE>("/home/jafioti/Datasets/openwebtext", 100_000, 20_000_000);
+    let mut train_dataset = build_dataset::<SEQ_LEN, BATCH_SIZE>("/home/jafioti/Datasets/openwebtext", 100_000, 19_000_000);
     let mut test_dataset = build_dataset::<SEQ_LEN, BATCH_SIZE>("/home/jafioti/Datasets/openwebtext", 0, 100_000);
     let dev: Cuda = Default::default();
     let mut model = Model::<30527, EMBED_DIM, LAYERS, HEADS, SEQ_LEN>::build_on_device(&dev);
     // model.load("epoch-0.npz").unwrap();
-    let mut opt: Adam<_, _, _> = Adam::new(&model, AdamConfig {
-        lr: LR,
+    let mut opt = Adam::new(&model, AdamConfig {
+        lr: 0.,
         ..Default::default()
     });
-    let mut scheduler = OneCycleScheduler::new(1e-5, 3e-4);
+    let mut scheduler = OneCycleScheduler::new(BASE_LR, MAX_LR);
     let mut tensorboard = Tensorboard::new("logdir");
 
     println!("Model Parameters: {}", pretty_print_num(model.num_trainable_params()));
@@ -97,13 +98,16 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
 {
     let total_len = dataset.len();
     let bar = train_progress_bar(dataset.len() as u64);
-    let mut loss_avg = ExponentialAverage::<f32>::with_beta(0.999);
+    let mut loss_avg = ExponentialAverage::with_beta(0.999);
     let mut gradients = Some(model.alloc_grads());
     for ((input, target), left) in dataset.iter_len() {
+        // Setup input
         let input = match Option::take(&mut gradients) {
             Some(g) => dev.tensor(input).trace_into(g),
             None => dev.tensor(input).traced()
         };
+
+        // Run through model
         let output = match model.try_forward(input) {
             Ok(o) => o,
             Err(e) => {
@@ -112,8 +116,8 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
             }
         };
 
-        let loss = match one_hot_encode(&target, dev)
-            .map(|t| try_cross_entropy_with_logits_loss(output, t)) {
+        // Get loss
+        let loss = match one_hot_encode(&target, dev).map(|t| try_cross_entropy_with_logits_loss(output, t)) {
             Ok(Ok(l)) => l,
             r => {
                 println!("{} {r:?}\n", "Loss Error:".bold().red());
@@ -213,11 +217,11 @@ where
     let (tokenizer, vocab) = (<WordpieceTokenizer as Tokenizer>::load(), <WordPieceVocab as Vocab>::load());
     let tokens = tokenizer.tokenize(&input);
     let mut indexes = vocab.indexes_from_tokens(&tokens).unwrap();
+    let initial_len = indexes.len();
 
     for _ in 0..num_tokens {
         let window: [usize; SEQ] = indexes[indexes.len() - SEQ..].try_into().unwrap();
-        let input: Tensor<_, _, D> = dev.tensor(window);
-        let output = model.forward(input);
+        let output = model.forward(dev.tensor(window));
         let index = output.array().last().unwrap()
             .iter()
             .enumerate()
@@ -226,7 +230,11 @@ where
             .unwrap();
         indexes.push(index);
     }
-    println!("{} {}\n", "Generation:".bold(), tokenizer.untokenize(vocab.tokens_from_indexes(&indexes).unwrap()));
+    println!("{} {} {}\n", 
+        "Generation:".bold(), 
+        tokenizer.untokenize(vocab.tokens_from_indexes(&indexes[..initial_len]).unwrap()), 
+        tokenizer.untokenize(vocab.tokens_from_indexes(&indexes[initial_len..]).unwrap()).bold()
+    );
 }
 
 fn build_dataset<const SEQ: usize, const BATCH: usize>(
@@ -244,6 +252,7 @@ fn build_dataset<const SEQ: usize, const BATCH: usize>(
         .node(Stateful::new(
             (WordpieceTokenizer::load(), WordPieceVocab::load()),
             |strings: Vec<String>, (tokenizer, vocab)| {
+                // println!("Loading: {}", strings.len());
                 // Filter / preprocess
                 let strings = strings.into_iter()
                     .filter(|s| !s.is_empty() && !s.contains("\\00"))
@@ -252,7 +261,6 @@ fn build_dataset<const SEQ: usize, const BATCH: usize>(
                 let tokens = tokenizer.batch_tokenize(strings);
                 // Convert to indexes
                 let indexes = vocab.batch_indexes_from_tokens(&tokens).unwrap();
-
                 // Convert to training examples
                 indexes.into_iter().filter_map(|indexes| {
                     if indexes.len() > SEQ {
@@ -273,7 +281,7 @@ fn build_dataset<const SEQ: usize, const BATCH: usize>(
             let (inputs, targets): (Vec<[usize; SEQ]>, Vec<[usize; SEQ]>) = indexes.into_iter().unzip();
             (inputs.try_into().unwrap(), targets.try_into().unwrap())
         });
-    Dataloader::new(pipeline).load_block_size(1_000_000)
+    Dataloader::new(pipeline).load_block_size(10_000)
 }
 
 fn one_hot_encode<const B: usize, const S: usize, const V: usize, D: Device<f32>>(
