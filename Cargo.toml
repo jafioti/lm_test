@@ -7,8 +7,9 @@ edition = "2021"
 
 [dependencies]
 #dfdx = "0.10.0"
-dfdx = {path="../dfdx-new-new", features=["cuda", "numpy"]}
+#dfdx = {path="../dfdx-new-new", features=["cuda", "numpy"]}
 #dfdx = {path="../dfdx-main", features=["cuda", "numpy"]}
+dfdx = {path="../dfdx-even-newer", features=["cuda", "numpy"]}
 dataflow = {git="https://github.com/Sidekick-AI/dataflow"}
 dataflow_nlp = "0.1.0"
 colored = "2.0.0"

@@ -1,6 +1,4 @@
 #![allow(clippy::type_complexity)]
-#![allow(incomplete_features)]
-#![feature(generic_const_exprs)]
 
 use colored::Colorize;
 use dataflow::{
@@ -11,7 +9,7 @@ use dataflow_nlp::{
     tokenization::{Tokenizer, WordpieceTokenizer},
     vocab::{Vocab, WordPieceVocab},
 };
-use dfdx::{prelude::*, nn::modules, optim::{Adam, AdamConfig}, gradients::Tape};
+use dfdx::{prelude::*, nn::modules, optim::{Adam, AdamConfig}};
 
 #[allow(unused)]
 mod bar;
@@ -23,23 +21,23 @@ pub use lr_scheduler::*;
 mod indicatif;
 mod position_encoding;
 
-type Model<const VOCAB: usize, const EMBED: usize, const LAYERS: usize, const HEADS: usize, const SEQ: usize> = (
+type Model<const VOCAB: usize, const EMBED: usize, const FF: usize, const LAYERS: usize, const HEADS: usize, const SEQ: usize> = (
     Embedding<VOCAB, EMBED>,
     position_encoding::builder::LearnedPositionalEmbedding<SEQ, EMBED>,
-    TransformerEncoder<EMBED, HEADS, {EMBED * 2}, LAYERS>,
+    TransformerEncoder<EMBED, HEADS, FF, LAYERS>,
     Linear<EMBED, VOCAB>,
 );
 
-type BuiltModel<const VOCAB: usize, const EMBED: usize, const LAYERS: usize, const HEADS: usize, const SEQ: usize, E, D> = (
+type BuiltModel<const VOCAB: usize, const EMBED: usize, const FF: usize, const LAYERS: usize, const HEADS: usize, const SEQ: usize, E, D> = (
     modules::Embedding<VOCAB, EMBED, E, D>,
     position_encoding::LearnedPositionalEmbedding<SEQ, EMBED, E, D>,
-    modules::TransformerEncoder<EMBED, HEADS, {EMBED * 2}, LAYERS, E, D>,
+    modules::TransformerEncoder<EMBED, HEADS, FF, LAYERS, E, D>,
     modules::Linear<EMBED, VOCAB, E, D>,
 );
 
 // Training
 const BATCH_SIZE: usize = 64;
-const BATCH_ACCUM: usize = 1;
+const BATCH_ACCUM: usize = 10;
 const BASE_LR: f32 = 1e-5;
 const MAX_LR: f32 = 3e-4;
 
@@ -47,13 +45,14 @@ const MAX_LR: f32 = 3e-4;
 const LAYERS: usize = 8;
 const SEQ_LEN: usize = 25;
 const EMBED_DIM: usize = 512;
+const FF_DIM: usize = EMBED_DIM * 2;
 const HEADS: usize = 8;
 
 fn main() {
-    let mut train_dataset = build_dataset::<SEQ_LEN, BATCH_SIZE>("/home/jafioti/Datasets/openwebtext", 100_000, 19_000_000);
+    let mut train_dataset = build_dataset::<SEQ_LEN, BATCH_SIZE>("/home/jafioti/Datasets/openwebtext", 100_000, 200_000);
     let mut test_dataset = build_dataset::<SEQ_LEN, BATCH_SIZE>("/home/jafioti/Datasets/openwebtext", 0, 100_000);
     let dev: Cuda = Default::default();
-    let mut model = Model::<30527, EMBED_DIM, LAYERS, HEADS, SEQ_LEN>::build_on_device(&dev);
+    let mut model = Model::<30527, EMBED_DIM, FF_DIM, LAYERS, HEADS, SEQ_LEN>::build_on_device(&dev);
     // model.load("epoch-0.npz").unwrap();
     let mut opt = Adam::new(&model, AdamConfig {
         lr: 0.,
@@ -78,8 +77,8 @@ fn main() {
     }
 }
 
-fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const EMBED: usize, const HEADS: usize, D: Device<f32>, O>(
-    model: &mut BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, 
+fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const EMBED: usize, const FF: usize, const HEADS: usize, D: Device<f32>, O>(
+    model: &mut BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, SEQ, f32, D>, 
     dataset: &mut Dataloader<([[usize; SEQ]; BATCH_SIZE], [[usize; SEQ]; BATCH_SIZE])>, 
     opt: &mut O,
     scheduler: &mut OneCycleScheduler<f32>,
@@ -88,23 +87,26 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
 ) where 
     D: Device<f32> + std::fmt::Debug + dfdx::tensor::TensorFrom<[[usize; SEQ]; BATCH_SIZE], Rank2<BATCH_SIZE, SEQ>, usize>
      + dfdx::tensor::TensorFrom<[usize; SEQ], Rank1<SEQ>, usize> + dfdx::tensor::TensorFromVec<usize>,
-    BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>: 
+    BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, SEQ, f32, D>: 
         Module<Tensor<Rank2<BATCH_SIZE, SEQ>, usize, D, OwnedTape<f32, D>>, Output = Tensor<Rank3<BATCH_SIZE, SEQ, VOCAB>, f32, D, OwnedTape<f32, D>>>
         + Module<Tensor<Rank1<SEQ>, usize, D>, Output = Tensor<Rank2<SEQ, VOCAB>, f32, D>>,
     Tensor<(), f32, D, OwnedTape<f32, D>>: AsArray<Array = f32>,
     Tensor<(dfdx::shapes::Const<SEQ>, dfdx::shapes::Const<VOCAB>), f32, D>: AsArray<Array = [[f32; VOCAB]; SEQ]>,
-    O: Optimizer<BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, D, f32> + LearningRate<f32>,
-    [(); EMBED * 2]:
+    O: Optimizer<BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, SEQ, f32, D>, D, f32> + LearningRate<f32>,
 {
     let total_len = dataset.len();
     let bar = train_progress_bar(dataset.len() as u64);
     let mut loss_avg = ExponentialAverage::with_beta(0.999);
     let mut gradients = Some(model.alloc_grads());
+    let accum_samples = BATCH_ACCUM * BATCH_SIZE;
     for ((input, target), left) in dataset.iter_len() {
         // Setup input
         let input = match Option::take(&mut gradients) {
             Some(g) => dev.tensor(input).trace_into(g),
-            None => dev.tensor(input).traced()
+            None => {
+                // gradients.get_or_insert_with(|| model.alloc_grads());
+                dev.tensor(input).traced()
+            }
         };
 
         // Run through model
@@ -120,7 +122,7 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
         let loss = match one_hot_encode(&target, dev).map(|t| try_cross_entropy_with_logits_loss(output, t)) {
             Ok(Ok(l)) => l,
             r => {
-                println!("{} {r:?}\n", "Loss Error:".bold().red());
+                println!("{} {r:?}", "Loss Error:".bold().red());
                 continue;
             }
         };
@@ -133,15 +135,17 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
 
         // Backprop and optimize
         gradients = Some(loss.backward());
+
         #[allow(clippy::modulo_one)]
-        if left % BATCH_ACCUM == 0 {
-            if let Some(mut gradients) = Option::take(&mut gradients) {
+        if tensorboard.iter % accum_samples == 0 {
+            if let Some(mut grads) = Option::take(&mut gradients) {
                 scheduler.set_progress((total_len - left) as f32 / total_len as f32);
                 scheduler.step(opt);
-                if let Err(e) = opt.update(model, &gradients) {
+                if let Err(e) = opt.update(model, &grads) {
                     println!("{} {e:?}\n", "Update Error:".bold().red());
                 }
-                model.zero_grads(&mut gradients);
+                model.zero_grads(&mut grads);
+                gradients = Some(grads);
             }
         }
 
@@ -160,16 +164,15 @@ fn train_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const 
     println!("Train PPL: {}", loss_avg.value);
 }
 
-fn test_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const EMBED: usize, const HEADS: usize, D: Device<f32>>(
-    model: &BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, 
+fn test_epoch<const LAYERS: usize, const SEQ: usize, const VOCAB: usize, const EMBED: usize, const FF: usize, const HEADS: usize, D: Device<f32>>(
+    model: &BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, SEQ, f32, D>, 
     dataset: &mut Dataloader<([[usize; SEQ]; BATCH_SIZE], [[usize; SEQ]; BATCH_SIZE])>, 
     dev: &D
 ) -> f32
 where 
     D: Device<f32> + dfdx::tensor::TensorFrom<[[usize; SEQ]; BATCH_SIZE], Rank2<BATCH_SIZE, SEQ>, usize>,
     Tensor<(), f32, D, NoneTape>: AsArray<Array = f32>,
-    BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>: Module<Tensor<Rank2<BATCH_SIZE, SEQ>, usize, D, NoneTape>, Output = Tensor<Rank3<BATCH_SIZE, SEQ, VOCAB>, f32, D, NoneTape>>,
-    [(); EMBED * 2]:
+    BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, SEQ, f32, D>: Module<Tensor<Rank2<BATCH_SIZE, SEQ>, usize, D, NoneTape>, Output = Tensor<Rank3<BATCH_SIZE, SEQ, VOCAB>, f32, D, NoneTape>>,
 {
     let total_len = dataset.len();
     let bar = test_progress_bar(dataset.len() as u64);
@@ -202,16 +205,15 @@ where
     return losses.iter().sum::<f32>() / (losses.len() as f32)
 }
 
-fn generate<const LAYERS: usize, const VOCAB: usize, const EMBED: usize, const HEADS: usize, const SEQ: usize, D: Device<f32>>(
-    model: &BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>, 
+fn generate<const LAYERS: usize, const VOCAB: usize, const EMBED: usize, const FF: usize, const HEADS: usize, const SEQ: usize, D: Device<f32>>(
+    model: &BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, SEQ, f32, D>, 
     dev: &D,
     num_tokens: usize,
 ) 
 where 
     Tensor<(dfdx::shapes::Const<SEQ>, dfdx::shapes::Const<VOCAB>), f32, D>: AsArray<Array = [[f32; VOCAB]; SEQ]>,
-    BuiltModel<VOCAB, EMBED, LAYERS, HEADS, SEQ, f32, D>: Module<Tensor<Rank1<SEQ>, usize, D>, Output = Tensor<Rank2<SEQ, VOCAB>, f32, D>>,
+    BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, SEQ, f32, D>: Module<Tensor<Rank1<SEQ>, usize, D>, Output = Tensor<Rank2<SEQ, VOCAB>, f32, D>>,
     D: Device<f32> + dfdx::tensor::TensorFrom<[usize; SEQ], Rank1<SEQ>, usize> + TensorFrom<[[f32; SEQ]; SEQ], Rank2<SEQ, SEQ>, f32>,
-    [(); EMBED * 2]:
 {
     let input = "Hi, how are you doing today? I'd like you to meet my friend Fred. He's a botonist, but also the first man to ever walk on the surface of".to_lowercase();
     let (tokenizer, vocab) = (<WordpieceTokenizer as Tokenizer>::load(), <WordPieceVocab as Vocab>::load());

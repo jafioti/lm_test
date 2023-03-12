@@ -1,5 +1,4 @@
-use dfdx::prelude::tensor_collection::{ModuleVisitor, TensorOptions};
-use dfdx::{gradients::Tape, prelude::tensor_collection::TensorCollection};
+use dfdx::prelude::tensor_collection::{TensorCollection, ModuleVisitor, TensorOptions};
 use dfdx::prelude::*;
 use rand_distr::Uniform;
 
@@ -48,9 +47,6 @@ where
     }
 }
 
-impl<const V: usize, const M: usize, E: Dtype, D: DeviceStorage> NonMutableModule
-    for LearnedPositionalEmbedding<V, M, E, D>{}
-
 impl<const MAX_LEN: usize, const DIM: usize, BATCH: Dim, D: Device<f32>, T: Tape<f32, D>>
     Module<Tensor<(BATCH, Const<MAX_LEN>, Const<DIM>), f32, D, T>>
     for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D>
@@ -69,6 +65,9 @@ where
             .try_add(input)
     }
 }
+
+impl<const V: usize, const M: usize, E: Dtype, D: DeviceStorage> NonMutableModule
+    for LearnedPositionalEmbedding<V, M, E, D>{}
 
 impl<const MAX_LEN: usize, const DIM: usize, D: Device<f32>> BuildModule<D, f32>
     for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D>
