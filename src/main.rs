@@ -11,6 +11,7 @@ use dfdx::{
     optim::{Adam, AdamConfig},
     prelude::*,
 };
+use itertools::Itertools;
 
 mod bar;
 pub use bar::*;
@@ -51,29 +52,36 @@ type BuiltModel<
 );
 
 // Training
-const BATCH_SIZE: usize = 64;
+const BATCH_SIZE: usize = 48;
 const BATCH_ACCUM: usize = 10;
 const BASE_LR: f32 = 1e-5;
 const MAX_LR: f32 = 3e-4;
 
 // Model
 const LAYERS: usize = 8;
-const SEQ_LEN: usize = 25;
+const MAX_SEQ_LEN: usize = 100;
 const EMBED_DIM: usize = 512;
 const FF_DIM: usize = EMBED_DIM * 2;
 const HEADS: usize = 8;
 
 fn main() {
-    let mut train_dataset = build_dataset::<SEQ_LEN, BATCH_SIZE>(
+    let mut train_dataset = build_dataset(
         "/home/jafioti/Datasets/openwebtext",
         100_000,
-        2_000_000,
+        30_000_000,
+        40,
+        BATCH_SIZE,
     );
-    let mut test_dataset =
-        build_dataset::<SEQ_LEN, BATCH_SIZE>("/home/jafioti/Datasets/openwebtext", 0, 100_000);
+    let mut test_dataset = build_dataset(
+        "/home/jafioti/Datasets/openwebtext",
+        0,
+        100_000,
+        40,
+        BATCH_SIZE,
+    );
     let dev: Cuda = Default::default();
     let mut model =
-        Model::<30527, EMBED_DIM, FF_DIM, LAYERS, HEADS, SEQ_LEN>::build_on_device(&dev);
+        Model::<30527, EMBED_DIM, FF_DIM, LAYERS, HEADS, MAX_SEQ_LEN>::build_on_device(&dev);
     // model.load("epoch-0.npz").unwrap();
     let mut opt = Adam::new(
         &model,
@@ -140,10 +148,10 @@ fn train_epoch<
     let total_len = dataset.len();
     let bar = train_progress_bar(dataset.len() as u64);
     let mut loss_avg = ExponentialAverage::with_beta(0.999);
-    // let mut gradients: Option<Gradients<f32, D>> = None;
     let mut gradients = Some(model.alloc_grads());
-    let accum_samples = BATCH_ACCUM * BATCH_SIZE;
+    let mut epoch_iter = 0;
     for ((input, target), left) in dataset.iter_len() {
+        epoch_iter += 1;
         // Setup input
         let (batch_size, seq_len) = (input.len(), input[0].len());
         let flat_vec: Vec<usize> = input.into_iter().flatten().collect();
@@ -186,7 +194,7 @@ fn train_epoch<
         gradients = Some(loss.backward());
 
         #[allow(clippy::modulo_one)]
-        if tensorboard.iter % accum_samples == 0 {
+        if epoch_iter % BATCH_ACCUM == 0 {
             if let Some(mut grads) = Option::take(&mut gradients) {
                 scheduler.set_progress((total_len - left) as f32 / total_len as f32);
                 scheduler.step(opt);
@@ -198,8 +206,8 @@ fn train_epoch<
             }
         }
 
-        // Save every 200_000 samples
-        if tensorboard.iter % 200_000 == 0 {
+        // Save every 10_000 steps
+        if epoch_iter % 10_000 == 0 {
             if let Err(e) = model.save(&format!("checkpoints/step_{}.npz", tensorboard.iter)) {
                 println!("{} {e:?}\n", "Error Saving Model:".bold().red());
             }
@@ -297,9 +305,8 @@ fn generate<
     let initial_len = indexes.len();
 
     for _ in 0..num_tokens {
-        let window = indexes[indexes.len() - 25..].to_vec();
-        let output = model.forward(dev.tensor_from_vec(window, (25,)));
-        let index = output.as_vec()[24 * VOCAB..]
+        let output = model.forward(dev.tensor_from_vec(indexes.clone(), (indexes.len(),)));
+        let index = output.as_vec()[(indexes.len() - 1) * VOCAB..]
             .iter()
             .enumerate()
             .max_by(|(_, a), (_, b)| a.total_cmp(b))
@@ -317,10 +324,12 @@ fn generate<
     );
 }
 
-fn build_dataset<const SEQ: usize, const BATCH: usize>(
+fn build_dataset(
     path: &str,
     min_index: usize,
     max_index: usize,
+    max_sequence_length: usize,
+    batch_size: usize,
 ) -> Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)> {
     let pipeline =
     // Random loader from files
@@ -328,7 +337,7 @@ fn build_dataset<const SEQ: usize, const BATCH: usize>(
         // Filter + tokenize + index
         .node(Stateful::new(
             (WordpieceTokenizer::load(), WordPieceVocab::load()),
-            |strings: Vec<String>, (tokenizer, vocab)| {
+            move |strings: Vec<String>, (tokenizer, vocab)| {
                 // Filter / preprocess
                 let strings = strings.into_iter()
                     .filter(|s| !s.is_empty() && !s.contains("\\00"))
@@ -337,39 +346,38 @@ fn build_dataset<const SEQ: usize, const BATCH: usize>(
                 let tokens = tokenizer.batch_tokenize(strings);
                 // Convert to indexes
                 let indexes = vocab.batch_indexes_from_tokens(&tokens).unwrap();
-                // Convert to training examples
-                indexes.into_iter().filter_map(|indexes| {
-                    if indexes.len() > SEQ {
-                        Some((
-                            indexes[..SEQ].to_vec(),
-                            indexes[1..(SEQ + 1)].to_vec(),
-                        ))
-                    } else {
-                        None
-                    }
-                }).collect()
-            },
-        ))
-        // Batch
-        .node(Batch::new(BATCH))
-        // Unzip inputs and targets
-        .map(|indexes: Vec<(Vec<usize>, Vec<usize>)>| {
-            indexes.into_iter().unzip()
-        });
-    Dataloader::new(pipeline).load_block_size(10_000)
-}
 
-fn _one_hot_encode<const B: usize, const S: usize, const V: usize, D: Device<f32>>(
-    labels: &[[usize; S]; B],
-    dev: &D,
-) -> Result<Tensor<Rank3<B, S, V>, f32, D>, D::Err> {
-    let mut data = vec![0.; B * S * V];
-    for (b, batch) in labels.iter().enumerate() {
-        for (i, l) in batch.iter().enumerate() {
-            data[b * S * V + i * V + *l] = 1.;
-        }
-    }
-    dev.try_tensor_from_vec(data, (Const::<B>, Const::<S>, Const::<V>))
+                indexes
+                    .into_iter()
+                    // Filter out sequences shorter than 5
+                    .filter(|i| i.len() > 5)
+                    // Sort
+                    .sorted_by_key(|a| a.len())
+                    // Batch
+                    .chunks(batch_size)
+                    .into_iter()
+                    .map(|batch| {
+                        // Limit the length of the vectors and pad out ones that need it
+                        let mut reference_length = 0;
+                        batch.map(|s| {
+                            if reference_length == 0 {
+                                reference_length = s.len().min(max_sequence_length + 1);
+                            }
+                            let mut seq = s[..reference_length].to_vec();
+                            seq.append(&mut vec![0; (reference_length).checked_sub(seq.len()).unwrap_or_default()]);
+                            (
+                                seq[..seq.len() - 1].to_vec(),
+                                seq[1..].to_vec()
+                            )
+                        }).collect()
+                    }).collect()
+            },
+        ).remaining(|i| i / 64))
+        // Re-shuffle
+        .node(Shuffle::default())
+        // Unzip inputs and targets
+        .map(|indexes: Vec<(Vec<usize>, Vec<usize>)>| indexes.into_iter().unzip());
+    Dataloader::new(pipeline).load_block_size(10_000)
 }
 
 fn vec_one_hot_encode<const V: usize, E: Dtype + Float, D: Device<E>>(
