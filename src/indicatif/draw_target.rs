@@ -168,8 +168,7 @@ impl ProgressDrawTarget {
     }
 
     /// Properly disconnects from the draw target
-    pub(crate) fn disconnect(&self) {
-    }
+    pub(crate) fn disconnect(&self) {}
 }
 
 #[derive(Debug)]

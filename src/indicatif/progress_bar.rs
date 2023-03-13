@@ -5,9 +5,7 @@ use std::sync::{Arc, Mutex, Weak};
 use std::thread;
 use std::time::{Duration, Instant};
 
-use super::draw_target::{
-    ProgressDrawState, ProgressDrawTarget,
-};
+use super::draw_target::{ProgressDrawState, ProgressDrawTarget};
 use super::state::{ProgressState, Status};
 use super::style::ProgressStyle;
 use super::{ProgressBarIter, ProgressIterator};

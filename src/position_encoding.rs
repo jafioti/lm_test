@@ -1,4 +1,4 @@
-use dfdx::prelude::tensor_collection::{TensorCollection, ModuleVisitor, TensorOptions};
+use dfdx::prelude::tensor_collection::{ModuleVisitor, TensorCollection, TensorOptions};
 use dfdx::prelude::*;
 use rand_distr::Uniform;
 
@@ -30,44 +30,61 @@ pub struct LearnedPositionalEmbedding<
 }
 
 /// Pass in an unbatched pre-embedded sequence, add positional embeddings in
-impl<const MAX_LEN: usize, const DIM: usize, D: Device<f32>, T: Tape<f32, D>>
-    Module<Tensor<Rank2<MAX_LEN, DIM>, f32, D, T>>
+impl<const MAX_LEN: usize, const DIM: usize, SEQ: Dim, D: Device<f32>, T: Tape<f32, D>>
+    Module<Tensor<(SEQ, Const<DIM>), f32, D, T>>
     for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D>
-where
-    D: TensorFromVec<usize>,
 {
-    type Output = Tensor<Rank2<MAX_LEN, DIM>, f32, D, T>;
+    type Output = Tensor<(SEQ, Const<DIM>), f32, D, T>;
     type Error = D::Err;
-    fn try_forward(&self, input: Tensor<Rank2<MAX_LEN, DIM>, f32, D, T>) -> Result<Self::Output, Self::Error> {
+    fn try_forward(
+        &self,
+        input: Tensor<(SEQ, Const<DIM>), f32, D, T>,
+    ) -> Result<Self::Output, Self::Error> {
         let (input, tape) = input.split_tape();
+        let indexes: Tensor<(SEQ,), usize, D> = input
+            .device
+            .tensor_from_vec((0..input.shape().0.size()).collect(), (input.shape().0,));
         self.weight
             .clone()
             .put_tape(tape)
+            .try_gather(indexes)?
             .try_add(input)
     }
 }
 
-impl<const MAX_LEN: usize, const DIM: usize, BATCH: Dim, D: Device<f32>, T: Tape<f32, D>>
-    Module<Tensor<(BATCH, Const<MAX_LEN>, Const<DIM>), f32, D, T>>
+impl<
+        const MAX_LEN: usize,
+        const DIM: usize,
+        BATCH: Dim,
+        SEQ: Dim,
+        D: Device<f32>,
+        T: Tape<f32, D>,
+    > Module<Tensor<(BATCH, SEQ, Const<DIM>), f32, D, T>>
     for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D>
-where
-    D: TensorFromVec<usize>,
-    Tensor<(dfdx::shapes::Const<MAX_LEN>, dfdx::shapes::Const<DIM>), f32, D>: AsArray,
 {
-    type Output = Tensor<(BATCH, Const<MAX_LEN>, Const<DIM>), f32, D, T>;
+    type Output = Tensor<(BATCH, SEQ, Const<DIM>), f32, D, T>;
     type Error = D::Err;
-    fn try_forward(&self, input: Tensor<(BATCH, Const<MAX_LEN>, Const<DIM>), f32, D, T>) -> Result<Self::Output, Self::Error> {
+    fn try_forward(
+        &self,
+        input: Tensor<(BATCH, SEQ, Const<DIM>), f32, D, T>,
+    ) -> Result<Self::Output, Self::Error> {
         let (input, tape) = input.split_tape();
+        let indexes: Tensor<(SEQ,), usize, D> = input
+            .device
+            .tensor_from_vec((0..input.shape().1.size()).collect(), (input.shape().1,));
         self.weight
             .clone()
             .put_tape(tape)
+            .try_gather(indexes)?
             .try_broadcast_like(input.shape())?
             .try_add(input)
     }
 }
 
 impl<const V: usize, const M: usize, E: Dtype, D: DeviceStorage> NonMutableModule
-    for LearnedPositionalEmbedding<V, M, E, D>{}
+    for LearnedPositionalEmbedding<V, M, E, D>
+{
+}
 
 impl<const MAX_LEN: usize, const DIM: usize, D: Device<f32>> BuildModule<D, f32>
     for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D>
@@ -75,9 +92,7 @@ impl<const MAX_LEN: usize, const DIM: usize, D: Device<f32>> BuildModule<D, f32>
     fn try_build(device: &D) -> Result<Self, D::Err> {
         let bound = 1. / (MAX_LEN as f32).sqrt();
         let weight = device.try_sample(Uniform::new(-bound, bound))?;
-        Ok(Self {
-            weight,
-        })
+        Ok(Self { weight })
     }
 }
 
@@ -91,8 +106,8 @@ impl<const MAX_LEN: usize, const DIM: usize, D1: Device<f32>, D2: Device<f32>> T
         }
     }
 }
-impl<const C: usize, const M: usize, D: SampleTensor<f32> + Device<f32>>
-    TensorCollection<f32, D> for LearnedPositionalEmbedding<C, M, f32, D>
+impl<const C: usize, const M: usize, D: SampleTensor<f32> + Device<f32>> TensorCollection<f32, D>
+    for LearnedPositionalEmbedding<C, M, f32, D>
 {
     fn iter_tensors<V: ModuleVisitor<Self, f32, D>>(visitor: &mut V) -> Result<(), V::Err> {
         visitor.visit_tensor(
@@ -104,6 +119,5 @@ impl<const C: usize, const M: usize, D: SampleTensor<f32> + Device<f32>>
                 t.try_fill_with_distr(Uniform::new(-b, b))
             }),
         )
-
     }
 }

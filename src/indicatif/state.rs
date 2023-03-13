@@ -1,4 +1,8 @@
-use std::{borrow::Cow, fmt, io, thread, time::{Duration, Instant}};
+use std::{
+    borrow::Cow,
+    fmt, io, thread,
+    time::{Duration, Instant},
+};
 
 use super::draw_target::{ProgressDrawState, ProgressDrawTarget};
 use super::style::{ProgressFinish, ProgressStyle};

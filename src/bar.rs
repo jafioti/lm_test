@@ -2,8 +2,8 @@ use std::collections::HashMap;
 
 use crate::indicatif::{ProgressBar, ProgressStyle};
 use num::{Float, Zero};
-use tensorboard_rs::summary_writer::SummaryWriter;
 use rand::Rng;
+use tensorboard_rs::summary_writer::SummaryWriter;
 
 /// Creates a training stylized progress bar
 pub fn train_progress_bar(steps: u64) -> ProgressBar {
@@ -63,27 +63,27 @@ pub struct ExponentialAverage<T: Float> {
     beta: f64,
     moment: f64,
     pub value: T,
-    t: i32
+    t: i32,
 }
 
-impl <T: Float> Default for ExponentialAverage<T> {
+impl<T: Float> Default for ExponentialAverage<T> {
     fn default() -> Self {
         ExponentialAverage {
             beta: 0.99,
             moment: 0.,
             value: Zero::zero(),
-            t: 0
+            t: 0,
         }
     }
 }
 
-impl <T: Float> ExponentialAverage<T> {
+impl<T: Float> ExponentialAverage<T> {
     pub fn new() -> Self {
         ExponentialAverage {
             beta: 0.99,
             moment: 0.,
             value: Zero::zero(),
-            t: 0
+            t: 0,
         }
     }
 
@@ -93,7 +93,7 @@ impl <T: Float> ExponentialAverage<T> {
             beta,
             moment: 0.,
             value: Zero::zero(),
-            t: 0
+            t: 0,
         }
     }
 
@@ -117,7 +117,7 @@ pub fn pretty_print_num(num: usize) -> String {
         1_000_000_000..=999_999_999_999 => format!("{:.2}B", num as f64 / 1_000_000_000.),
         1_000_000..=999_999_999 => format!("{:.2}M", num as f64 / 1_000_000.),
         1_000..=999_999 => format!("{:.2}K", num as f64 / 1_000.),
-        _ => num.to_string()
+        _ => num.to_string(),
     }
 }
 
@@ -142,6 +142,10 @@ impl Tensorboard {
 
     pub fn record(&mut self, metric_name: &str, metric: f32, steps: usize) {
         self.iter += steps;
-        self.writer.add_scalars(metric_name, &HashMap::from([(self.id.clone(), metric)]), self.iter);
+        self.writer.add_scalars(
+            metric_name,
+            &HashMap::from([(self.id.clone(), metric)]),
+            self.iter,
+        );
     }
 }

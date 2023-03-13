@@ -37,9 +37,7 @@ impl<E> OneCycleScheduler<E> {
 impl<E: Dtype, L: LearningRate<E>> OptimScheduler<L> for OneCycleScheduler<E> {
     fn step(&mut self, optimizer: &mut L) {
         let progress = (0.5 - (self.progress - 0.5).abs()) * 2.;
-        *optimizer.learning_rate() = 
-            (self.max_lr - self.base_lr)
-             * E::from_f32(progress).unwrap()
-             + self.base_lr;
+        *optimizer.learning_rate() =
+            (self.max_lr - self.base_lr) * E::from_f32(progress).unwrap() + self.base_lr;
     }
 }
