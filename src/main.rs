@@ -7,7 +7,6 @@ use dataflow_nlp::{
     vocab::{Vocab, WordPieceVocab},
 };
 use dfdx::{
-    nn::modules,
     optim::{Adam, AdamConfig},
     prelude::*,
 };
@@ -15,11 +14,11 @@ use itertools::Itertools;
 
 mod bar;
 pub use bar::*;
-mod lr_scheduler;
-pub use lr_scheduler::*;
 use num::Float;
 mod indicatif;
-mod position_encoding;
+mod lr_scheduler;
+pub use lr_scheduler::*;
+mod model;
 
 type Model<
     const VOCAB: usize,
@@ -28,12 +27,14 @@ type Model<
     const LAYERS: usize,
     const HEADS: usize,
     const MAX_LEN: usize,
-> = (
-    Embedding<VOCAB, EMBED>,
-    position_encoding::builder::LearnedPositionalEmbedding<MAX_LEN, EMBED>,
-    TransformerEncoder<EMBED, HEADS, FF, LAYERS>,
-    Linear<EMBED, VOCAB>,
-);
+> = model::reverse_embedding::builder::ReverseEmbedding<
+    VOCAB,
+    EMBED,
+    (
+        model::position_encoding::builder::LearnedPositionalEmbedding<MAX_LEN, EMBED>,
+        model::transformer::builder::TransformerEncoder<EMBED, HEADS, FF, LAYERS>,
+    ),
+>;
 
 type BuiltModel<
     const VOCAB: usize,
@@ -44,45 +45,49 @@ type BuiltModel<
     const MAX_LEN: usize,
     E,
     D,
-> = (
-    modules::Embedding<VOCAB, EMBED, E, D>,
-    position_encoding::LearnedPositionalEmbedding<MAX_LEN, EMBED, E, D>,
-    modules::TransformerEncoder<EMBED, HEADS, FF, LAYERS, E, D>,
-    modules::Linear<EMBED, VOCAB, E, D>,
-);
+> = model::reverse_embedding::ReverseEmbedding<
+    VOCAB,
+    EMBED,
+    E,
+    D,
+    (
+        model::position_encoding::LearnedPositionalEmbedding<MAX_LEN, EMBED, E, D>,
+        model::transformer::TransformerEncoder<EMBED, HEADS, FF, LAYERS, E, D>,
+    ),
+>;
 
 // Training
 const BATCH_SIZE: usize = 48;
-const BATCH_ACCUM: usize = 10;
-const BASE_LR: f32 = 1e-5;
-const MAX_LR: f32 = 3e-4;
+const BATCH_ACCUM: (usize, usize) = (1, 20);
+const MAX_TRAIN_SEQ_LEN: usize = 45;
+const LR: (f32, f32) = (1e-5, 3e-4);
 
 // Model
 const LAYERS: usize = 8;
 const MAX_SEQ_LEN: usize = 100;
 const EMBED_DIM: usize = 512;
-const FF_DIM: usize = EMBED_DIM * 2;
+const FF_DIM: usize = EMBED_DIM * 4;
 const HEADS: usize = 8;
 
 fn main() {
     let mut train_dataset = build_dataset(
         "/home/jafioti/Datasets/openwebtext",
-        100_000,
-        30_000_000,
-        40,
+        1_000_000,
+        5_000_000,
+        MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
     let mut test_dataset = build_dataset(
         "/home/jafioti/Datasets/openwebtext",
         0,
         100_000,
-        40,
+        MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
     let dev: Cuda = Default::default();
     let mut model =
-        Model::<30527, EMBED_DIM, FF_DIM, LAYERS, HEADS, MAX_SEQ_LEN>::build_on_device(&dev);
-    // model.load("epoch-0.npz").unwrap();
+        Model::<30528, EMBED_DIM, FF_DIM, LAYERS, HEADS, MAX_SEQ_LEN>::build_on_device(&dev);
+    // model.load("checkpoints/step_10800000.npz").unwrap();
     let mut opt = Adam::new(
         &model,
         AdamConfig {
@@ -90,7 +95,8 @@ fn main() {
             ..Default::default()
         },
     );
-    let mut scheduler = OneCycleScheduler::new(BASE_LR, MAX_LR);
+    let mut lr_scheduler = OneCycleScheduler::new(LR.0, LR.1).set_peak(0.2);
+    let  mut accum_scheduler = LinearScheduler::new(BATCH_ACCUM.0, BATCH_ACCUM.1);
     let mut tensorboard = Tensorboard::new("logdir");
 
     println!(
@@ -98,20 +104,22 @@ fn main() {
         pretty_print_num(model.num_trainable_params())
     );
 
-    generate(&model, &dev, 50);
+    generate(&model, &dev, 100, MAX_TRAIN_SEQ_LEN);
     for epoch in 0..3 {
         println!("{}", format!("Epoch {}", epoch + 1).bold().cyan());
         train_epoch(
             &mut model,
             &mut train_dataset,
+            &mut test_dataset,
             &mut opt,
-            &mut scheduler,
+            &mut lr_scheduler,
+            &mut accum_scheduler,
             &dev,
             &mut tensorboard,
         );
         println!("Test PPL: {}", test_epoch(&model, &mut test_dataset, &dev));
 
-        generate(&model, &dev, 50);
+        generate(&model, &dev, 100, MAX_TRAIN_SEQ_LEN);
 
         if let Err(e) = model.save(&format!("checkpoints/epoch-{epoch}.npz")) {
             println!("{} {e:?}", "Error Saving Model:".bold().red());
@@ -119,6 +127,7 @@ fn main() {
     }
 }
 
+#[allow(clippy::too_many_arguments)]
 fn train_epoch<
     const LAYERS: usize,
     const SEQ: usize,
@@ -131,8 +140,10 @@ fn train_epoch<
 >(
     model: &mut BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, SEQ, f32, D>,
     dataset: &mut Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)>,
+    test_dataset: &mut Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)>,
     opt: &mut O,
     scheduler: &mut OneCycleScheduler<f32>,
+    accum_scheduler: &mut LinearScheduler<usize>,
     dev: &D,
     tensorboard: &mut Tensorboard,
 ) where
@@ -142,6 +153,7 @@ fn train_epoch<
             Output = Tensor<(usize, usize, Const<VOCAB>), f32, D, OwnedTape<f32, D>>,
         > + Module<Tensor<(usize,), usize, D>, Output = Tensor<(usize, Const<VOCAB>), f32, D>>,
     Tensor<(), f32, D, OwnedTape<f32, D>>: AsArray<Array = f32>,
+    Tensor<(), f32, D, NoneTape>: AsArray<Array = f32>,
     O: Optimizer<BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, SEQ, f32, D>, D, f32>
         + LearningRate<f32>,
 {
@@ -152,17 +164,13 @@ fn train_epoch<
     let mut epoch_iter = 0;
     for ((input, target), left) in dataset.iter_len() {
         epoch_iter += 1;
+        accum_scheduler.set_progress((total_len - left) as f32 / total_len as f32);
         // Setup input
         let (batch_size, seq_len) = (input.len(), input[0].len());
         let flat_vec: Vec<usize> = input.into_iter().flatten().collect();
-        let input = match Option::take(&mut gradients) {
-            Some(g) => dev
-                .tensor_from_vec(flat_vec, (batch_size, seq_len))
-                .trace_into(g),
-            None => dev
-                .tensor_from_vec(flat_vec, (batch_size, seq_len))
-                .traced(),
-        };
+        let input = dev
+            .tensor_from_vec(flat_vec, (batch_size, seq_len))
+            .trace_into(gradients.take().unwrap_or_else(|| model.alloc_grads()));
 
         // Run through model
         let output = match model.try_forward(input) {
@@ -191,10 +199,10 @@ fn train_epoch<
         tensorboard.record("ppl", loss_avg.value, BATCH_SIZE);
 
         // Backprop and optimize
-        gradients = Some(loss.backward());
+        gradients = Some((loss / accum_scheduler.get() as f32).backward());
 
         #[allow(clippy::modulo_one)]
-        if epoch_iter % BATCH_ACCUM == 0 {
+        if epoch_iter % accum_scheduler.get() == 0 {
             if let Some(mut grads) = Option::take(&mut gradients) {
                 scheduler.set_progress((total_len - left) as f32 / total_len as f32);
                 scheduler.step(opt);
@@ -206,14 +214,19 @@ fn train_epoch<
             }
         }
 
-        // Save every 10_000 steps
-        if epoch_iter % 10_000 == 0 {
+        // Save every 5_000 steps
+        if epoch_iter % 5_000 == 0 {
             if let Err(e) = model.save(&format!("checkpoints/step_{}.npz", tensorboard.iter)) {
                 println!("{} {e:?}\n", "Error Saving Model:".bold().red());
             }
 
+            // Run test
+            let test_ppl = test_epoch(model, test_dataset, dev);
+            println!("Test PPL: {}", format!("{:.2}", test_ppl).bold());
+            tensorboard.record("test_ppl", test_ppl, 0);
+
             // Run generation
-            generate(model, dev, 50);
+            generate(model, dev, 50, MAX_TRAIN_SEQ_LEN);
         }
     }
     drop(bar);
@@ -290,12 +303,13 @@ fn generate<
     model: &BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, MAX_LEN, f32, D>,
     dev: &D,
     num_tokens: usize,
+    window_size: usize,
 ) where
     BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, MAX_LEN, f32, D>:
         Module<Tensor<(usize,), usize, D>, Output = Tensor<(usize, Const<VOCAB>), f32, D>>,
     D: Device<f32>,
 {
-    let input = "Hi, how are you doing today? I'd like you to meet my friend Fred. He's a botonist, but also the first man to ever walk on the surface of".to_lowercase();
+    let input = "Hi, how are you doing today? I'd like you to meet my friend Fred".to_lowercase();
     let (tokenizer, vocab) = (
         <WordpieceTokenizer as Tokenizer>::load(),
         <WordPieceVocab as Vocab>::load(),
@@ -305,8 +319,11 @@ fn generate<
     let initial_len = indexes.len();
 
     for _ in 0..num_tokens {
-        let output = model.forward(dev.tensor_from_vec(indexes.clone(), (indexes.len(),)));
-        let index = output.as_vec()[(indexes.len() - 1) * VOCAB..]
+        let output = model.forward(dev.tensor_from_vec(
+            indexes[indexes.len().checked_sub(window_size).unwrap_or_default()..].to_vec(),
+            (indexes.len().min(window_size),),
+        ));
+        let index = output.as_vec()[(indexes.len() - 1).min(window_size - 1) * VOCAB..]
             .iter()
             .enumerate()
             .max_by(|(_, a), (_, b)| a.total_cmp(b))
@@ -372,12 +389,12 @@ fn build_dataset(
                         }).collect()
                     }).collect()
             },
-        ).remaining(|i| i / 64))
+        ).remaining(move |i| i / batch_size))
         // Re-shuffle
         .node(Shuffle::default())
         // Unzip inputs and targets
         .map(|indexes: Vec<(Vec<usize>, Vec<usize>)>| indexes.into_iter().unzip());
-    Dataloader::new(pipeline).load_block_size(10_000)
+    Dataloader::new(pipeline).load_block_size(100_000)
 }
 
 fn vec_one_hot_encode<const V: usize, E: Dtype + Float, D: Device<E>>(

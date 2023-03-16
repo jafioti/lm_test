@@ -9,11 +9,12 @@ edition = "2021"
 #dfdx = "0.10.0"
 #dfdx = {path="../dfdx-new-new", features=["cuda", "numpy"]}
 #dfdx = {path="../dfdx-main", features=["cuda", "numpy"]}
-dfdx = {path="../dfdx-even-newer", features=["cuda", "numpy"]}
+dfdx = {path="../dfdx-even-newer", features=["cuda", "numpy", "safetensors"]}
 dataflow = {git="https://github.com/Sidekick-AI/dataflow", rev="938220899eb6055dd35d85e468a2827a55f73a82"}
 dataflow_nlp = "0.1.0"
 colored = "2.0.0"
 zip = "0.6.2"
+num-traits = "0.2.15"
 
 # For indicatif
 regex = { version = "1.5.5", default-features = false, features = ["std"] }

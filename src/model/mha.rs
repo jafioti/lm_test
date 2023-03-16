@@ -1,0 +1,265 @@
+use num_traits::Float;
+use rand_distr::uniform::SampleUniform;
+
+use dfdx::{nn::modules::*, shapes::*, tensor::*, tensor_ops::*};
+
+pub mod builder {
+    #[derive(Debug, Clone)]
+    pub struct MultiHeadAttention<
+        const EMBED_DIM: usize,
+        const NUM_HEADS: usize,
+        const K_DIM: usize = EMBED_DIM,
+        const V_DIM: usize = EMBED_DIM,
+    >;
+    impl<const M: usize, const H: usize, const K: usize, const V: usize>
+        MultiHeadAttention<M, H, K, V>
+    {
+        pub const TYPE_CHECK: () = assert!(
+            K % H == 0 && V % H == 0,
+            "NUM_HEADS must divide K_DIM & V_DIM evenly! If you haven't specified K_DIM & V_DIM, they default to EMBED_DIM, which means NUM_HEADS must divide EMBED_DIM evenly."
+        );
+    }
+}
+
+impl<const M: usize, const H: usize, const K: usize, const V: usize, E: Dtype, D: Device<E>>
+    BuildOnDevice<D, E> for builder::MultiHeadAttention<M, H, K, V>
+where
+    MultiHeadAttention<M, H, K, V, E, D>: BuildModule<D, E>,
+{
+    type Built = MultiHeadAttention<M, H, K, V, E, D>;
+    fn try_build_on_device(device: &D) -> Result<Self::Built, <D>::Err> {
+        #[allow(clippy::let_unit_value)]
+        let _ = Self::TYPE_CHECK;
+        Self::Built::try_build(device)
+    }
+}
+
+/// A multi-head attention layer.
+///
+/// Generics:
+/// - `EMBED_DIM`: The size of query vectors.
+/// - `NUM_HEADS` The number of heads to split query/key/value into.
+/// - *Optional* `K_DIM`: The size of key vectors. Defaults to `EMBED_DIM`
+/// - *Optional* `V_DIM` The size of value vectors. Defaults to `EMBED_DIM`
+///
+/// **Pytorch equivalent**: `torch.nn.MultiheadAttention(EMBED_DIM, NUM_HEADS, batch_first=True)`
+///
+/// Examples
+/// - `MultiHeadAttention<8, 2>` is an attention layer with 2 heads and 8 token, key and value dims.
+/// - `MultiHeadAttention<8, 2, 6, 4>` is an attention layer with the key and value dimension different
+///   than the embed dimension
+#[derive(Debug, Clone)]
+pub struct MultiHeadAttention<
+    const EMBED_DIM: usize,
+    const NUM_HEADS: usize,
+    const K_DIM: usize,
+    const V_DIM: usize,
+    E: Dtype,
+    D: DeviceStorage,
+> {
+    pub w_q: Linear<EMBED_DIM, K_DIM, E, D>,
+    pub w_k: Linear<EMBED_DIM, K_DIM, E, D>,
+    pub w_v: Linear<EMBED_DIM, V_DIM, E, D>,
+    pub w_o: Linear<V_DIM, EMBED_DIM, E, D>,
+}
+
+impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D: Device<E>>
+    BuildModule<D, E> for MultiHeadAttention<M, H, K, V, E, D>
+where
+    E: Dtype + Float + SampleUniform,
+{
+    fn try_build(device: &D) -> Result<Self, <D>::Err> {
+        #[allow(clippy::let_unit_value)]
+        let _ = builder::MultiHeadAttention::<M, H, K, V>::TYPE_CHECK;
+        Ok(Self {
+            w_q: BuildModule::try_build(device)?,
+            w_k: BuildModule::try_build(device)?,
+            w_v: BuildModule::try_build(device)?,
+            w_o: BuildModule::try_build(device)?,
+        })
+    }
+}
+
+impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D: Device<E>>
+    TensorCollection<E, D> for MultiHeadAttention<M, H, K, V, E, D>
+where
+    E: Dtype + Float + SampleUniform,
+{
+    fn iter_tensors<W: ModuleVisitor<Self, E, D>>(visitor: &mut W) -> Result<(), W::Err> {
+        visitor.visit_module("w_q", |s| &s.w_q, |s| &mut s.w_q)?;
+        visitor.visit_module("w_k", |s| &s.w_k, |s| &mut s.w_k)?;
+        visitor.visit_module("w_v", |s| &s.w_v, |s| &mut s.w_v)?;
+        visitor.visit_module("w_o", |s| &s.w_o, |s| &mut s.w_o)
+    }
+}
+
+impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D1, D2> ToDevice<D2>
+    for MultiHeadAttention<M, H, K, V, E, D1>
+where
+    E: Dtype,
+    D1: Device<E>,
+    D2: Device<E>,
+{
+    type Output = MultiHeadAttention<M, H, K, V, E, D2>;
+
+    fn to_device(&self, device: &D2) -> Self::Output {
+        MultiHeadAttention {
+            w_q: self.w_q.to_device(device),
+            w_k: self.w_k.to_device(device),
+            w_v: self.w_v.to_device(device),
+            w_o: self.w_o.to_device(device),
+        }
+    }
+}
+
+impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D, S1, S2, T>
+    Module<(
+        Tensor<(S1, Const<M>), E, D, T>,
+        Tensor<(S2, Const<M>), E, D>,
+        Tensor<(S2, Const<M>), E, D>,
+    )> for MultiHeadAttention<M, H, K, V, E, D>
+where
+    E: Dtype + Float,
+    D: Device<E>,
+    S1: Dim,
+    S2: Dim,
+    T: Tape<E, D>,
+{
+    type Output = Tensor<(S1, Const<M>), E, D, T>;
+    type Error = D::Err;
+
+    /// Encoder-Decoder style self attention where one set of tensors is used for values and keys, and another is used for queries
+    fn try_forward(
+        &self,
+        (q, k, v): (
+            Tensor<(S1, Const<M>), E, D, T>,
+            Tensor<(S2, Const<M>), E, D>,
+            Tensor<(S2, Const<M>), E, D>,
+        ),
+    ) -> Result<Self::Output, D::Err> {
+        assert_eq!(k.shape().0, v.shape().0);
+        let s1 = q.shape().0;
+        let s2 = k.shape().0;
+        let v = self.w_v.try_forward(v.retaped::<T>())?;
+        let v = v.try_reshape_like(&(s2, H, V / H)).unwrap()?;
+        let v = v.try_permute::<_, Axes3<1, 0, 2>>()?;
+
+        let k = self.w_k.try_forward(k.retaped::<T>())?;
+        let k = k.try_reshape_like(&(s2, H, K / H)).unwrap()?;
+        let k = k.try_permute::<_, Axes3<1, 2, 0>>()?;
+
+        let q = self.w_q.try_forward(q)?;
+        let q = q.try_reshape_like(&(s1, H, K / H)).unwrap()?;
+        let q = q.try_permute::<_, Axes3<1, 0, 2>>()?;
+
+        // Get weights
+        let scalar: E = E::ONE / E::from_usize(K / H).unwrap().sqrt();
+        let weights = q.try_matmul(k)?.try_mul(scalar)?;
+        let mut mask = vec![E::zero(); s1.size() * s2.size()];
+        for i in 0..s1.size() {
+            for j in i+1..s2.size() {
+                mask[i *  s1.size() + j] = -E::infinity();
+            }
+        }
+        let mask: Tensor<(S1, S2), _, _> = weights.device.try_tensor_from_vec(mask, (s1, s2)).unwrap();
+        let weights = weights.try_add(mask.try_broadcast_like(&(H, s1, s2))?)?;
+        let weights = weights.try_softmax::<Axis<2>>()?;
+
+        // Get new tokens
+        let tokens = weights.try_matmul(v)?;
+        let tokens = tokens.try_permute::<_, Axes3<1, 0, 2>>()?;
+        let tokens = tokens.try_reshape_like(&(s1, Const::<V>)).unwrap()?;
+
+        self.w_o.try_forward(tokens)
+    }
+}
+
+impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D, B, S1, S2, T>
+    Module<(
+        Tensor<(B, S1, Const<M>), E, D, T>,
+        Tensor<(B, S2, Const<M>), E, D>,
+        Tensor<(B, S2, Const<M>), E, D>,
+    )> for MultiHeadAttention<M, H, K, V, E, D>
+where
+    E: Dtype + Float,
+    D: Device<E>,
+    B: Dim,
+    S1: Dim,
+    S2: Dim,
+    T: Tape<E, D>,
+{
+    type Output = Tensor<(B, S1, Const<M>), E, D, T>;
+    type Error = D::Err;
+
+    /// Batched Encoder-Decoder style self attention where one set of tensors is used for values and keys, and another is used for queries
+    fn try_forward(
+        &self,
+        (q, k, v): (
+            Tensor<(B, S1, Const<M>), E, D, T>,
+            Tensor<(B, S2, Const<M>), E, D>,
+            Tensor<(B, S2, Const<M>), E, D>,
+        ),
+    ) -> Result<Self::Output, D::Err> {
+        assert_eq!(q.shape().0, k.shape().0);
+        assert_eq!(q.shape().0, v.shape().0);
+        assert_eq!(k.shape().1, v.shape().1);
+
+        let b = q.shape().0;
+        let s1 = q.shape().1;
+        let s2 = v.shape().1;
+
+        let v = self.w_v.try_forward(v.retaped::<T>())?;
+        let v = v.try_reshape_like(&(b, s2, H, V / H)).unwrap()?;
+        let v = v.try_permute::<_, Axes4<0, 2, 1, 3>>()?;
+
+        let k = self.w_k.try_forward(k.retaped::<T>())?;
+        let k = k.try_reshape_like(&(b, s2, H, K / H)).unwrap()?;
+        let k = k.try_permute::<_, Axes4<0, 2, 3, 1>>()?;
+
+        let q = self.w_q.try_forward(q)?;
+        let q = q.try_reshape_like(&(b, s1, H, K / H)).unwrap()?;
+        let q = q.try_permute::<_, Axes4<0, 2, 1, 3>>()?;
+
+        // Get weights
+        let scalar: E = E::ONE / E::from_usize(K / H).unwrap().sqrt();
+        let weights = q.try_matmul(k)?.try_mul(scalar)?;
+        let mut mask = vec![E::zero(); s1.size() * s2.size()];
+        for i in 0..s1.size() {
+            for j in i+1..s2.size() {
+                mask[i *  s1.size() + j] = -E::infinity();
+            }
+        }
+        let mask: Tensor<(S1, S2), _, _> = weights.device.try_tensor_from_vec(mask, (s1, s2)).unwrap();
+        let weights = weights.try_add(mask.try_broadcast_like(&(b, H, s1, s2))?)?;
+        let weights = weights.try_softmax::<Axis<3>>()?;
+
+        // Get new tokens
+        let tokens = weights.try_matmul(v)?;
+        let tokens = tokens.try_permute::<_, Axes4<0, 2, 1, 3>>()?;
+        let tokens = tokens.try_reshape_like(&(b, s1, Const::<V>)).unwrap()?;
+
+        self.w_o.try_forward(tokens)
+    }
+}
+
+impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D, Src> Module<Src>
+    for MultiHeadAttention<M, H, K, V, E, D>
+where
+    E: Dtype,
+    D: Device<E>,
+    Src: SplitTape,
+    Self: Module<(Src, Src::NoTape, Src::NoTape), Output = Src, Error = D::Err>,
+{
+    type Output = Src;
+    type Error = D::Err;
+
+    fn try_forward(&self, src: Src) -> Result<Self::Output, D::Err> {
+        let (src, tape) = src.split_tape();
+        self.try_forward((src.clone().put_tape(tape), src.clone(), src))
+    }
+}
+
+impl<const M: usize, const H: usize, const K: usize, const V: usize, E: Dtype, D: Device<E>>
+    NonMutableModule for MultiHeadAttention<M, H, K, V, E, D>
+{
+}
