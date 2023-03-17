@@ -1,21 +1,13 @@
 [package]
-name = "lm_test"
+name = "train"
 version = "0.1.0"
 edition = "2021"
 
-[workspace]
-
-members = [
-    "train",
-    "inference",
-]
-
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-#dfdx = "0.10.0"
-#dfdx = {path="../dfdx-new-new", features=["cuda", "numpy"]}
-#dfdx = {path="../dfdx-main", features=["cuda", "numpy"]}
-dfdx = {path="../dfdx-even-newer", features=["cuda", "numpy", "safetensors"]}
+lm_test = {path="../"}
+dfdx = {path="../../dfdx-even-newer", features=["cuda", "numpy", "safetensors"]}
 dataflow = {git="https://github.com/Sidekick-AI/dataflow", rev="938220899eb6055dd35d85e468a2827a55f73a82"}
 dataflow_nlp = "0.1.0"
 colored = "2.0.0"

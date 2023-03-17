@@ -12,55 +12,14 @@ use dfdx::{
 };
 use itertools::Itertools;
 
-mod bar;
-pub use bar::*;
+use lm_test::{bar::*, lr_scheduler::*, model::{BuiltModel, Model}};
 use num::Float;
-mod indicatif;
-mod lr_scheduler;
-pub use lr_scheduler::*;
-mod model;
-
-type Model<
-    const VOCAB: usize,
-    const EMBED: usize,
-    const FF: usize,
-    const LAYERS: usize,
-    const HEADS: usize,
-    const MAX_LEN: usize,
-> = model::reverse_embedding::builder::ReverseEmbedding<
-    VOCAB,
-    EMBED,
-    (
-        model::position_encoding::builder::LearnedPositionalEmbedding<MAX_LEN, EMBED>,
-        model::transformer::builder::TransformerEncoder<EMBED, HEADS, FF, LAYERS>,
-    ),
->;
-
-type BuiltModel<
-    const VOCAB: usize,
-    const EMBED: usize,
-    const FF: usize,
-    const LAYERS: usize,
-    const HEADS: usize,
-    const MAX_LEN: usize,
-    E,
-    D,
-> = model::reverse_embedding::ReverseEmbedding<
-    VOCAB,
-    EMBED,
-    E,
-    D,
-    (
-        model::position_encoding::LearnedPositionalEmbedding<MAX_LEN, EMBED, E, D>,
-        model::transformer::TransformerEncoder<EMBED, HEADS, FF, LAYERS, E, D>,
-    ),
->;
 
 // Training
 const BATCH_SIZE: usize = 48;
-const BATCH_ACCUM: (usize, usize) = (1, 20);
+const BATCH_ACCUM: (usize, usize) = (1, 1);
 const MAX_TRAIN_SEQ_LEN: usize = 45;
-const LR: (f32, f32) = (1e-5, 3e-4);
+const LR: (f32, f32) = (1e-4, 3e-4);
 
 // Model
 const LAYERS: usize = 8;
@@ -87,7 +46,7 @@ fn main() {
     let dev: Cuda = Default::default();
     let mut model =
         Model::<30528, EMBED_DIM, FF_DIM, LAYERS, HEADS, MAX_SEQ_LEN>::build_on_device(&dev);
-    // model.load("checkpoints/step_10800000.npz").unwrap();
+    // model.load("../checkpoints/step_10800000.npz").unwrap();
     let mut opt = Adam::new(
         &model,
         AdamConfig {
@@ -97,7 +56,7 @@ fn main() {
     );
     let mut lr_scheduler = OneCycleScheduler::new(LR.0, LR.1).set_peak(0.2);
     let  mut accum_scheduler = LinearScheduler::new(BATCH_ACCUM.0, BATCH_ACCUM.1);
-    let mut tensorboard = Tensorboard::new("logdir");
+    let mut tensorboard = Tensorboard::new("../logdir");
 
     println!(
         "Model Parameters: {}",
@@ -121,7 +80,7 @@ fn main() {
 
         generate(&model, &dev, 100, MAX_TRAIN_SEQ_LEN);
 
-        if let Err(e) = model.save(&format!("checkpoints/epoch-{epoch}.npz")) {
+        if let Err(e) = model.save(&format!("../checkpoints/epoch-{epoch}.npz")) {
             println!("{} {e:?}", "Error Saving Model:".bold().red());
         }
     }
@@ -216,7 +175,7 @@ fn train_epoch<
 
         // Save every 5_000 steps
         if epoch_iter % 5_000 == 0 {
-            if let Err(e) = model.save(&format!("checkpoints/step_{}.npz", tensorboard.iter)) {
+            if let Err(e) = model.save(&format!("../checkpoints/step_{}.npz", tensorboard.iter)) {
                 println!("{} {e:?}\n", "Error Saving Model:".bold().red());
             }
 
