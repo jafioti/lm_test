@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 lm_test = {path="../"}
-dfdx = {path="../../dfdx-even-newer", features=["cuda", "numpy", "safetensors"]}
+dfdx = {path="../dfdx-even-newer", features=["cuda", "numpy", "safetensors"]}
 dataflow = {git="https://github.com/Sidekick-AI/dataflow", rev="938220899eb6055dd35d85e468a2827a55f73a82"}
 dataflow_nlp = "0.1.0"
 colored = "2.0.0"

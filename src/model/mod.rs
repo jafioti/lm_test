@@ -13,10 +13,10 @@ pub type Model<
 > = reverse_embedding::builder::ReverseEmbedding<
     VOCAB,
     EMBED,
-    (
-        position_encoding::builder::LearnedPositionalEmbedding<MAX_LEN, EMBED>,
-        transformer::builder::TransformerEncoder<EMBED, HEADS, FF, LAYERS>,
-    ),
+    // (
+        // position_encoding::builder::LearnedPositionalEmbedding<MAX_LEN, EMBED>,
+        transformer::builder::TransformerEncoder<EMBED, HEADS, FF, LAYERS, MAX_LEN>,
+    // ),
 >;
 
 pub type BuiltModel<
@@ -33,8 +33,8 @@ pub type BuiltModel<
     EMBED,
     E,
     D,
-    (
-        position_encoding::LearnedPositionalEmbedding<MAX_LEN, EMBED, E, D>,
-        transformer::TransformerEncoder<EMBED, HEADS, FF, LAYERS, E, D>,
-    ),
+    // (
+        // position_encoding::LearnedPositionalEmbedding<MAX_LEN, EMBED, E, D>,
+        transformer::TransformerEncoder<EMBED, HEADS, FF, LAYERS, MAX_LEN, E, D>,
+    // ),
 >;

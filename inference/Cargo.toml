@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 lm_test = {path="../"}
-dfdx = {path="../../dfdx-even-newer", features=["cuda", "numpy", "safetensors"]}
+dfdx = {path="../dfdx-even-newer", features=["cuda", "numpy", "safetensors"]}
 dataflow_nlp = "0.1.0"
 
 # For interface

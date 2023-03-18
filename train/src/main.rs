@@ -19,7 +19,7 @@ use num::Float;
 const BATCH_SIZE: usize = 48;
 const BATCH_ACCUM: (usize, usize) = (1, 1);
 const MAX_TRAIN_SEQ_LEN: usize = 45;
-const LR: (f32, f32) = (1e-4, 3e-4);
+const LR: (f32, f32) = (1e-5, 3e-4);
 
 // Model
 const LAYERS: usize = 8;
@@ -121,7 +121,14 @@ fn train_epoch<
     let mut loss_avg = ExponentialAverage::with_beta(0.999);
     let mut gradients = Some(model.alloc_grads());
     let mut epoch_iter = 0;
+    // let mut setup = 0.;
+    // let mut forward = 0.;
+    // let mut loss_t = 0.;
+    // let mut back = 0.;
+    // let mut optimization = 0.;
+    // let mut track = 0.;
     for ((input, target), left) in dataset.iter_len() {
+        // let current = Instant::now();
         epoch_iter += 1;
         accum_scheduler.set_progress((total_len - left) as f32 / total_len as f32);
         // Setup input
@@ -130,8 +137,10 @@ fn train_epoch<
         let input = dev
             .tensor_from_vec(flat_vec, (batch_size, seq_len))
             .trace_into(gradients.take().unwrap_or_else(|| model.alloc_grads()));
+        // setup += current.elapsed().as_secs_f32();
 
         // Run through model
+        // let current = Instant::now();
         let output = match model.try_forward(input) {
             Ok(o) => o,
             Err(e) => {
@@ -139,8 +148,10 @@ fn train_epoch<
                 continue;
             }
         };
+        // forward += current.elapsed().as_secs_f32();
 
         // Get loss
+        // let current = Instant::now();
         let loss = match vec_one_hot_encode(&target, dev)
             .map(|t| try_cross_entropy_with_logits_loss(output, t))
         {
@@ -150,19 +161,25 @@ fn train_epoch<
                 continue;
             }
         };
+        // loss_t += current.elapsed().as_secs_f32();
 
         // Update status
+        // let current = Instant::now();
         loss_avg.update(loss.array().exp()); // Update with PPL
         bar.set_position((total_len - left) as u64);
         bar.set_message(format!("PPL: {:.2}", loss_avg.value));
         tensorboard.record("ppl", loss_avg.value, BATCH_SIZE);
+        // track += current.elapsed().as_secs_f32();
 
         // Backprop and optimize
+        // let current = Instant::now();
         gradients = Some((loss / accum_scheduler.get() as f32).backward());
+        // back += current.elapsed().as_secs_f32();
 
         #[allow(clippy::modulo_one)]
         if epoch_iter % accum_scheduler.get() == 0 {
             if let Some(mut grads) = Option::take(&mut gradients) {
+                // let current = Instant::now();
                 scheduler.set_progress((total_len - left) as f32 / total_len as f32);
                 scheduler.step(opt);
                 if let Err(e) = opt.update(model, &grads) {
@@ -170,6 +187,7 @@ fn train_epoch<
                 }
                 model.zero_grads(&mut grads);
                 gradients = Some(grads);
+                // optimization += current.elapsed().as_secs_f32() * accum_scheduler.get() as f32;
             }
         }
 
@@ -191,6 +209,7 @@ fn train_epoch<
     drop(bar);
 
     println!("Train PPL: {}", loss_avg.value);
+    // println!("Time: Setup: {} Forward: {}s Loss: {}s Back: {}s Opt: {}s Track: {}s", setup, forward, loss_t, back, optimization, track);
 }
 
 fn test_epoch<

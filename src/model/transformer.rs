@@ -23,9 +23,10 @@ pub type TransformerEncoder<
     const NUM_HEADS: usize,
     const FF_DIM: usize,
     const NUM_LAYERS: usize,
+    const MAX_LEN: usize,
     E,
     D,
-> = Repeated<TransformerEncoderBlock<MODEL_DIM, NUM_HEADS, FF_DIM, E, D>, NUM_LAYERS>;
+> = Repeated<TransformerEncoderBlock<MODEL_DIM, NUM_HEADS, FF_DIM, MAX_LEN, E, D>, NUM_LAYERS>;
 
 pub mod builder {
     #[derive(Debug)]
@@ -34,6 +35,7 @@ pub mod builder {
         const NUM_HEADS: usize,
         const FF_DIM: usize,
         const NUM_LAYERS: usize,
+        const MAX_LEN: usize
     >;
 
     #[derive(Debug)]
@@ -41,26 +43,27 @@ pub mod builder {
         const MODEL_DIM: usize,
         const NUM_HEADS: usize,
         const FF_DIM: usize,
+        const MAX_LEN: usize,
     >;
 }
 
-impl<const M: usize, const H: usize, const F: usize, const L: usize, E: Dtype, D: Device<E>>
-    BuildOnDevice<D, E> for builder::TransformerEncoder<M, H, F, L>
+impl<const M: usize, const H: usize, const F: usize, const L: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>>
+    BuildOnDevice<D, E> for builder::TransformerEncoder<M, H, F, L, MAX_LEN>
 where
-    TransformerEncoder<M, H, F, L, E, D>: BuildModule<D, E>,
+    TransformerEncoder<M, H, F, L, MAX_LEN, E, D>: BuildModule<D, E>,
 {
-    type Built = TransformerEncoder<M, H, F, L, E, D>;
+    type Built = TransformerEncoder<M, H, F, L, MAX_LEN, E, D>;
     fn try_build_on_device(device: &D) -> Result<Self::Built, <D>::Err> {
         Self::Built::try_build(device)
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, E: Dtype, D: Device<E>> BuildOnDevice<D, E>
-    for builder::TransformerEncoderBlock<M, H, F>
+impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>> BuildOnDevice<D, E>
+    for builder::TransformerEncoderBlock<M, H, F, MAX_LEN>
 where
-    TransformerEncoderBlock<M, H, F, E, D>: BuildModule<D, E>,
+    TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>: BuildModule<D, E>,
 {
-    type Built = TransformerEncoderBlock<M, H, F, E, D>;
+    type Built = TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>;
     fn try_build_on_device(device: &D) -> Result<Self::Built, <D>::Err> {
         Self::Built::try_build(device)
     }
@@ -84,10 +87,11 @@ pub struct TransformerEncoderBlock<
     const MODEL_DIM: usize,
     const NUM_HEADS: usize,
     const FF_DIM: usize,
+    const MAX_LEN: usize,
     E: Dtype,
     D: DeviceStorage,
 > {
-    pub self_attn: MultiHeadAttention<MODEL_DIM, NUM_HEADS, MODEL_DIM, MODEL_DIM, E, D>,
+    pub self_attn: MultiHeadAttention<MODEL_DIM, NUM_HEADS, MAX_LEN, MODEL_DIM, MODEL_DIM, E, D>,
     pub norm1: LayerNorm1D<MODEL_DIM, E, D>,
     pub ff: FF<MODEL_DIM, FF_DIM, E, D>,
     pub norm2: LayerNorm1D<MODEL_DIM, E, D>,
@@ -96,8 +100,8 @@ pub struct TransformerEncoderBlock<
 type FF<const M: usize, const F: usize, E, D> =
     Residual<(Linear<M, F, E, D>, GeLU, Linear<F, M, E, D>)>;
 
-impl<const M: usize, const H: usize, const F: usize, E, D: Device<E>> BuildModule<D, E>
-    for TransformerEncoderBlock<M, H, F, E, D>
+impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>> BuildModule<D, E>
+    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 where
     E: Dtype + Float + SampleUniform,
 {
@@ -111,8 +115,8 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, E, D: Device<E>> TensorCollection<E, D>
-    for TransformerEncoderBlock<M, H, F, E, D>
+impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>> TensorCollection<E, D>
+    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 where
     E: Dtype + Float + SampleUniform,
 {
@@ -124,10 +128,10 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, E: Dtype, D1: Device<E>, D2: Device<E>>
-    ToDevice<D2> for TransformerEncoderBlock<M, H, F, E, D1>
+impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D1: Device<E>, D2: Device<E>>
+    ToDevice<D2> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D1>
 {
-    type Output = TransformerEncoderBlock<M, H, F, E, D2>;
+    type Output = TransformerEncoderBlock<M, H, F, MAX_LEN, E, D2>;
     fn to_device(&self, device: &D2) -> Self::Output {
         TransformerEncoderBlock {
             self_attn: self.self_attn.to_device(device),
@@ -138,11 +142,11 @@ impl<const M: usize, const H: usize, const F: usize, E: Dtype, D1: Device<E>, D2
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, E: Dtype, D: Device<E>, Src> Module<Src>
-    for TransformerEncoderBlock<M, H, F, E, D>
+impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>, Src> Module<Src>
+    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 where
     Src: SplitTape + std::ops::Add<Src::NoTape, Output = Src>,
-    MultiHeadAttention<M, H, M, M, E, D>: Module<Src, Output = Src, Error = D::Err>,
+    MultiHeadAttention<M, H, MAX_LEN, M, M, E, D>: Module<Src, Output = Src, Error = D::Err>,
     LayerNorm1D<M, E, D>: Module<Src, Output = Src, Error = D::Err>,
     FF<M, F, E, D>: Module<Src, Output = Src, Error = D::Err>,
 {
@@ -159,7 +163,7 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, E: Dtype, D: Device<E>> NonMutableModule
-    for TransformerEncoderBlock<M, H, F, E, D>
+impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>> NonMutableModule
+    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 {
 }

@@ -8,11 +8,12 @@ pub mod builder {
     pub struct MultiHeadAttention<
         const EMBED_DIM: usize,
         const NUM_HEADS: usize,
+        const MAX_LEN: usize,
         const K_DIM: usize = EMBED_DIM,
         const V_DIM: usize = EMBED_DIM,
     >;
-    impl<const M: usize, const H: usize, const K: usize, const V: usize>
-        MultiHeadAttention<M, H, K, V>
+    impl<const M: usize, const H: usize, const MAX_LEN: usize, const K: usize, const V: usize>
+        MultiHeadAttention<M, H, MAX_LEN, K, V>
     {
         pub const TYPE_CHECK: () = assert!(
             K % H == 0 && V % H == 0,
@@ -21,12 +22,12 @@ pub mod builder {
     }
 }
 
-impl<const M: usize, const H: usize, const K: usize, const V: usize, E: Dtype, D: Device<E>>
-    BuildOnDevice<D, E> for builder::MultiHeadAttention<M, H, K, V>
+impl<const M: usize, const H: usize, const MAX_LEN: usize, const K: usize, const V: usize, E: Dtype, D: Device<E>>
+    BuildOnDevice<D, E> for builder::MultiHeadAttention<M, H, MAX_LEN, K, V>
 where
-    MultiHeadAttention<M, H, K, V, E, D>: BuildModule<D, E>,
+    MultiHeadAttention<M, H, MAX_LEN, K, V, E, D>: BuildModule<D, E>,
 {
-    type Built = MultiHeadAttention<M, H, K, V, E, D>;
+    type Built = MultiHeadAttention<M, H, MAX_LEN, K, V, E, D>;
     fn try_build_on_device(device: &D) -> Result<Self::Built, <D>::Err> {
         #[allow(clippy::let_unit_value)]
         let _ = Self::TYPE_CHECK;
@@ -52,6 +53,7 @@ where
 pub struct MultiHeadAttention<
     const EMBED_DIM: usize,
     const NUM_HEADS: usize,
+    const MAX_LEN: usize,
     const K_DIM: usize,
     const V_DIM: usize,
     E: Dtype,
@@ -61,27 +63,42 @@ pub struct MultiHeadAttention<
     pub w_k: Linear<EMBED_DIM, K_DIM, E, D>,
     pub w_v: Linear<EMBED_DIM, V_DIM, E, D>,
     pub w_o: Linear<V_DIM, EMBED_DIM, E, D>,
+    pub biases: Tensor<Rank3<NUM_HEADS, MAX_LEN, MAX_LEN>, E, D>
 }
 
-impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D: Device<E>>
-    BuildModule<D, E> for MultiHeadAttention<M, H, K, V, E, D>
+impl<const M: usize, const H: usize, const MAX_LEN: usize, const K: usize, const V: usize, E, D: Device<E>>
+    BuildModule<D, E> for MultiHeadAttention<M, H, MAX_LEN, K, V, E, D>
 where
     E: Dtype + Float + SampleUniform,
 {
     fn try_build(device: &D) -> Result<Self, <D>::Err> {
         #[allow(clippy::let_unit_value)]
-        let _ = builder::MultiHeadAttention::<M, H, K, V>::TYPE_CHECK;
+        let _ = builder::MultiHeadAttention::<M, H, MAX_LEN, K, V>::TYPE_CHECK;
         Ok(Self {
             w_q: BuildModule::try_build(device)?,
             w_k: BuildModule::try_build(device)?,
             w_v: BuildModule::try_build(device)?,
             w_o: BuildModule::try_build(device)?,
+            biases: {
+                // ALiBi masking
+                let mut mask = vec![E::zero(); H * MAX_LEN * MAX_LEN];
+                let ratio = 2_f32.powf(-(2_f32.powf(-((H as f32).log2() - 3.))));
+                for h in 0..H {
+                    let m = -ratio.powi(h as i32 + 1); // Negative to apply minus mask
+                    for i in 0..MAX_LEN {
+                        for j in 0..i {
+                            mask[h*MAX_LEN*MAX_LEN + i*MAX_LEN + j] = E::from_f32((i as f32 - j as f32).abs() * m).unwrap();
+                        }
+                    }
+                }
+                device.tensor_from_vec(mask, (Const::<H>, Const::<MAX_LEN>, Const::<MAX_LEN>))
+            }
         })
     }
 }
 
-impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D: Device<E>>
-    TensorCollection<E, D> for MultiHeadAttention<M, H, K, V, E, D>
+impl<const M: usize, const H: usize, const MAX_LEN: usize, const K: usize, const V: usize, E, D: Device<E>>
+    TensorCollection<E, D> for MultiHeadAttention<M, H, MAX_LEN, K, V, E, D>
 where
     E: Dtype + Float + SampleUniform,
 {
@@ -89,18 +106,39 @@ where
         visitor.visit_module("w_q", |s| &s.w_q, |s| &mut s.w_q)?;
         visitor.visit_module("w_k", |s| &s.w_k, |s| &mut s.w_k)?;
         visitor.visit_module("w_v", |s| &s.w_v, |s| &mut s.w_v)?;
-        visitor.visit_module("w_o", |s| &s.w_o, |s| &mut s.w_o)
+        visitor.visit_module("w_o", |s| &s.w_o, |s| &mut s.w_o)?;
+        visitor.visit_tensor(
+            "biases", 
+            |s| &s.biases, 
+            |s| &mut s.biases, 
+            TensorOptions::reset_with(|tensor| {
+                // ALiBi masking
+                let mut mask = vec![E::zero(); H * MAX_LEN * MAX_LEN];
+                let ratio = 2_f32.powf(-(2_f32.powf(-((H as f32).log2() - 3.))));
+                for h in 0..H {
+                    let m = -ratio.powi(h as i32 + 1); // Negative to apply minus mask
+                    for i in 0..MAX_LEN {
+                        for j in 0..i {
+                            mask[h*MAX_LEN*MAX_LEN + i*MAX_LEN + j] = E::from_f32((i as f32 - j as f32).abs() * m).unwrap();
+                        }
+                    }
+                }
+                tensor.copy_from(&mask);
+                tensor.fill_with_zeros();
+                Ok(())
+            })
+        )
     }
 }
 
-impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D1, D2> ToDevice<D2>
-    for MultiHeadAttention<M, H, K, V, E, D1>
+impl<const M: usize, const H: usize, const MAX_LEN: usize, const K: usize, const V: usize, E, D1, D2> ToDevice<D2>
+    for MultiHeadAttention<M, H, MAX_LEN, K, V, E, D1>
 where
     E: Dtype,
     D1: Device<E>,
     D2: Device<E>,
 {
-    type Output = MultiHeadAttention<M, H, K, V, E, D2>;
+    type Output = MultiHeadAttention<M, H, MAX_LEN, K, V, E, D2>;
 
     fn to_device(&self, device: &D2) -> Self::Output {
         MultiHeadAttention {
@@ -108,16 +146,17 @@ where
             w_k: self.w_k.to_device(device),
             w_v: self.w_v.to_device(device),
             w_o: self.w_o.to_device(device),
+            biases: self.biases.to_device(device),
         }
     }
 }
 
-impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D, S1, S2, T>
+impl<const M: usize, const H: usize, const MAX_LEN: usize, const K: usize, const V: usize, E, D, S1, S2, T>
     Module<(
         Tensor<(S1, Const<M>), E, D, T>,
         Tensor<(S2, Const<M>), E, D>,
         Tensor<(S2, Const<M>), E, D>,
-    )> for MultiHeadAttention<M, H, K, V, E, D>
+    )> for MultiHeadAttention<M, H, MAX_LEN, K, V, E, D>
 where
     E: Dtype + Float,
     D: Device<E>,
@@ -153,16 +192,23 @@ where
         let q = q.try_permute::<_, Axes3<1, 0, 2>>()?;
 
         // Get weights
+        let indexes = v.device.tensor_from_vec(std::iter::repeat(0..s2.size()).take(MAX_LEN).flatten().collect(), (Const::<MAX_LEN>, s2));
+        let mask = self.biases.clone().gather(indexes.broadcast_like(&(Const::<H>, Const::<MAX_LEN>, s2)));
+        let indexes = v.device.tensor_from_vec((0..s1.size()).collect(), (s1,));
+        let mask = mask.gather(indexes.broadcast_like(&(Const::<H>, s1)));
+        
         let scalar: E = E::ONE / E::from_usize(K / H).unwrap().sqrt();
         let weights = q.try_matmul(k)?.try_mul(scalar)?;
-        let mut mask = vec![E::zero(); s1.size() * s2.size()];
+        let mut causal_mask = vec![E::zero(); s1.size() * s2.size()];
         for i in 0..s1.size() {
             for j in i+1..s2.size() {
-                mask[i *  s1.size() + j] = -E::infinity();
+                causal_mask[i *  s1.size() + j] = -E::infinity();
             }
         }
-        let mask: Tensor<(S1, S2), _, _> = weights.device.try_tensor_from_vec(mask, (s1, s2)).unwrap();
-        let weights = weights.try_add(mask.try_broadcast_like(&(H, s1, s2))?)?;
+        let causal_mask: Tensor<(S1, S2), _, _> = weights.device.try_tensor_from_vec(causal_mask, (s1, s2)).unwrap();
+        let weights = weights
+            .try_add(causal_mask.try_broadcast_like(&(H, s1, s2))?)?
+            .try_add(mask.realize::<(usize, S1, S2)>().unwrap())?;
         let weights = weights.try_softmax::<Axis<2>>()?;
 
         // Get new tokens
@@ -174,12 +220,12 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D, B, S1, S2, T>
+impl<const M: usize, const H: usize, const MAX_LEN: usize, const K: usize, const V: usize, E, D, B, S1, S2, T>
     Module<(
         Tensor<(B, S1, Const<M>), E, D, T>,
         Tensor<(B, S2, Const<M>), E, D>,
         Tensor<(B, S2, Const<M>), E, D>,
-    )> for MultiHeadAttention<M, H, K, V, E, D>
+    )> for MultiHeadAttention<M, H, MAX_LEN, K, V, E, D>
 where
     E: Dtype + Float,
     D: Device<E>,
@@ -221,16 +267,23 @@ where
         let q = q.try_permute::<_, Axes4<0, 2, 1, 3>>()?;
 
         // Get weights
+        let indexes = v.device.tensor_from_vec(std::iter::repeat(0..s2.size()).take(MAX_LEN).flatten().collect(), (Const::<MAX_LEN>, s2));
+        let mask = self.biases.clone().gather(indexes.broadcast_like(&(Const::<H>, Const::<MAX_LEN>, s2)));
+        let indexes = v.device.tensor_from_vec((0..s1.size()).collect(), (s1,));
+        let mask = mask.gather(indexes.broadcast_like(&(Const::<H>, s1)));
+
         let scalar: E = E::ONE / E::from_usize(K / H).unwrap().sqrt();
         let weights = q.try_matmul(k)?.try_mul(scalar)?;
-        let mut mask = vec![E::zero(); s1.size() * s2.size()];
+        let mut causal_mask = vec![E::zero(); s1.size() * s2.size()];
         for i in 0..s1.size() {
             for j in i+1..s2.size() {
-                mask[i *  s1.size() + j] = -E::infinity();
+                causal_mask[i *  s1.size() + j] = -E::infinity();
             }
         }
-        let mask: Tensor<(S1, S2), _, _> = weights.device.try_tensor_from_vec(mask, (s1, s2)).unwrap();
-        let weights = weights.try_add(mask.try_broadcast_like(&(b, H, s1, s2))?)?;
+        let causal_mask: Tensor<(S1, S2), _, _> = weights.device.try_tensor_from_vec(causal_mask, (s1, s2)).unwrap();
+        let weights = weights
+            .try_add(causal_mask.try_broadcast_like(&(b, H, s1, s2))?)?
+            .try_add(mask.realize::<(usize, S1, S2)>().unwrap().try_broadcast_like(&(b, H, s1, s2))?)?;
         let weights = weights.try_softmax::<Axis<3>>()?;
 
         // Get new tokens
@@ -242,8 +295,8 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const K: usize, const V: usize, E, D, Src> Module<Src>
-    for MultiHeadAttention<M, H, K, V, E, D>
+impl<const M: usize, const H: usize, const MAX_LEN: usize, const K: usize, const V: usize, E, D, Src> Module<Src>
+    for MultiHeadAttention<M, H, MAX_LEN, K, V, E, D>
 where
     E: Dtype,
     D: Device<E>,
@@ -259,7 +312,5 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const K: usize, const V: usize, E: Dtype, D: Device<E>>
-    NonMutableModule for MultiHeadAttention<M, H, K, V, E, D>
-{
-}
+impl<const M: usize, const H: usize, const MAX_LEN: usize, const K: usize, const V: usize, E: Dtype, D: Device<E>>
+    NonMutableModule for MultiHeadAttention<M, H, MAX_LEN, K, V, E, D> {}
