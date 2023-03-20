@@ -80,14 +80,22 @@ where
             w_v: BuildModule::try_build(device)?,
             w_o: BuildModule::try_build(device)?,
             biases: {
-                // ALiBi masking
+                // ALiBi + causal masking
                 let mut mask = vec![E::zero(); H * MAX_LEN * MAX_LEN];
                 let ratio = 2_f32.powf(-(2_f32.powf(-((H as f32).log2() - 3.))));
                 for h in 0..H {
+                    // ALiBi
                     let m = -ratio.powi(h as i32 + 1); // Negative to apply minus mask
                     for i in 0..MAX_LEN {
                         for j in 0..i {
                             mask[h*MAX_LEN*MAX_LEN + i*MAX_LEN + j] = E::from_f32((i as f32 - j as f32).abs() * m).unwrap();
+                        }
+                    }
+
+                    // Causal
+                    for i in 0..MAX_LEN {
+                        for j in i+1..MAX_LEN {
+                            mask[h*MAX_LEN*MAX_LEN + i*MAX_LEN + j] = -E::infinity();
                         }
                     }
                 }
@@ -116,15 +124,22 @@ where
                 let mut mask = vec![E::zero(); H * MAX_LEN * MAX_LEN];
                 let ratio = 2_f32.powf(-(2_f32.powf(-((H as f32).log2() - 3.))));
                 for h in 0..H {
+                    // ALiBi
                     let m = -ratio.powi(h as i32 + 1); // Negative to apply minus mask
                     for i in 0..MAX_LEN {
                         for j in 0..i {
                             mask[h*MAX_LEN*MAX_LEN + i*MAX_LEN + j] = E::from_f32((i as f32 - j as f32).abs() * m).unwrap();
                         }
                     }
+
+                    // Causal
+                    for i in 0..MAX_LEN {
+                        for j in i+1..MAX_LEN {
+                            mask[h*MAX_LEN*MAX_LEN + i*MAX_LEN + j] = -E::infinity();
+                        }
+                    }
                 }
                 tensor.copy_from(&mask);
-                tensor.fill_with_zeros();
                 Ok(())
             })
         )
@@ -167,7 +182,6 @@ where
     type Output = Tensor<(S1, Const<M>), E, D, T>;
     type Error = D::Err;
 
-    /// Encoder-Decoder style self attention where one set of tensors is used for values and keys, and another is used for queries
     fn try_forward(
         &self,
         (q, k, v): (
@@ -176,45 +190,45 @@ where
             Tensor<(S2, Const<M>), E, D>,
         ),
     ) -> Result<Self::Output, D::Err> {
-        assert_eq!(k.shape().0, v.shape().0);
         let s1 = q.shape().0;
         let s2 = k.shape().0;
-        let v = self.w_v.try_forward(v.retaped::<T>())?;
-        let v = v.try_reshape_like(&(s2, H, V / H)).unwrap()?;
-        let v = v.try_permute::<_, Axes3<1, 0, 2>>()?;
+        let v = self.w_v
+            .try_forward(v.retaped::<T>())?
+            .try_reshape_like(&(s2, H, V / H)).unwrap()?
+            .try_permute::<_, Axes3<1, 0, 2>>()?;
 
-        let k = self.w_k.try_forward(k.retaped::<T>())?;
-        let k = k.try_reshape_like(&(s2, H, K / H)).unwrap()?;
-        let k = k.try_permute::<_, Axes3<1, 2, 0>>()?;
+        let k = self.w_k
+            .try_forward(k.retaped::<T>())?
+            .try_reshape_like(&(s2, H, K / H)).unwrap()?
+            .try_permute::<_, Axes3<1, 2, 0>>()?;
 
-        let q = self.w_q.try_forward(q)?;
-        let q = q.try_reshape_like(&(s1, H, K / H)).unwrap()?;
-        let q = q.try_permute::<_, Axes3<1, 0, 2>>()?;
+        let q = self.w_q
+            .try_forward(q)?
+            .try_reshape_like(&(s1, H, K / H)).unwrap()?
+            .try_permute::<_, Axes3<1, 0, 2>>()?;
 
         // Get weights
-        let indexes = v.device.tensor_from_vec(std::iter::repeat(0..s2.size()).take(MAX_LEN).flatten().collect(), (Const::<MAX_LEN>, s2));
-        let mask = self.biases.clone().gather(indexes.broadcast_like(&(Const::<H>, Const::<MAX_LEN>, s2)));
-        let indexes = v.device.tensor_from_vec((0..s1.size()).collect(), (s1,));
-        let mask = mask.gather(indexes.broadcast_like(&(Const::<H>, s1)));
-        
-        let scalar: E = E::ONE / E::from_usize(K / H).unwrap().sqrt();
-        let weights = q.try_matmul(k)?.try_mul(scalar)?;
-        let mut causal_mask = vec![E::zero(); s1.size() * s2.size()];
-        for i in 0..s1.size() {
-            for j in i+1..s2.size() {
-                causal_mask[i *  s1.size() + j] = -E::infinity();
-            }
-        }
-        let causal_mask: Tensor<(S1, S2), _, _> = weights.device.try_tensor_from_vec(causal_mask, (s1, s2)).unwrap();
-        let weights = weights
-            .try_add(causal_mask.try_broadcast_like(&(H, s1, s2))?)?
-            .try_add(mask.realize::<(usize, S1, S2)>().unwrap())?;
-        let weights = weights.try_softmax::<Axis<2>>()?;
+        let mask = self.biases
+            .clone()
+            .gather::<(Const::<H>, Const::<MAX_LEN>, S2), _>(
+                v.device
+                    .tensor_from_vec(std::iter::repeat(0..s2.size()).take(MAX_LEN).flatten().collect(), (Const::<MAX_LEN>, s2))
+                    .broadcast_like(&(Const::<H>, Const::<MAX_LEN>, s2))
+            )
+            .gather(v.device.tensor_from_vec((0..s1.size()).collect(), (s1,)).broadcast_like(&(Const::<H>, s1)));
+
+        let scalar = E::ONE / E::from_usize(K / H).unwrap().sqrt();
+        let weights = q
+            .try_matmul(k)?
+            .try_mul(scalar)?
+            .try_add(mask.realize::<(usize, S1, S2)>().unwrap())?
+            .try_softmax::<Axis<2>>()?;
 
         // Get new tokens
-        let tokens = weights.try_matmul(v)?;
-        let tokens = tokens.try_permute::<_, Axes3<1, 0, 2>>()?;
-        let tokens = tokens.try_reshape_like(&(s1, Const::<V>)).unwrap()?;
+        let tokens = weights
+            .try_matmul(v)?
+            .try_permute::<_, Axes3<1, 0, 2>>()?
+            .try_reshape_like(&(s1, Const::<V>)).unwrap()?;
 
         self.w_o.try_forward(tokens)
     }
@@ -246,50 +260,47 @@ where
             Tensor<(B, S2, Const<M>), E, D>,
         ),
     ) -> Result<Self::Output, D::Err> {
-        assert_eq!(q.shape().0, k.shape().0);
-        assert_eq!(q.shape().0, v.shape().0);
-        assert_eq!(k.shape().1, v.shape().1);
-
         let b = q.shape().0;
         let s1 = q.shape().1;
         let s2 = v.shape().1;
 
-        let v = self.w_v.try_forward(v.retaped::<T>())?;
-        let v = v.try_reshape_like(&(b, s2, H, V / H)).unwrap()?;
-        let v = v.try_permute::<_, Axes4<0, 2, 1, 3>>()?;
+        let v = self.w_v
+            .try_forward(v.retaped::<T>())?
+            .try_reshape_like(&(b, s2, H, V / H)).unwrap()?
+            .try_permute::<_, Axes4<0, 2, 1, 3>>()?;
 
-        let k = self.w_k.try_forward(k.retaped::<T>())?;
-        let k = k.try_reshape_like(&(b, s2, H, K / H)).unwrap()?;
-        let k = k.try_permute::<_, Axes4<0, 2, 3, 1>>()?;
+        let k = self.w_k
+            .try_forward(k.retaped::<T>())?
+            .try_reshape_like(&(b, s2, H, K / H)).unwrap()?
+            .try_permute::<_, Axes4<0, 2, 3, 1>>()?;
 
-        let q = self.w_q.try_forward(q)?;
-        let q = q.try_reshape_like(&(b, s1, H, K / H)).unwrap()?;
-        let q = q.try_permute::<_, Axes4<0, 2, 1, 3>>()?;
+        let q = self.w_q
+            .try_forward(q)?
+            .try_reshape_like(&(b, s1, H, K / H)).unwrap()?
+            .try_permute::<_, Axes4<0, 2, 1, 3>>()?;
 
         // Get weights
-        let indexes = v.device.tensor_from_vec(std::iter::repeat(0..s2.size()).take(MAX_LEN).flatten().collect(), (Const::<MAX_LEN>, s2));
-        let mask = self.biases.clone().gather(indexes.broadcast_like(&(Const::<H>, Const::<MAX_LEN>, s2)));
-        let indexes = v.device.tensor_from_vec((0..s1.size()).collect(), (s1,));
-        let mask = mask.gather(indexes.broadcast_like(&(Const::<H>, s1)));
+        let mask = self.biases
+            .clone()
+            .gather::<(Const::<H>, Const::<MAX_LEN>, S2), _>(
+                v.device
+                    .tensor_from_vec(std::iter::repeat(0..s2.size()).take(MAX_LEN).flatten().collect(), (Const::<MAX_LEN>, s2))
+                    .broadcast_like(&(Const::<H>, Const::<MAX_LEN>, s2))
+            )
+            .gather(v.device.tensor_from_vec((0..s1.size()).collect(), (s1,)).broadcast_like(&(Const::<H>, s1)));
 
-        let scalar: E = E::ONE / E::from_usize(K / H).unwrap().sqrt();
-        let weights = q.try_matmul(k)?.try_mul(scalar)?;
-        let mut causal_mask = vec![E::zero(); s1.size() * s2.size()];
-        for i in 0..s1.size() {
-            for j in i+1..s2.size() {
-                causal_mask[i *  s1.size() + j] = -E::infinity();
-            }
-        }
-        let causal_mask: Tensor<(S1, S2), _, _> = weights.device.try_tensor_from_vec(causal_mask, (s1, s2)).unwrap();
-        let weights = weights
-            .try_add(causal_mask.try_broadcast_like(&(b, H, s1, s2))?)?
-            .try_add(mask.realize::<(usize, S1, S2)>().unwrap().try_broadcast_like(&(b, H, s1, s2))?)?;
-        let weights = weights.try_softmax::<Axis<3>>()?;
+        let scalar = E::ONE / E::from_usize(K / H).unwrap().sqrt();
+        let weights = q
+            .try_matmul(k)?
+            .try_mul(scalar)?
+            .try_add(mask.realize::<(usize, S1, S2)>().unwrap().try_broadcast_like(&(b, H, s1, s2))?)?
+            .try_softmax::<Axis<3>>()?;
 
         // Get new tokens
-        let tokens = weights.try_matmul(v)?;
-        let tokens = tokens.try_permute::<_, Axes4<0, 2, 1, 3>>()?;
-        let tokens = tokens.try_reshape_like(&(b, s1, Const::<V>)).unwrap()?;
+        let tokens = weights
+            .try_matmul(v)?
+            .try_permute::<_, Axes4<0, 2, 1, 3>>()?
+            .try_reshape_like(&(b, s1, Const::<V>)).unwrap()?;
 
         self.w_o.try_forward(tokens)
     }

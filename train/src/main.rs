@@ -17,9 +17,9 @@ use num::Float;
 
 // Training
 const BATCH_SIZE: usize = 48;
-const BATCH_ACCUM: (usize, usize) = (1, 1);
+const BATCH_ACCUM: (usize, usize) = (1, 10);
 const MAX_TRAIN_SEQ_LEN: usize = 45;
-const LR: (f32, f32) = (1e-5, 3e-4);
+const LR: (f32, f32) = (5e-5, 3e-4);
 
 // Model
 const LAYERS: usize = 8;

@@ -5,7 +5,7 @@ use dfdx::{
     nn::modules::*,
     shapes::Dtype,
     tensor::{DeviceStorage, PutTape, SplitTape, ToDevice},
-    tensor_ops::Device,
+    tensor_ops::{Device, TryAdd},
 };
 
 use super::mha::MultiHeadAttention;
@@ -145,7 +145,7 @@ impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dt
 impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>, Src> Module<Src>
     for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 where
-    Src: SplitTape + std::ops::Add<Src::NoTape, Output = Src>,
+    Src: SplitTape + TryAdd<Src::NoTape, Err = D::Err>,
     MultiHeadAttention<M, H, MAX_LEN, M, M, E, D>: Module<Src, Output = Src, Error = D::Err>,
     LayerNorm1D<M, E, D>: Module<Src, Output = Src, Error = D::Err>,
     FF<M, F, E, D>: Module<Src, Output = Src, Error = D::Err>,
@@ -156,7 +156,7 @@ where
     fn try_forward(&self, src: Src) -> Result<Self::Output, D::Err> {
         let (src, tape) = src.split_tape();
         let x = self.self_attn.try_forward(src.clone().put_tape(tape))?;
-        let x = x + src;
+        let x = x.try_add(src)?;
         let x = self.norm1.try_forward(x)?;
         let x = self.ff.try_forward(x)?;
         self.norm2.try_forward(x)
@@ -164,6 +164,4 @@ where
 }
 
 impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>> NonMutableModule
-    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
-{
-}
+    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D> {}

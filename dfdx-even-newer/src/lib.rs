@@ -166,8 +166,8 @@ pub fn keep_denormals() {
     }
 }
 
-#[cfg(test)]
-pub(crate) mod tests {
+// #[cfg(test)]
+pub mod tests {
 
     #[cfg(not(feature = "test-cuda"))]
     pub type TestDevice = crate::tensor::Cpu;
