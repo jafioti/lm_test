@@ -59,10 +59,10 @@ pub struct MultiHeadAttention<
     E: Dtype,
     D: DeviceStorage,
 > {
-    pub w_q: Linear<EMBED_DIM, K_DIM, E, D>,
-    pub w_k: Linear<EMBED_DIM, K_DIM, E, D>,
-    pub w_v: Linear<EMBED_DIM, V_DIM, E, D>,
-    pub w_o: Linear<V_DIM, EMBED_DIM, E, D>,
+    pub w_q: UnbiasedLinear<EMBED_DIM, K_DIM, E, D>,
+    pub w_k: UnbiasedLinear<EMBED_DIM, K_DIM, E, D>,
+    pub w_v: UnbiasedLinear<EMBED_DIM, V_DIM, E, D>,
+    pub w_o: UnbiasedLinear<V_DIM, EMBED_DIM, E, D>,
     pub biases: Tensor<Rank3<NUM_HEADS, MAX_LEN, MAX_LEN>, E, D>
 }
 

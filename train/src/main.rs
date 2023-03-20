@@ -29,17 +29,17 @@ const FF_DIM: usize = EMBED_DIM * 4;
 const HEADS: usize = 8;
 
 fn main() {
-    let mut train_dataset = build_dataset(
+    let mut train_dataset = openwebtext(
         "/home/jafioti/Datasets/openwebtext",
         1_000_000,
         5_000_000,
         MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
-    let mut test_dataset = build_dataset(
-        "/home/jafioti/Datasets/openwebtext",
+    let mut test_dataset = wikitext103(
+        "/home/jafioti/Datasets/WikiText/wikitext-103/wiki.test.tokens",
         0,
-        100_000,
+        usize::MAX,
         MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
@@ -319,7 +319,7 @@ fn generate<
     );
 }
 
-fn build_dataset(
+fn openwebtext(
     path: &str,
     min_index: usize,
     max_index: usize,
@@ -339,6 +339,61 @@ fn build_dataset(
                     .map(|s| s.to_lowercase().replace(['\\', '/', '"'], "")).collect();
                 // Tokenize
                 let tokens = tokenizer.batch_tokenize(strings);
+                // Convert to indexes
+                let indexes = vocab.batch_indexes_from_tokens(&tokens).unwrap();
+
+                indexes
+                    .into_iter()
+                    // Filter out sequences shorter than 5
+                    .filter(|i| i.len() > 5)
+                    // Sort
+                    .sorted_by_key(|a| a.len())
+                    // Batch
+                    .chunks(batch_size)
+                    .into_iter()
+                    .map(|batch| {
+                        // Limit the length of the vectors and pad out ones that need it
+                        let mut reference_length = 0;
+                        batch.map(|s| {
+                            if reference_length == 0 {
+                                reference_length = s.len().min(max_sequence_length + 1);
+                            }
+                            let mut seq = s[..reference_length].to_vec();
+                            seq.append(&mut vec![0; (reference_length).checked_sub(seq.len()).unwrap_or_default()]);
+                            (
+                                seq[..seq.len() - 1].to_vec(),
+                                seq[1..].to_vec()
+                            )
+                        }).collect()
+                    }).collect()
+            },
+        ).remaining(move |i| i / batch_size))
+        // Re-shuffle
+        .node(Shuffle::default())
+        // Unzip inputs and targets
+        .map(|indexes: Vec<(Vec<usize>, Vec<usize>)>| indexes.into_iter().unzip());
+    Dataloader::new(pipeline).load_block_size(100_000)
+}
+
+fn wikitext103(
+    path: &str,
+    min_index: usize,
+    max_index: usize,
+    max_sequence_length: usize,
+    batch_size: usize,
+) -> Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)> {
+    let pipeline =
+    // Random loader from files
+    RandomLoader::new(&[path]).min_index(min_index).max_index(max_index)
+        // Filter for length
+        .node(|lines: Vec<String>| lines.into_iter().filter(|i| i.len() > 100).collect::<Vec<_>>())
+        // Filter + tokenize + index
+        .node(Stateful::new(
+            (WordpieceTokenizer::load(), WordPieceVocab::load()),
+            move |strings: Vec<String>, (tokenizer, vocab)| {
+                // Tokenize
+                let tokens = tokenizer.batch_tokenize(strings.into_iter()
+                    .map(|s| s.to_lowercase().replace(['\\', '/', '"'], "")).collect());
                 // Convert to indexes
                 let indexes = vocab.batch_indexes_from_tokens(&tokens).unwrap();
 

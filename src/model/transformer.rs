@@ -98,7 +98,7 @@ pub struct TransformerEncoderBlock<
 }
 
 type FF<const M: usize, const F: usize, E, D> =
-    Residual<(Linear<M, F, E, D>, GeLU, Linear<F, M, E, D>)>;
+    Residual<(UnbiasedLinear<M, F, E, D>, GeLU, UnbiasedLinear<F, M, E, D>)>;
 
 impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>> BuildModule<D, E>
     for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
