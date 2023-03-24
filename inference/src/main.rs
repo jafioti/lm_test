@@ -1,15 +1,20 @@
-use dataflow_nlp::{tokenization::{WordpieceTokenizer, Tokenizer}, vocab::{WordPieceVocab, Vocab}};
+use dataflow_nlp::{
+    tokenization::{Tokenizer, WordpieceTokenizer},
+    vocab::{Vocab, WordPieceVocab},
+};
 use dfdx::prelude::*;
 
-use lm_test::{bar::*, model::{BuiltModel, Model}};
-
+use lm_test::{
+    bar::*,
+    model::{BuiltModel, Model},
+};
 
 use crossterm::{
     event::{self, DisableMouseCapture, EnableMouseCapture, Event, KeyCode},
     execute,
     terminal::{disable_raw_mode, enable_raw_mode, EnterAlternateScreen, LeaveAlternateScreen},
 };
-use rand::{thread_rng, distributions::WeightedIndex};
+use rand::{distributions::WeightedIndex, thread_rng};
 use rand_distr::Distribution;
 use std::{error::Error, io, time::Duration};
 use tui::{
@@ -34,7 +39,15 @@ enum Message {
 }
 
 /// App holds the state of the application
-struct App<const V: usize, const E: usize, const F: usize, const L: usize, const H: usize, const M: usize, D: Device<f32>> {
+struct App<
+    const V: usize,
+    const E: usize,
+    const F: usize,
+    const L: usize,
+    const H: usize,
+    const M: usize,
+    D: Device<f32>,
+> {
     /// Current value of the input box
     input: String,
     /// Current input mode
@@ -58,7 +71,10 @@ fn main() -> Result<(), Box<dyn Error>> {
         Model::<30528, EMBED_DIM, FF_DIM, LAYERS, HEADS, MAX_SEQ_LEN>::build_on_device(&dev);
     model.load("../checkpoints/best.npz").unwrap();
 
-    let param_msg = format!("Model Parameters: {}", pretty_print_num(model.num_trainable_params()));
+    let param_msg = format!(
+        "Model Parameters: {}",
+        pretty_print_num(model.num_trainable_params())
+    );
 
     // setup terminal
     enable_raw_mode()?;
@@ -72,7 +88,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         input: "".to_string(),
         input_mode: InputMode::Normal,
         messages: vec![Message::Assistant(param_msg)],
-        model
+        model,
     };
     let res = run_app(&mut terminal, app, &dev);
 
@@ -92,7 +108,20 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-fn run_app<B: Backend, const V: usize, const E: usize, const F: usize, const L: usize, const H: usize, const M: usize, D: Device<f32>>(terminal: &mut Terminal<B>, mut app: App<V, E, F, L, H, M, D>, dev: &D) -> io::Result<()> {
+fn run_app<
+    B: Backend,
+    const V: usize,
+    const E: usize,
+    const F: usize,
+    const L: usize,
+    const H: usize,
+    const M: usize,
+    D: Device<f32>,
+>(
+    terminal: &mut Terminal<B>,
+    mut app: App<V, E, F, L, H, M, D>,
+    dev: &D,
+) -> io::Result<()> {
     let mut process: Option<std::thread::JoinHandle<String>> = None;
 
     loop {
@@ -122,7 +151,14 @@ fn run_app<B: Backend, const V: usize, const E: usize, const F: usize, const L: 
                         KeyCode::Enter => {
                             let string: String = app.input.drain(..).collect();
                             app.messages.push(Message::User(string.clone()));
-                            app.messages.push(Message::Assistant(generate(&string, &app.model, dev, 50, MAX_TRAIN_SEQ_LEN, 0.5)))
+                            app.messages.push(Message::Assistant(generate(
+                                &string,
+                                &app.model,
+                                dev,
+                                50,
+                                MAX_TRAIN_SEQ_LEN,
+                                0.5,
+                            )))
                         }
                         KeyCode::Char(c) => {
                             app.input.push(c);
@@ -141,7 +177,19 @@ fn run_app<B: Backend, const V: usize, const E: usize, const F: usize, const L: 
     }
 }
 
-fn ui<B: Backend, const V: usize, const E: usize, const F: usize, const L: usize, const H: usize, const M: usize, D: Device<f32>>(f: &mut Frame<B>, app: &App<V, E, F, L, H, M, D>) {
+fn ui<
+    B: Backend,
+    const V: usize,
+    const E: usize,
+    const F: usize,
+    const L: usize,
+    const H: usize,
+    const M: usize,
+    D: Device<f32>,
+>(
+    f: &mut Frame<B>,
+    app: &App<V, E, F, L, H, M, D>,
+) {
     let chunks = Layout::default()
         .direction(Direction::Vertical)
         .margin(2)
@@ -209,11 +257,15 @@ fn ui<B: Backend, const V: usize, const E: usize, const F: usize, const L: usize
         .iter()
         .map(|m| match m {
             Message::User(m) => Spans::from(Span::raw(format!("{m}\n"))),
-            Message::Assistant(m) => Spans::from(Span::styled(format!("{m}\n"), Style::default().fg(Color::LightBlue))),
+            Message::Assistant(m) => Spans::from(Span::styled(
+                format!("{m}\n"),
+                Style::default().fg(Color::LightBlue),
+            )),
         })
         .collect();
-    let messages =
-        Paragraph::new(messages).block(Block::default().borders(Borders::ALL).title("Messages")).wrap(Wrap {trim: true});
+    let messages = Paragraph::new(messages)
+        .block(Block::default().borders(Borders::ALL).title("Messages"))
+        .wrap(Wrap { trim: true });
     f.render_widget(messages, chunks[1]);
     f.render_widget(input, chunks[2]);
 }
@@ -233,7 +285,8 @@ fn generate<
     num_tokens: usize,
     window_size: usize,
     temperature: f32,
-) -> String where
+) -> String
+where
     BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, MAX_LEN, f32, D>:
         Module<Tensor<(usize,), usize, D>, Output = Tensor<(usize, Const<VOCAB>), f32, D>>,
     D: Device<f32>,
@@ -252,7 +305,8 @@ fn generate<
             indexes[indexes.len().checked_sub(window_size).unwrap_or_default()..].to_vec(),
             (indexes.len().min(window_size),),
         ));
-        let mut distr: Vec<f32> = output.as_vec()[(indexes.len() - 1).min(window_size - 1) * VOCAB..].to_vec();
+        let mut distr: Vec<f32> =
+            output.as_vec()[(indexes.len() - 1).min(window_size - 1) * VOCAB..].to_vec();
         softmax(&mut distr, temperature);
         indexes.push(WeightedIndex::new(&distr).unwrap().sample(&mut rng));
     }

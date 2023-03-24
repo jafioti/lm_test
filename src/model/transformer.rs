@@ -35,7 +35,7 @@ pub mod builder {
         const NUM_HEADS: usize,
         const FF_DIM: usize,
         const NUM_LAYERS: usize,
-        const MAX_LEN: usize
+        const MAX_LEN: usize,
     >;
 
     #[derive(Debug)]
@@ -47,8 +47,15 @@ pub mod builder {
     >;
 }
 
-impl<const M: usize, const H: usize, const F: usize, const L: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>>
-    BuildOnDevice<D, E> for builder::TransformerEncoder<M, H, F, L, MAX_LEN>
+impl<
+        const M: usize,
+        const H: usize,
+        const F: usize,
+        const L: usize,
+        const MAX_LEN: usize,
+        E: Dtype,
+        D: Device<E>,
+    > BuildOnDevice<D, E> for builder::TransformerEncoder<M, H, F, L, MAX_LEN>
 where
     TransformerEncoder<M, H, F, L, MAX_LEN, E, D>: BuildModule<D, E>,
 {
@@ -58,8 +65,14 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>> BuildOnDevice<D, E>
-    for builder::TransformerEncoderBlock<M, H, F, MAX_LEN>
+impl<
+        const M: usize,
+        const H: usize,
+        const F: usize,
+        const MAX_LEN: usize,
+        E: Dtype,
+        D: Device<E>,
+    > BuildOnDevice<D, E> for builder::TransformerEncoderBlock<M, H, F, MAX_LEN>
 where
     TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>: BuildModule<D, E>,
 {
@@ -100,8 +113,8 @@ pub struct TransformerEncoderBlock<
 type FF<const M: usize, const F: usize, E, D> =
     Residual<(UnbiasedLinear<M, F, E, D>, GeLU, UnbiasedLinear<F, M, E, D>)>;
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>> BuildModule<D, E>
-    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
+impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>>
+    BuildModule<D, E> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 where
     E: Dtype + Float + SampleUniform,
 {
@@ -115,8 +128,8 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>> TensorCollection<E, D>
-    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
+impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>>
+    TensorCollection<E, D> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 where
     E: Dtype + Float + SampleUniform,
 {
@@ -128,8 +141,15 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D1: Device<E>, D2: Device<E>>
-    ToDevice<D2> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D1>
+impl<
+        const M: usize,
+        const H: usize,
+        const F: usize,
+        const MAX_LEN: usize,
+        E: Dtype,
+        D1: Device<E>,
+        D2: Device<E>,
+    > ToDevice<D2> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D1>
 {
     type Output = TransformerEncoderBlock<M, H, F, MAX_LEN, E, D2>;
     fn to_device(&self, device: &D2) -> Self::Output {
@@ -142,8 +162,15 @@ impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dt
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>, Src> Module<Src>
-    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
+impl<
+        const M: usize,
+        const H: usize,
+        const F: usize,
+        const MAX_LEN: usize,
+        E: Dtype,
+        D: Device<E>,
+        Src,
+    > Module<Src> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 where
     Src: SplitTape + TryAdd<Src::NoTape, Err = D::Err>,
     MultiHeadAttention<M, H, MAX_LEN, M, M, E, D>: Module<Src, Output = Src, Error = D::Err>,
@@ -163,5 +190,13 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>> NonMutableModule
-    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D> {}
+impl<
+        const M: usize,
+        const H: usize,
+        const F: usize,
+        const MAX_LEN: usize,
+        E: Dtype,
+        D: Device<E>,
+    > NonMutableModule for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
+{
+}

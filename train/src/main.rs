@@ -12,7 +12,11 @@ use dfdx::{
 };
 use itertools::Itertools;
 
-use lm_test::{bar::*, lr_scheduler::*, model::{BuiltModel, Model}};
+use lm_test::{
+    bar::*,
+    lr_scheduler::*,
+    model::{BuiltModel, Model},
+};
 use num::Float;
 
 // Training
@@ -55,7 +59,7 @@ fn main() {
         },
     );
     let mut lr_scheduler = OneCycleScheduler::new(LR.0, LR.1).set_peak(0.2);
-    let  mut accum_scheduler = LinearScheduler::new(BATCH_ACCUM.0, BATCH_ACCUM.1);
+    let mut accum_scheduler = LinearScheduler::new(BATCH_ACCUM.0, BATCH_ACCUM.1);
     let mut tensorboard = Tensorboard::new("../logdir");
 
     println!(

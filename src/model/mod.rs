@@ -1,6 +1,6 @@
+pub mod mha;
 pub mod position_encoding;
 pub mod reverse_embedding;
-pub mod mha;
 pub mod transformer;
 
 pub type Model<
