@@ -157,11 +157,12 @@ where
         let weights = q.try_matmul(k)?.try_mul(scalar)?;
         let mut mask = vec![E::zero(); s1.size() * s2.size()];
         for i in 0..s1.size() {
-            for j in i+1..s2.size() {
-                mask[i *  s1.size() + j] = -E::infinity();
+            for j in i + 1..s2.size() {
+                mask[i * s1.size() + j] = -E::infinity();
             }
         }
-        let mask: Tensor<(S1, S2), _, _> = weights.device.try_tensor_from_vec(mask, (s1, s2)).unwrap();
+        let mask: Tensor<(S1, S2), _, _> =
+            weights.device.try_tensor_from_vec(mask, (s1, s2)).unwrap();
         let weights = weights.try_add(mask.try_broadcast_like(&(H, s1, s2))?)?;
         let weights = weights.try_softmax::<Axis<2>>()?;
 
@@ -225,11 +226,12 @@ where
         let weights = q.try_matmul(k)?.try_mul(scalar)?;
         let mut mask = vec![E::zero(); s1.size() * s2.size()];
         for i in 0..s1.size() {
-            for j in i+1..s2.size() {
-                mask[i *  s1.size() + j] = -E::infinity();
+            for j in i + 1..s2.size() {
+                mask[i * s1.size() + j] = -E::infinity();
             }
         }
-        let mask: Tensor<(S1, S2), _, _> = weights.device.try_tensor_from_vec(mask, (s1, s2)).unwrap();
+        let mask: Tensor<(S1, S2), _, _> =
+            weights.device.try_tensor_from_vec(mask, (s1, s2)).unwrap();
         let weights = weights.try_add(mask.try_broadcast_like(&(b, H, s1, s2))?)?;
         let weights = weights.try_softmax::<Axis<3>>()?;
 

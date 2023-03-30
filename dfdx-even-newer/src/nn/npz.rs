@@ -246,7 +246,6 @@ mod tests {
         let mut loaded = M::build_on_device(&dev);
 
         saved.gamma.fill_with_distr(Standard);
-        saved.beta.fill_with_distr(Standard);
         let y = saved.forward(x.clone());
 
         assert_ne!(loaded.forward(x.clone()).array(), y.array());

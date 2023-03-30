@@ -12,10 +12,10 @@
 mod axes;
 mod broadcasts;
 mod permutes;
+mod realize;
 mod replace_dim;
 mod same_numel;
 mod shape;
-mod realize;
 
 pub use axes::Axes;
 pub use broadcasts::{

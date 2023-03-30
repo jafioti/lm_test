@@ -10,14 +10,6 @@ use dfdx::{
 
 use super::mha::MultiHeadAttention;
 
-/// A transformer encoder.
-///
-/// Generics
-/// - `MODEL_DIM`: The size of query/key/value tensors. Given to [MultiHeadAttention].
-/// - `NUM_HEADS`: The number of heads in [MultiHeadAttention].
-/// - `FF_DIM`: The size of the hidden layer in
-///   the feedforward network in [TransformerEncoderBlock].
-/// - `NUM_LAYERS`: The number of [TransformerEncoderBlock] to use.
 pub type TransformerEncoder<
     const MODEL_DIM: usize,
     const NUM_HEADS: usize,
@@ -35,7 +27,7 @@ pub mod builder {
         const NUM_HEADS: usize,
         const FF_DIM: usize,
         const NUM_LAYERS: usize,
-        const MAX_LEN: usize
+        const MAX_LEN: usize,
     >;
 
     #[derive(Debug)]
@@ -47,8 +39,15 @@ pub mod builder {
     >;
 }
 
-impl<const M: usize, const H: usize, const F: usize, const L: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>>
-    BuildOnDevice<D, E> for builder::TransformerEncoder<M, H, F, L, MAX_LEN>
+impl<
+        const M: usize,
+        const H: usize,
+        const F: usize,
+        const L: usize,
+        const MAX_LEN: usize,
+        E: Dtype,
+        D: Device<E>,
+    > BuildOnDevice<D, E> for builder::TransformerEncoder<M, H, F, L, MAX_LEN>
 where
     TransformerEncoder<M, H, F, L, MAX_LEN, E, D>: BuildModule<D, E>,
 {
@@ -58,8 +57,14 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>> BuildOnDevice<D, E>
-    for builder::TransformerEncoderBlock<M, H, F, MAX_LEN>
+impl<
+        const M: usize,
+        const H: usize,
+        const F: usize,
+        const MAX_LEN: usize,
+        E: Dtype,
+        D: Device<E>,
+    > BuildOnDevice<D, E> for builder::TransformerEncoderBlock<M, H, F, MAX_LEN>
 where
     TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>: BuildModule<D, E>,
 {
@@ -69,19 +74,6 @@ where
     }
 }
 
-/// A single transformer encoder block
-///
-/// Generics
-/// - `MODEL_DIM`: The size of query/key/value tensors. Given to [MultiHeadAttention].
-/// - `NUM_HEADS`: The number of heads in [MultiHeadAttention].
-/// - `FF_DIM`: The size of the hidden layer in the feedforward network.
-///
-/// **Pytorch equivalent**:
-/// ```python
-/// encoder = torch.nn.TransformerEncoderLayer(
-///    EMBED_DIM, NUM_HEADS, dim_feedforward=FF_DIM, batch_first=True, dropout=0.0
-/// )
-/// ```
 #[derive(Clone, Debug)]
 pub struct TransformerEncoderBlock<
     const MODEL_DIM: usize,
@@ -100,8 +92,8 @@ pub struct TransformerEncoderBlock<
 type FF<const M: usize, const F: usize, E, D> =
     Residual<(UnbiasedLinear<M, F, E, D>, GeLU, UnbiasedLinear<F, M, E, D>)>;
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>> BuildModule<D, E>
-    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
+impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>>
+    BuildModule<D, E> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 where
     E: Dtype + Float + SampleUniform,
 {
@@ -115,8 +107,8 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>> TensorCollection<E, D>
-    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
+impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E, D: Device<E>>
+    TensorCollection<E, D> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 where
     E: Dtype + Float + SampleUniform,
 {
@@ -128,8 +120,15 @@ where
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D1: Device<E>, D2: Device<E>>
-    ToDevice<D2> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D1>
+impl<
+        const M: usize,
+        const H: usize,
+        const F: usize,
+        const MAX_LEN: usize,
+        E: Dtype,
+        D1: Device<E>,
+        D2: Device<E>,
+    > ToDevice<D2> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D1>
 {
     type Output = TransformerEncoderBlock<M, H, F, MAX_LEN, E, D2>;
     fn to_device(&self, device: &D2) -> Self::Output {
@@ -142,8 +141,15 @@ impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dt
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>, Src> Module<Src>
-    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
+impl<
+        const M: usize,
+        const H: usize,
+        const F: usize,
+        const MAX_LEN: usize,
+        E: Dtype,
+        D: Device<E>,
+        Src,
+    > Module<Src> for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
 where
     Src: SplitTape + TryAdd<Src::NoTape, Err = D::Err>,
     MultiHeadAttention<M, H, MAX_LEN, M, M, E, D>: Module<Src, Output = Src, Error = D::Err>,
@@ -155,13 +161,24 @@ where
 
     fn try_forward(&self, src: Src) -> Result<Self::Output, D::Err> {
         let (src, tape) = src.split_tape();
-        let x = self.self_attn.try_forward(src.clone().put_tape(tape))?;
-        let x = x.try_add(src)?;
-        let x = self.norm1.try_forward(x)?;
-        let x = self.ff.try_forward(x)?;
-        self.norm2.try_forward(x)
+        let x = self
+            .self_attn
+            .try_forward(self.norm1.try_forward(src.clone().put_tape(tape))?)?
+            .try_add(src)?;
+        let (x, tape) = x.split_tape();
+        self.ff
+            .try_forward(self.norm2.try_forward(x.clone().put_tape(tape))?)?
+            .try_add(x)
     }
 }
 
-impl<const M: usize, const H: usize, const F: usize, const MAX_LEN: usize, E: Dtype, D: Device<E>> NonMutableModule
-    for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D> {}
+impl<
+        const M: usize,
+        const H: usize,
+        const F: usize,
+        const MAX_LEN: usize,
+        E: Dtype,
+        D: Device<E>,
+    > NonMutableModule for TransformerEncoderBlock<M, H, F, MAX_LEN, E, D>
+{
+}

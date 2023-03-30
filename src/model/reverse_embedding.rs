@@ -95,7 +95,7 @@ impl<
         let (input, tape) = input.split_tape();
         let embedded = self.weight.clone().put_tape(tape).try_gather(input)?;
         let output = self.inner.try_forward(embedded)?;
-        output.try_matmul(self.weight.retaped::<T>().permute())
+        output.try_matmul(self.weight.clone().permute())
     }
 }
 
@@ -124,7 +124,7 @@ impl<
         let (input, tape) = input.split_tape();
         let embedded = self.weight.clone().put_tape(tape).try_gather(input)?;
         let output = self.inner.try_forward(embedded)?;
-        output.try_matmul(self.weight.retaped::<T>().permute())
+        output.try_matmul(self.weight.clone().permute())
     }
 }
 

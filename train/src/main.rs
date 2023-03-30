@@ -12,50 +12,65 @@ use dfdx::{
 };
 use itertools::Itertools;
 
-use lm_test::{bar::*, lr_scheduler::*, model::{BuiltModel, Model}};
+use lm_test::{
+    bar::*,
+    lr_scheduler::*,
+    model::{BuiltModel, Model},
+};
 use num::Float;
+use rand::{distributions::WeightedIndex, thread_rng, Rng};
+use rand_distr::Distribution;
 
 // Training
-const BATCH_SIZE: usize = 48;
-const BATCH_ACCUM: (usize, usize) = (1, 10);
-const MAX_TRAIN_SEQ_LEN: usize = 45;
-const LR: (f32, f32) = (5e-5, 3e-4);
+const BATCH_SIZE: usize = 12;
+const BATCH_ACCUM: (usize, usize) = (40, 40);
+const MAX_TRAIN_SEQ_LEN: usize = 128;
+const LR: (f32, f32) = (6e-4, 6e-4);
 
 // Model
 const LAYERS: usize = 8;
-const MAX_SEQ_LEN: usize = 100;
+const MAX_SEQ_LEN: usize = 512;
 const EMBED_DIM: usize = 512;
 const FF_DIM: usize = EMBED_DIM * 4;
 const HEADS: usize = 8;
 
 fn main() {
-    let mut train_dataset = openwebtext(
+    let mut train_dataset = simple_openwebtext(
         "/home/jafioti/Datasets/openwebtext",
-        1_000_000,
-        5_000_000,
+        1_500_000,
+        5_500_000,
         MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
-    let mut test_dataset = wikitext103(
-        "/home/jafioti/Datasets/WikiText/wikitext-103/wiki.test.tokens",
+    let mut test_dataset = simple_openwebtext(
+        "/home/jafioti/Datasets/openwebtext",
         0,
-        usize::MAX,
+        10_000,
         MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
+    // let mut test_dataset = wikitext103(
+    //     "/home/jafioti/Datasets/WikiText/wikitext-103/wiki.test.tokens",
+    //     0,
+    //     usize::MAX,
+    //     MAX_TRAIN_SEQ_LEN,
+    //     BATCH_SIZE,
+    // );
     let dev: Cuda = Default::default();
     let mut model =
         Model::<30528, EMBED_DIM, FF_DIM, LAYERS, HEADS, MAX_SEQ_LEN>::build_on_device(&dev);
-    // model.load("../checkpoints/step_10800000.npz").unwrap();
+
+    model.load("../checkpoints/step_138240000.npz").unwrap();
     let mut opt = Adam::new(
         &model,
         AdamConfig {
             lr: 0.,
+            betas: [0.9, 0.95],
             ..Default::default()
         },
     );
     let mut lr_scheduler = OneCycleScheduler::new(LR.0, LR.1).set_peak(0.2);
-    let  mut accum_scheduler = LinearScheduler::new(BATCH_ACCUM.0, BATCH_ACCUM.1);
+    let mut accum_scheduler = LinearScheduler::new(BATCH_ACCUM.0, BATCH_ACCUM.1);
     let mut tensorboard = Tensorboard::new("../logdir");
 
     println!(
@@ -63,7 +78,15 @@ fn main() {
         pretty_print_num(model.num_trainable_params())
     );
 
-    generate(&model, &dev, 100, MAX_TRAIN_SEQ_LEN);
+    generate(
+        "hi, how are you doing today? i' d like you to meet my friend fred",
+        &model,
+        &dev,
+        50,
+        MAX_TRAIN_SEQ_LEN,
+        0.5,
+        1
+    );
     for epoch in 0..3 {
         println!("{}", format!("Epoch {}", epoch + 1).bold().cyan());
         train_epoch(
@@ -76,9 +99,17 @@ fn main() {
             &dev,
             &mut tensorboard,
         );
-        println!("Test PPL: {}", test_epoch(&model, &mut test_dataset, &dev));
+        println!("Val Loss: {}", test_epoch(&model, &mut test_dataset, &dev));
 
-        generate(&model, &dev, 100, MAX_TRAIN_SEQ_LEN);
+        generate(
+            "hi, how are you doing today? i' d like you to meet my friend fred",
+            &model,
+            &dev,
+            50,
+            MAX_TRAIN_SEQ_LEN,
+            0.5,
+            5,
+        );
 
         if let Err(e) = model.save(&format!("../checkpoints/epoch-{epoch}.npz")) {
             println!("{} {e:?}", "Error Saving Model:".bold().red());
@@ -118,17 +149,10 @@ fn train_epoch<
 {
     let total_len = dataset.len();
     let bar = train_progress_bar(dataset.len() as u64);
-    let mut loss_avg = ExponentialAverage::with_beta(0.999);
     let mut gradients = Some(model.alloc_grads());
     let mut epoch_iter = 0;
-    // let mut setup = 0.;
-    // let mut forward = 0.;
-    // let mut loss_t = 0.;
-    // let mut back = 0.;
-    // let mut optimization = 0.;
-    // let mut track = 0.;
+    let mut loss_accum = 0.;
     for ((input, target), left) in dataset.iter_len() {
-        // let current = Instant::now();
         epoch_iter += 1;
         accum_scheduler.set_progress((total_len - left) as f32 / total_len as f32);
         // Setup input
@@ -137,10 +161,8 @@ fn train_epoch<
         let input = dev
             .tensor_from_vec(flat_vec, (batch_size, seq_len))
             .trace_into(gradients.take().unwrap_or_else(|| model.alloc_grads()));
-        // setup += current.elapsed().as_secs_f32();
 
         // Run through model
-        // let current = Instant::now();
         let output = match model.try_forward(input) {
             Ok(o) => o,
             Err(e) => {
@@ -148,10 +170,8 @@ fn train_epoch<
                 continue;
             }
         };
-        // forward += current.elapsed().as_secs_f32();
 
         // Get loss
-        // let current = Instant::now();
         let loss = match vec_one_hot_encode(&target, dev)
             .map(|t| try_cross_entropy_with_logits_loss(output, t))
         {
@@ -161,25 +181,27 @@ fn train_epoch<
                 continue;
             }
         };
-        // loss_t += current.elapsed().as_secs_f32();
 
-        // Update status
-        // let current = Instant::now();
-        loss_avg.update(loss.array().exp()); // Update with PPL
-        bar.set_position((total_len - left) as u64);
-        bar.set_message(format!("PPL: {:.2}", loss_avg.value));
-        tensorboard.record("ppl", loss_avg.value, BATCH_SIZE);
-        // track += current.elapsed().as_secs_f32();
+        loss_accum += loss.array();
 
         // Backprop and optimize
-        // let current = Instant::now();
         gradients = Some((loss / accum_scheduler.get() as f32).backward());
-        // back += current.elapsed().as_secs_f32();
 
+        bar.set_position((total_len - left) as u64);
         #[allow(clippy::modulo_one)]
         if epoch_iter % accum_scheduler.get() == 0 {
+            // Update status
+            bar.set_message(format!(
+                "Loss: {:.2}",
+                loss_accum / accum_scheduler.get() as f32
+            ));
+            tensorboard.record(
+                "loss",
+                loss_accum / accum_scheduler.get() as f32,
+                BATCH_SIZE * accum_scheduler.get() * MAX_TRAIN_SEQ_LEN,
+            );
+
             if let Some(mut grads) = Option::take(&mut gradients) {
-                // let current = Instant::now();
                 scheduler.set_progress((total_len - left) as f32 / total_len as f32);
                 scheduler.step(opt);
                 if let Err(e) = opt.update(model, &grads) {
@@ -187,29 +209,34 @@ fn train_epoch<
                 }
                 model.zero_grads(&mut grads);
                 gradients = Some(grads);
-                // optimization += current.elapsed().as_secs_f32() * accum_scheduler.get() as f32;
             }
+            loss_accum = 0.;
         }
 
-        // Save every 5_000 steps
-        if epoch_iter % 5_000 == 0 {
+        // Save every 10_000 steps
+        if epoch_iter % 10_000 == 0 {
             if let Err(e) = model.save(&format!("../checkpoints/step_{}.npz", tensorboard.iter)) {
                 println!("{} {e:?}\n", "Error Saving Model:".bold().red());
             }
 
             // Run test
-            let test_ppl = test_epoch(model, test_dataset, dev);
-            println!("Test PPL: {}", format!("{:.2}", test_ppl).bold());
-            tensorboard.record("test_ppl", test_ppl, 0);
+            let val_loss = test_epoch(model, test_dataset, dev);
+            println!("Val Loss: {}", format!("{:.2}", val_loss).bold());
+            tensorboard.record("val_loss", val_loss, 0);
 
             // Run generation
-            generate(model, dev, 50, MAX_TRAIN_SEQ_LEN);
+            generate(
+                "hi, how are you doing today? i' d like you to meet my friend fred",
+                model,
+                dev,
+                50,
+                MAX_TRAIN_SEQ_LEN,
+                0.5,
+                3,
+            );
         }
     }
     drop(bar);
-
-    println!("Train PPL: {}", loss_avg.value);
-    // println!("Time: Setup: {} Forward: {}s Loss: {}s Back: {}s Opt: {}s Track: {}s", setup, forward, loss_t, back, optimization, track);
 }
 
 fn test_epoch<
@@ -258,11 +285,11 @@ where
                 continue;
             }
         };
-        let loss = loss.array().exp();
+        let loss = loss.array();
         losses.push(loss);
         loss_avg.update(loss);
         bar.set_position((total_len - left) as u64);
-        bar.set_message(format!("PPL: {:.2}", loss_avg.value));
+        bar.set_message(format!("Loss: {:.2}", loss_avg.value));
     }
     drop(bar);
 
@@ -278,47 +305,59 @@ fn generate<
     const MAX_LEN: usize,
     D: Device<f32>,
 >(
+    input: &str,
     model: &BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, MAX_LEN, f32, D>,
     dev: &D,
     num_tokens: usize,
     window_size: usize,
-) where
+    temperature: f32,
+    generations: u8,
+)
+where
     BuiltModel<VOCAB, EMBED, FF, LAYERS, HEADS, MAX_LEN, f32, D>:
         Module<Tensor<(usize,), usize, D>, Output = Tensor<(usize, Const<VOCAB>), f32, D>>,
     D: Device<f32>,
 {
-    let input = "Hi, how are you doing today? I'd like you to meet my friend Fred".to_lowercase();
     let (tokenizer, vocab) = (
         <WordpieceTokenizer as Tokenizer>::load(),
         <WordPieceVocab as Vocab>::load(),
     );
-    let tokens = tokenizer.tokenize(&input);
-    let mut indexes = vocab.indexes_from_tokens(&tokens).unwrap();
-    let initial_len = indexes.len();
+    let tokens = tokenizer.tokenize(&input.to_lowercase());
+    for i in 0..generations {
+        let mut indexes = vocab.indexes_from_tokens(&tokens).unwrap();
+        let initial_len = indexes.len();
+        let mut rng = thread_rng();
 
-    for _ in 0..num_tokens {
-        let output = model.forward(dev.tensor_from_vec(
-            indexes[indexes.len().checked_sub(window_size).unwrap_or_default()..].to_vec(),
-            (indexes.len().min(window_size),),
-        ));
-        let index = output.as_vec()[(indexes.len() - 1).min(window_size - 1) * VOCAB..]
-            .iter()
-            .enumerate()
-            .max_by(|(_, a), (_, b)| a.total_cmp(b))
-            .map(|(index, _)| index)
-            .unwrap();
-        indexes.push(index);
+        for _ in 0..num_tokens {
+            let output = model.forward(dev.tensor_from_vec(
+                indexes[indexes.len().checked_sub(window_size).unwrap_or_default()..].to_vec(),
+                (indexes.len().min(window_size),),
+            ));
+            let mut distr: Vec<f32> =
+                output.as_vec()[(indexes.len() - 1).min(window_size - 1) * VOCAB..].to_vec();
+            softmax(&mut distr, temperature);
+            indexes.push(WeightedIndex::new(&distr).unwrap().sample(&mut rng));
+        }
+
+        println!(
+            "{} {} {}\n",
+            format!("Generation {}:", i + 1).bold(),
+            tokenizer.untokenize(vocab.tokens_from_indexes(&indexes[..initial_len]).unwrap()),
+            tokenizer
+                .untokenize(vocab.tokens_from_indexes(&indexes[initial_len..]).unwrap())
+                .bold(),
+        );
     }
-    println!(
-        "{} {} {}\n",
-        "Generation:".bold(),
-        tokenizer.untokenize(vocab.tokens_from_indexes(&indexes[..initial_len]).unwrap()),
-        tokenizer
-            .untokenize(vocab.tokens_from_indexes(&indexes[initial_len..]).unwrap())
-            .bold()
-    );
 }
 
+fn softmax(distr: &mut [f32], temperature: f32) {
+    let sum: f32 = distr.iter().map(|i| (i / temperature).exp()).sum();
+    for i in distr {
+        *i = (*i / temperature).exp() / sum;
+    }
+}
+
+#[allow(unused)]
 fn openwebtext(
     path: &str,
     min_index: usize,
@@ -328,6 +367,7 @@ fn openwebtext(
 ) -> Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)> {
     let pipeline =
     // Random loader from files
+    // OpenWebTextLoader::new(path, max_sequence_length, min_index, max_index)
     RandomLoader::from_directory(path).min_index(min_index).max_index(max_index)
         // Filter + tokenize + index
         .node(Stateful::new(
@@ -344,8 +384,8 @@ fn openwebtext(
 
                 indexes
                     .into_iter()
-                    // Filter out sequences shorter than 5
-                    .filter(|i| i.len() > 5)
+                    // Filter out sequences shorter than max_sequence_length
+                    .filter(|i| i.len() != max_sequence_length)
                     // Sort
                     .sorted_by_key(|a| a.len())
                     // Batch
@@ -375,6 +415,92 @@ fn openwebtext(
     Dataloader::new(pipeline).load_block_size(100_000)
 }
 
+fn simple_openwebtext(
+    path: &str,
+    min_index: usize,
+    max_index: usize,
+    sequence_length: usize,
+    batch_size: usize,
+) -> Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)> {
+    let pipeline = OpenWebTextLoader::new(path, sequence_length + 1, min_index, max_index)
+        .map(|seq: Vec<usize>| (seq[..seq.len() - 1].to_vec(), seq[1..].to_vec()))
+        .node(Batch::new(batch_size))
+        // Unzip inputs and targets
+        .map(|indexes: Vec<(Vec<usize>, Vec<usize>)>| indexes.into_iter().unzip());
+
+    Dataloader::new(pipeline).load_block_size(10_000)
+}
+
+struct OpenWebTextLoader {
+    data: Vec<usize>,
+    seq_len: usize,
+    total_iter: usize,
+    current_iter: usize,
+}
+
+use std::io::{BufRead, BufReader};
+
+impl OpenWebTextLoader {
+    fn new(path: &str, seq_len: usize, start_index: usize, max_index: usize) -> Self {
+        let mut data = Vec::with_capacity((max_index - start_index) * seq_len);
+        let mut curr_index = 0;
+        let (tokenizer, vocab) = (WordpieceTokenizer::load(), WordPieceVocab::load());
+        for reader in std::fs::read_dir(path).unwrap().map(|r| {
+            BufReader::new(std::fs::File::open(r.unwrap().path().to_str().unwrap()).unwrap())
+        }) {
+            let lines = reader
+                .lines()
+                .flatten()
+                .map(|l| l.to_lowercase().replace(['\\', '/', '"'], ""))
+                .collect();
+            let tokens = tokenizer.batch_tokenize(lines);
+
+            for seq in tokens {
+                if curr_index < (start_index * seq_len) {
+                    curr_index += seq.len();
+                    continue;
+                }
+                let mut indexes = vocab.indexes_from_tokens(&seq).unwrap();
+                data.append(&mut indexes);
+
+                if data.len() > seq_len * (max_index - start_index) {
+                    return Self {
+                        data,
+                        seq_len,
+                        total_iter: max_index - start_index,
+                        current_iter: 0,
+                    };
+                }
+            }
+        }
+        panic!("Not enough data")
+    }
+}
+
+impl Node for OpenWebTextLoader {
+    type Input = Vec<()>;
+    type Output = Vec<Vec<usize>>;
+
+    fn data_remaining(&self, _: usize) -> usize {
+        self.total_iter.saturating_sub(self.current_iter)
+    }
+
+    fn reset(&mut self) {
+        self.current_iter = 0;
+    }
+
+    fn process(&mut self, input: Self::Input) -> Self::Output {
+        self.current_iter += input.len();
+        let mut rng = thread_rng();
+        input
+            .iter()
+            .map(|_| rng.gen_range(0..self.data.len() - self.seq_len))
+            .map(|i| self.data[i..i + self.seq_len].to_vec())
+            .collect()
+    }
+}
+
+#[allow(unused)]
 fn wikitext103(
     path: &str,
     min_index: usize,

@@ -38,7 +38,6 @@ where
 #[derive(Debug, Clone)]
 pub struct LayerNorm1D<const M: usize, E: Dtype, D: DeviceStorage> {
     pub gamma: Tensor<Rank1<M>, E, D>,
-    pub beta: Tensor<Rank1<M>, E, D>,
     pub epsilon: E,
 }
 
@@ -49,7 +48,6 @@ impl<const M: usize, E: Dtype, D: Device<E>> BuildModule<D, E> for LayerNorm1D<M
     fn try_build(device: &D) -> Result<Self, D::Err> {
         Ok(Self {
             gamma: device.try_ones()?,
-            beta: device.try_zeros()?,
             epsilon: E::from_f32(1e-5).unwrap(),
         })
     }
@@ -62,12 +60,6 @@ impl<const M: usize, E: Dtype, D: Device<E>> TensorCollection<E, D> for LayerNor
             |s| &s.gamma,
             |s| &mut s.gamma,
             TensorOptions::reset_to_ones(),
-        )?;
-        visitor.visit_tensor(
-            "beta",
-            |s| &s.beta,
-            |s| &mut s.beta,
-            TensorOptions::reset_to_zeros(),
         )
     }
 }
@@ -80,7 +72,6 @@ impl<const M: usize, E: Dtype, D1: Device<E>, D2: Device<E>> ToDevice<D2>
     fn to_device(&self, device: &D2) -> Self::Output {
         LayerNorm1D {
             gamma: self.gamma.to_device(device),
-            beta: self.beta.to_device(device),
             epsilon: self.epsilon,
         }
     }
@@ -93,9 +84,7 @@ impl<const M: usize, E: Dtype, D: Device<E>, T: Tape<E, D>> Module<Tensor<Rank1<
     type Error = D::Err;
 
     fn try_forward(&self, x: Tensor<Rank1<M>, E, D, T>) -> Result<Self::Output, D::Err> {
-        x.try_normalize(self.epsilon)?
-            .try_mul(self.gamma.clone())?
-            .try_add(self.beta.clone())
+        x.try_normalize(self.epsilon)?.try_mul(self.gamma.clone())
     }
 }
 
@@ -108,8 +97,7 @@ impl<B: Dim, const M: usize, E: Dtype, D: Device<E>, T: Tape<E, D>>
     fn try_forward(&self, x: Tensor<(B, Const<M>), E, D, T>) -> Result<Self::Output, D::Err> {
         let shape = *x.shape();
         x.try_normalize::<Axis<1>>(self.epsilon)?
-            .try_mul(self.gamma.retaped::<T>().try_broadcast_like(&shape)?)?
-            .try_add(self.beta.retaped::<T>().try_broadcast_like(&shape)?)
+            .try_mul(self.gamma.retaped::<T>().try_broadcast_like(&shape)?)
     }
 }
 
@@ -122,8 +110,7 @@ impl<B: Dim, S: Dim, const M: usize, E: Dtype, D: Device<E>, T: Tape<E, D>>
     fn try_forward(&self, x: Tensor<(B, S, Const<M>), E, D, T>) -> Result<Self::Output, D::Err> {
         let shape = *x.shape();
         x.try_normalize::<Axis<2>>(self.epsilon)?
-            .try_mul(self.gamma.retaped::<T>().try_broadcast_like(&shape)?)?
-            .try_add(self.beta.retaped::<T>().try_broadcast_like(&shape)?)
+            .try_mul(self.gamma.retaped::<T>().try_broadcast_like(&shape)?)
     }
 }
 
@@ -138,18 +125,14 @@ mod tests {
 
         let mut m = dev.build_module::<builder::LayerNorm1D<5>, TestDtype>();
         assert_eq!(m.gamma.array(), [1.0; 5]);
-        assert_eq!(m.beta.array(), [0.0; 5]);
 
         m.gamma = dev.sample_normal();
-        m.beta = dev.sample_normal();
 
         assert_ne!(m.gamma.array(), [1.0; 5]);
-        assert_ne!(m.beta.array(), [0.0; 5]);
 
         m.reset_params();
 
         assert_eq!(m.gamma.array(), [1.0; 5]);
-        assert_eq!(m.beta.array(), [0.0; 5]);
     }
 
     #[test]
@@ -167,7 +150,6 @@ mod tests {
             &g.get(&m.gamma).array(),
             &[0.1746608, 0.19759633, -0.32166985, 0.088057674, -0.13864495],
         );
-        assert_close(&g.get(&m.beta).array(), &[0.2; 5]);
     }
 
     #[test]
@@ -189,6 +171,5 @@ mod tests {
             &g.get(&m.gamma).array(),
             &[0.1713974, -0.16086, -0.1304687, 0.109183, 0.0107483],
         );
-        assert_close(&g.get(&m.beta).array(), &[0.2; 5]);
     }
 }

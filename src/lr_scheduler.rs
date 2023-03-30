@@ -23,7 +23,8 @@ pub trait LRScheduler<E, T: LearningRate<E>> {
 impl<E: Dtype + Display, L, S> LRScheduler<E, L> for S
 where
     L: LearningRate<E>,
-    S: Scheduler<E> {
+    S: Scheduler<E>,
+{
     fn step(&mut self, optimizer: &mut L) {
         *optimizer.learning_rate() = self.get();
     }
