@@ -1,0 +1,5 @@
+A few years ago Mark Russinovich and I put together a feature in SysInternal’s Process Monitor where you can add tracing statements to the log. (Here’s the original post.) The idea was that by seeing your tracing in line with the wonderful Process Monitor I/O reporting, it would be easier to track down problems in you code. This is especially true when you are using 3rd party libraries that might be hitting the disk or registry a ton.
+
+In the original blog post I gave you the code to make this Process Monitor feature easy to use. The code works with native C++ and managed .NET applications and supports both x86 and x64, I’ve updated the code to Visual Studio 2013, fixed a minor bug, and moved it up to Wintellect’s GitHub page for your enjoyment. Grab the latest version here.
+
+Right now I’m just providing the source code. If people need the compiled versions instead, let me know and I’ll add those as well.

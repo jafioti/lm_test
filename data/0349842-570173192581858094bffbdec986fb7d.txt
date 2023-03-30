@@ -1,0 +1,19 @@
+The project will use electric car batteries to store excess energy and feed electricity back into the grid when the weather is calm
+
+Cars could be the solution to the intermittent nature of wind power if a multimillion European project beginning on a Danish island proves successful.
+
+The project on the holiday island of Bornholm will use the batteries of parked electric cars to store excess energy when the wind blows hard, and then feed electricity back into the grid when the weather is calm.
+
+The concept, known as vehicle-to-grid (V2G) is widely cited among greens as a key step towards a low-carbon future, but has never been demonstrated. Now, the 40,000 inhabitants of Bornholm are being recruited into the experiment. Denmark is already a world leader in wind energy and has schemes to replace 10% of all its vehicles with electric cars, but the goal on the island is to replace all petrol cars.
+
+Currently 20% of the island's electricity comes from wind, even though it has enough turbines installed to meet 40% of its needs. The reason it cannot use the entire capacity is the intermittency of the wind: many turbines are needed to harness sufficient power in breezes, but when gales blow the grid would overload, so some turbines are disconnected.
+
+So the aim of the awkwardly named Electric Vehicles in a Distributed and Integrated Market using Sustainable Energy and Open Networks Project – Edison for short – is to use V2G to allow more turbines to be built and provide up to 50% of the island's supply without making the grid crash.
+
+Each electric vehicle will have battery capacity reserved to store wind power for the island rather than for travelling. This means it acts like a buffer, says Dieter Gantenbein, a researcher at IBM's Zurich Research Laboratory. IBM is developing the software needed for the island's smart grid, and will showcase its work next week. When the cars are plugged in and charging their batteries, they will absorb any additional load the grid cannot cope with and then feed it back to power homes when needed, he says.
+
+"It's never been tried at this scale," says Hermione Crease of Cambridge-based Sentec, which develops smart grid software. There are plenty of smart grid trials already under way, usually involving the use of software to monitor and manage supply and demand, for example, by temporarily switching off industrial cooling units during periods of peak load, she says. But unlike these so-called "negawatt" approaches, proving that cars can be used as part of the grid has yet to attempted.
+
+Andrew Howe of RLTec in London, another smart grid technology firm, says many important questions need answers. It is not clear, for example, how the cost and lifetime of batteries will influence the economics of such a system.
+
+These are the kinds of issue the project seeks to shed light on, says the project manager Jørgen Christensen of the Danish Energy Association, which with technology companies Siemens and Dong and the government are running the scheme.

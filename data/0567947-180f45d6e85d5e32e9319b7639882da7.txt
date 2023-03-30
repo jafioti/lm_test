@@ -1,0 +1,45 @@
+Colleges and universities are moving swiftly to create advanced degree programs in analytics to manage big data.
+
+The schools have all seen the McKinsey Co. report warning of a mega shortage in analytical talent of as many as 190,000 people by 2018. They have also heard about the need directly from big employers, such IBM and SAS.
+
+Schools, for years, have provided many training opportunities in analytics. But these new advanced-degree programs are using business intelligence and other analytical tools to turn social media, sensor, purchase transactions, mobile and other sources of big data into useful information for business and government.
+
+Among the new programs is one at the McCombs School of Business at the University of Texas. It is now accepting applications for its Master of Science in Business Analytics, which will begin in the fall of 2013.
+
+"There is lot of demand for people who can say something meaningful about the data that is accumulating," said Prabhudev Konana, chair of the Department of Information, Risk, and Operations Management at the University of Texas.
+
+The university expects to begin the program with 50 students, but it anticipates demand from qualified students above that.
+
+Based on student inquiries so far, "getting 50 (students) is not going to be the issue, figuring out where we want to cap it might be the bigger issue," said Michael Hasler, the director of the program at the university. It will be an 11-month, full-time program.
+
+What may be the pioneering program was started in 2007 at North Carolina State University, which has enrolled 84 students in its class a 2013. It just recently finished expanding its facilities to meet demand. There were 272 applications for this class.
+
+According to data it publishes about its class enrollments and graduates, every student in the North Carolina 2012 analytics class of 38 students received a job offer. The average base salary for those students was $89,100.
+
+For students with prior job experience it was $100,100. Moreover, 60% of its most recent graduating class received a signing bonus, with an average amount of $16,000.
+
+Northwestern University's new Master of Science in Analytics began this week with 32 students, according to Chris Bray, the assistant director of the program. The program, which is in the Robert R. McCormick School of Engineering and Applied Sciences, was developed with the help of IBM.
+
+Of the students in the Northwestern program, one third enrolled directly from an undergrad program, another third had one to five years of work experience, and the remaining third have five to 10 years of experience. The median age is 27, said Bray.
+
+It is a 15-month, full-time program, and while it is part of the industrial engineering program, the curriculum is designed to bring together information technology, data science and business so that students will be able to analyze the data and "communicate the value of it," said Bray.
+
+A common element in all these programs is a need for a strong quantitative background, which could include work in math, computer science, engineering, life sciences, finance and other studies that have foundational quantitative skills.
+
+In April, the New York University Stern School of Business announced a new Master of Science in Business Analytics that will be offered in Shanghai and at the school's NYC campus. The program will begin in May 2013.
+
+University of Michigan-Dearborn College of Business launched a Master of Science in Business Analytics, with classes that began Sept. 5th. There are 16 students enrolled in a part-time program, although some students may be able to elect full-time schedules in some terms.
+
+The program is expected to take two years, assuming part-time enrollment and some waivers on business foundation courses, said a spokeswoman at the university.
+
+Michigan State University new master's degree program in business analytics will begin in January. Announced in concert with IBM, it will start with an enrollment of 10 students with plans to expand in the following years.
+
+Loras College in Dubuque, Iowa, announced this month a Masters of Business Administration degree focused on business analytics. The first class will begin next summer with as many as 25 students and take 24 months to complete.
+
+Louisiana State University and SAS, a business analytics firm, said last month that they were collaborating on a Master of Science in Analytics program. LSU ran a pilot program that finished this year with nine students.
+
+All the graduates of the LSU analytics program got jobs within weeks of graduation
+
+Patrick Thibodeau covers cloud computing and enterprise applications, outsourcing, government IT policies, data centers and IT workforce issues for Computerworld. Follow Patrick on Twitter at @DCgov or subscribe to Patrick's RSS feed . His e-mail address is pthibodeau@computerworld.com.
+
+See more by Patrick Thibodeau on Computerworld.com.

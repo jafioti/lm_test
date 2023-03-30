@@ -1,0 +1,89 @@
+Voting on the new C++14 standard completed in August with approval of the document. All that remains before we can say it is officially complete is publication by the ISO. In this article, I visit the high points of the new standard, demonstrating how the upcoming changes will affect the way you program, particularly when using the idioms and paradigms of what is termed Modern C++.
+
+The committee seems intent on keeping the standards process in a higher gear than in decades past. This means that C++14, having had just three years since the last standard, is a somewhat constrained release. Far from being disappointing, this is a boon for programmers because it means implementers are able to push out compliance with the new features in real time. Yes, you can start using C++14 features today  nearly all of them if you are flexible in your tool chain.
+
+At this point you can get a free copy of the draft proposal here. Unfortunately, when the final standard is published, ISO will have it paywalled.
+
+Shortening the time-frame between releases is working to help compiler writers keep up with the language changes in something closer to real time. With just three years between releases, there are fewer changes to adjust to.
+
+The examples in this article were mostly tested with clang 3.4, which has great coverage of C++14 features; g++ has a somewhat smaller list of features covered; and Visual C++ seems to be trailing the pack.
+
+C++14: What's Important
+
+What follows are descriptions of the C++14 changes that will have significant impact in your coding work, along with working examples and discussions of when and why you would employ the features.
+
+Return type deduction
+
+The capabilities auto are expanded in this release. C++ itself continues to be typesafe, but the mechanics of type safety are increasingly being performed by the compiler instead of the programmer.
+
+In C++11, programmers starting using auto for declarations. This was keenly appreciated for things like iterator creation, when the fully qualified type name might be horrendous. Newly minted C++ code was much easier to read:
+
+for ( auto ii = collection.begin() ; ...
+
+This code is still completely typesafe  the compiler knows what type begin() returns in that context, so there is no question about what type ii is, and that will be checked every place it is used.
+
+In C++14, the use of auto is expanded in a couple of ways. One that makes perfect sense is that of return type deduction. If I write a line of code like this inside a function:
+
+return 1.4;
+
+It is obvious to both me and the compiler that the function is returning a double . So in C++14, I can define the function return type as auto instead of double :
+
+auto getvalue() {
+
+The details of this new feature are pretty easy to understand. For example, if a function has multiple return paths, they need to have the same type. Code like this:
+
+auto f(int i) { if ( i < 0 ) return -1; else return 2.0 }
+
+might seem like it should obviously have a deduced return type of double , but the standard prohibits this ambiguity, and the compiler property complains:
+
+error_01.cpp:6:5: error: 'auto' in return type deduced as 'double' here but deduced as 'int' in earlier return statement return 2.0 ^ 1 error generated.
+
+There several good reasons why deducing the return type is a plus for your C++ programs. First, there are times when you need to return a fairly complex type, such as an iterator, perhaps when searching into a standard library container. The auto return type makes the function easier to write properly, and easier to read. A second (maybe less obvious) reason is that using an auto return type enhances your ability to refactor. As an example, consider this program:
+
+#include <iostream> #include <vector> #include <string> struct record { std::string name; int id; }; auto find_id(const std::vector<record> &people, const std::string &name) { auto match_name = [&name](const record& r) -> bool { return r.name == name; }; auto ii = find_if(people.begin(), people.end(), match_name ); if (ii == people.end()) return -1; else return ii->id; } int main() { std::vector<record> roster = { {"mark",1}, {"bill",2}, {"ted",3}}; std::cout << find_id(roster,"bill") << "
+
+"; std::cout << find_id(roster,"ron") << "
+
+"; }
+
+In this example, I'm not saving many brain cells by having find_id() return auto instead of int . But consider what happens if I decide that I want to refactor my record structure. Instead of using an integral type to identify the person in the record object, maybe I have a new GUID type:
+
+struct record { std::string name; GUID id; };
+
+Making that change to the record object will cause a series of cascading changes in things like the return types of functions. But if my function uses automatic return type deduction, the compiler will silently make the change for me.
+
+Any C++ programmer who has worked on a large project is familiar with this issue. Making a change to a single data structure can cause a seemingly endless series of iterations through the code base, changing variables, parameters, and return types. The increased use of auto does a lot to cut through this bookkeeping.
+
+Note that in the example above, and in the rest of this article, I create and use a named lambda. I suspect that most users of lambdas with functions like std::find_if() will define their lambdas as anonymous inline objects, which is a very convenient style. Due to limited page width, I think it is a little easier to read code in your browser when lambdas are defined apart from their usage. So this is not necessarily a style you should emulate, you should just appreciate that it is somewhat easier to read. In particular, it will be much easier if you are light on lambda experience.
+
+Turning back to auto , an immediate consequence of using it as a return type is the reality of its doppelgänger, decltype(auto) , and the rules it will follow for type deduction. You can now use it to capture type information automatically, as in this fragment:
+
+template<typename Container> struct finder { static decltype(Container::find) finder1 = Container::find; static decltype(auto) finder2 = Container::find; };
+
+Generic Lambdas
+
+Another place where auto has insinuated itself is in the definitions of lambda parameters. Defining lambda parameters with an auto type declaration is the loose equivalent of creating a template function. The lambda will be instantiated in a specific embodiment based on the deduced types of the arguments.
+
+This is convenient for creating lambdas that can be reused in different contexts. In the simple example below, I've created a lambda used as a predicate in a standard library function. In the C++11 world, I would have needed to explicitly instantiate one lambda for adding integers, and a second for adding strings.
+
+With the addition of generic lambdas, I can define a single lambda with generic parameters. Although the syntax doesn't include the keyword template , this is still clearly a further extension of C++ generic programming:
+
+#include <iostream> #include <vector> #include <string> #include <numeric> int main() { std::vector<int> ivec = { 1, 2, 3, 4}; std::vector<std::string> svec = { "red", "green", "blue" }; auto adder = [](auto op1, auto op2){ return op1 + op2; }; std::cout << "int result : " << std::accumulate(ivec.begin(), ivec.end(), 0, adder ) << "
+
+"; std::cout << "string result : " << std::accumulate(svec.begin(), svec.end(), std::string(""), adder ) << "
+
+"; return 0; }
+
+Which produces the following output:
+
+int result : 10 string result : redgreenblue
+
+Even if you are instantiating anonymous inline lambdas, employing generic parameters is still useful for the reasons I discussed earlier in this article. When your data structures change, or functions in your APIs get signature modifications, generic lambdas will adjust with recompilation instead of requiring rewrites:
+
+std::cout << "string result : " << std::accumulate(svec.begin(), svec.end(), std::string(""), [](auto op1,auto op2){ return op1+op2; } ) << "
+
+";
+
+Initialized Lambda Captures
+
+In C++11, we had to start adjusting to the notion of a lambda capture specification. That declaration guides the compiler during the creation of the closure: an instance of the function defined by the lambda, along with bindings to variables defined outside the lambda's scope.

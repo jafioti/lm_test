@@ -1,0 +1,17 @@
+Right now the W3C is discussing CSS shader standardization on their mailing lists. Microsoft has voiced their opinion and things are about to get very strange indeed.
+
+A quick explanation of what CSS shaders are. They are intended to make it possible to define a shading effect in CSS in a shading language.
+
+The W3C tries to come up with a standard to make CSS shaders work the same everywhere. The Standard proposes using GLSL syntax for the shading. Everybody (Google, Apple, Mozilla etc.) agrees with this. Except Microsoft.
+
+Microsoft does not like GLSL. So they want the shading language to be undefined, so every vendor can define his own. They prefer their own shading language they call IESL.
+
+Yes, Microsoft proposes to not standardize the standard on CSS shading. So if this "Standard" continues on this road, every browser will claim to be "CSS Shading compatible" yet, you the web author will have to provide a separate shader for every Browser.
+
+Not like this. A standard is a common agreement to do things the same way for the greater good of the web.
+
+I hope not! I hope everybody will see reason and actually do that thing, you know, collaborate!
+
+I'm a web author, and if you made it down here, you are probably too. I'm angry, you are angry.
+
+We want things to just work (tm). Please, Google, Microsoft, Mozilla, Apple, Adobe and Opera make things just work (tm). Do not introduce yet another broken standard that does not work.

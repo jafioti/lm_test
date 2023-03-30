@@ -1,0 +1,71 @@
+Meet the Team #12- Jim Croft (Head of Audio)
+
+Jim it’s a pleasure to have you, first up how long have you worked at Frontier and what projects have you worked on?
+
+Just over a year. Zoo Tycoon was my first Frontier title as Head of Audio.
+
+How did you get into audio as a career and what advice would you have to anyone else planning to get into it?
+
+I started out as an assistant to an established TV and advertising composer in Hong Kong back in 1992. From there I got my own gig as a music composer in advertising. When I returned to the UK after 4 years in the Far East, I started up my own company and picked up a client in the games industry, initially as a music composer, but later as a sound designer. I went from freelancer to in-house at that company within the year – 1997- and I’ve never looked back. My advice would be, learn your stuff, be confident in yourself, thicked skinned, not precious about your work, persevering and above all, positive, warm and friendly.
+
+What are you working on right now with Elite: Dangerous?
+
+I’m exploring the concept of a ‘ship’s voice’ and undertaking further development of the dynamic music system.
+
+Can you elaborate on the "ship's voice"?
+
+Sure, there are many things that happen in your cockpit that we've found we want to notify the player about, and sound is a very important component of that. However, beeps and alarms can only tell you so much. We think that we can inform so much more accurately if we use speech for some things. For example, we have a visual and audio representation in both the HUD and the world itself for when a targeted enemy's shields are down, but in the heat of battle, it's something that you can easily miss, particularly if they are off screen. Having the ship tell you:"Target Shields Offline" or equally "Target Shields Online" is an extremely efficient and informative way of getting the message across and will have a direct effect on how you behave in a skirmish. We are very wary of 'spamming' the player too often with voice, so we are developing logical systems that manage the speech in a sensible way. We'll also give players the option to turn the system off in the release version if they wish.
+
+What role will you be playing most in the final game?
+
+Oh a Pirate of course! I’ll thoroughly enjoy stirring up mayhem and pouncing on innocent miners and cargo carriers. I expect to get my backside wupped often, so perhaps I'll swap sides and try my hand as a bounty hunter.
+
+What are the biggest challenges that the audio team are currently working through at the moment?
+
+I’m lucky enough to manage a team of 8 very talented and self motivated individuals, five of whom are working exclusively on Elite: Dangerous. Our biggest challenge at the moment is managing an ongoing iterative development process while at the same time supporting the demands of the public Alpha builds. We have to be very careful about breaking things – it’s like eggs and omelettes – and have to be very careful about what makes it into the outgoing branch. It’s not a dev cycle many of us are particularly used to. Normally the audio is a mess until half way through beta, with all kinds of ideas being thrown at the wall to see what sticks, but in the case of ED, we have to be very organised; very methodical. We do however find that this process gives us excellent focus and consistently drives us to try to achieve great things. I've never worked on a project whose Alpha audio is this good. This complete. It gives us a platform from which to create something extraordinary.
+
+When you applied to work for Frontier, were you secretly hoping you'd get to work on Elite: Dangerous?
+
+Absolutely. The game is legendary. I remember very clearly when it came out. I had a BBCB at the time but embarrassingly must admit to not buying or playing it. I was completely addicted to Atari/Williams incredibly fast paced ‘Defender’ conversion - you had to use at least 4 fingers of each hand on the keyboard as I recall (I was all about twitchy reaction times in those days) - and did little else but play that and attempt to make my own games in basic.
+
+Are you a long-standing fan of science fiction? If so, what are your favourite films/books/games in the genre? If not, what's wrong with you?
+
+Oh very much so. I’ve always been a particular fan of the novels of Iain M Banks. I just love his imagination and the way he can, or could I should say – I’m still smarting from his passing - plausibly extrapolate into the far distant future. I also love Ray Bradbury, HG Wells and Michael Moorcock. I’ve always found space and space travel fascinating. I’d say I’m more Silent Running and Moon than Star Trek and Star Wars though. I prefer the quirky and the understated. This may or may not have a bearing on how the final Elite: Dangerous soundtrack will sound! Suffice to say it’s an absolute honour and privilege to be involved.
+
+What’s your favourite game genre, outside of space games / simulations?
+
+I’ve been hooked on Skyrim and its associated DLC for the past 18 months. I simply love the depth, the freedom and the attention to detail, the environments. Jeremy Soule’s score is also utterly beautiful. Aside from that I like original perhaps less mainstream games like Katamari Damacy , Journey and the Unfinished Swan.
+
+Is Elite: Dangerous the most complex project you’ve worked on in your career?
+
+I would say so, yes. It’s a bit like Alice. It’s a small rabbit hole initially but once you’ve started down it, one thing tends to lead to another and before you know it you are lost in labyrinthine complexity.
+
+There are some pretty wacky things banded around on the forum. Do they create much of a talking point in the office and have they helped the development of the game?
+
+Oh always. It’s great to hear what people are saying. We do try to take much of it on board, but if you reacted to absolutely everything people said, you’d never actually get anywhere. You have to be brave, have a vision and follow your instincts, while at the same time having an open mind and being flexible enough to switch tack as and when it’s called for.
+
+Which games outside of Frontier Developments inspire you?
+
+I’m often inspired by other’s work. There are a lot of very talented people around in this business. I’m currently in love with Naughty Dog’s “The Last of Us” score, by the amazing Gustavo Santaolalla.
+
+What do you think a classical score brings to the game?
+
+Using the classical orchestra tends to lend a project a timeless and potentially, epic, flavour. It gives you a wide dynamic. We are by no means attempting to limit ourselves to a purely orchestral palette however. The sound track will be very much a hybrid.
+
+When designing any audio for Elite how much does the environment or the situation of the player at that moment factor into your process?
+
+That will be huge. It’s a central plank of ours. It’s all part of the plan with music and ambience and the dynamics of the mix in general. We simply have not had a chance to implement any of it properly yet.
+
+Are you happy with the response by the backers that the audio in the game has received so far?
+
+The response to Alpha 1.0 has been overwhelmingly positive. We were really glad to hear that people were in general enjoying our approach, particularly with respect to ship engines.
+
+One of our biggest challenges is in attempting to make space flight feel enjoyable, dynamic and non-fatiguing, while adhering to a plausible physical flight model as much as we can. It’s very tough to keep all parties happy; some like a light touch or no sound at all, whereas others want the full ‘Hollywood’ treatment. We want to give players what they want. Our aim is making as much of the audio in the game as customisable as possible in the audio options. So players can pick and choose the elements they prefer to hear and which elements they do not. We are also looking at the idea of creating two separate engine mixes/audio models for’ flight assist on’ and ‘flight assist off’, for example, to really try to reinforce the feeling of, and differences between, the two modes.
+
+Have you anything you’d like to say to the community at large?
+
+What I would really like to get across is that the audio is very far from finished. We have a lot of exciting things planned. What you hear at the moment is really a statement of intent and nothing more than that and I ask our backers to bear with us as we iterate. Sound design is a creative and iterative process. The music currently in the Alpha for example is a static place holder. Erasmus and I are currently working on a dynamic music system that will allow the score to ‘breathe’ and reflect gameplay. I don’t want to roll that out until I am happy with at least first simple iteration and I have enough assets to work with. In the meantime, the placeholder music is there to underpin and nothing more. This is why it is being kept quite low in the mix.
+
+
+
+I’d also really like to take this opportunity to encourage players to experience the game in 5.1 surround, as it’s a very satisfying experience and really adds to the sense of immersion in the game (Just a general tech point - do make sure your sound card is set to 48k and not 44.1k or your PC will attempt to horribly resample everything and degrade your experience - we are looking at ways of solving this issue)

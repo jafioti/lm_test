@@ -1,0 +1,69 @@
+Saudi Arabia is the world's largest oil producer and exporter and plans to raise its production capacity to 12.5 million bpd in 2009.
+
+And of course, we can believe them! Just like when they announced this last year :
+
+The kingdom also reiterated its promise to expand production capacity, noting that it expects to achieve 12.5m b/d next year and could add an additional 2.5m barrels – if needed – after that with a massive investment programme.
+
+Saudi Arabia confirmed it would pump *9.7m barrels a day* next month, an increase of 200,000 and the highest level in nearly 30 years, as it repeated its standard offer of extra barrels if customers demanded them.
+
+Saudi Arabia has announced , once again, that it was increasing production:
+
+
+
+Or this:
+
+SAUDI ARABIA READY TO BOOST CRUDE OIL OUTPUT Saudi Arabia, the world's largest oil producer, announced August 11 [2004] that it was ready to increase the Kingdom's crude oil production to help reduce and stabilize high oil prices. The Kingdom estimated that it could increase production by 1.3 million barrels of oil per day (BPD) if necessary. "The Kingdom of Saudi Arabia, in collaboration with the other OPEC member countries, endeavors to ensure the stability of the international oil market and prevent oil prices from escalating in a way that may negatively affect the world economy or oil demand," said Ali Al-Naimi, Saudi Minister of Petroleum and Mineral Resources, in a statement released to the Saudi Press Agency. Naimi noted Saudi Arabia already increased oil production during the past three months to meet the growing demand. The increases amounted to over one million barrels per day, bringing to over *9.3 million barrels per day*.
+
+Or this:
+
+Bush fails to persuade Saudis to cut oil price [26 April 2005] While the talks were taking place, a Saudi spokesman outlined a plan to the media that would involve spending $US50 billion ($64 billion) to increase production capacity to 12.5 million barrels a day by 2009 and to 15 million barrels a day in the subsequent decade. The Saudis currently produce *9.5 million barrels a day*. The National Security Adviser, Steve Hadley, welcomed the announcement, saying that when the Saudis increased their production capacity, this was bound to have a "positive effect on oil prices".
+
+Or this:
+
+Saudi Plan to Boost Output Opposed by Some in OPEC Sept. 11 [2007] (Bloomberg) -- A Saudi Arabian-backed plan to temper high oil prices by raising oil production at today's OPEC meeting in Vienna is meeting resistance from Venezuela, Algeria and Libya. Oil prices above $77 a barrel are a burden to consuming nations, prompting some Persian Gulf producers to discuss raising OPEC quotas by at least 500,000 barrels a day at the meeting today. The group's biggest producer, Saudi Arabia, proposed an increase, Iraq's oil minister said before the talks started.
+
+So we see that the Saudis seem to be regularly announcing or promising production increases to supply the market - and yet always seem to have production around 9.5 mb/d after such increases...
+
+And it's no wonder: that's where their production has been for the past several years (graph from a 2006 Econobrowser post)
+
+If you're wondering how it's possible to announce increases every other year, and still produce the same, it's simple: there are (more discreet) production decreases along the way.
+
+Also, the Saudis like to play on the easy confusion between different numbers. The graph below, prepared by *Euan Mearns* (and most recently posted by him in this thread) explains this:
+
+There are really two different numbers: one is what is traditionally called "oil": it's the blue bit above, and it's also called C+C (for crude and condensate, condensate, to simplify being the oil found in gas fields). The other (in yellow above) is what is called "liquids": it includes oil and a number of other liquids that look like oil, including NGL (natural gas liquids: other oil-like liquids found in gas production) and many others - biofuels are included in that number in those countries that produce them, for instance).
+
+Saudis repeatedly maintain the confusion between the two numbers. The 12.5mb/d capacity that they have promising many times for 2009 (which by the way means that today's suggestions that they will reach that level are nothing new) refers to all liquids, for instance, not just to oil. With overall liquids production above 10.5mb/d already, that means that either they have much less spare capacity than they claim, or that the increases in overall capacity by the end of the year will be insignificant.
+
+An added twist to that is noted by David Cohen over at ASPO-USA in that the Saudis are currently making no efforts to supply the market with their existing available capacity, by refusing to compensate potential buyers for the lower quality (full of sulfur) of that crude:
+
+Saudi Arabia is offering greater volumes of Arab Light (33.4° API, Sulfur 1.77%) and Arab Extra-light (37.2° API, Sulfur 1.15%) in the June/July production hike. Arab Light crude is called "sour" because of its high sulfur content. Refiners who can process this oil will take it only if Saudi Arabia lowers the asking price. US refiners see extra Saudi oil offer [as] too pricey tells the story (Reuters, June 16, 2008). "They [the Saudis] can offer all the oil they want. The fact is they want too much for it. There's cheaper oil out there right now," said a trader with an independent U.S. oil refiner. Saudi official selling prices for the United States currently list Arab Light ARL-OSP-N at a nearly $3 per barrel premium to comparable U.S. domestic crude grades like Mars MRS- -- even before the cost of shipping oil from Saudi Arabia is taken into account. Traders said they would be willing to increase purchases of Saudi crude, if prices were lowered. Asian refiners like China's Sinopec, who are operating at a loss, are "choosy" about the the oil they buy in order to keep their costs down (Reuters, June 16, 2008). Many "simple" refiners in Asia would prefer a crude mix that includes more medium or heavy oil, not the pricey Arab light Saudi Arabia is offering. They also want these lower quality grades at a reasonable price. Although margins for processing the kingdom's heavier grades have plummeted, Aramco has also cut the discounts it offers on these grades to their lowest levels this decade, while keeping prices of its lighter grades at relatively high levels. [emphasis added] In addition to keeping oil off the market in 2007, the Saudis have raised prices on all of their crude grades beyond what the refining market can currently bear.
+
+So, in short:
+
+Saudi Arabia is promising the oil (and/or production capacity) it has been promising again and again over the past 5 years;
+
+they are claiming to have spare capacity when numbers suggest that it is much lower than they claim, and made up mostly of "sour" crude that refiners might be interested in (if they can actually process it) only with deep discounts that the Saudis won't offer - so it's smallish, inconvenient spare capacity created by, effectively, offering it for sale at a price significantly higher than current market prices;
+
+they keep on playing with the various oil qualities to announce numbers that are not comparable to one another - but which they nevertheless proceed to compare in their announcements - not surprisingly enough, to make things look better than they are.
+
+Dave Cohen makes an interesting comparison to the Texas Railway Commission in the 70s - go read it. He notes that the point where a cartel lets its members produce flat out is the moment when it becomes impotent to control the market. We seem to be at that point with OPEC today.
+
+Which makes Bodman's announcement today all the more worrisome:
+
+U.S. energy sec: more oil needed to tame price Producers must pump more to ease the pain felt in the United States and elsewhere from record fuel prices, U.S. Energy Secretary Sam Bodman said on Saturday. He blamed tight supplies for fuelling a rally which lifted oil close to $140 a barrel this week, sparking protests across Asia and Europe. (...) Bodman said prices would soar higher if more oil was not forthcoming. "In the absence of any additional crude supply, for every one percent of crude demand, we will expect a 20 percent increase in price in order to balance the market."
+
+This has been my theme for a while, but here it is, in stark terms: when supply is constrained and demand growing, market balance must be achieved through demand destruction; with a commodity as precious and necessary as oil, demand destruction is _hard_ to get, and requires massive price hikes.
+
+And things are even worse that Bodman notes: the problem is not just the lack of additional crude supply, but the actual drop in exports as oil producers, which are all, unsurprisingly, enjoying huge economic booms, consume more of the stuff themselves - volumes that are directly taken out of the markets and not subject to price mechanisms.
+
+See this table (from this recent post by *Datamunger* and *westexas*), showing the main exporters, and their export volumes:
+
+Production is stagnant, and exports are actually shrinking rapidly.
+
+So not only the Saudis are blowing smoke when they repeatedly announce production increases, but their exports are actually been going down quite significantly lately.
+
+And of course, as the FT article I quote at the top notes, there are additional worries:
+
+Saudi Arabia’s decision to pump more oil than it has in nearly 30 years risks being completely negated by the sharp drop in output caused by attacks on production facilities in Nigeria. Nigeria now pumps less than 1.5m barrels a day, its lowest level in 25 years, rather than the 2.5m b/d it has the ability to produce, according to officials attending Sunday’s high-level meeting in Jeddah, Saudi Arabia.
+
+This post was written for the European Tribune, where it is part of the Countdown to $200 oil series

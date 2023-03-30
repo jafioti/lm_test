@@ -1,0 +1,19 @@
+Capture the Soul (CTS) is a variant on the classic game mode, Capture the Flag.
+
+Posted by MadballNeek on Sep 2nd, 2014
+
+Featuring multiple game modes has been a requirement for Demons with Shotguns since the beginning, and thankfully due to some great code architecture (thank you, thank you), it's very easy to add them, allowing us to quickly iterate on ideas and designs. The first game mode (other than the core deathmatch) we've got up and running is Capture the Soul. Capture the Soul (CTS) is our take on the classic game mode, Capture the Flag.
+
+The rules to CTS are simple:
+
+Players must rush to make a frag in order to have a soul be released from the unlucky dead player. You can think of the soul as the flag in CTF. However, there aren't two flags within the map, only one soul can be active within the game at any time.
+
+Players must fight for control of the soul and take the soul back to the capture point for a score.
+
+First player to 5 captures wins!
+
+Currently, there are no team based game modes in Demons with Shotguns, including CTS. This is still every man for themselves. We will explore adding teams for some 2 vs. 2 or even 3 vs. 1 action in the very near future.
+
+While this game mode still needs to be heavily playtested, one potential design flaw from this current iteration is when CTS is played with just two players (1 vs.1). When a player makes a frag and gains control of the soul, it's essentially a guaranteed capture since the player can get to the capture point uncontested while the other player is respawning. This is something that will need to be addressed.
+
+Besides that, internal playtesting has boded very well for this mode! We're anxious to get a playtest build up so you guys can give it a go yourselves and give us some feedback. Keep your eyes peeled!

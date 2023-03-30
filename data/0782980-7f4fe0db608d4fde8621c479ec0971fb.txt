@@ -1,0 +1,481 @@
+This article explains the new features of C# 7.0 & C#7.1. It covers all the latest features such as Discards, Pattern Matching, Generalized async return types, Async Main (Main Method returning Task), Infer Tuple Element Names, Default Literal Expressions & Type Inference and Pattern Matching with Generics.
+
+This article is the second article of the series New Features of C# 7.x. If you missed the first part of this article, then I recommend you to go through the below-provided link.
+
+Top 10 New Features of C# 7 With Visual Studio 2017
+
+In the preceding article, I covered following features of C# 7.0.
+
+Local Functions or Nested Functions Binary Literals Digit Separators Pattern matching ref returns and ref Locals Tuples (Tuples Enhancement) Throw Expressions Expression Bodied Members (methods, properties, constructors, destructors, getters, setters, indexers, operators, Main method) Out variables (enhancement for out variables) Deconstruction
+
+Rather than using term C# 7.0, C# 7.1 and C# 7.2, C# 7.3, I may be using the term C# 7.x instead.
+
+I am going to cover following features of C# 7.x in this article.
+
+Discards (C# 7.0)
+
+
+
+Out parameter variable in C# 7 with Discard Discard multiple parameter names Discard multiple variable names and their data types Discard with tuples Using Discard standalone Using Discard with the ‘is’ expression Pattern Matching Discard with Tasks Simplest and smallest example of Discard
+
+Pattern Matching (C# 7.0)
+
+
+
+The ‘is’ type Pattern Matching “switch” Statement Pattern Matching “switch” Statement with “when” condition Pattern Matching Does Sequence Matters for Switch Case Expression in C# 7.x? (Big change)
+
+
+
+Generalized async return types (C# 7.0)
+
+
+
+Async method returning Task Async method returning Task<T> Async method returning void Async method returning ValueTask <T>
+
+Async Main: Main Method returning Task (C# 7.1)
+
+
+
+Understanding the Existing Functionality and Behaviour of Main Method What is new in C# 7.1 for Main Method
+
+
+
+Infer Tuple Element Names (C# 7.1)
+
+
+
+Using Tuple before C# 7.0 Using Tuple in C# 7: Without Using the Tuple Keyword Using Tuple in C# 7: Accessing member with meaningful name Using Tuple in C# 7: Deconstructing Tuple Using Tuple in C# 7.1: Inferring element name
+
+
+
+Default Literal Expressions and Type Inference (C# 7.1)
+
+
+
+Overview of Default Literal Expressions before C# 7.1 Enhancement for Default Literal Expressions in C# 7.1
+
+
+
+Pattern Matching with Generics (C# 7.1)
+
+C# 7 allows us to discard the returned value which is not required. Underscore (_) character is used for discarding the parameter. The discard parameter (_) is also referred to as write-only. We cannot read the value from this parameter.
+
+
+
+
+
+Before jumping to discard, I want to explain about out keyword in C#. Have a look at the below code snippet.
+
+Before C# 7
+
+WriteLine( "Please enter a numeric value" ); int x; if ( int .TryParse(ReadLine(), out x)) { WriteLine( "Entered data is a number" ); }
+
+You can see that in the preceding code snippet, I am just trying to convert a string to an integer. If it is converted successfully, then I am printing a message.
+
+In C# 7, we can declare out variable as inline variable so the preceding code snippet can be written as -
+
+WriteLine( "Please enter a numeric value" ); if ( int .TryParse(ReadLine(), out int x)) { WriteLine( "Entered data is a number" ); }
+
+As you see, I am using a local variable x just for passing it as a parameter but I am using this variable nowhere. So, if the variable is not used, then it should not have a name and no value should be assigned to it.
+
+Discard does the same thing, i.e. instead of using the variable name, we can just use the underscore character.
+
+WriteLine( "Please enter a numeric value" ); if ( int .TryParse(ReadLine(), out int _)) { WriteLine( "Entered data is number" ); }
+
+This discard option is not limited to a single variable. You can use discard with any number of variable. Let’s try to understand it with another example.
+
+Write a function with name Result which accepts 2 integers and returns sum, difference, multiplication, division, and modular division of these 2 numbers.
+
+private static void Result( int x, int y, out int sum, out int diff, out int mult, out int div, out int modDiv) { sum = x + y; diff = x - y; mult = x * y; div = x / y; modDiv = x % y; }
+
+And, call it like -
+
+int a=10, b=20, sum, diff, mult, div, modDiv; Result(a, b, out sum, out diff, out mult, out div, out modDiv); WriteLine($ "Sum of {a} and {b} is {sum}" );
+
+In Visual Studio 2017, you notice that it shows 3 dots for each variable which can be declared inline. So, you can call the Result method by using the below code snippet.
+
+int a=10, b=20; Result(a, b, out int sum, out int diff, out int mult, out int div, out int modDiv); WriteLine($ "Sum of {a} and {b} is {sum}" );
+
+However, I am using only the variable “sum” but not using the variable “diff”, “mult”, “div” and “modDiv”, so I can replace all these by the underscore (_) characters as shown in the below code snippet.
+
+int a=10, b=20; Result(a, b, out int sum, out int _, out int _, out int _, out int _); WriteLine($ "Sum of {a} and {b} is {sum}" );
+
+So, you can see how we are discarding the variable we are not using.
+
+You know that I am not passing the variable name but data type passed. However, datatype passing is also optional, and we can remove data type as well. Following is the code snippet for the same.
+
+int a=10, b=20; Result(a, b, out int sum, out _, out _, out _, out _); WriteLine($ "Sum of {a} and {b} is {sum}" );
+
+
+
+
+
+You can see in the preceding screenshot that I need only product id and product name, so I have discarded all other parameters of the tuple.
+
+Following is the complete code for the same
+
+using static System.Console; namespace DiscardExampleWithTuple { class Program { static void Main(string[] args) { Program p = new Program(); ( int id, string name, _, _, _, _) = p.GetProduct(101); WriteLine($ "id: {id} name: {name}" ); } ( int productId, string productName, string productDescription, double productPrice, double customerRating, string productCategory) GetProduct( int productId) => (productId, "Wireless Mouse" , "Wireless mouse. connect with usb..." , 200.00, 4.6, "Computer accesories" ); } }
+
+Have a look at the below code snippet.
+
+class Program { static void Main(string[] args) { int x = 20; var recordsUpdated= x > 20 ? UpdateCustomer() : UpdateProduct(); } private static int UpdateCustomer() { int recordsUpdated = 0; recordsUpdated = 5; return recordsUpdated; } private static int UpdateProduct() { int recordsUpdated = 0; recordsUpdated = 10; return recordsUpdated; } }
+
+You can see that I am calling UpdateCustomer() & UpdateProduct() method conditionally in ternary operator.
+
+var recordsUpdated= x > 20 ? UpdateCustomer() : UpdateProduct();
+
+So, I am calling 2 methods conditionally and storing the result in a variable “recordsUpdated”. But, I am not using the value of variable “recordsUpdated”. So, let’s call it like below.
+
+x > 20 ? UpdateCustomer() : UpdateProduct();
+
+You get the compiler error. Following is the screenshot for the same.
+
+
+
+
+
+Now, resolve it using discard and call it like the following statement.
+
+_=x > 20 ? UpdateCustomer() : UpdateProduct();
+
+In case of pattern matching, discard can be used with ‘is’ expression.
+
+private static void DoSomething(dynamic x) { if (x is int ) WriteLine( " x is int" ); if (x is null ) WriteLine( " x is null" ); if (x is string) WriteLine( " x is string" ); else if (x is var _) WriteLine( " not sure about the type of x" ); }
+
+Let’s have a look at the below code snippet.
+
+static void Main(string[] args) => PrintOddNumbers(20); private static void PrintOddNumbers( int maxNumber) { Task task = Run(() => { for ( int i = 1; i < maxNumber; i += 2) { Write($ "{i}\t" ); Sleep(500); } }); Delay(300*maxNumber).Wait(); }
+
+You can see that in the above code snippet, I am creating a variable with name “task” but I am not using it. So, it can be discarded and we can write it as -
+
+private static void PrintOddNumbers( int maxNumber) { _= Run(() => { for ( int i = 1; i < maxNumber; i += 2) { Write($ "{i}\t" ); Sleep(500); } }); Delay(300*maxNumber).Wait(); }
+
+I am just showing an example to explain how to use discard with the task, but the above code snippet can be optimized.
+
+Below code snippet is one of the simplest and smallest examples of discard.
+
+static void Main(string[] args) => _=10+20;
+
+2. Pattern Matching
+
+Pattern matching is one of the most popular features of C# 7. I also explained pattern matching in my previous article, but right I am going to explain it in depth.
+
+
+
+The ‘is’ keyword is not new to C#, but in C# 7, you can assign it to a new variable in the same expression.
+
+Before C# 7
+
+private static void PrintObject(dynamic x) { if (x is Customer) { var c = x as Customer; WriteLine($ "Customer Id : {c.Id} Customer Name {c.Name}" ); } if (x is Product) { var p = x as Product; WriteLine($ "Product Id : {p.ProductId} Product Name {p.Name}" ); } else WriteLine( "Unknown type" ); }
+
+In C# 7
+
+private static void PrintObject(dynamic x) { if (x is Customer c) WriteLine($ "Customer Id : {c.Id} Customer Name {c.Name}" ); if (x is Product p) WriteLine($ "Product Id : {p.ProductId} Product Name {p.Name}" ); else WriteLine( "Unknown type" ); }
+
+If you compile the above statement in C# 6 or below version, then you get compile time error.
+
+
+
+
+
+So, you can see that in C# 7, as soon as the type matches, we can assign it to a new variable.
+
+Before C# 7, we could not use pattern matching with switch expression. In C# 6 and earlier versions, limited types were supported and that must had been a compile time constant otherwise you get the following error.
+
+“A switch expression or case label must be a bool, char, string, integral, enum, or corresponding nullable type in C# 6 and earlier.”
+
+Let’s use the same example which I have used for ‘is’ pattern matching and convert the code to switch expression.
+
+In C# 7
+
+private static void PrintObject(dynamic x) { switch (x) { case Customer c: WriteLine($ "Customer Id : {c.Id} Customer Name {c.Name}" ); break ; case Product p: WriteLine($ "Product Id : {p.ProductId} Product Name {p.Name}" ); break ; default : WriteLine( "Unknown type" ); break ; } }
+
+Compile “switch” Statement Pattern Matching with C# 6
+
+Now, try to compile the same in C# 6. You get the errors as shown in the following screenshot.
+
+
+
+
+
+In C# 7, we can use “when” with switch case for better pattern matching.
+
+private void PrintShapeType(object shape) { switch (shape) { case Triangle t when t.SideA == t.SideB && t.SideB == t.SideC: WriteLine($ "Equilateral Triangle" ); break ; case Triangle t: WriteLine($ "Not a Equilateral Triangle" ); break ; case Rectangle r when r.Height == r.Width: WriteLine($ "Square" ); break ; case Rectangle r: WriteLine($ "Rectangle" ); break ; default : WriteLine($ "Unknow shape" ); break ; } }
+
+If we talk about the sequence for case expression, apparently, the answer is YES. In C# 7.0 and above versions, sequence matters for case expression.
+
+Let’s create a simple console app to prove that statement. Create a console app with following code snippet.
+
+using static System.Console; namespace CaseExpressionSequence { class Program { static void Main(string[] args) { PrintData(0); PrintData(2); PrintData(5); PrintData( false ); PrintData( true ); PrintData(55.5); } private static void PrintData(object obj) { switch (obj) { case 0: case 5: case true : WriteLine($ "you passed {obj}" ); break ; case int number: WriteLine($ "you passed a numeric value" ); break ; case bool b: WriteLine($ "you passed a boolean value" ); break ; default : WriteLine($ "Invalid data" ); break ; } } } }
+
+Output
+
+
+
+
+
+You can see that in the above code snippet, when I am passing 0, 5, & true, then it has more than one matching conditions but the code is being executed for the first matching block. This is a significant change and you must remember it.
+
+Before going through the generalized async, let’s have a look on asynchronous programming and try to understand it how it works.
+
+class Program { static void Main(string[] args) { PrintPrimeNumbers(100); ReadKey(); } private static async Task PrintPrimeNumbers( int maxNumber) { await Run(() => { WriteLine($ "printing prime numbers between 0 and {maxNumber}" ); List< int > primes = new List< int >(); bool isPrime; for ( int number = 2; number <= maxNumber; number++) { isPrime = true ; foreach ( var prime in primes.Where(x => x <= Sqrt(number))) { if (number % prime == 0) { isPrime = false ; break ; } } if (isPrime) { WriteLine(number); primes.Add(number); } } }); } }
+
+You can see that the return type of the method “PrintPrimeNumbers()” is Task.
+
+Now, change the return type of the method as Task<T>.
+
+static void Main(string[] args) { int x = GetLargestPrimeNumber(100).Result; WriteLine(x); ReadKey(); } private static async Task< int > GetLargestPrimeNumber( int maxNumber) { List< int > primes = new List< int >(); await Run(() => { bool isPrime; for ( int number = 2; number <= maxNumber; number++) { isPrime = true ; foreach ( var prime in primes.Where(x => x <= Sqrt(number))) { if (number % prime == 0) { isPrime = false ; break ; } } if (isPrime) { primes.Add(number); } } }); return primes.Max(); }
+
+static void Main(string[] args) { PrintPrimeNumber(20); ReadKey(); } private static async void PrintPrimeNumber( int maxNumber) { await Run(() => { WriteLine($ "printing prime numbers between 0 and {maxNumber}" ); List< int > primes = new List< int >(); bool isPrime; for ( int number = 2; number <= maxNumber; number++) { isPrime = true ; foreach ( var prime in primes.Where(x => x <= Sqrt(number))) { if (number % prime == 0) { isPrime = false ; break ; } } if (isPrime) { WriteLine(number); primes.Add(number); } } }); }
+
+Async method returning ValueTask <T>
+
+So far, you have seen that an async method can return Task, Task<T>, and void. However, rather than returning Task<T>, it would be better if we can return anything because Task is a class, i.e. reference type which may not be right in multiple scenarios because reference type behaves differently in C#.
+
+In C# 7, there is an inbuilt value type ValueTask <T> which can be used instead of Task<T>. Below is the code snippet for the same.
+
+static void Main(string[] args) { int x= GetLargestPrimeNumber(20).Result; ReadKey(); } private static async ValueTask< int > GetLargestPrimeNumber( int maxNumber) { List< int > primes = new List< int >(); await Run(() => { bool isPrime; for ( int number = 2; number <= maxNumber; number++) { isPrime = true ; foreach ( var prime in primes.Where(x => x <= Sqrt(number))) { if (number % prime == 0) { isPrime = false ; break ; } } if (isPrime) { primes.Add(number); } } }); return primes.Max(); }
+
+To use ValueTask<T>, you must need to install NuGet package “System.Threading.Tasks.Extensions”.
+
+If you do not remember the package name, then you do not need to worry about it. As soon as you write the ValueTuple<T>, you get a suggestion for installing it, as shown in the following screenshot.
+
+
+
+
+
+
+
+
+
+If NuGet package “System.Threading.Tasks.Extensions” is already installed for any other project, it shows you that you can use the local version.
+
+You may be thinking that I was talking about the term generalized async, but here you are getting only ValueTuple<T>. So, I would like to clarify that you can create your type which can be the return type of async method. However, if you do not want to create your type, then you can use ValueTuple<T> which is already available.
+
+If you would like to create your custom type, then please visit here.
+
+In C# 7.1, support for the “async Main” method has been added. I have already discussed a lot about async methods and you can understand the behavior of async.
+
+
+
+
+
+However, before jumping to the syntax of Async Main method let’s try to understand the current behaviour of the Main method.
+
+Answer
+
+
+
+Yes, we can have more than one Main method in a Project. However, in that case, we need to specify the entry point otherwise it gives compile time error.
+
+Just try to compile the below code snippet
+
+using static System.Console; namespace MultipleMain { class Program { static void Main(string[] args) => WriteLine($ "class B" ); } class A { static void Main(string[] args) => WriteLine($ "class A" ); } }
+
+And you will get the compile-time error. Below is the screenshot for the same.
+
+
+
+
+
+If you are compiling it from the command prompt, then you have to compile with /main.
+
+In case of Visual studio follow the below steps to specify the entry point.
+
+Right click on your project => Properties => on Application Tab => Startup object,
+
+
+
+
+
+Before C# 7.1, the Main method can have following signatures which are considered as entry points.
+
+Static Main method with return type void and argument as string array Static Main method with return type void and without any arguments Static Main method with return type “int” and argument as string array Static Main method with return type “int” and without any arguments
+
+static void Main(string[] args) static void Main() static int Main(string[] args) static int Main()
+
+Complete code
+
+class Program { static void Main(string[] args) { WriteLine( "Static Main method with return type void and argument as string array" ); } static void Main() { WriteLine( "Static Main method with return type void and without any arguments" ); } static int Main(string[] args) { WriteLine( "Static Main method with return type “int” and argument as string array" ); return 0; } static int Main() { WriteLine( "Static Main method with return type “int” and without any arguments" ); return 0; } }
+
+If you are using any other signature for “Main” method apart from the above 4 mentioned signatures, then it is not considered as an entry point.
+
+
+
+
+
+In C# 7.1 support for async “Main” has been added. Thus, in C# 7.1 following signatures for the Main method has been added which are allowed as entry point
+
+static async Task Main() static Task Main() static async Task< int > Main() static Task< int > Main() static async Task Main(string[] args) static Task Main(string[] args) static async Task< int > Main(string[] args) static Task< int > Main(string[] args)
+
+Generalized async is not supported by the Main method.
+
+
+
+
+
+You can see in the above screenshot that I am using ValueTask<int> but it gives a compilation error.
+
+You know that if we include the signature of the Main method allowed as entry point till C# 7.1 then it becomes 12 so you think that how you can remember all the signature, then I would like to tell you that it is straightforward. Just remember these rules
+
+Parameters: It can be Parameterless or have parameter as “string[]”
+
+Return Type: void, int, Task & Task<int>
+
+Async: can be used with Task and Task<int>
+
+Apart from the above mentioned 12 signatures the Main method may have dozens of more signatures, but the Main method with that signature is not allowed as an entry point.
+
+C# 7.1 has added support for inferring the tuple name. I have already explained a lot about tuple in the previous article you can read there about tuple enhancement done in C# 7.0. Let’s have a quick look in brief,
+
+using System; namespace TupleExampleWithCsharp4_0 { class Program { static void Main(string[] args) { var activity=ActivityTracker.GetActivity(); Console.WriteLine( "Activity Data:
+
+Steps: {0}
+
+Distance: {1} Km.
+
+Calories Burned: {2}
+
+Sleep Time: {3}
+
+Heart Rate: {4}
+
+Weight: {5}" , activity.Item1, activity.Item2, activity.Item3, activity.Item4, activity.Item5, activity.Item6); } } public class ActivityTracker { public static Tuple< int , double , double ,TimeSpan, double , double > GetActivity() { int steps = 7000; double distance = 5.2; double caloriesBurned = 30.02; TimeSpan sleepTime = new TimeSpan(6, 20, 00); double heartRate = 72; double weight = 75.5; Tuple< int , double , double , TimeSpan, double , double > activity = new Tuple< int , double , double , TimeSpan, double , double > (steps, distance, caloriesBurned, sleepTime, heartRate, weight); return activity; } } }
+
+
+
+
+
+using System; using static System.Console; namespace TupleExampleWithCsharp7_0 { class Program { static void Main(string[] args) { var activity = ActivityTracker.GetActivity(); WriteLine($ "Activity Data:
+
+Steps: {activity.Item1}
+
+Distance: {activity.Item2} Km.
+
+Calories Burned: {activity.Item2}
+
+Sleep Time: {activity.Item4}
+
+Heart Rate: {activity.Item5}
+
+Weight: {activity.Item6}" ); } } public class ActivityTracker { public static ( int , double , double , TimeSpan, double , double ) GetActivity() { int steps = 7000; double distance = 5.2; double caloriesBurned = 30.02; TimeSpan sleepTime = new TimeSpan(6, 20, 00); double heartRate = 72; double weight = 75.5; var activity = (steps, distance, caloriesBurned, sleepTime, heartRate, weight); return activity; } } }
+
+using System; using static System.Console; using static TupleWithMemberName.ActivityTracker; namespace TupleWithMemberName { class Program { static void Main(string[] args) { var activity = GetActivity(); WriteLine($ "Activity Data:
+
+Steps: {activity.steps}
+
+Distance: {activity.distance} Km.
+
+Calories Burned: {activity.caloriesBurned}
+
+Sleep Time: {activity.sleepTime}
+
+Heart Rate: {activity.heartRate}
+
+Weight: {activity.weight}" ); } } public class ActivityTracker { public static ( int steps, double distance, double caloriesBurned, TimeSpan sleepTime, double heartRate, double weight) GetActivity() => (steps: 7000, distance: 5.2, caloriesBurned: 30.02, sleepTime: new TimeSpan(6, 20, 00), heartRate: 72, weight: 75.5); } }
+
+using System; using static System.Console; namespace TupleDeConstruct { class Program { static void Main(string[] args) { ( int steps, double distance, double caloriesBurned, TimeSpan sleepTime, double heartRate, double weight) = GetActivity(); WriteLine($ "Activity Data:
+
+Steps: {steps}
+
+Distance: {distance} Km.
+
+Calories Burned: {caloriesBurned}
+
+Sleep Time: {sleepTime}
+
+Heart Rate: {heartRate}
+
+Weight: {weight}" ); } public static ( int steps, double distance, double caloriesBurned, TimeSpan sleepTime, double heartRate, double weight) GetActivity() => (steps: 7000, distance: 5.2, caloriesBurned: 30.02, sleepTime: new TimeSpan(6, 20, 00), heartRate: 72, weight: 75.5); } }
+
+static void Main(string[] args) { ( int steps, double distance,_,_,_,_) = GetActivity(); WriteLine($ "Activity Data:
+
+Steps: {steps}
+
+Distance: {distance} Km." ); } public static ( int , double , double , TimeSpan, double , double ) GetActivity() => (7000, 5.2,30.02, new TimeSpan(6, 20, 00),72,75.5);
+
+Using Tuple in C# 7.1 Inferring element name
+
+Now try to compile the following code snippet in C# 7.0.
+
+public static void GetActivity() { int steps = 7000; double distance = 5.2; double caloriesBurned = 30.02; TimeSpan sleepTime = new TimeSpan(6, 20, 00); double heartRate = 72; double weight = 75.5; var activity = (steps, distance, caloriesBurned, sleepTime, heartRate, weight); WriteLine($ "Activity Data:
+
+Steps: {activity.steps}
+
+Distance: {activity.distance} Km." ); }
+
+Please visit the below-provided links for the details of how to change C# language version
+
+You will get a compilation error for the above code snippet. Following is the screenshot for the same.
+
+
+
+
+
+However, if you look at the error message you will notice that it is saying that Tuple element name is inferred and suggesting you use C# 7.1.
+
+On mouse hover you will get a similar type of suggestion and “Quick Actions” light bulb will also suggest you do the same thing shown in the following screenshot.
+
+
+
+
+
+Now change the C# language version to C# 7.1 by just clicking on the “Quick Actions” options and re-compile your code. You will notice that it gets compiled successfully and following is output for the same.
+
+
+
+
+
+6. Default Literal Expressions and Type Inference
+
+‘default’ keyword is not a new keyword in C#. It is being used for a long time. However, some enhancement has been done for ‘default literal expression’.
+
+There are multiple examples where we need to use the default value of a variable. Below are some examples of the same,
+
+int a = 0; bool b = false ; string c = null ; int ? d = null ;
+
+In the above code snippet, you can see that I am assigning default values for value type and reference type explicitly.
+
+Now replace the datatype keywords with ‘var’ and you see that you are not able to compile your code
+
+
+
+
+
+If you look at the above code snippet, you will notice that there 2 issues:
+
+You must know default value of all types that you are using. Null cannot be assigned to an implicitly-typed
+
+The solution is “default”. Using the default keyword, the above code snippet can be written as:
+
+var a = default ( int ); var b = default (bool); var c = default (string); var d = default ( int ?);
+
+That’s fine. Now take another exmple and have a look at the below code snippet.
+
+int a = default ( int ); bool b = default (bool); string c = default (string); int ? d = default ( int ?); Action< int , bool> action = default (Action< int , bool>); Predicate<string> predicate = default (Predicate<string>); List<string> list = default (List<string>); Dictionary< int , string> dictionary = default (Dictionary< int , string>); public int Add( int x, int y= default ( int ), int z= default ( int )) { return x + y + z; }
+
+So, in the above code snippet, you can see that rather than providing their default values explicitly I am using the default keyword to get their default values.
+
+In C# 7.1 enhancement has been done for Default Literal Expressions and Type Inference and we can write the previous statement as follows,
+
+int a = default ; bool b = default ; string c = default ; int ? d = default ; Action< int , bool> action = default ; Predicate<string> predicate = default ; List<string> list = default ; Dictionary< int , string> dictionary = default ; public int Add( int x, int y = default , int z = default ) { return x + y + z; }
+
+If you are using the above statement in C# 7.0 then it gives error and suggest you use C# 7.1. Whereas if you are using it in C# 7.1 and providing type details in right-hand side of the statement then it suggests you simplify the code.
+
+
+
+
+
+7. Pattern Matching with Generics
+
+Pattern matching is one of the most popular features introduced with C# 7.0, and it supports many patters which I have already explained earlier in this article. However, Pattern matching with generic was not supported with C# 7.0. It has been added in C# 7.1. Let’s have a look at the below code snippets,
+
+public void PrintProduct<T>(T product) where T:Product { switch (product) { case ConvenienceProduct p: WriteLine( "Convenience Product" ); break ; case ShoppingProduct p: WriteLine( "Shopping Product" ); break ; case SpecialtyProduct p: WriteLine( "Specialty Product" ); break ; default : WriteLine( "General Product" ); break ; }
+
+Pattern Matching with Generics Example 2
+
+public void Print<T>(T type) where T : class { switch (type) { case Customer customer: WriteLine($ "{customer.Id} {customer.Name} {customer.CustomerType} {customer.MonthlyPurchase}" ); break ; case Product product: WriteLine($ "{product.ProductId} {product.ProductName} {product.ProductDescription}" ); break ; default : break ; } }
+
+You can see in the previous two code snippets that in the switch statement, now I can use generics. However, if you will try to compile the above two code snippets in C# 7.0, these will not get compiled and suggest you to use C# 7.1.
+
+SO far, I have covered a lot from C# 7.0 and C# 7.1. In the next article, i.e. the third article of the series, I will be explaining the new features added in C# 7.2 and above versions. You can go through the below-provided links for my other articles of C# 7.

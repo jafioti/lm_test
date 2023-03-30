@@ -1,0 +1,143 @@
+Wave Crest Audio HVL-1 Bookshelf Speaker Review
+
+Wes, who is a self confessed stalker fanboy, tracked me down via deep hacking of the internets and realized that he lived in the same area code as me. After a little back and forth emailing I figured him to be harmless if not helpful, and arranged a meeting. He showed up in his pickup truck with a 12 pack of Bud and a pair of speakers for me to review. The speakers in question are the Wavecrest HVL-1.
+
+
+
+The beer drank good, and these are speakers that I have seen featured by some of the other reviewers of cheap speakers. I was always curious about them, but had never scraped the cash together to buy a pair. With an asking price of $225/pair they had better sound damn good as that's a chunk of cash more than the Pioneer BS-22, and is a fiver away from the ELAC B5.
+
+Not wasting anytime Wes and I set to work downing beers and dissecting the speakers while snapping photos of the innards.
+
+Component Overview:
+
+Tweeter
+
+This tweeter is one of the reasons I was hesitant to pick up these speakers. Not the tweeter itself, it looks like a pretty good driver. The problem is the placement. You would be hard pressed to find any tweeter on any speaker placed as close to the top edge as this driver is. The reason it's a bad idea is because not only do you get nasty edge diffraction, you also get a large chunk of the tweeters response bouncing of the top of the speaker instead of projecting forward.
+
+Just look at that mess the tweeter has to deal with, it's a diffraction minefield where most tweeters are surrounded by a nice flat metal bezel, or even a waveguide for the first few inches.
+
+Woofer
+
+The woofer looks like a pretty nice part, yet again another reversed dust cap. Something I'm not fond of, especially in 2 way speakers. The problem is that the sound does not project out enough from the driver. We will see if it's as much of a problem as the ELAC.
+
+The driver looks like a quality build, it has a good looking spider and the stamped steel basket seems sturdy. Both the woofer and tweeter are magnetically shielded to a point where there seems to be zero magnetic field coming out of the back.
+
+Port
+
+Now for the reason for all of this tight spacing, there is a large hole in the front of the speaker. This port is an obese, for this box, 2 inch diameter that is only a stubby 4 inches deep. Back of the napkin calculations put this at 65Hz tuning, so we are not expecting much as far as deep bass performance. Not only that, with it stuck to the front of the box phase cancelation and audible port leakage are real possibilities.
+
+Cabinet
+
+The cabinet is about as boring a design as you could make it, flat lightly textured black vinyl coating the standard issue Chinese MDF in the common box shaped design. Wave Crest does go above and beyond the standard bottom of the barrel speakers by increasing the thickness of the cheap MDF and putting a brace in the middle of the box.
+
+
+
+Also note the plentiful polyfill blankets that are well attached and cover all of the internal panels.
+
+Terminals
+
+The terminals on the back of the box work pretty good and are flush mount, I'm assuming for wall mounting in a surround setup.
+
+Crossover
+
+Look at that crossover, it's on a real board and uses a ton of components all laid out logicly. Looks like two L-Pads from 4 resistors, a pair of air core inductors and an iron core along with one poly cap and a pair of cheap electrolytics. As for the arrangement Wave Crest claims a 4th order acoustic... that last word there is key, it means that it's taking into account the natural roll off of the drivers as a part of the crossover. Looking at the parts I'm guessing 2nd order with level matching on the tweeter and a 3rd order on the woofer with minimal baffle step, but that's just a guess.
+
+Grills
+
+Grills require fingernail breaking force to pry them off, but they look very good for a speaker that has it's tweeter sitting so close to the edge of the baffle. Wes doesn't use them, and I don't plan on using them either.
+
+Wes uses the Wavecrest HVL-1 as a desktop speakers, so that is where they went for the testing.
+
+
+
+Initial impressions were that the speaker was bright, but not too bad. I could not hear anything that stood out as "the problem" with these speakers in a short listening test, so we switched over to my main system and blasted a mix of electronica and "cry into your beer" country music for a couple of hours. Wes left the speakers with me for a thorough review, which is what you are now reading.
+
+Listening Notes:
+
+Deep listening - Put in about 60 hours of listening and the treble still sounds brittle and piercing, like a rising response issue they are putting out a lot of super detailed to the point of headache inducing treble.
+
+
+
+The bass has improved with time, meaning I've adjusted to not hearing much bass.
+
+
+
+The bass honks at me occasionally in the form of a 100hz bass bloom. This is either a product of the front port phasing or room interaction. Either way it's off putting.
+
+
+
+They sound like what people expect from studio monitors - detailed, but not enjoyable, just bad.
+
+
+
+Imaging is extremely forward, feels almost like the performance is above me and behind me.
+
+
+
+If you want all of your music to sound like low compression mp3's the Wave Crest will do it.
+
+
+
+Female vocals sound good, male vocals sound like an old telephone, cutting out the fundamental frequency bass of male tones and just providing the left over guttural spitting parts of vocal patterns. It ain't pretty.
+
+
+
+This speaker is too much sizzle and no steak.
+
+Measurements:
+
+Close mic measurements look clean outside of the port leaking at exactly 1,228Hz and canceling that frequency out from the woofer response. Looks like a smooth nice crossover between the drivers, but I'm not seeing 24dB per octave happening. That may just be because I'm not disconnecting the drivers, just measuring really close.
+
+Frequency response shows the bass cancelation from the port, so I overlaid the port response which is more indicative of the bass performance of the speaker. The measurement is good above 700Hz, and in this range the treble is seriously flat, +-2.0dB out of the box is damn clean, even of it is a little jagged.
+
+
+
+So that's that, I guess it's a great speaker and my ears are broken... I spent so much time trying to figure this out I actually started to consider that option.
+
+These 0 to 60 degree close windowed measurements in 5 degree increments are a small sample of the few hundred measurements I did over the past 4 days finding the problem. I normally don't measure off axis because speakers tend to roll off at a somewhat uniform or at least nonoffensive way. The Wave Crest HVL-1 speakers have very specific problems off axis.
+
+
+
+The treble just won't quit, in particular there is a fucking massive hump centered at 6k that is blasting full volume all the way out to 60 degrees off axis, and the stuff in the 10k area that is really sparkly harsh is uniformly elevated instead of flat and then rolling off.
+
+DSP Correction:
+
+So we are going to do some surgery and trim the treble by studying off axis measurements of successful speakers and see what we can do to make good sound. I immediately thought of the Revel Ultima Salon 2 which had a great warm sound at RMAF, so I pulled up the Stereophile review and saw that they are flat to 8.5k off axis and then use a small waveguide to kill the top octave. Well we don't have a waveguide to help us, we barely have a bezel for the tweeter. Instead I did what I could to make it mostly flat up to 8.5k and suck out the upper octave extra bits.
+
+This is what we end up with, the top line is on axis, the bottom is 60 degrees off axis. It's not crazy waveguide perfect, but it's way the hell better than it was.
+
+On axis shot of the correction still shows the speaker +-2.5dB in the treble range, so it's not like I cut off the nose to spite the face.
+
+Corrected Listening Notes:
+
+Speakers sounds pretty good now.
+
+
+
+Bass is here, while it's not deep I can hear it now.
+
+
+
+Still sounds detailed, but I'm not getting a headache.
+
+
+
+Speakers are pretty efficient and can get loud.
+
+
+
+Not bad.
+
+Final Thoughts:
+
+The problems with this speaker may not be as obvious if you either have a shit ton of room treatments that suck out the treble in your room or if you have a subwoofer and run it hot - you will end up with a valley response which can be entertaining to some people.
+
+
+
+Corrected the speakers are pretty good, but after fighting with these bastards for a week I'm done with them. Other options on the desktop work better out of the box, check out the system finder to see what I recommend.
+
+
+
+Special thanks to Wes for bringing me this pair of problems.
+
+Other content you may like:

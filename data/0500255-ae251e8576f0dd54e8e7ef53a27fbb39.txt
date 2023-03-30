@@ -1,0 +1,51 @@
+The process of redrawing district lines to give an advantage to one party over another is called "gerrymandering." Here's how it works. (Daron Taylor/The Washington Post)
+
+The Supreme Court just made a major decision without actually issuing a decision. On Monday morning, the justices announced that they would take up a case out of Wisconsin that could result in a ruling on the constitutionality of partisan gerrymandering.
+
+Democrats should be cautiously very happy with this.
+
+No, it doesn't mean that the Supreme Court will suddenly strike down the practice altogether, but it does mean that the court could deliver what would be basically an unprecedented rebuke of a practice that has, according to a recent study, prevented Democrats from controlling the U.S. House for potentially four of the past six years.
+
+The Post's Supreme Court guru Robert Barnes explains the significance here:
+
+The justices regularly are called to invalidate state electoral maps that have been illegally drawn to reduce the influence of racial minorities by depressing the impact of their votes. But the Supreme Court has never found a plan unconstitutional because of partisan gerrymandering. If it does, it would have a revolutionary impact on the reapportionment that comes after the 2020 election and could come at the expense of Republicans, who control the process in the majority of states. The court accepted a case from Wisconsin, where a divided panel of three federal judges last year ruled last year that the state’s Republican leadership in 2011 pushed through a plan so partisan that it violated the Constitution’s First Amendment and equal rights protections.
+
+In other words, the fact that the justices are even going to hear this case suggests that it could result in a ruling on the constitutionality question. And since the court has never struck down a map for partisan gerrymandering, that ruling could move the needle in a way we have never seen before.
+
+Basically any movement in that needle would be in Democrats' favor. In recent years, Republicans have enjoyed a very large edge when it comes to control of the redistricting process throughout the United States. The GOP won a huge wave election in the 2010 contests, which happened to come just before the once-per-decade census and before state legislatures in most states across the country redrew their congressional and state legislative maps.
+
+Republicans used this edge to draw very GOP-friendly maps in big swing states and even some blue-leaning states like Florida, Michigan, North Carolina, Ohio, Pennsylvania and Virginia. And in large part because of those state legislative maps, they retain historic control through today, including complete control of state government in 25 out of 50 states, compared to just seven for Democrats. And that, in turn, would mean they get to draw many of these maps again. It's a vicious cycle for Democrats.
+
+Unless.
+
+Let's say for the sake of argument that the Supreme Court does rule that partisan gerrymandering is unconstitutional. How much would Democrats stand to gain?
+
+The Brennan Center tried to answer this question a few weeks back, as it happens. Using a number of methods, they estimated the number of seats Republicans and Democrats have gained in each state compared to what you might expect with a politically neutral map. (A “politically neutral map” is a very hypothetical concept that is open to interpretation, it should be noted.)
+
+[Republican redistricting is taking a beating in the courts (again)]
+
+Basically, it took the actual GOP share of seats in states that were big enough to allow for gerrymandering to shift seats, and compared it to various definitions of what you might expect under a neutral map. One method is the “efficiency gap,” which compares how many seats the GOP controls to the raw vote totals. In Florida, Michigan, North Carolina, Ohio and Pennsylvania, this method suggests the GOP gained multiple seats via its redistricting advantage. Other methods showed similar gains in similar states. Democrats gained seats in Maryland and Massachusetts, where they were in control, but their overall gains were nowhere close to the GOP's.
+
+
+
+Brennan Center for Justice
+
+In the end, the Brennan analysis suggests the GOP won between 25 and 37 extra seats in the 2012 election because of its redistricting advantage. In 2014, the advantage was smaller — between four and 20 seats — and in 2016 it got bigger again, with a GOP gain of between 16 and 29 seats.
+
+And here's the key takeaway: Those shifts were good enough to hand Republicans the majority in 2012 and potentially in 2016, too. Given the GOP had a 234-201 majority after the 2012 election, shifting 25 seats would have given Democrats a 226-209 majority. And that's Brennan's most GOP-friendly estimate; if 37 seats flipped, Democrats would have held a 238-197 majority.
+
+The GOP would have held on to its majorities in 2014 regardless, according to the estimates. But in 2016, that 16-to-29-seat gain for the GOP through redistricting may have accounted for its majority. If 23 or fewer seats shifted because of the GOP's redistricting advantage, the GOP would have held its majority. If 24 or more shifted, Democrats would have taken control.
+
+Election GOP majority GOP edge from redistricting GOP's best case w/o gerrymandering Dems' best-case w/o gerrymandering 2012 234-201 25-37 seats 226-209 Dems 238-197 Dems 2014 247-188 4-20 seats 243-192 GOP 227-208 GOP 2016 241-194 16-29 seats 225-210 GOP 223-212 Dems
+
+But that doesn't mean the Supreme Court is about to hand the keys to the U.S. House back to Democrats. And all of this comes with a couple of big caveats.
+
+The first is that we don't know if the court will actually strike down partisan gerrymandering writ large or just rule narrowly on the Wisconsin case. Barnes notes a significant aspect of the court's announcement Monday:
+
+The justices gave themselves a bit of an out: They said they will further consider their jurisdiction over the case when it is heard on its merits.
+
+The second is that even a pretty sweeping decision won't suddenly result in those idealized, hypothetical neutral maps. It will certainly give Republicans some pause in drawing pretty nakedly politically advantageous maps and make it easier for courts to strike them down. But politicians are clever when it comes to self-preservation and partisanship, and the whoever is in charge will undoubtedly find other justifications for maps that appear to be partisan gerrymanders.
+
+In other words, it's unlikely that the court will do something that suddenly shifts 10, 20 or 30 or more seats toward Democrats — either in 2018 or after the next census and redistricting process. But basically any movement away from partisan gerrymandering will accrue to Democrats' benefit.
+
+And given that they've been in the minority since after the 2010 election and probably face another grim redistricting process in 2021 and 2022, that's got to be encouraging.

@@ -1,0 +1,45 @@
+It’s rare to see two players directly trade places, but that’s what Kim “Reignover” Yeu-jin and Joshua “Dardoch” Hartnett have done this offseason. Reignover left the Immortals and has signed with Team Liquid, while Dardoch made the trek in the other direction. The swap is noteworthy for both the quality of the players and the implications for each team.
+
+Though the players weren’t formally traded between the two organizations, it’s still natural to ask which team won the exchange. The comparison will come to the forefront even more with both teams attending Intel Extreme Masters Gyeonggi.
+
+Did Team Liquid get the best value by picking up one of the most effective Koreans playing in the Western scene over the past two years, presumably at a high financial cost? Or did Immortals snag the real prize by locking down one of North America’s brightest emerging talents for a lengthy three-year term?
+
+As of today, Reignover is the better player and carries less baggage, making him a more reliable choice to build around for 2017. But if Dardoch delivers on his potential and addresses the behind-the-scenes issues that plagued his time with Team Liquid, the Immortals may find themselves richly rewarded down the road.
+
+The better player
+
+Dardoch’s and Reignover’s personalities are expressed in their playstyles. Dardoch is brash and decisive, with a “follow me” style. He leads from the front, inspiring his team to come along for the ride. Reignover is somewhat more subdued, still ready to throw himself into playmaking but more likely than Dardoch to lead from within, creating partnerships with his teammates and helping them succeed. Those styles can be seen in each player’s summer stat line.
+
+KDA KP DTH% DPM FB% CSD@10 CS%P15 WPM WCPM Dardoch 3.5 75.0% 22.8% 429 38% +0.7 15.6% 0.65 0.41 Reignover 5.5 73.6% 17.4% 374 35% +5.7 14.2% 0.83 0.47
+
+2016 summer regular season, OraclesElixir.com
+
+Dardoch’s stats tell the story of a do-it-myself carry jungler. All summer, Dardoch was in the thick of the action for Team Liquid, leading the team with 75.0 percent kill participation and topping all junglers with 429 average damage per minute. He frequently put himself at risk to make things happen, though, and wound up with 22.8 percent death share, second-worst among starting junglers. Add in the highest CS share post-15-minutes and lowest wards per minute among junglers and it’s clear how highly Dardoch prioritized his own ability to carry games, even while frequently playing tanks like Rek’Sai and Gragas.
+
+Reignover showed a bit more balance. He, too, led his team in kill participation, and was second to Dardoch in jungler DPM, but he kept his death count much lower in the process, put out 28 percent more wards, and gave more farm to his laners. Reignover matched Dardoch’s ability to generate First Blood kills, and actually averaged more kills and assists at 15 minutes than Dardoch (2.4 to Dardoch’s 2.1), while also being much more efficient with his farming and counter-jungling to lead all junglers with a +5.7 CS difference at 10 minutes.
+
+All things considered, there’s no question Reignover is an in-game upgrade over Dardoch. From early-game influence to vision control to a balance of offense and defense, Reignover has shown more quality and consistency, proving himself as one of the very best players in the NA or EU LCS over the past two years. That said, Dardoch is no slouch and boasts some impressive skill, with the numbers to back it up, even though he may try to do too much himself and needs to work on his relationship with his Sightstone.
+
+The better teammate
+
+Questions of skill are always subject to change over time, but out-of-game factors threaten to widen the gap between Reignover and Dardoch significantly.
+
+Dardoch’s maturity levels have been thoroughly dissected, based on evidence from his entertaining pre-game trash talk and post-game interviews and his front-and-center role as the remorseful villain of Team Liquid’s 2016 documentary, Breaking Point. Given Dardoch’s skill and his team’s lack of success, some of the negativity we’ve seen from him can be excused as an overflow of passion stemming from unmet expectations. We’ve seen positives to Dardoch’s teamwork, as well, particularly his close, supportive relationship with Team Liquid top laner Samson “Lourlo” Jackson. But even factoring in the wider picture, Dardoch’s immaturity will continue be an asterisk on his skill until he’s able to prove, over a sustained period of time, that he has actually grown as a person and a teammate.
+
+Reignover hasn’t had his flaws broadcasted to the world in quite the same way Dardoch has, but he’s spent plenty of time in the spotlight as a star player and a member of Europe’s most celebrated esports organization, Fnatic. Relative to Dardoch, his career is characterized by a conspicuous absence of drama. He didn't stand out while playing in Korea, but since moving to the West he has developed into a calm, positive leader with the skill and maturity to anchor his teammates. Throughout his two-year partnership with Heo “Huni” Seung-hoon, Reignover was the stabilizing influence that grounded both Huni’s in-game recklessness and his out-of-game goofiness. Add his experience winning two EU LCS titles and reaching the World Championship semifinals with Fnatic in 2015, and Reignover’s out-of-game value is obvious.
+
+The better building block
+
+Even though Reignover is both a better player and a better teammate than Dardoch — at least for now — that doesn’t necessarily make him a better building block for constructing a winning roster, for one very big reason: import status.
+
+Since Reignover holds one of Team Liquid’s two import slots, the team is forced to field resident North American players in three of their other four positions. Those players, for what it’s worth, will be Lourlo, Matthew “Matt” Elento, and Greyson “Goldenglue” Gilmer. The trio contains a reasonable level of talent but doesn’t necessarily match up favorably against some of the NA LCS’s other North American cores. Team Liquid have had to make some sacrifices by signing Reignover, most notably parting ways with Korean mid laner Kim “FeniX” Jae-hun.
+
+Immortals, in contrast, gained an import slot when they brought in Dardoch. That has freed them to sign Lee “Flame” Ho-jong for the top lane while retaining the option to sign a second import. The actual value of that flexibility is only implied for now, and will be measured once Immortals announce their new support player to go with NA residents Eugene “Pobelter” Park and rookie AD carry Cody “Massacre” Sun.
+
+Dardoch’s value as a resident extends beyond the immediate Immortals roster, though. His and Reignover’s statuses will not change over time — at least, not unless Reignover spends four years playing in a single region to gain the chance to change his residency. That gives Dardoch the potential, though by no means the guarantee, to be more valuable than Reignover in the long term. Unlike residency, skills and temperament can change much more quickly than once every four years. If Dardoch improves himself as a player and a teammate over the coming year, he could eventually match or exceed Reignover’s strengths, while continuing to allow Immortals to build more flexible rosters around him.
+
+For now, and until proven otherwise, Reignover is a more valuable signing than Dardoch, but Immortals know the risk they’re taking and the rewards they can reap if they properly tap into their young jungler’s potential. Their commitment to a three-year contract is a way to tell the world, and more importantly to tell Dardoch himself, that they value the rewards much more than they fear the risk.
+
+With Team Liquid and the Immortals gearing up to represent North America at Intel Extreme Masters Gyeonggi from December 16 to 18, we’ll have our first chance to measure the two junglers’ value in their new settings. But the real story of this jungler swap may take three years to tell, and it’s up to Dardoch to determine whether his new team’s faith was well placed, or whether he will remain in Reignover’s shadow.
+
+Tim "Magic" Sevenhuysen runs OraclesElixir.com, the premier source for League of Legends esports statistics. You can find him on Twitter, unless he’s busy giving one of his three sons a shoulder ride.

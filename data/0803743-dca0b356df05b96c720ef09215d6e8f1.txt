@@ -1,0 +1,11 @@
+Update: Shadowplay has now been released
+
+ShadowPlay is the latest tool for PC gamers from Nvidia and the beta is out today as part of the GeForce Experience 1.7 update. However, it has actually leaked onto the Intertubes early if you want to take it for a spin.
+
+ShadowPlay gives gamers the ability to record their in-game footage over a period of time utilising the on-board H.264 encoder which is built into the GeForce GTX 600 and 700 series. The utility saves 10 or 20 minutes of footage to a temporary buffer, and should you pull off something spectacular in that period of time, a quick key press of ALT-F10 will save the footage to a file folders organised by game name. All files are saved as mp4 and can be edited before uploading to your favourite video site.
+
+If you don’t like the idea of buffering the footage, there’s also standard recording built in which saves the video directly to your HD like other utilities such as the popular Fraps. There will also be direct streaming to Twitch although that has not surfaced in this first release.
+
+All DX9 and newer titles are supported and Nvidia say there is a 5-10% performance impact when the recording at max-quality 50 mbps. So far the comments we have seen from testers have been very positive.
+
+Watch out for the full ShadowPlay release on Nvidia’s site later today.

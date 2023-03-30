@@ -1,0 +1,43 @@
+Kotlin 1.0 was released this week. For those not familiar with Kotlin, it is 'yet another programming language for the Java Virtual Machine.' In many ways Kotlin is similar to Groovy and Scala, other Java-like languages on that path. On the surface, Kotlin is very Scala-like in that is supports Functional Programming along side Imperative (Object-Oriented) programming the way Scala does. Some people say "Kotlin has 80% the power of Scala, with 20% of the features." Some might say that Kotlin is just an other evolution in the search for better programming languages, where Java is 20 years old, and Scala is 10 years old. In the upcoming book on Kotlin, it points out in Chapter 1 "Kotlin is also not a research language" and that is the topic for this discussion.
+
+In most technical fields there is a natural tension between Engineering and Science, and this is still true in programming language design. It is fair to say engineering has been around a lot longer than science, where it relied more on experience, trial, and error, than on science. In another sense, engineering is the art of building things, whereas science is the art of breaking things or taking them apart. For example, it cost about $13.25 billion dollars to confirm the Higgs Boson in a particle collider smashing protons together at the speed of light. We had to break fundamental particles, just to understand how they work, but we relied on $13,250,000 of engineering just to run the experiment.
+
+
+
+Engineering needs science, and science needs engineering, but the goals are different. In programming languages this is often reflected in language features. In some languages, the feature are highly experimental, and required to understand if an idea was a good one or a bad one. This would be the Computer Science languages. In other languages, the features are more conservative, and required to promote effective collaboration on maintenance of software. In one case we want to use a programming language to experiment and play with ideas, while in another case we want to build robust, reliable systems that are easy to maintain among a herd of cats, I mean software developers ;-)
+
+Over 20 year of my experience with Java, my impression is that Java is closer to the software engineering side, while after 10 years of my experience I would say Scala is closer to the computing science side.
+
+Java
+
+I came to Java after years of experience with C and C++. In particular, by that time I was moving back to C because I was tired of the complexity of C++, so when I started playing with Java I immediately liked the sound features of Object Oriented programming, without all the overhead of C++. Another feature I liked of Java, was javadoc. No, I don't mean the utility, while that is nice, I mean the amazing effort Sun Microsystems went to in documenting the APIs. This really made Java a software engineering language where good engineering depends on good documentation, specifications, etc.
+
+Over 10 years of using Java I often wondered if there was something more. To be sure, the evolution of Java is glacial compared to some other languages such as C#. While at a JavaOne conference I attended a talk from the language designers who explained why they were so conservative in adding features to Java. "Once you put something new into the language, you can't take it out, including the mistakes." I understood the wisdom of that immediately, and I respect their decisions.
+
+Scala
+
+Over time I have dabbled with C#, Groovy, JavaScript, Java FX Script, and Scala. All are interesting in that I consider them Java-like, but Scala was the most interesting of all. Scala is a truly amazing blend of two programming paradigms, imperative and functional that also supports Object Oriented Programming. C#, JavaScript, and Java FX Script all had functional programming features, but Scala embraced FP head on, and did it well.
+
+The first time I tried learning Scala, I hurt my brain, and it took about a year before I was willing to try again. The second time I fared better and soon became intrigued with the language, but felt like a commuter who always missed the bus by 30 seconds. Sure, I always managed to catch the second bus because I was already there, but still felt there was something wrong.
+
+To be sure, I have probably learned more contemporary computing science concepts from working with Scala than any other programming language. I would have trouble enumerating all of the leading edge, or more accurately, bleeding edge concepts that the Scala community have investigated. Many of these ideas have made it back into the evolution of Java language and library features once having proved to be invaluable.
+
+These days I can write decent Scala code, and in fact Scala is still my favorite programming language to write stuff in, but I do not enjoy reading other people's Scala code. There are just too many ways to skin the same cat, and most Scala developers seem to delight in exploring all of them.
+
+Kotlin
+
+Being a new language I have only begun to learn, I am enjoying myself. It has many of the features of Scala I love, but is not as complex as I find Scala. In one of the Kotlin presentations, the presenter claimed "most developers we talk to say they spend most of their time reading code, not writing code." As a software developer I could instantly identify with that statement.
+
+As a software developer, I would rather write code than read and modify someone else's code. That is a normal selfish impulse. As a software development manager, I know that pragmatically you need a team of people to get things done in realistic time-frames, and that requires collaboration, and consequently developers reading and modifying other people's code.
+
+While it is still early for Kotlin, I believe the important distinction to be made is that it is a software engineering language in contrast to Scala which is a computing science language. I am not saying one language is better than another, but that the language designers are simply focusing on either the Ying or the Yang, the science or the engineering of software development.
+
+Conclusions
+
+Scala is the programming language I love to play with, experiment with, learn new things with. It is also the programming language I would want my children to learn in school, especially in conjunction with mathematics as Scala embodies so many great math concepts.
+
+If I were a CTO, I would agonize over using Scala, and would tend to favor plain old Java, with a keen interest in Kotlin because likely my job would be building important things with highly collaborative teams who share code constantly. At the same time, I would encourage my developers to learn Scala, Haskell, and other 'research languages' so that they are fluent in bleeding edge science. On the other hand, if I were Dean of a Computing Science School, I would favor use of Scala and beyond such as DOT, while if I were Dean of an Engineering School, I would favor investigation into what makes a better software engineering language.
+
+Ultimately, I feel it would be hard to have a good language for both software engineering and computing science, unless you could have a language setting or compiler option that enables or disables the computing science features. Somehow I cannot see that happening.
+
+Finally, I am not saying you cannot do quality software engineering with research languages such as Scala, but to do so requires another level of discipline from your developers than the enforced discipline in using languages such as Java and Kotlin. Every organization is unique, and has to make choices about how they build things. Preferably those choices will be well informed.

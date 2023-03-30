@@ -1,0 +1,57 @@
+With CSS filter effects and blend modes, we can now leverage various techniques for styling images directly in the browser. However, creating aesthetic theming isn't all that filter effects are good for. You can use filters to indicate hover state, hide passwords, and now—for web performance.
+
+While playing with profiling performance wins of using blend modes for duotone image effects (I'll write up an article on this soon), I discovered something even more exciting. A major image optimization win! The idea is to reduce image contrast in the source image, reducing its file size, then boosting the contrast back up with CSS filters!
+
+Start with your image, then remove the contrast, and then reapply it with CSS filters.
+
+How It Works
+
+Let's put a point on exactly how this works:
+
+Reduce image contrast using a linear transform function (Photoshop can do this) Apply a contrast filter in CSS to the image to make up for the contrast removal
+
+Step one involves opening your image in a program that lets you linearly reduce contrast in a linear way. Photoshop's legacy mode does a good job at this (Image > Adjustments > Brightness/Contrast):
+
+You get to this screen via Image > Adjustments > Brightness/Contrast in Photoshop CC.
+
+Not all programs use the same functions to apply image transforms (for example, this would not work with the macOS default image editor, since it uses a different technique to reduct contrast). A lot of the work done to build image effects into the browser was initially done by Adobe, so it makes sense that Photoshop's Legacy Mode aligns with browser image effects.
+
+Then, we apply some CSS filters to our image. The filters we'll be using are contrast and (a little bit of) brightness . With the 50% Legacy Photoshop reduction, I applied filter: contrast(1.75) brightness(1.2); to each image.
+
+Major Savings
+
+This technique is very effective for reducing image size and therefore the overall weight of your page. In the following study, I used 4 vibrant photos taken on an iPhone, applied a 50% reduction in contrast using Photoshop Legacy Mode, saved each photo at Maximum quality (10), and then applied filter: contrast(1.75) brightness(1.2); to each image. These are the results:
+
+You can play with the live demo here to check it out for yourself!
+
+In each of the above cases, we saved between 23% and 28% in image size by reducing and reapplying the contrast using CSS filters. This is with saving each of the images at maximum quality.
+
+If you look closely, you can see some legitimate losses in image quality. This is especially true with majority-dark images. so this technique is not perfect, but it definitely proves image savings in an interesting way.
+
+Browser Support Considerations
+
+Be aware that browser support for CSS filters is "pretty good".
+
+This browser support data is from Caniuse, which has more detail. A number indicates that browser supports the feature at that version and up. Desktop Chrome Opera Firefox IE Edge Safari 18* 15* 35 No 18 6* Mobile / Tablet iOS Safari Opera Mobile Opera Mini Android Android Chrome Android Firefox 6.0-6.1* 46 No 4.4* 71 64
+
+As you can see, Internet Explorer and Opera Mini lack support. Edge 16 (the current latest version) supports CSS filters and this technique works like a charm. You'll have to decide if a reduced-contrast image as a fallback is acceptable or not.
+
+What About Repainting?
+
+You may be thinking: "but while we're saving in image size, we're putting more work on the browser, wouldn't this affect performance?" That's a great question! CSS filters do trigger a repaint because they set off window.getComputedStyle() . Let's profile our example.
+
+What I did was open an incognito window in Chrome, disable JavaScript (just to be certain for the extensions I have), set the network to "Slow 3G" and set the CPU to a 6x slowdown:
+
+With a 6x CPU slowdown, the longest Paint Raster took 0.27 ms, AKA 0.00027 seconds.
+
+While the images took a while to load in, the actual repaint was pretty quick. With a 6x CPU slowdown, the longest individual Rasterize Paint took 0.27 ms, AKA 0.00027 seconds.
+
+CSS filters originated from SVG filters, and are relatively browser optimized versions of the most popular SVG filter effect transformations. So I think its pretty safe to use as progressive enhancement at this point (being aware of IE users and Opera Mini users!).
+
+Conclusion and the Future
+
+There are still major savings to be had when reducing image quality (again, in this small study, the images were saved at high qualities for more of a balanced result). Running images through optimizers like ImageOptim, and sending smaller image file sizes based on screen sized (like responsive images in HTML or CSS) will give you even bigger savings.
+
+In the web performance optimization world, I find image performance the most effective thing we can do to reduce web cruft and data for our users, since images are the largest chunk of what we send on the web (by far). If we can start leveraging modern CSS to help lift some of the weight of our images, we can look into a whole new world of optimization solutions.
+
+For example, this could potentially be taken even further, playing with other CSS filters such as saturate and brightness . We could leverage automation tools like Gulp and Webpack to apply the image effects for us, just as we use automation tools to run our images through optimizers. Blending this technique with other best practices for image optimization, can lead to major savings in the pixel-based assets we're sending our users.

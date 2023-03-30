@@ -1,0 +1,33 @@
+Scientists have successfully treated the deadly Ebola virus in infected animals following onset of disease symptoms, according to a report published online today in Science Translational Medicine. The results show promise for developing therapies against the virus, which causes hemorrhagic fever with human case fatality rates as high as 90 percent.
+
+According to first author James Pettitt of the U.S. Army Medical Research Institute of Infectious Diseases (USAMRIID), the research team previously demonstrated that the treatment--known as MB-003--protected 100 percent of non-human primates when given one hour after Ebola exposure. Two-thirds of the animals were protected when treated 48 hours after exposure.
+
+In the current study, 43 percent of infected non-human primates recovered after receiving the treatment intravenously 104 to 120 hours after infection. The experimental design differed significantly from the team's earlier work--this time, infected animals were not treated until they developed measurable symptoms of disease.
+
+Ebola virus has been responsible for numerous deaths in Africa over the past several years. In addition to being a global health concern, the virus also is considered a potential biological threat agent.
+
+"By requiring both a documentable fever and a positive diagnostic assay result for Ebola infection before initiating treatment in these animals, we were able to use MB-003 as a true therapeutic countermeasure," said senior author Gene Olinger, Ph.D., of USAMRIID. "These initial results push the threshold of MB-003 from post-exposure prophylaxis to treating verified illness."
+
+According to the scientists, Ebola virus replicates quickly to very high levels, thus overwhelming the host's ability to fight off the infection. MB-003 is a "cocktail" of monoclonal antibodies that help bind to and inactivate the virus. In addition, said Pettitt, the antibodies recognize infected cells and trigger the immune system to kill them off. No side effects of the antibodies were observed in the surviving animals.
+
+MB-003 was developed through a decade-long collaborative effort between private industry and the U.S. government, with funding from the Defense Advanced Research Projects Agency (DARPA), the National Institutes of Health (NIH), and the Defense Threat Reduction Agency (DTRA).
+
+"With no vaccines or therapeutics currently licensed to treat or prevent Ebola virus, MB-003 is a promising candidate for continued development," said collaborator Larry Zeitlin, Ph.D., president of Mapp Biopharmaceutical in San Diego, California.
+
+MB-003 is manufactured in a plant-based system by Kentucky BioProcessing in Owensboro, Kentucky. According to Barry Bratcher, the company's chief operating officer, the plant-based system allows for considerable efficacy while KBP's automated facility keeps MB-003 cost-effective and cuts down on the production time required.
+
+"Our facility can produce these proteins in two weeks at a substantial reduction in cost to other production methods," said Bratcher. "This advanced method of manufacturing allows us to address needs quickly and inexpensively."
+
+Zeitlin said Mapp recently announced formation of a joint venture between LeafBio (Mapp's commercialization arm) and Defyrus of Toronto, Canada, to consolidate their antibody programs. He said the relationship will streamline development of the most potent anti-filovirus products.
+
+According to Zeitlin, the next step in the drug development process would be to more extensively test the safety of the antibodies in animals. Once that is established, the safety of the antibodies would need to be assessed in human volunteers. Ultimately, a large efficacy study in non-human primates and a larger safety study in humans would be required for Food and Drug Administration (FDA) licensure of the product.
+
+###
+
+USAMRIID's mission is to protect the warfighter from biological threats and to be prepared to investigate disease outbreaks or threats to public health. Research conducted at USAMRIID leads to medical solutions--vaccines, drugs, diagnostics, and information--that benefit both military personnel and civilians. The Institute plays a key role as the lead military medical research laboratory for the Defense Threat Reduction Agency's Joint Science and Technology Office for Chemical and Biological Defense. USAMRIID is a subordinate laboratory of the U.S. Army Medical Research and Materiel Command.
+
+Reference: J. Pettitt, L. Zeitlin, D. H. Kim, C. Working, J. C. Johnson, O. Bohorov, B. Bratcher, E. Hiatt, S. D. Hume, A. K. Johnson, J. Morton, M. H. Pauly, K. J. Whaley, M. F. Ingram, A. Zovanyi, M. Heinrich, A. Piper, J. Zelko, G. G. Olinger. Therapeutic intervention of Ebola virus infection in rhesus macaques with the MB-003 monoclonal antibody cocktail. Sci. Transl. Med. 5, 199ra113 (2013)
+
+For more information about USAMRIID: http://www. usamriid. army. mil
+
+No commercial endorsement is implied.

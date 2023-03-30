@@ -1,0 +1,41 @@
+At the sharp end of the fight against Ebola and other infectious diseases are courageous people who work tirelessly in difficult conditions. Equations are not included as standard in medical kits. But in the backrooms of universities and institutes mathematicians are also contributing to the lines of defence.
+
+While big data analysts and statisticians process observational information to refine a picture of what is happening, where and when, mathematical modellers instead distill into equations the fundamental mechanisms that govern epidemiological dynamics such as transmission, incubation, recovery, treatment and quarantine.
+
+These mathematical models can then be analysed to reach a deeper understanding of the critical processes that drive an epidemic, help identify and assess potential management strategies, and perhaps look a little into the future when statistical extrapolation can be confounded by the complex interplay of nonlinear effects that characterises many biological systems – for instance the limiting effects of density on population size.
+
+The art of mathematical modelling
+
+In mathematical modelling, the ordered beauty and truth of mathematics guides the process of repetitions through which empirical evidence refines scientific hypothesis. Mathematical modelling is the process of abstraction from observed reality, guided by knowledge, data and intuition from the sharp end, pulling out and piecing together mechanisms and relationships that will unlock insights into a particular question.
+
+Art can be considered a process of abstraction, refining the essence of an observation to communicate and explore the relationships in a composition. Art history documents many styles and forms of abstraction, and the nature of the result depends on the nature of the method, and all forms are valid as long as we understand this and interpret the product of our model appropriately.
+
+A spectrum of models
+
+The assumptions, approximations and simplifications that go into a mathematical model place the insights it produces on a spectrum from quantitative to qualitative. Models at the quantitative end of the spectrum incorporate as much observed detail as possible, as accurately as possible. The epidemics described by these models can be projected forward in time to predict what will happen next if we do nothing, and if we do this or do that.
+
+These predictions are clouded by uncertainty because the model construction is always an approximation of reality and the computational simulation relies on parameters derived from biological data, which is imprecise because it is gathered in the field, often under difficult conditions. Nevertheless, with sufficient computer power, the uncertainty in the model can be quantified so we can say there is a 85% chance of outcome A, a 19% chance of outcome B and a 1% chance of outcome C. And rare events, of course, do happen.
+
+The airline transport network is key to the global dispersal of many infectious diseases. In the event of an epidemic a major concern for governments, health protection agencies and an anxious public is the risk that it will spread to their country.
+
+The risk of imported cases can be quantified using mathematical models that combine basic information about local epidemics with detailed information about passenger numbers across the flight network.
+
+A preliminary analysis of this nature has already been done for the current Ebola outbreak by adapting a global epidemic and mobility model originally developed for pandemic influenza.
+
+Models like this can also be used to examine the likely impact of containment strategies such as closing certain flight routes or airports, assuming that people don’t respond in an unforeseen way to the inconvenience.
+
+Models at the qualitative end of the spectrum are simpler, more stylised representations of reality. These models generally aim to provide fundamental insights into how the interaction between simple components shapes the emergent dynamics, which can be surprisingly complex. For instance, qualitative mathematical modelling of dengue virus has shown that a combination of seasonal variation in transmission over the course of the year and immunological interaction between different viral stereotypes can generate cycles in prevalence that span several years.
+
+The speed with which simple qualitative models can be set up and analysed makes them useful for conducting rapid thought experiments to support acute decision making. They can be used to explore, in general terms, what happens if we do this or if we do that and, crucially, why it happens. This “why” is difficult to extract from highly detailed models but has the potential to cut to the heart of an epidemic.
+
+At the scale of a city or province, an important consideration when assessing possible strategies for managing an epidemic is how socio-demographic structures influence the way an epidemic unfolds. In the case of Ebola, transmission requires close contact with an infectious person. A reasonable abstraction of the socio-demographic structure might use a population structured into households with intense transmission within households but a weak transmission between them.
+
+This type of model can illuminate the role of factors such as the distribution of household sizes or the relative weights of transmission within and between households during an epidemic. It can also be used to explore how potential control measures that have an effect on these structures will affect, or fail to affect, an epidemic’s trajectory.
+
+A repository of knowledge
+
+The history of epidemiological modelling stretches back more than a hundred years. Ronald Ross, who discovered that malaria was transmitted by mosquitoes, used simple mathematical models to inform his campaign against malaria in the early 1900s. Ross used equations to formalise the transmission process from mosquito to person and back again, and employed this framework to understand how the number of human infections was related to the mosquito population size.
+
+Since then mathematical analysis has offered insights into the epidemiology of a wide range of pathogens and parasites from helminths to HIV. This research has resulted in a vast repository of knowledge, methods and techniques that underpin modern understanding of the dynamics of infectious diseases.
+
+The research community in mathematical epidemiology has never been more substantial or more active, probing for more effective ways to manage endemic infectious diseases, examining how best to exploit technological or pharmaceutical innovations and offering strategic support in the face of emergent challenges such as Ebola.

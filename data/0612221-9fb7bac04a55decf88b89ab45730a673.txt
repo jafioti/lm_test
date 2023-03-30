@@ -1,0 +1,91 @@
+This past offseason, the NFL officiating clinic discussed a “point of emphasis” on Illegal Contact (IC) and Defensive Holding (DH) that would be applied to the 2014 season. As it turns out, there is much more at stake here than just points. Teams can seriously take advantage of these rules, both offensively and defensively, when it comes to what they care about most: Wins and Losses.
+
+The penalties for IC and DH are different than for Defensive Pass Interference (DPI). Instead of spot fouls, these penalties are just 5 yards, but they come with an automatic first down. Which are critical. Consider that the past 3 years, teams averaged roughly 19 first downs per game, even adding 1 to 2 additional first downs is a 5.3% to 10.5% increase.
+
+Thru the 1st week of the 2014 preseason (in 17 games), we’ve seen 27 IC flags. Last year, we saw just 37 total in 256 games! DH was called much more often last year (313 total) so where that ends up in 2014 is anyone’s guess. Thru the 2nd week of the 2014 preseason (30 games), we’ve seen 96 defensive holding flags (62 enforced) and 52 illegal contact flags.
+
+Last year we saw 1.2 DH enforced/game, this preseason we are at 2.1.
+
+Thats a 75% increase in DH enforced/game.
+
+Last year we saw 0.14 IC enforced/game, this preseason we are at 1.73.
+
+That’s a 1136% increase in IC enforced/game.
+
+Oddly, while I’ve seen a fair amount of the games this preseason, when they do replay these flags, to be honest, it looks like 85%-90% are ACTUAL flag-worthy offenses by the letter of the law. Teams and fans just are not used to seeing them called because officials have been far too lax on them. But as Chip Kelly says (full quote below): “Those are the rules and we’ve got to play by them.”
+
+But let’s look at what happens when this all boils down to what really matters: the Win and Loss columns.
+
+3rd DOWN – Converting failed 3rd downs to 1st down because of penalty
+
+Let’s examine the scenario when a team’s offense is able to draw one of these IC or DH penalties when they are on 3rd down. This flag (if accepted) changes a 4th down punt (most of the time) into a 1st down. It keeps the drive alive, and the team maintains possession of the ball instead of vacating it.
+
+Below is data for the last 3 years, averaging per team across the NFL:
+
+13.38 3rd down attempts/game
+
+38.61% average conversion rate
+
+Translates to roughly teams (on avg) going 5 of 13 on 3rd down (38.5%)
+
+I ran a regression analysis on 3rd down conversion percentage to team wins over the last 3 seasons. Based on the 3D conversion rate a team earns, you can approximate the number of wins that team will gain in the season. The formula is Wins = 28.542 x (3D%) – 3.0402.
+
+As such, with the league average above (approx 38.5% 3D conversions the past 3 years), the avg team won 7.95 games. Which is essentially 8, which is average (8-8), and makes total sense.
+
+Imagine if in 2014, a team is able to earn just 1 extra first down on 3rd down per game because of one of these penalties. They move from 5 of 13 (38.5%) to 6 of 13 (46.2%). Plugging that new percentage into the formula, we can see:
+
+A team who converts 1 more 3rd down into first down per game wins 10.14 games! That is MASSIVE! It moves an 8 win team, most likely out of the playoffs, into a 10 win team, most likely in the playoffs.
+
+In my 2014 NFL Preview, I discuss even more about 3rd down conversions and how there is a down even MORE critical to wins than 3rd down.
+
+1st & 2nd DOWNS – Converting first downs while on 1st or 2nd down because of penalty
+
+Now we’ll look at situations where an offense is on 1st or 2nd down, and is able to earn another 1st down… a highly efficient situation.
+
+Below is data for the last 3 years, averaging by team across the NFL:
+
+50 1st & 2nd down plays/game
+
+25.4% average conversion rate to new 1st downs
+
+Translates to teams (on avg) converting 12.7 new 1st downs of their 50 total 1st/2nd down play attempts each game
+
+I ran a regression analysis on 1st/2nd down conversion percentage to team wins over the last 3 seasons. Based on the rate a team earns, you can approximate the number of wins that team will gain that season. The formula is Wins = 55.754 x (1&2D%) – 6.1992.
+
+As such, with the league average above (approx 25.4% 1st/2nd D conversions the past 3 years), the avg team won 7.96 games. Again, 8-8 and makes sense.
+
+Imagine if in 2014, a team is able to earn just 1 extra first down on 1st or 2nd down, because of one of these penalties. They move from 12.7/50 to 13.7/50 (27.4%). Plugging that new percentage into the formula, we can see:
+
+A team who converts 1 more 1st/2nd down into a new first down wins 9.08 games! And if they earned 2 extra first downs by penalty out of 50 1st/2nd down plays in a game, they move from 8 wins up to 10.19 wins!
+
+KEY CONSIDERATION
+
+The numbers we’re discussing are ALL AVERAGES. So if the NFL average rises, which surely it will, just because a team earns an extra 1st down due to penalty does NOT mean they will win 9 or 10 games. The key is, the team’s offense must earn them (seems likely) but the team’s defense MUST NOT.
+
+Which is why what Chip Kelly said was spot on:
+
+“Those are the rules, and we’ve got to play by them. We’ve got to learn to not get our hands in people’s faces, and we’ve got to understand that after five yards it’s illegal contact. And if you can’t play within the rules, you can’t play in this league. That’s just the bottom line. You’re just handing people first downs. We better figure it out, and as I said earlier, whichever team ends up being the most disciplined team from that standpoint is going to have a big advantage in this league. It’s a challenge to everybody. We all have to figure it out. That’s the deal.”
+
+Chip Kelly “gets it”. [Not just on this topic, but he really gets ALL of it.] He understands to have the BIG ADVANTAGE, you need to get these “free” first downs and prevent your opponent from getting them. Your defense MUST be disciplined, and your offense MUST pass the ball and be aggressive (you don’t earn these pass penalties when you’re running the ball).
+
+But I doubt even Chip Kelly realizes the full, exact impact. He’s just a smart guy who understands football.
+
+The full, exact impact is if you’re gaining just 1 of these penalties/game which convert a 3rd down into a first down -AND not giving your opponent one- you’re on your way to move from an 8 win team to a 10 win team (all other things being equal).
+
+And likewise, even if you don’t get the flag on a critical 3rd down, but you get it on 1st or 2nd down, you’re on your way to move from an 8 win team to a 9 win team (1 flag/game) or a 10 win team (2 flags/game).
+
+That is the EXACT IMPACT. It’s massive. It’s the difference between making the playoffs and making room on your couch to watch the playoffs. And that’s the difference between coaches getting raises or getting fired.
+
+If players and fans want to keep complaining about the flags, that’s fine. But I doubt they call things THIS tight in the regular season. But they hopefully will call it tighter than they did last season. So we WILL see more flags. Most of them are warranted by the letter of the law which has always been there. They just weren’t emphasized enough, and now they are. Time to move on.
+
+The teams who get stuck complaining about the flags probably will be the teams who are committing too many offenses. And according to this study, it will most likely be those teams who are losing games.
+
+[NOTE: Keep in mind not ALL penalties calls are equal. Teams who are leading in games (like the Broncos and Seahawks last year) have a lot of pass attempts against their defense, by opposing offenses playing catchup who are down by a lot of points. Therefore, they are more likely to have pass penalties called on their defense, but many are called when the game is out of reach. Which is why its hard to put too much weight on penalties alone, because game theory plays into it a lot.]
+
+_______________________________________________________________________
+
+What they’re saying about the 247-page 2014 Football Preview, released 1 week ago:
+
+Comments
+
+comments

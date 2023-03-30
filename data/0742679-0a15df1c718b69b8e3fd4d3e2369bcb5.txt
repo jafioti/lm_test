@@ -1,0 +1,55 @@
+“Science is always wrong,” George Bernard Shaw famously proclaimed in a toast to Albert Einstein. “It never solves a problem without creating 10 more.”
+
+In the fifth century BC, long before science as we know it existed, Socrates, the very first philosopher, famously observed, “I know one thing, that I know nothing.” Some 21 centuries later, while inventing calculus in 1687, Sir Isaac Newton likely knew all there was to know in science at the time — a time when it was possible for a single human brain to hold all of mankind’s scientific knowledge. Fast-forward 40 generations to today, and the average high school student has more scientific knowledge than Newton did at the end of his life. But somewhere along that superhighway of progress, we seem to have developed a kind of fact-fetishism that shackles us to the allure of the known and makes us indifferent to the unknown knowable. Yet it’s the latter — the unanswered questions — that makes science, and life, interesting. That’s the eloquently argued case at the heart of Ignorance: How It Drives Science, in which Stuart Firestein sets out to debunk the popular idea that knowledge follows ignorance, demonstrating instead that it’s the other way around and, in the process, laying out a powerful manifesto for getting the public engaged with science — a public to whom, as Neil deGrasse Tyson recently reminded Senate, the government is accountable in making the very decisions that shape the course of science.
+
+The tools and currencies of our information economy, Firestein points out, are doing little in the way of fostering the kind of question-literacy essential to cultivating curiosity:
+
+Are we too enthralled with the answers these days? Are we afraid of questions, especially those that linger too long? We seem to have come to a phase in civilization marked by a voracious appetite for knowledge, in which the growth of information is exponential and, perhaps more important, its availability easier and faster than ever.*
+
+(For a promise of a solution, see Clay Johnson’s excellent The Information Diet.)
+
+The cult of expertise — whose currency are static answers — obscures the very capacity for cultivating a thirst for ignorance:
+
+There are a lot of facts to be known in order to be a professional anything — lawyer, doctor, engineer, accountant, teacher. But with science there is one important difference. The facts serve mainly to access the ignorance… Scientists don’t concentrate on what they know, which is considerable but minuscule, but rather on what they don’t know…. Science traffics in ignorance, cultivates it, and is driven by it. Mucking about in the unknown is an adventure; doing it for a living is something most scientists consider a privilege. […] Working scientists don’t get bogged down in the factual swamp because they don’t care all that much for facts. It’s not that they discount or ignore them, but rather that they don’t see them as an end in themselves. They don’t stop at the facts; they begin there, right beyond the facts, where the facts run out. Facts are selected, by a process that is a kind of controlled neglect, for the questions they create, for the ignorance they point to.
+
+Firestein, who chairs the Department of Biological Sciences at Columbia University, stresses that beyond simply accumulating facts, scientists use them as raw material, not finished product. He cautions:
+
+Understanding the raw material for the product is a subtle error but one that can have surprisingly far-reaching consequences. Understanding this error and its ramifications, and setting it straight, is crucial to understanding science.
+
+What emerges is an elegant definition of science:
+
+Real science is a revision in progress, always. It proceeds in fits and starts of ignorance.
+
+(What is true of science is actually also true of all creativity: As Jonah Lehrer puts it “The only way to be creative over time — to not be undone by our expertise — is to experiment with ignorance, to stare at things we don’t fully understand.” Einstein knew that, too, when he noted that without a preoccupation with “the eternally unattainable in the field of art and scientific research, life would have seemed… empty.” And Kathryn Schulz touched on it with her meditation on pessimistic meta-induction.)
+
+In highlighting this commonality science holds with other domains of creative and intellectual labor, Firestein turns to the poet John Keats, who described the ideal state of the literary psyche as Negative Capability — “that is when a man is capable of being in uncertainties, Mysteries, doubts without any irritable reaching after fact & reason.” Firestein translates this to science:
+
+Being a scientist requires having faith in uncertainty, finding pleasure in mystery, and learning to cultivate doubt. There is no surer way to screw up an experiment than to be certain of its outcome.
+
+He captures the heart of this argument in an eloquent metaphor:
+
+Science, then, is not like the onion in the often used analogy of stripping away layer after layer to get at some core, central, fundamental truth. Rather it’s like the magic well: no matter how many buckets of water you remove, there’s always another one to be had. Or even better, it’s like the widening ripples on the surface of a pond, the ever larger circumference in touch with more and more of what’s outside the circle, the unknown. This growing forefront is where science occurs… It is a mistake to bob around in the circle of facts instead of riding the wave to the great expanse lying outside the circle.
+
+However, more important than the limits of our knowledge, Firestein is careful to point out, are the limits to our ignorance. (Cue in Errol Morris’s fantastic 2010 five-part New York Times series, The Anosognosic’s Dilemma.) Science historian and Stanford professor Robert Proctor has even coined a term for the study of ignorance — agnotology — and, Firestein argues, it is a conduit to better understanding progress.
+
+Science historian and philosopher Nicholas Rescher has offered a different term for a similar concept: Copernican cognitivism, suggesting that just like Copernicus showed us there was nothing privileged about our position in space by debunking the geocentric model of the universe, there is also nothing privileged about our cognitive landscape.
+
+But the most memorable articulation of the limits of our own ignorance comes from the Victorian novella Flatland, where a three-dimensional sphere shows up in a two-dimensional land and inadvertently wreaks havoc on its geometric inhabitants’ most basic beliefs about the world as they struggle to imagine the very possibility of a third dimension.
+
+An engagement with the interplay of ignorance and knowledge, the essential bargaining chips of science, is what elevated modern civilization from the intellectual flatness of the Middle Ages. Firestein points out that “the public’s direct experience of the empirical methods of science” helped humanity evolve from the magical and mystical thinking of Western medieval thought to the rational discourse of contemporary culture.
+
+At the same time, Firestein laments, science today is often “as inaccessible to the public as if it were written in classical Latin.” Making it more accessible, he argues, necessitates introducing explanations of science that focus on the unknown as an entry point — a more inclusive gateway than the known.
+
+In one of the most compelling passages of the book, he broadens this insistence on questions over answers to the scientific establishment itself:
+
+Perhaps the most important application of ignorance is in the sphere of education, particularly of scientists… We must ask ourselves how we should educate scientists in the age of Google and whatever will supersede it… The business model of our Universities, in place now for nearly a thousand years, will need to be revised. […] Instead of a system where the collection of facts is an end, where knowledge is equated with accumulation, where ignorance is rarely discussed, we will have to provide the Wiki-raised student with a taste of and for boundaries, the edge of the widening circle of ignorance, how the data, which are not unimportant, frames the unknown. We must teach students how to think in questions, how to manage ignorance. W. B. Yeats admonished that ‘education is not the filling of a pail, but the lighting of a fire.’
+
+(For a taste of what modern science education can and should be like beyond the academy, see Joe Hanson’s It’s Okay To Be Smart, Ed Yong’s Not Exactly Rocket Science, and Bora Zivkovic’s Twitter feed.)
+
+Firestein sums it up beautifully:
+
+Science produces ignorance, and ignorance fuels science. We have a quality scale for ignorance. We judge the value of science by the ignorance it defines. Ignorance can be big or small, tractable or challenging. Ignorance can be thought about in detail. Success in science, either doing it or understanding it, depends on developing comfort with the ignorance, something akin to Keats’ negative capability.
+
+* See some thoughts on the difference between access and accessibility.
+
+↬ Scientific American

@@ -1,0 +1,199 @@
+
+
+A Port of the birds-eye shoot-em-up shooter OpenTyrian to Wii.
+
+About
+
+This is a Wii adaptation of TYRIAN, the game edited by Eclipse and published by Epic MegaGames.The original game was programmed by Jason Emery, illustrated by Daniel Cook, and its music composed by Alexander Brandon and Andras Molnar.
+
+This port is based on OpenTyrian project code, maintained by mindless2112, syntaxglitch,emacs.hacker, yuriks.br.
+
+This README file was based on the README found on Nuvalo's old one.
+
+This port is separate from Nuvalo's port, and has now replaced it (as you can see). It is fully functional and much more stable than the Wii-Linux version.
+
+This is not the version featured in the Homebrew Showcase linked on the main page (unfortunately). But trust me, it is better, and easier to use.
+
+Gameplay
+
+Tyrian is an arcade-style vertical scrolling shooter. The player controls a space ship fitted with different weapons and enhanced energy shields. Money is earned by destroying enemies and grabbing bonuses, which is then used to purchase upgrades such as weapons, shields, energy generators, and different ships from interlevel menus. The game is fast paced and presents a variety of enemies and bosses.
+
+Features
+
+Full Wiimote+Nunchuk, Classic Controller, and USB Keyboard support, 95% GC Pad support.
+
+Wiimote horizontal capable.
+
+2 Player Arcade action.
+
+Full input choice (you can use any Wiimote, classic controller or GC pad, no matter the sync, as well as the keyboard).
+
+SD and SDHC support from the front SD slot.
+
+NEW - Fully configurable and savable button mappings for all controllers (see Custom Button Assignments for help).
+
+Loadable from SD and USB (FAT partitions only).
+
+All difficulties and arcade/engage modes now available. Difficulties in Select Difficulty. Arcade accessed by left/right sidekick simultaneous press in main menu.
+
+Installation
+
+Download the two packages on Google Code (you only need the tyrianFiles zip once. Those won't be updated)
+
+Unzip them directly to the root of your SD card (will work on putting the cfg and sav files in the tyrian folder)
+
+Run using HBC (you can run it with something else, but HBC is the standard now). Installing Homebrew Channel
+
+Controls
+
+Keep in mind that though Wiimote horizontal play is supported, it is not set up by default. The only thing that is enabled by default for horizontal is the Wiimote DPad.
+
+In Menu/In Game
+
+Because custom mapping is enabled now, all you need to know is that whatever button is assigned to "FIRE" in the joystick mapping is also the confirm button, and the "CHANGE FIRE" assignment is the cancel button. The rest should be pretty straightforward and/or intuitive.
+
+Custom Button Assignments
+
+Here's a list of controller button numbers for your customization pleasure.
+
+NOTE: As of 1.5.0, custom button assignment saving has been reenabled! Customize at your leisure!
+
+NOTE: As of 1.6, the joystick configuration menu works now to display button names. Here are the details:
+
+Now displays name of joystick at top instead of number (Joystick 1-4 == Wiimote 1-4, Joystick 5-8 == GC Pad 1-4).
+
+Also displays button names instead of numbers now. AX replaced by JOY (and RJOY for Classic substick and GC Pad C-Stick), BTN i replaced by W-/C-/N- (wiimote, classic, and nunchuk respectively) and name for Wiimotes, and just the names for GC, and H replaced by DPAD. +/- on each axis replaced by physical directions.
+
+Finally, DPAD directions dynamically displayed based on whether Classic is plugged in or not.
+
+In order to make a reassignment, in the Joystick menu, using the "RETURN"/"FIRE" button, select the function you wish to reassign, press the button that is assigned for that controller/expansion, then select the function again and press the button you wish to use. Defaults currently only set the Wiimote buttons by itself, and are really not set properly. However, it's possible to make button assignments with just the Wiimote, or in any combination of controllers and extensions.
+
+Known Issues
+
+Network status unknown.
+
+GC pad joystick does not work (buttons and D-pad do).
+
+In Save menu, when using the keyboard, cannot type save names, Enter does not "RETURN" and confirm the save. Use Wiimote A button or Classic Controller b button (defaults).
+
+Sometimes, loading a game right after you die (especially on some bonus levels) causes a crash. I suggest, for now, starting the next level and quitting that level before loading again for these instances.
+
+If you know of or find anything else, or you think of an improvement you'd like to suggest, please post it on my Google Code issues page.
+
+TODO
+
+Fix GC Joysticks.
+
+In-level cheats menu?
+
+Possibly add in NTFS support for SD and USB.
+
+Changelog
+
+1.7 - 25 February 2010
+
+Impossible, Suicide, and Lord of Game difficulties now available by default in difficulty select menu.
+
+Change in onscreen keyboard startup and shutdown routine. Result is an increase in speed when loading the save/highscore name entry screens.
+
+Rich mode (a.k.a. loot) now accessible through "OpenTyrian" menu option.
+
+Latest changelog now included in meta.xml (for the benefit of the HBB users).
+
+Special Games/Modes menu added. Access by simultaneously pressing left and right sidekick assigned joystick buttons (or F15 on a keyboard, if you have one that far up). Includes choices for both Arcade ships (i.e. UNKNOWN, WEIRD, NORTSHIP, etc), as well as the two difficulty settings for ENGAGE (suicide and LOG). Will eventually include Destruct mode (2D tanks game), but since it's not rigged to work with joysticks at the moment, it's useless on the Wii.
+
+1.6 - 19 February 2010
+
+USB support added for loading and saving OpenTyrian data files (make sure all files in /popkey and /tyrian subdirectories are in place; tyrian.sav, tyrian.cfg and joystick.conf are optional).
+
+Several background code optimizations not yet reflecting in game performance.
+
+OSK bugfix: "9" now works on both name input screens.
+
+Bugfix for "Low" detail text display in Pause menu.
+
+Default detail level set to "Pentium"
+
+Wild detail mode enabled in Pause menu detail selection.
+
+Fix for default HAT assignments (used to assign all directions to HAT-left).
+
+Joystick configuration menu completely reworked (details in Joystick Config): Now displays name of joystick at top instead of number. Also displays button names instead of numbers now. Finally, DPAD directions dynamically displayed based on whether Classic is plugged in or not.
+
+
+
+1.5.0 - 14 February 2010
+
+Massive core update finally completed. This core update includes many improvements, such as: Joystick configurations now savable. No corruption has yet occurred through dozens of saving/loading cycles. Game is much more stable. Random crashes seem nonexistent. Sound distortions are at an all-time low. Pops/crackles hardly noticeable, if at all.
+
+This core update also includes all previous improvements, such as the on-screen keyboard and menu exclusions/changes to avoid any possible problems resulting from settings incompatible with the Wii.
+
+1.2.0 - 09 June 2009
+
+On screen keyboard is now fully active, and tested working both in the save menu and on the high scores screen! There are actually quite a few symbols that are available through the OSK that aren't available if you're using a USB keyboard, lol. The OSK comes up automatically on both screens.
+
+As a result, the interim name input for both screens has been removed (replaced by the OSK).
+
+1.1.3 - 04 June 2009
+
+All scalers are now set to center vertical output on a 4:3 display (at 320x240 [none] or 640x480 [2x, scale2x]). Widescreen is untested, but is still expected to stretch and have a substantial black bar at the bottom. Good thing is that it's no longer clipped at the top.
+
+Fullscreen scaling has been abandoned, as the most optimized version of the interpolater (that I could optimize it to) takes too much processor time to complete, and is extremely slow on the Wii. Therefore None, 2x and scale2x are now all open again.
+
+Keyboard functionality has been restored to the save game and high scores naming windows. Keyboard input from all alphanumeric characters, plus some symbols, is now supported.
+
+As an interim solution for non-keyboard save/score naming, save and high score name input is enabled for all joysticks and DPads now, as well. Use up/down to change the character, right to advance a space, and left to delete. Unfortunately, high score input is untested, but soon will be, and any bugs will be fixed in the next version.
+
+Finally, did some cleanup in the OpenTyrian menu. Removed Fullscreen option (it froze the game when activated) and removed 3x, scale3x, and 4x from the scaler options (since SDL can't support that size anyway).
+
+1.1.2 - 28 May 2009
+
+All DPads now support bidirectional movement. This makes the GC pad much more viable as a controller to use in OpenTyrianWii.
+
+Fix confirmed for the CC DPad bug. It now only functions as a DPad.
+
+Unconfirmed fix for HBC 1.0.2 and up (I tested it on my Wii with 1.0.3 and it worked).
+
+Because of a bug in the joystick saving function, I have temporarily disabled it. Details in Controls.
+
+As a note, turning the volume down on the sfx seems to diminish the popping in the audio, but only slightly. Still looking into a proper resampling.
+
+Also, don't change the scaler to anything but scale2x. 2x is now a testing ground for the 640x480 upscale, and is unstable.
+
+1.1.1 - 26 May 2009
+
+All DPads are now functional. Wiimote DPad is configured for horizontal gameplay, CC and GC DPads are configured traditionally. However, the CC DPad left seems to act as an escape key. Fix to come later.
+
+1.1.0 - 26 May 2009
+
+Fixed sound bug from exit exception fix.
+
+Fixed joystick configuration. Wiimote+nunchuk and Classic Controller are now fully configurable!!! Details in Controls.
+
+Disabled mouse support (until SDL Wii is fixed with a solution for Wiimote dual functioning as mouse and joystick).
+
+All userdata moved to tyrian/userdata. For those with versions earlier than 1.1.0, just move your tyrian.cfg and tyrian.sav files to tyrian/userdata. The next time you exit, joystick.cfg will show up there as well.
+
+Button crashes are not confirmed to be fixed, but so far, I have not had any problems since I disabled the mouse functionality.
+
+Whatever you do, do not use the GameCube pad yet. It will override (for some reason) the wiimote functionality, and as the GC pad joystick is not functioning yet, you can't navigate or change anything. I will work on a fix for this later.
+
+1.0.1 - 25 May 2009
+
+Fixed exception screen on title menu exit selection.
+
+1.0 - 25 May 2009
+
+Initial release.
+
+Supports game saves natively.
+
+Full audio support (music synthesized at 32khz, sfx resampled to 33075). Sfx will pop, music by itself will not.
+
+Wiimote/Nunchuk support through SDL Wii's joystick functionality.
+
+Video's
+
+Video removed by Youtube.*
+
+Thanks

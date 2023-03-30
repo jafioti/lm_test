@@ -1,0 +1,11 @@
+If you use Google+ application on Android, you would be thrilled to know that all those pictures being loaded on your device since last month and a half are not really JPG or JPEG format. They are Google’s experimental WebP image format. Big benefit of this new format is that it saves 50% bandwidth maintaining almost same quality as the original.
+
+At a presentation held on Google I/O conference, Googlers said that the fact Androids can show WebP image formats natively has helped them reduce bandwidth by 50% by showing images in WebP format. The search giant says within the next year, WebP format images will be shown across all of its platforms — from Google Image search to every other product — on the web, too.
+
+Earlier, Google started using WebP format images in Chrome Web Store without any big announcement. According to them, WebP formatted images are 30% smaller in size than PNG formats. Since Google has to deal with a lot of images among all of its services, the company is now looking at efficient ways to save bandwidth and serve images faster for better user experience.
+
+We reported earlier that Google is also pushing a WebM format to YouTube videos soon with its newest VP9 video codec. The goal is same: to save bandwidth. We guess WebP means Web Picture and WebM means Web Media — and Google has them both. No doubt the company is now making it better for everyone.
+
+At this moment, the only platforms supporting WebP image formats are Chrome, Android and Opera. However, Google says it hopes Firefox will soon support WebP image formats within the next year.
+
+Have you noticed a speedy improvement over image loading on your Google+ app on Android?

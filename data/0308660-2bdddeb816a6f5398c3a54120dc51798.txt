@@ -1,0 +1,25 @@
+Five plaintiffs yesterday sued Apple and asked a federal court to designate the case a class action lawsuit because their iPhones were allegedly "bricked" after they had either repaired their smartphones themselves or went to a third-party shop for repairs.
+
+According to a complaint filed Thursday, the five were represented by the Seattle, Wash. law firm Pfau, Cochran, Vertetis, Amala (PCVA), which earlier this week solicited possible plaintiffs for a class action suit.
+
+The complaint was based on "Error 53," an error message that has appeared on iPhone 6, 6S, 6 Plus and 6S Plus devices. It appears when a do-it-yourself owner or a third-party shop has replaced the Home button -- which includes the Touch ID sensor -- and/or the connecting cable. Once the error appears, the iPhone is "bricked," or rendered unusable.
+
+[ Further reading: How iOS 11 makes mobile management easier ]
+
+Error 53 is triggered when users update or upgrade to a new version of iOS, and the operating system detects that components have been changed in the iPhone.
+
+Apple has said the error message and subsequent crippling of the iPhone are "security checks designed to protect our customers." If iOS sniffs out a new Home button or cable, Touch ID, the fingerprint-based authentication technology used by the iPhone, is disabled. "This security measure is necessary to protect your device and prevent a fraudulent Touch ID sensor from being used," Apple said in a statement Tuesday.
+
+A recently published support document on Apple's website provided additional information about the circumstances that can trigger Error 53, including a screen replacement. "An unauthorized or faulty screen replacement could cause the check to fail," the support document stated.
+
+PCVA attorneys for the five plaintiffs -- who include one each from Arizona, California and Oregon, and two from Florida -- sued Apple for alleged negligence, negligent misrepresentation, unjust enrichment and violation of California's unfair competition and false advertising laws.
+
+"Plaintiff DeNoma decided to replace the screen himself after researching how to do so," the lawsuit said, referring to John DeNoma of Oregon. "While replacing the screen, he broke the ribbon cable that connected the Touch ID to the device, so he ended up replacing the entire home button. The iPhone worked great after the repair.
+
+"Sometime in or around December 2015, Plaintiff DeNoma updated the iPhone to iOS 9.1.2. Halfway through the process, the device froze and the Error 53 code appeared. Plaintiff DeNoma would not have attempted to install the Operating System update had he been warned or notified by Apple that Error 53 might occur and/or that his device might be rendered inoperable and unusable."
+
+Much of the potential class-action lawsuit relies on charges that Apple failed to tell iPhone owners that if they had their devices repaired by anyone other than Apple, the smartphone might not work after an iOS update or upgrade.
+
+"Apple further owed a duty to Plaintiffs and the Class members to disclose that the Operating Systems contained features that could trigger Error 53, Error 53's existence, and/or that the features and/or Error 53 could render Affected Models inoperable and unusable if Plaintiffs and the Class members utilized independent repair services," the complaint said in the negligence and negligent misrepresentation charges.
+
+The lawsuit requested a jury trial and class-action status. The latter will allow others to join the case without having to find an attorney of their own and sue Apple independently.

@@ -1,0 +1,59 @@
+Humanoid robots could help autistic children practice imitation behavior, according to USC Viterbi School of Engineering researchers, based on a new study.
+
+They examined how children with autism spectrum disorder (ASD) react to humanoid robots that provide “graded cueing” — an occupational therapy technique that shapes behavior by providing increasingly specific cues, or prompts, to help a person learn new or lost skills.
+
+An imitation game
+
+They divided a group of 12 high-functioning children with ASD into two groups, one experimental and one control. Each child then played an imitation game (“copycat”) with a Nao robot that asked the child to imitate 25 different arm poses.
+
+“So if a child with autism is at recess with friends, and some kids are playing Red Light/Green Light, the child might look at the game and say, ‘Oh, I see how to play, and I can play with them too,”’ explained study leader Maja Matarić, USC Viterbi Vice Dean for Research and the Chan Soon-Shiong Chair in Computer Science, Neuroscience and Pediatrics.
+
+When a child in either group imitated the pose correctly, the robot flashed its eyes green, nodded, or said “Good job!” When a child in the control group failed to imitate the pose correctly, the robot simply repeated the command without variation.
+
+However, for the experimental group participants, the Nao robot offered varied prompting when a child did not copy the pose accurately. At first, it provided only verbal cues, but later it followed up with more detailed instructions and demonstrations of the pose.
+
+Children who received the varied prompting (graded cueing feedback) until the correct action was achieved showed improved or maintained performance, while children who did not receive graded cueing regressed or stayed the same.
+
+The researchers explain that these results demonstrate that a socially assistive robot can be effective at providing that kind of varied feedback. The study also found that the feedback was more effective and less frustrating to the study participants than merely receiving the same prompt repeatedly when they did not imitate the pose correctly.
+
+A personal robot for each child with ASD
+
+Although this study did not exercise the graded cueing model to its fullest, the preliminary results show promise for the use of this technique to improve user autonomy through robot-mediated intervention, said Matarić, who hopes that, within a decade, children with ASD might have their own personal robots to assist them with therapy, help prompt them through daily tasks, coach them through interactions with others, and encourage them to play with peers.
+
+“The idea is to eventually give every child a personalized robot dedicated to providing motivation and praise and nudges toward more integration,” she said.
+
+This pilot study is part of ongoing work in socially assistive robotics under Matarić at The Interaction Lab, part of the USC Center for Robotics and Autonomous Systems (RASC), the USC Robotics Labs, and the USC Viterbi Computer Science Department. Research at The Interaction Lab focuses on the development of adaptive and personalized socially assistive robots that can help people with special needs to incorporate new healthy and therapeutic behaviors into their everyday lives.
+
+Findings from the study were presented at the 23rd IEEE International Symposium on Robot and Human Interactive Communication (RO-MAN) conference in Edinburgh, Scotland, on Aug. 27.
+
+Matarić’s research team included doctoral student Jillian Greczek, postdoctoral researcher Amin Atrash, and undergraduate computer science student Edward Kaszubski.
+
+This research was funded at USC by the National Science Foundation Human-Centered Computing grant and the National Science Foundation CISE Research Infrastructure grant.
+
+Should we try this at home? KurzweilAI interview with Maja Matarić, USC Viterbi Vice Dean for Research.
+
+Q: Are there other less-expensive robots that could achieve similar results that interested researchers (or perhaps parents) could work with?
+
+A: Currently there are very few robots on the U.S. consumer market. In fact, there is just the iRobot Roomba, remote presence robots, and toys, by and large. But that will all change, hopefully soon. For a technology to actually be therapeutic, it needs to be carefully designed, and currently there is no such robotic product on the market for ASD, in large part because there is an utter lack of venture capital investment in spinning off such technologies from promising research. We need to see more investor interest in this area.
+
+Q: What about using a tablet with an app to reduce costs? (There’s a Kinect-like device for the iPad.)
+
+A: While there are various tablet-based apps available for children with ASD, they work on entirely different principles from child-robot interactions. The interaction with a robot engages the child’s social responses, and attempts to develop and train those responses in a way that is similar to human-human interaction. The interaction with a screen does not elicit the same type of social responses, because it most likely does not engage the same type of cognitive and neural processing as take place in social interactions with real, physical creatures. That is just how people are wired. I think there are some and there will be many more tablet-based and phone-based apps for ASD users, and those are valuable and complementary to therapeutic robots, but they are different and serve different important therapy/training purposes.
+
+Q: Do you encourage therapists and/or parents to experiment with these techniques and if so, how effective might they be?
+
+A: I strongly encourage therapists and parents to experiment with new technologies and to carefully monitor the child’s response. ASD is a spectrum disorder, meaning that it covers a vast variety of behaviors. What works for one child, may only work for that one child, or a sub-population of children with ASD that we don’t yet understand how to characterize. In general, with ASD there will not be any fast catch-all solutions or therapies (possibly ever, certainly not soon). Therefore it is worth experimenting with various technologies carefully. We cannot predict the effects, and currently there is also no funding from NIH to do large-scale clinical studies to actually see what may be helpful, how effective it may be, and for what sub-populations of ASD it may work. Here again, is where much more investment is needed, in this case federal research by NIH.
+
+Q: Could modeling behavior on robots make some ASD children more “robotic” (mechanical) in their behavior?
+
+A: There is no such thing as “robotic behavior.” Robot behavior can be as smooth as elegant as biological behavior, if the robot is built to be able to make such movements and programmed to make them.
+
+Our robots do not move ‘robotically,’ and in general there is nothing particularly ‘robotic’ about them. Some of them have fur and look like toys, especially those created for children. Some others are made to be quite utilitarian, but those are not intended for interactions with children or people in general. One does not design a robot for helping kids with ASD to be mechanical; instead one designs it to be engaging, both in its appearance and in its behavior.
+
+The robot we are currently using is just one that is commercially available; it is not meant to represent what all or even best robots for kids with ASD would be. But even as just one example, it actually can move very smoothly. The notion of a mechanical robot is an outdated one that may pervade in old movies but is not the current state-of-the-art.
+
+Finally, children with ASD often have serious imitation deficits; they are far from over-imitating and becoming mechanical, the issue is more about having the ability to imitate at all, and knowing what to imitate and what to ignore as not relevant/important. Those skills can be practiced with a robot, and that opportunity to practice in an enjoyable way is the much-needed therapy the technology can provide.”
+
+Abstract of paper presented at the IEEE International Symposium on Robot and Human Interactive Communication
+
+We performed a study that examined the effects of a humanoid robot giving the minimum required feedback – graded cueing – during a one-on-one imitation game played children with autism spectrum disorders (ASD). 12 high-functioning participants with ASD, ages 7 to 10, each played “Copy-Cat” with a Nao robot 5 times over the span of 2.5 weeks. While the graded cueing model was not exercised in its fullest, using graded cueing-style feedback resulted in a nondecreasing trend in imitative accuracy when compared to a non-adaptive condition, where participants always received the same, most descriptive feedback whenever they made a mistake. These trends show promise for future work with robots encouraging autonomy in special needs populations.

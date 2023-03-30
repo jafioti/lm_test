@@ -1,0 +1,261 @@
+If you’re like me, your entire 3U career was a passionate love letter to the Grongigas Hammer. 1506 attack (290 true raw) with purple sharpness, and a fair amount of slime to boot. Hard to convince yourself to use any other hammer.
+
+It was just so consistent in dealing out truckloads of damage. After using it for a few hundred hours, you get to know exactly when a monster is going to stagger. When you can use a slime explosion to chain into a golfswing. Exactly when you can start your triple pound for a stagger on the second pound, KO on the golfswing… But I digress.
+
+The point is, I’ve only just gotten through Caravan 9* on 4U, and already I find myself pining for my Grongigas Hammer.
+
+It got me to wondering… How close am I coming to my dearly beloved numbers-wise? Which brings me to the point:
+
+
+
+
+
+THE GRONGIGAS COEFFICIENT
+
+Part i: Monster Hunter’s Damage Formula
+
+
+
+The damage formula goes as follows:
+
+
+
+[(raw * sharpness * affinity * motion * hitzone * connect * special)
+
++
+
+(element * ele sharpness * ele affinity * ele motion * ele hitzone * ele special)]
+
+*
+
+rage * status * defense
+
+For the purposes of the initial coefficient, we’re going to drop most of this - first of all, we only want to see what’s going in to the quest, regardless of the monster / hitzone / which attack is used, etc. Grongigas is elemental-less so we can get rid of all of that, and we’ll mess with the affinity variable in a second.
+
+This leaves us with a formula for the ‘effective attack’ of a weapon:
+
+raw * sharpness * affinity + element * ele sharpness * ele affinity
+
+We want the damage-over-time increase/decrease for affinity. Looks complicated, but here’s how you crunch it out - make sure to add for positive affinity, subtract for negative, and only use the ele affinity chunk at all if you have the associated armor skill.
+
+raw * sharpness * ([raw +/- (.25 raw * affinity)] / raw)
+
++
+
+element * ele sharpness * ([element +/- (.25 element * ele affinity)] / element)
+
+
+
+
+
+Part ii: The Standard Unit
+
+
+
+
+
+Let’s say one standard unit of Grongigas assumes Sharpness+1 (because duh) but nothing else. This means a sharpness multiplier of 1.44, negative 15% affinity, 290 true raw. With no element, we’ll just leave that whole second bit out. All we need is:
+
+raw * sharpness * ((raw - (.25 * raw * affinity) / raw)
+
+290 * 1.44 * ((290 - (.25 * 290 * .15)) / 290)
+
+290 * 1.44 * .9625 = 401.94
+
+1 Grongigas (G) = 401.94 effective attack.
+
+
+
+
+
+Part iii: Third Generation
+
+
+
+
+
+In 3U, with my Challenger +2 Honed Blade set (+25 rage, +20 static), a full register of attack buffs (+15 powercharm and powertalon, +10 seed, +7 kitchen AuL) and a HH bro with an Attack Boost L horn, it was common for me to operate as follows:
+
+367 * 1.44 * ((367 + (.25 * 367 * .5) / 367)
+
+367 * 1.44 * 1.125 = 594.54
+
+594.54 / 401.94 = 1.48 G
+
+Approximately 1.48 Grongigases. Which, honestly, makes me feel pretty good about that set.
+
+It was also totally possible (with some careful planning) to hit the true raw cap of 700 in 3rd gen. Totally maxed (let’s say a Crit Draw Cera Cymmetry for 80% affinity, +20% with Challenger +2), buffed, hunting horned, Fortified and Heroic, and with the monster enraged, a player could potentially operate at:
+
+700 * 1.44 * 1.25 = 1260
+
+1260 / 401.94 = 3.13 G
+
+That is one player charge slashing with the power of over three fucking Grongigases. Not for long, and at only 10HP or less, but it’s the principle of the thing.
+
+
+
+
+
+THE GRONGIGAS COEFFICIENT AND YOU
+
+
+
+
+
+To compare any weapon you currently have to the Grongigas Hammer of old, just use this formula, where R = true raw (displayed raw / weapon class modifier), S = sharpness, A = affinity, E = element, ES = element sharpness (yes, it’s different from raw sharpness) and EA = element affinity (if applicable, else 0 for the whole effective elemental affinity bit).
+
+(The division by 2 at the end of the elemental chunk is a sweeping, sloppy approximation - most elemental hitzones tend to max out around 50, meaning that you usually only end up using about half of your displayed element. This is why you hear a lot of people saying that the damage formula favors raw. If anyone can think of a more accurate way to express this in effective damage, let me know. Anyway.)
+
+[(R * S * [(R +/- .25 * R * A) / R])
+
++
+
+(E * ES * [(E +/- .25 * E * EA) / E] * .5)]
+
+/ G
+
+For example, I finally got Little Miss Forge to cough up an Arluq Whammer. This hammer has 832 attack (160 true raw), white sharpness with S+1, and no affinity or element. Plugging everything in pedantically, that gives us:
+
+[(160 * 1.32 * ((160 + .25 * 160 * 0) / 160)
+
++
+
+(0 * 0 * 0)]
+
+/ 401.94
+
+211.2 / 401.94 = .52G
+
+So here I am derping around in high rank, and I’m looking at about half of a Grongigas. Okay, I guess I can live with that.
+
+
+
+
+
+THE GRONGIGAS GOLFSWING
+
+
+
+
+
+Doing all this number crunching got me to thinking. When it comes to anticipating a stagger, it’s the actual amount of damage dealt that’s important; just knowing your effective raw isn’t enough due to motion values and hitzones and the like. I want to know how much damage a standard Grongigas golfswing puts out for purposes of comparison. So let’s get the whole damage formula back in here for this one.
+
+[(raw * sharpness * affinity * motion * hitzone * connect * special
+
++
+
+element * esharpness * eleaffinity * elemotion * elehitzone * elespecial)]
+
+*
+
+rage * status * defense
+
+To start, let’s clear up those weird ones: connect and special (or especial) are unique to weapon classes, based on where along the weapon the attack hits, hitting with the weapon or the shield, which phial is being used, et cetera et cetera.
+
+Monster Hunter is a cruel mistress: she will heartlessly shave off your decimal values and laugh while she does it. The total offense result is rounded down, then after monster defense is factored in, the result is rounded down again to get you to your final damage number.
+
+For the purposes of the Grongigas, none of those weird ones apply unless you’re at yellow or lower sharpness, and like, why. And obviously, no element.
+
+For the purposes of creating a standard unit, we’re going to assume a few 'frictionless plane’ kind of deals:
+
+-the attack does not crit in either direction
+
+-the hitzone with which the attack connects has a value of 100 (I don’t think a flat 100 is ever seen in game, but it keeps the math nice)
+
+-the elemental hitzone with which the attack connects has a value of 50 [(same deal, 50 is on the high end for element damage) and this is only really necessary information when comparing an elemental weapon]
+
+-the monster’s rage state does not affect its defense
+
+-the monster is not experiencing any status effect
+
+-the monster has a defense modifier of 100 (standard for low rank, but this is the part where this formula sucks. I’d love to know the standard G rank monster defense modifier for 4U if anyone has a verifiable source - seems more proper since we’re using a G rank weapon for the offensive numbers)
+
+Lastly, a hammer golfswing (third hit of the X+X+X combo, if that wasn’t obvious) has a sweet, sweet .9 motion value.
+
+So to back it all up, let’s plug the numbers in for a Grongigas buffed only by Sharpness +1.
+
+(raw * sharpness * affinity * motion * hitzone) * rage * status * defense
+
+(290 * 1.44 * 1 * .9 * 1) * 1 * 1 * 1 = 375.84
+
+1 Grongigas golfswing (Gg) = 375 damage.
+
+
+
+
+
+LARGER APPLICATIONS OF THE GRONGIGAS GOLFSWING
+
+
+
+
+
+Part i: Comparing Weapon Damage
+
+
+
+
+
+Let’s see how my endgame set was doing in 3rd gen in terms of Gg output - I’m going to factor in a crit, because hell, 5% can still happen and those are the golfswings I live for.
+
+(367 * 1.44 * 1.25 * .9 * 1) * 1 * 1 * 1 = 594.54
+
+594 damage = 1.58 Gg
+
+Again, around one and a half Grongigases on each golfswing… Feels pretty good. That just goes to show exactly how much of an effect intelligent armor skilling and buff stacking can have.
+
+Now, if a Gg is simply a unit of damage, it can be used comparatively for any weapon type and any attack - simply plugging in the appropriate numbers. Let’s crunch it with that tryhard maxed out Cera Cymmetry from earlier (GS gets two special numbers: a 1.05 connect modifier for landing the attack in the middle of the blade, and an additional flat-out pornographic 1.3 modifier on a level 3 charge):
+
+(700 * 1.44 * 1.25 * 1.2(1.3) * 1 * 1.05) * 1 * 1 * 1
+
+(700 * 1.44 * 1.25 * 1.56 * 1 * 1.05) * 1 * 1 * 1 = 2063.88
+
+2063 damage = 5.5 Gg
+
+Holy crap. Keep in mind that attacks on a sleeping monster do double damage, and that hitzones much higher than 100 exist in the game.
+
+
+
+
+
+Part ii: Monster HP
+
+
+
+
+
+Again, since the Gg expresses damage, which is really just monster HP, we can use it to estimate how many well-placed golfswings it will take to kill a monster.
+
+This isn’t ideal, since rank defense modifers should come into play and we don’t know those exact numbers, but it’s just kind of fun. I’d love to remake this section with appropriate rank defense numbers - P3rd’s defense mods were 75% in endgame high rank quests, so to extrapolate that further your Gg should be cut by around 60% in G rank. At this point, only low-rank calculations will be technically accurate.
+
+Examples:
+
+Low rank Aptonoth: 59 HP = 1.57 dGg
+
+Low rank Rathian: 2340 HP = 6.24 Gg
+
+High rank Remobra: 236 HP = .63 Gg
+
+High rank Gravios: 3080 HP = 8.21 Gg
+
+G rank Diablos: 5590 HP = 14.9 Gg
+
+G rank Dalamadur: 17600 HP = 4.69 daGg
+
+
+
+
+
+
+
+CONCLUSION
+
+
+
+
+
+The hammer you’re looking for is the Fatalis Iregard.
+
+Just the raw: (310 * 1.44 * 1) / 401.94 = 1.11 Grongigases.
+
+If you can ever find a head that soaks up fire damage: [(310 * 1.44 * 1) + (260 * 1.2 * 1 * .5)] / 401.94 = 1.49 Grongigases.

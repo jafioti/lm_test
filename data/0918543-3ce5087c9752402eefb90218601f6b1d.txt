@@ -1,0 +1,29 @@
+The full Dragons of Tarkir spoiler is up. I’ve started my spoiler analysis, and I’m really excited about the direction that Dragons of Tarkir is going to take the draft format. Also, Dragons. Dragons, Dragons, Dragons, Dragons. I thought that it might be cool to do a little pre-analysis, and post that here on the blog, just to point out some interesting things that wouldn’t normally make the cut in a spoiler analysis article, simply because of space reasons. Afterward, I intend to release other tidbits as a sort of appendix to the spoiler analysis.
+
+As articles have been going up on the mothership, I’ve been devouring them in an attempt to learn as much as possible about the format. One of the articles, this one by Dave Humphreys, had a fascinating tidbit at the end. He says the following:
+
+“In Limited, we needed to make sure there was a sandbox of things to do and you’d be happy even if you didn’t open up any Dragons you wanted to play. As part of that, we needed to make sure that Dragons were good and playable, but also that they weren’t despair-inducing. We had to ensure there were enough decent cards to answer the Dragons, in ways we had fallen short of in our previous draft environment of big flying creatures, with Avacyn Restored.”
+
+I’ve talked a bit about Avacyn Restored, and this quote actually did nothing to reassure me, because it seemed to me that the problems with Avacyn Restored had very little to do with the flyers, and much more to do with the aggressive nature of the set, the disconnect between Soulbond and Loner, and Miracles. But, I’m willing to give Wizards a chance to show that they’ve built a better draft format.
+
+Regardless, the quote did set me down an interesting line of thinking. Avacyn Restored was a set that was supposed to be about flying; Dragons of Tarkir is also a set that’s about flying, and I started to wonder which of those sets had more flying creatures. Which one was the true “flying” set? I thought even more; how many flyers do sets tend to have? Which sets have the most flying? How does that impact a set?
+
+So I came to the obvious conclusion. Run the numbers! Ok, I’m a weirdo. But that is almost always my natural reaction to questions. So, I present to you the flyers for every set from Dragons of Tarkir back to Lorwyn:
+
+First, a brief discussion about methods.
+
+I started off by numbering the amount of flyers in each rarity for each set. Then I calculated the rarity weight by commonality of cards in the set. For example, in Dragons of Tarkir, there are 101 commons. But in Fate Reforged, there are 60 commons (if we don’t count the gain lands that only go in the land slot). This means that commons in Fate Reforged have a rarity weight of 4 per 24 packs, while commons in Dragons of Tarkir have a rarity weight of 2.376238 per 24 packs. I use the 24 pack calculation because it translates more easily into player experience; you’ll have around 2.354238 of any particular common per draft of Dragons of Tarkir. You could just divide this number by 24 to figure out how many of any particular common will show up in a single pack, but those numbers go into decimals that are much harder to process mentally.
+
+In the first chart, you can see how many flyers each set has per 24 packs. Modern Masters comes in way above the competition with 56.17 flyers on average per draft, while MBS clocks in at the bottom with a mere 26.50 flyers per draft. There are more than twice as many flyers in a draft of Modern Masters as there are in Mirrodin Besieged.
+
+Dragons of Tarkir is on the far left of this graph, and you can see that it has the third most flyers of any of these sets. Furthermore, it has the second highest numer of flyers in a regular season draft set, since Modern Masters was a premium draft set, and it also has the largest number of flyers in a regular season large set. Translation: There are a crap ton of flyers in Dragons of Tarkir. The next closest set is Dark Ascension, but that set was weird because it had a substantially lower number of cards in each rarity. After that, we have Conflux, but again, that was a small set, so it didn’t have the same impact on the draft format as a large set. The second highest number of flyers in a regular season large set is in M14.
+
+The second graph shows the percentage difference between each set and the average. Modern Masters has 62% more flyers than an average set, and Morningtide has 44.4% more flyers. Mirrodin Besieged has 23.6% fewer flyers than the average set. Dragons of Tarkir, again comes out near the top of the list, with 35.7% more flyers per draft. For every two flyers in a regular draft set, Dragons of Tarkir has three flyers. The density of flyers is just higher than we typically see.
+
+The really interesting thing about this set is that we get two packs of Dragons of Tarkir and one pack of Fate Reforged. One person asked me on Twitter to compare the DDF draft format against LLW, and see which one came out on top. It’s the only one that would even be able to compete for flyers against DDF, so I ran the numbers.
+
+DDF comes out ahead. In fact, the other regular season draft format with the most flyers was M14, and DDF still comes in quite a bit ahead of that triple set format. When it comes down to it, DDF draft is going to have more flyers than we have ever seen in a regular season draft, competing with things like Modern Masters. And it’s clocking in higher than most sets by a wide margin. Further, the flyers in Dragons of Tarkir are friggin’ dragons. Not only are there more flyers, but they are big.
+
+What impact will this have on the format? I honestly have no clue. I need to analyze the rest of the set before I can draw conclusions. But be ready for Dragons.
+
+Advertisements

@@ -1,0 +1,9 @@
+Intel is bringing its professional-class Xeon processors to notebook PCs for the first time ever, with Lenovo incorporating the new chips into a pair of hefty machines. The Lenovo ThinkPad P50 and P70 are designed for people who need large amounts of computing power on the go, offering up to 64GB of RAM (the most memory on any mobile workstation, says Lenovo), up to 1TB of SSD storage, and two USB Type-C Thunderbolt 3 ports for super-fast data transfer.
+
+The Xeon processors powering both machines are based on Intel's Skylake architecture — a "tock" update in the company's tick-tock strategy of improving chips, meaning that it's built with the same 14nm process as its Broadwell predecessor, but is architecturally improved. Essentially, these notebooks are the dreadnoughts of the mobile PC world: big and very powerful.
+
+The P50 and P70 are notable as the first laptops to incorporate Skylake chip architecture, but they're also a good reminder that while most of us are focusing on slim, lightweight laptops like the new 12-inch MacBook, there are still people chomping at the bit for hardcore productivity machines. And these are certainly nothing like the new MacBook, with the 15.6-inch P50 and 17-inch P70 weighing in at 5.6 pounds and 7.6 pounds, respectively, according to AnandTech. That's at least two and a half times as heavy as the 2-pound MacBook.
+
+In a world of lightweight laptops, the P50 and P70 offer something a little meatier
+
+Prices for the P50 start at $1,599 and for the P70 at $1,999, with customers given their choice of operating system, including Windows 10, 8.1, 7, or Ubuntu, as well as the option of 4K and touch displays. The notebooks are expected to go on sale sometime in the fourth quarter this year, with the P70 also offering something some PC users will have forgotten about: an optional DVD-RW drive.

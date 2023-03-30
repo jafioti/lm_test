@@ -1,0 +1,27 @@
+Happy 25th Birthday, VB!
+
+.Net Team
+
+That’s right! Today marks the 25th (“Silver Anniversary”) since VB first debuted to the world. It seems like just yesterday I’d only been at Microsoft a little over a year when VB turned 20. Looking back at the progress of 5 years—a complete revamp of the IDE and debugger, a trove of new language features, and millions of lines of code—I’m humbled. And that’s just coming from the Roslyn team. But I’m even more humbled looking back at a history FIVE times longer than that with hundreds of innovative productivity features spanning 14 releases and scores of team members. So much history could hardly be given justice in one blog post on a Friday afternoon.
+
+So, in honor of this momentous occasion I’m announcing the…
+
+(booming loudspeaker voice)
+
+VISUAL BASIC SILVER ANNIVERSARY CELEBRATIATHON
+
+(end booming loudspeaker voice)
+
+That’s right. A Celebratiathon (a perfectly cromulent word). A celebration so extensive it’s also a marathon. What does it really mean, though?
+
+It means that the party don’t stop here. In anticipation of this magnificent milestone we’ve been reaching out to members of the Visual Basic team stretching all the way back to the beginning to get a retrospective on the juggernaut that is VB across every era, from VB 1.0 to VB6 to the early days of VB.NET to Roslyn and I’m going to be your tour guide as we look behind the scenes at history from the perspective of the programming pioneers who lived it. Whatever your first or favorite version we’re going to be talking to the women and men who built it. The trials, the triumphs, the passion, THE FUN! Visual Basic has always been more than just “a language”. It’s a legacy of generation after generation of people pouring themselves into making an experience with the goal of empowering people and touching lives. So to really celebrate 25 years of VB is to celebrate over 25 years of individuals, within Microsoft and in the community, contributing with love to the VB story every step along the way.
+
+But, don’t worry, it won’t all be backward looking. In the midst of all the “deleted scenes” and “director’s commentary” I’ll also be opening up about the really cool features we’re looking at for VB “15” and beyond. And of course I’ve got some surprises planned too. So you’ll want to keep checking back here on the blog starting next week to geek out on language design on features like tuples and pattern matching and other features (*mischievous grin*), and video interviews with industry legends, and other VB themed stuff (*shifty eyes*). It’s going to be great!
+
+Now this is a party, so feel free to be interactive. If you’re a user and you’ve always been curious, leave a comment. And tell your friends! If you’re a team member, past or present, leave a comment. If you know a team member forward them this link and tell them to leave a comment. Or if you just have a favorite memory of VB or a personal pet project you’re writing in VB, leave a comment. And everyone, always feel free to shout at me on twitter @ThatVBGuy
+
+Next week we’re talking to members from the original VB 1.0 team (and talking about tuples). Until then join me in wishing my all-time favorite programming language a VERY HAPPY 25th BIRTHDAY (AND MANY MORE)!
+
+Jubilations,
+
+-ADG

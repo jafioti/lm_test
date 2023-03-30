@@ -1,0 +1,21 @@
+A Japanese startup company no new folk studio has launched an interactive LED shoe that enables dancers, and artists to design lighting patterns from their unique dance moves.
+
+Two Japanese models wearing no new folk's smart LED shoes, Orphe. (All photos courtesy of no new folk)
+
+The smart LED shoe system is equipped with 9-axis motion sensors, enabling it to detect a range of movements and change color accordingly.
+
+Sensors in the shoes enable users, such as performers to make unique lighting patterns from their movement such as the one seen above.
+
+Nearly 100 LEDs are embedded in each shoe, and can be controlled and programmed individually using a smartphone to emit a wide range of colors. High density LED tape lights are used for each sole, which can be controlled independently using a microprocessor.
+
+Black model of Orphe.
+
+For each shoe, a small unified circuit board with an ARM Cortex-M3 microprocessors, invensense mpu9150 motion-tracking device, wireless module (Bluetooth LE), and charging circuit.
+
+White Orphe shoes.
+
+A more interesting aspect of the shoe design is how no new folk studio is aiming to build an exclusive community with the product, and the company is seeking partnerships with artists and performers. Orphe users can even upload and share their design patterns with other users online. Please see the below video for further details.
+
+The company will be displaying prototypes at the SXSW2015 Trade Show in Texas from March 15 to 18, 2015, and has launched a crowdfunding project on Indiegogo. More shoe sizes will be made available for the black and white shoes models if the company successfully acquires more than US $50,000 for the project.
+
+(Author: Judy Lin, Chief Editor, LEDinside)

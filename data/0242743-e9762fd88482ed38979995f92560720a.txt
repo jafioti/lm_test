@@ -1,0 +1,7 @@
+Archos is now readily welcoming orders via its online French store for its new Archos 13. Priced at €399.98 (~$480), the ultra-thin treads dangerously close to being cast aside as "yet another Atom-based netbook," but it doesn't come without a few perks. For starters, the 13.3-inch (1366x768) display is a bit larger than you'd expect from a netbook, and the system packs a dual-core Atom D510 processor, which is typically reserved for compact desktops.
+
+
+
+Other specs include 1GB of system memory, a 160GB hard drive, a 1.3-megapixel camera, 10/100 Ethernet, an integrated modem, wireless b/g/n, Bluetooth 2.0+EDR, VGA output (no HDMI), three USB 2.0 ports, an MMC/SD/SDHC card reader, and audio jacks. Unfortunately, there's no HD-capable graphics, such as Nvidia's Ion or even a decoder chip from Broadcom. With a six-cell battery the machine weighs about 3.5lbs, measures just over an inch thick, and runs Windows 7 Starter.
+
+When (or if) the updated Archos 13 will ship in the US isn't clear.

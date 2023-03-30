@@ -1,0 +1,13 @@
+About This Game Bildo is a 2D platform game in which the player plays the role of Bildo, a boy who saw his homeland consumed and ravaged by The Darkness, and decided to start a quest around the world in search for The Colors. Guided by The Keeper, an enigmatic Entity, he will begin his mission to beat The Darkness and restore the Light to Nibiru.
+
+
+
+The gameplay of Bildo focuses on solving puzzles using the colors. In the world of Nibiru each color grants power, and offers new abilities to the player. In order to solve the puzzles and move forward, the player will be presented different scenarios, with escalating challenges and obstacles. From moving a rock with the yellow power, illuminate a cave with the white power, destroy enemies with the red power or even create objects with the blue power. The objective is that players combine the colors and their mechanics to move forward and unlock new challenges.
+
+
+
+The visual style of Bildo is based on the concept of contrast between light and darkness. Giving prominence to the colors, over the dark silhouettes of the game’s background created a gloomy but immersive experience. The animators used the Parallax technique, different layers that move in different speeds to create a sense of depth.
+
+
+
+All the artwork is original and unique, even the music was designed specifically for each one of the game’s stages, making it a really smooth, and enjoyable experience.

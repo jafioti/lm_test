@@ -1,0 +1,97 @@
+Thinking > story
+
+Deep linking in iOS
+
+Deep linking consists of using a hyperlink that links to a specific piece of content within an app. The specific content could be a specific view, a particular section of a page, or a certain tab.
+
+To see an example, download the Twitter app. Log into it and close it. Now, try opening the following url in Safari Mobile on your device: twitter://timeline. iOS will switch to the Twitter app and go directly to your timeline.
+
+Now try the following url in Safari Mobile: twitter://post?message=using%20deeplinking. This time Twitter will open up with the message "using deep linking" already composed and ready to be tweeted.
+
+You can use deep linking for:
+
+Displaying a different landing page after launch.
+
+Inter-app communication by launching an app from another app and passing information.
+
+Creating a web-like URI based navigation scheme throughout your app.
+
+Enabling integration with other apps by letting them launch your app directly.
+
+Recording and analyzing user behavior to determine where your users launch your app from.
+
+Given the above uses, let us look at a basic implementation of deep linking. In this tutorial we are going to:
+
+Enable deep linking in an app. Handle launch URLs to show a different landing page based on the url.
+
+Note: This tutorial assumes a basic knowledge of creating simple apps in iOS
+
+In this post we'll be referring to the sample app, which is located here: https://github.com/vipulvpatil/deeplinking-in-ios.
+
+Create an app and enable deep linking
+
+Create a basic app in XCode consisting of a main ViewController pushed on a UINavigation ViewController . Also create some additional ViewController s to be used later.
+
+To enable deep linking, go to the Info tab in the Xcode project. In the URL Types section, click on the + button, and then add an identifier and a URL scheme. Ensure that the identifier and URL scheme you select are unique. Take note of the URL scheme you enter, as this is how iOS knows to open a link in your app. The sample app registers the following url scheme:
+
+dlapp
+
+To confirm that your URL scheme has been registered, check Info.plist for an entry named 'URL Types’. Expanding it will show you the new URL scheme you just registered. You can check that this is working by typing the following url into Safari Mobile: your-url-scheme:// ( For the sample app, it would be: dlapp://). This should open up your app. If not, please go through this section again before moving on.
+
+Handling the opening of registered urls within your app
+
+Now that you have ensured that deep linking is working, we need to handle the url used to launch the app. In it's current state, your app can be launched using a simple url, but it can't do much beyond that. To do more, we need to override the following function in AppDelegate :
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+
+Note that this is not present by default, and needs to be added. This function gets called every time your app is launched using the registered url-scheme. The passed in arguments are:
+
+url : The complete url used to launch the app.
+
+: The complete url used to launch the app. sourceApplication : The bundle ID for the application from which the url was called.
+
+: The bundle ID for the application from which the url was called. annotation: A property list object that can be used to pass additional info along with the url.
+
+The format of the url is as follows: [scheme]://[host]/[path]
+
+Breaking this down, we get:
+
+scheme : The url scheme tells iOS what app to launch. Note that the url scheme should be registered with the device for it to be able to handle this (this is what we did in the previous section).
+
+: The url scheme tells iOS what app to launch. Note that the url scheme should be registered with the device for it to be able to handle this (this is what we did in the previous section). host : The host is analogous to a website/server name on the web. You can handle multiple hosts within your app.
+
+: The host is analogous to a website/server name on the web. You can handle multiple hosts within your app. path: The path enables you to provide additional information regarding the location within your app.
+
+In general, you would use the host and path parameters to determine what the user intends to do.
+
+The exact contents of this method largely depend on your needs, but for the purpose of this post, we will check the host and then based on the path, load a particular ViewController .
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{ if([[url host] isEqualToString:@"page"]){ if([[url path] isEqualToString:@"/page1"]){ [self.mainController pushViewController:[[Page1ViewController alloc] init] animated:YES]; } return YES; }
+
+Line 2 checks to see if the host within the url is what we are expecting, i.e. 'page' in this case. After that, it matches the url path and loads the view controller for that page. In this way, you can handle, every expected url within the function and show a different screen for each. One thing to note is that the app can be launched with a url regardless of whether this function can handle it or not. In such cases returning NO from the method tells iOS that the url was not handled by the app. The result in general, is that the app just opens in the last state it was in.
+
+In the sample app, we handle 4 different urls:
+
+dlapp://page/main
+
+dlapp://page/page1
+
+dlapp://page/page2
+
+dlapp://page/page3
+
+Here is the complete code to handle the above urls:
+
+if([[url host] isEqualToString:@"page"]){ if([[url path] isEqualToString:@"/main"]){ [self.mainController setViewControllers:@[[[DLViewController alloc] init]] animated:YES]; } else if([[url path] isEqualToString:@"/page1"]){ [self.mainController pushViewController:[[Page1ViewController alloc] init] animated:YES]; } else if([[url path] isEqualToString:@"/page2"]){ [self.mainController pushViewController:[[Page2ViewController alloc] init] animated:YES]; } else if([[url path] isEqualToString:@"/page3"]){ [self.mainController pushViewController:[[Page3ViewController alloc] init] animated:YES]; } else{ return NO; } return YES; } else{ return NO; }
+
+Conclusion
+
+This post shows you how to respond to urls passed into your app, but you can do a lot more. By taking apart the url in the callback, you can do quite a lot. For example, you could:
+
+customize the look and feel of the page opened
+
+pre-populate certain elements on the page (the way the Twitter app did)
+
+track how users are getting to your app
+
+Happy Coding!

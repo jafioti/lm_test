@@ -81,90 +81,46 @@ impl<
         const V: usize,
         E,
         D: Device<E>,
-    > BuildModule<D, E> for MultiHeadAttention<M, H, MAX_LEN, K, V, E, D>
-where
-    E: Dtype + Float + SampleUniform,
-{
-    fn try_build(device: &D) -> Result<Self, <D>::Err> {
-        #[allow(clippy::let_unit_value)]
-        let _ = builder::MultiHeadAttention::<M, H, MAX_LEN, K, V>::TYPE_CHECK;
-        Ok(Self {
-            w_q: BuildModule::try_build(device)?,
-            w_k: BuildModule::try_build(device)?,
-            w_v: BuildModule::try_build(device)?,
-            w_o: BuildModule::try_build(device)?,
-            biases: {
-                // ALiBi + causal masking
-                let mut mask = vec![E::zero(); H * MAX_LEN * MAX_LEN];
-                let ratio = 2_f32.powf(-(2_f32.powf(-((H as f32).log2() - 3.))));
-                for h in 0..H {
-                    // ALiBi
-                    let m = -ratio.powi(h as i32 + 1); // Negative to apply minus mask
-                    for i in 0..MAX_LEN {
-                        for j in 0..i {
-                            mask[h * MAX_LEN * MAX_LEN + i * MAX_LEN + j] =
-                                E::from_f32((i as f32 - j as f32).abs() * m).unwrap();
-                        }
-                    }
-
-                    // Causal
-                    for i in 0..MAX_LEN {
-                        for j in i + 1..MAX_LEN {
-                            mask[h * MAX_LEN * MAX_LEN + i * MAX_LEN + j] = -E::infinity();
-                        }
-                    }
-                }
-                device.tensor_from_vec(mask, (Const::<H>, Const::<MAX_LEN>, Const::<MAX_LEN>))
-            },
-        })
-    }
-}
-
-impl<
-        const M: usize,
-        const H: usize,
-        const MAX_LEN: usize,
-        const K: usize,
-        const V: usize,
-        E,
-        D: Device<E>,
     > TensorCollection<E, D> for MultiHeadAttention<M, H, MAX_LEN, K, V, E, D>
 where
     E: Dtype + Float + SampleUniform,
 {
-    fn iter_tensors<W: ModuleVisitor<Self, E, D>>(visitor: &mut W) -> Result<(), W::Err> {
-        visitor.visit_module("w_q", |s| &s.w_q, |s| &mut s.w_q)?;
-        visitor.visit_module("w_k", |s| &s.w_k, |s| &mut s.w_k)?;
-        visitor.visit_module("w_v", |s| &s.w_v, |s| &mut s.w_v)?;
-        visitor.visit_module("w_o", |s| &s.w_o, |s| &mut s.w_o)
-    }
-}
+    type To<E2: Dtype, D2: Device<E2>> = MultiHeadAttention<M, H, MAX_LEN, K, V, E2, D2>;
 
-impl<
-        const M: usize,
-        const H: usize,
-        const MAX_LEN: usize,
-        const K: usize,
-        const V: usize,
-        E,
-        D1,
-        D2,
-    > ToDevice<D2> for MultiHeadAttention<M, H, MAX_LEN, K, V, E, D1>
-where
-    E: Dtype,
-    D1: Device<E>,
-    D2: Device<E>,
-{
-    type Output = MultiHeadAttention<M, H, MAX_LEN, K, V, E, D2>;
+    fn iter_tensors<W: ModuleVisitor<Self, E, D>>(visitor: &mut W) -> Result<Option<Self::To<W::E2, W::D2>>, W::Err> {
+        visitor.visit_fields(
+            (
+                Self::module("w_q", |s| &s.w_q, |s| &mut s.w_q),
+                Self::module("w_k", |s| &s.w_k, |s| &mut s.w_k),
+                Self::module("w_v", |s| &s.w_v, |s| &mut s.w_v),
+                Self::module("w_o", |s| &s.w_o, |s| &mut s.w_o),
+                Self::tensor("biases", |s| &s.biases, |s| &mut s.biases, TensorOptions::detached(|t| {
+                    let mut mask = vec![E::zero(); H * MAX_LEN * MAX_LEN];
+                    let ratio = 2_f32.powf(-(2_f32.powf(-((H as f32).log2() - 3.))));
+                    for h in 0..H {
+                        // ALiBi
+                        let m = -ratio.powi(h as i32 + 1); // Negative to apply minus mask
+                        for i in 0..MAX_LEN {
+                            for j in 0..i {
+                                mask[h * MAX_LEN * MAX_LEN + i * MAX_LEN + j] =
+                                    E::from_f32((i as f32 - j as f32).abs() * m).unwrap();
+                            }
+                        }
 
-    fn to_device(&self, device: &D2) -> Self::Output {
-        MultiHeadAttention {
-            w_q: self.w_q.to_device(device),
-            w_k: self.w_k.to_device(device),
-            w_v: self.w_v.to_device(device),
-            w_o: self.w_o.to_device(device),
-            biases: self.biases.to_device(device),
-        }
+                        // Causal
+                        for i in 0..MAX_LEN {
+                            for j in i + 1..MAX_LEN {
+                                mask[h * MAX_LEN * MAX_LEN + i * MAX_LEN + j] = -E::infinity();
+                            }
+                        }
+                    }
+                    t.copy_from(&mask);
+
+                    Ok(())
+                }))
+            ),
+            |(w_q, w_k, w_v, w_o, biases)| MultiHeadAttention { w_q, w_k, w_v, w_o, biases},
+        )
     }
 }
 
@@ -227,31 +183,15 @@ where
             .try_permute::<_, Axes3<1, 0, 2>>()?;
 
         // Get weights
-        let mask = self
-            .biases
-            .clone()
-            .try_gather::<(Const<H>, Const<MAX_LEN>, S2), _>(
-                v.device
-                    .tensor_from_vec(
-                        std::iter::repeat(0..s2.size())
-                            .take(MAX_LEN)
-                            .flatten()
-                            .collect(),
-                        (Const::<MAX_LEN>, s2),
-                    )
-                    .broadcast_like(&(Const::<H>, Const::<MAX_LEN>, s2)),
-            )?
-            .try_gather(
-                v.device
-                    .tensor_from_vec((0..s1.size()).collect(), (s1,))
-                    .broadcast_like(&(Const::<H>, s1)),
-            )?;
-
         let scalar = E::ONE / E::from_usize(K / H).unwrap().sqrt();
         let weights = q
             .try_matmul(k)?
             .try_mul(scalar)?
-            .try_add(mask.realize::<(usize, S1, S2)>().unwrap())?
+            .try_add(self.biases
+                .clone()
+                .try_slice((.., ..s1.size(), ..s2.size()))?
+                .realize::<(usize, S1, S2)>()
+                .unwrap())?
             .try_softmax::<Axis<2>>()?;
 
         // Get new tokens
@@ -329,32 +269,15 @@ where
             .try_permute::<_, Axes4<0, 2, 1, 3>>()?;
 
         // Get weights
-        let mask = self
-            .biases
-            .clone()
-            .try_gather::<(Const<H>, Const<MAX_LEN>, S2), _>(
-                v.device
-                    .tensor_from_vec(
-                        std::iter::repeat(0..s2.size())
-                            .take(MAX_LEN)
-                            .flatten()
-                            .collect(),
-                        (Const::<MAX_LEN>, s2),
-                    )
-                    .broadcast_like(&(Const::<H>, Const::<MAX_LEN>, s2)),
-            )?
-            .try_gather(
-                v.device
-                    .tensor_from_vec((0..s1.size()).collect(), (s1,))
-                    .broadcast_like(&(Const::<H>, s1)),
-            )?;
-
         let scalar = E::ONE / E::from_usize(K / H).unwrap().sqrt();
         let weights = q
             .try_matmul(k)?
             .try_mul(scalar)?
             .try_add(
-                mask.realize::<(usize, S1, S2)>()
+                self.biases
+                    .clone()
+                    .try_slice((.., ..s1.size(), ..s2.size()))?
+                    .realize::<(usize, S1, S2)>()
                     .unwrap()
                     .try_broadcast_like(&(b, H, s1, s2))?,
             )?

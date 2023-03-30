@@ -1,0 +1,33 @@
+Fast building tracing with JOSM
+
+Mapbox Blocked Unblock Follow Following Dec 16, 2015
+
+By Andrey Golovin
+
+Here are a few techniques the data team uses to quickly trace buildings for OpenStreetMap. First, we use JOSM, the OpenStreetMap desktop data editor. We then install a couple custom plugins specifically for tracing buildings, like building_tools which lets us trace rectangular buildings in 2–3 mouse clicks and utilsplugin2 (see also) which is a collection of super useful tools for JOSM.
+
+Here is a look at how the plugins work. Choose an area for building tracing and download data into JOSM. Check the imagery offset and adjust if needed.
+
+There are two main methods for drawing buildings: extrusion and area intersections.
+
+Using extrusion
+
+Select Draw buildings (or just press shortcut - B), and draw the basic rectangular outline of the building.
+
+“Extrude” part of the building to add extra details. Select the extrusion tool X. Add an extra node with mouse double-click, then pull out needed segment of building.
+
+Using area intersections
+
+To create more complex buildings, draw a first box over the building, and then select 2 nodes of that box. Draw additional boxes to cover the building footprint; they will be parallel to the first box.
+
+Then select all traced parts of the building. First select one of them and then press I (to select intersected ways one by one); or ⌘+* (to select all intersecting ways).
+
+Now combine all selected parts of the building — press Shift+J to Joining overlapping Areas
+
+We just traced a complex building outline in 5–8 seconds!
+
+Happy fast mapping!
+
+PS. Since Mapbox announced 3D features in Mapbox GL JS it’s a good practice to add heights to the buildings you are currently editing. If you want to create a complex building structure, follow the guide Mapping 3D building features in OpenStreetMap.
+
+And don’t hesitate to check our mapping guide to know more about OpenStreetMap mapping.

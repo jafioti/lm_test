@@ -1,0 +1,27 @@
+No. If the Runner chooses to trash a program, the rest of Scavenge resolves immediately. If the program the Runner just trashed is then reinstalled from the heap, it is no longer eligible for the ability on Skorpios.
+
+If the Runner uses Scavenge to trash an installed program, can the Corp use Skorpios Defense Systems to remove that program from the game before the Runner can install the same program again?
+
+UFAQ [Michael Boggs]
+
+If Employee Strike is active when either an agenda is scored or another current is played, can Skorpios Defense Systems remove it from the game?
+
+No. Employee Strike is active until it is trashed, so Skorpios doesn’t have its ability in time to see the trigger condition being met.
+
+If the Runner trashes multiple cards at once, such as through damage from Scorched Earth or through MaxX's ability, does the Corp have to choose one at a time which card to remove from the game as damage is picked?
+
+Skorpios meets its trigger condition once for each card trashed simultaneously after they have all been picked, so the Corp can choose any of the cards that were trashed to remove from the game.
+
+If an I've Had Worse is trashed to damage while the Corp is playing Skorpios Defense Systems, does the Runner get to draw 3 cards before I’ve Had Worse can be removed from the game?
+
+Yes.
+
+Can Skorpios Defense Systems remove an event from the game after the Runner plays and resolves it?
+
+Yes.
+
+If the Runner plays a run event like Account Siphon, when would Skorpios Defense Systems trigger?
+
+An event that initiates a run is not considered fully resolved until the run completes, and is thus not trashed until afterward. If a Runner card is trashed during the run initiated by Account Siphon, the Corp will have to choose at that moment whether or not to remove that card from the game. If the Corp chooses to use the ability on Skorpios, they will not be able to use it again when the Account Siphon run ends and the event is trashed.
+
+If the Corp uses Skorpios Defense Systems to remove a Clone Chip from the game when the Runner uses it, does the Runner still get to install a program from their heap or has the cost been prevented?

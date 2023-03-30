@@ -1,0 +1,17 @@
+Monday, 07 Jul, 2008 Science
+
+According to the scientists at the University of Southampton's School of Electronics and Computer Science (ECS) , they are working on creating the smallest high-performance and low-power sensor in the world. The sensor is made in silicon and it will be used in the fields of biosensing (the development of devices able to identify, record or transmit physiological information, especially information regarding the presence of chemical compounds) and environmental monitoring. Together with his colleagues, Pr. Hiroshi Mizuta is working on a 3-year project, which will allow the production of world's smallest sensors. The project is funded by the European FP-7 and it is entitled NEMSIC, which stands for nano electro mechanical system integrated circuits.
+
+The Seventh Framework Programme for research and technological development (FP7) is the central tool of the European Union for funding research throughout the period between 2007 and 2013. FP7 supports RD activities that cover nearly all scientific fields.
+
+Besides being the smallest in the world, the sensor will also feature high sensitivity and will consume very little power. Such advantages are going to be achieved through co-integration (on a universal silicon technology) of transistors with a single electron and nano-electro-mechanical systems (NEMS).
+
+"Power consumption is a big issue at the moment as devices use current whether they are switched off and on. The single-electron transistor combined with the NEM device technology reduces power consumption at both ON and OFF states of the sensor. Stand-by power is reduced to zero by having a complete sleep with the NEM switch when it is off," said Pr. Mizuta.
+
+The professor and his team will create a single-electron transistor, which will include a unique suspended silicon nanobridge. The work of the nanobridge will resemble the work of a very sensitive detector for organic and chemical molecules.
+
+"This is the first time that anyone has combined these two nanotechnologies to develop a smart sensor. The traditional CMOS (Complementary metal-oxide-semiconductor) approach has many limitations so we needed to find a new approach," said Pr. Mizuta.
+
+After the opening of the new ECS Mountbatten building, scientists will be able to get a new electron beam lithography machine. The latter will help in making sensing devices to the nanoscale. "This sensor will be the smallest and use less power than any other on the market. The fact that it will be at the nanoscale means that it will be able to detect either single-charge transfer and/or change in masses caused by a small amount of chemical and biological molecules electrically."
+
+Powered by www.infoniac.com

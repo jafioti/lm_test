@@ -35,41 +35,28 @@ impl<const V: usize, const M: usize, E: Dtype, D: DeviceStorage, I> NonMutableMo
 }
 
 impl<
-        const V: usize,
-        const M: usize,
-        E: Dtype + Float + SampleUniform,
-        D: Device<E>,
-        I: BuildModule<D, E>,
-    > BuildModule<D, E> for ReverseEmbedding<V, M, E, D, I>
-{
-    fn try_build(device: &D) -> Result<Self, D::Err> {
-        let bound = E::ONE / E::from_usize(V).unwrap().sqrt();
-        let weight = device.try_sample(Uniform::new(-bound, bound))?;
-        Ok(Self {
-            weight,
-            inner: I::try_build(device)?,
-        })
-    }
-}
-
-impl<
         const C: usize,
         const M: usize,
         E: Dtype + Float + SampleUniform,
-        D: SampleTensor<E>,
+        D: Device<E>,
         I: TensorCollection<E, D>,
     > TensorCollection<E, D> for ReverseEmbedding<C, M, E, D, I>
 {
-    fn iter_tensors<V: ModuleVisitor<Self, E, D>>(visitor: &mut V) -> Result<(), V::Err> {
-        visitor.visit_module("inner", |s| &s.inner, |s| &mut s.inner)?;
-        visitor.visit_tensor(
-            "weight",
-            |s| &s.weight,
-            |s| &mut s.weight,
-            TensorOptions::reset_with(|t| {
-                let b: E = E::ONE / E::from_usize(C).unwrap().sqrt();
-                t.try_fill_with_distr(Uniform::new(-b, b))
-            }),
+    type To<E2: Dtype, D2: Device<E2>> = ReverseEmbedding<C, M, E2, D2, I::To<E2, D2>>;
+
+    fn iter_tensors<V: ModuleVisitor<Self, E, D>>(visitor: &mut V) -> Result<Option<Self::To<V::E2, V::D2>>, V::Err> {
+        visitor.visit_fields(
+            (
+                Self::module("inner", |s| &s.inner, |s| &mut s.inner),
+                Self::tensor("weight",
+                |s| &s.weight,
+                |s| &mut s.weight,
+                TensorOptions::reset_with(|t| {
+                    let b: E = E::ONE / E::from_usize(C).unwrap().sqrt();
+                    t.try_fill_with_distr(Uniform::new(-b, b))
+                }))
+            ),
+            |(inner, weight)| ReverseEmbedding {inner, weight}
         )
     }
 }
@@ -125,23 +112,5 @@ impl<
         let embedded = self.weight.clone().put_tape(tape).try_gather(input)?;
         let output = self.inner.try_forward(embedded)?;
         output.try_matmul(self.weight.clone().permute())
-    }
-}
-
-impl<
-        const VOCAB: usize,
-        const DIM: usize,
-        E: Dtype,
-        D1: Device<E>,
-        D2: Device<E>,
-        I: ToDevice<D2>,
-    > ToDevice<D2> for ReverseEmbedding<VOCAB, DIM, E, D1, I>
-{
-    type Output = ReverseEmbedding<VOCAB, DIM, E, D2, <I as ToDevice<D2>>::Output>;
-    fn to_device(&self, device: &D2) -> Self::Output {
-        ReverseEmbedding {
-            weight: self.weight.to_device(device),
-            inner: self.inner.to_device(device),
-        }
     }
 }

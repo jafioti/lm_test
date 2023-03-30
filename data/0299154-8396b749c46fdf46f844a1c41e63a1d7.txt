@@ -1,0 +1,116 @@
+Hey everyone,
+
+
+
+The June Update to Rock Band 4 is almost upon us, and with it comes a fan favorite feature that is making a triumphant return to the series – Practice Mode! Here’s all you need to know about the ins and outs of Practice Mode in Rock Band 4.
+
+
+
+
+
+The Basics
+
+
+
+You can enter Practice Mode from the Main Menu by selecting “Training”, and then “Practice Mode”. From here, you’ll be taken to your Music Library to select a song, instrument, and difficulty.
+
+
+
+Like in previous Rock Band games, Practice Mode is a single-player mode only. There are no instrument Overdrives, Freestyle Guitar Solos, or drum fills. You won’t be able to make Setlists or Play A Show while in Practice Mode, as it is entirely its own feature.
+
+
+
+
+
+
+
+
+
+Section Select
+
+
+
+You’ve now entered the “Select Sections” screen of Practice Mode. Here, you’ll see every section of the selected song broken down into parts like the Intro, Verses, Choruses, Breakdowns, Solos, and Outros! Every song will have the “Full Song” section located at the top of the list. Scrolling through the list will give you an audio preview of each highlighted section, so you know what you’re about to practice before you choose.
+
+
+
+Now that you know what part of the track you want to practice, hover over your desired section and press A / X / Green Fret to select it. This chooses an endpoint for your practice range, and is indicated by the inward-facing arrows. In previous Rock Band titles, this would be your starting point for the range. In Rock Band 4, this can be EITHER endpoint – the beginning OR end to the range of sections you want to practice! Once highlighted in that golden yellow color, you can continue scrolling up or down to select the range of sections you want to practice. If you want to practice the entire song, select “Full Song” at the top of the list, which will not allow you to scroll through the sections afterwards.
+
+
+
+Once you’ve finalized the range of sections you’d like to practice, press A / X / Green Fret on the other highlighted endpoint. If you want to practice just the one section that is highlighted, press A / X / Green Fret on that highlighted section again.
+
+
+
+
+
+Speed Select
+
+
+
+You’ll now arrive at the speed selection screen. With this, you can customize how fast the song will be played back during your practice session (don’t worry, you can change it when you’re mid-practicing, too!). Choices range from the full speed (100%) of the song down to 70% in 10% increments, which probably sounds familiar to Rock Band 3 players. Once you’ve chosen your speed option, press A / X / Green Fret one more time to load your selections and get practicing.
+
+
+
+
+
+
+
+
+
+In Practice Mode Gameplay
+
+
+
+Alright, you’re ready to practice those sweet licks or drum rolls (details for singers are in the next section), and you’ve made your way to the gameplay. There’s a few new elements on this screen, so let’s walk through ‘em.
+
+
+
+On the top left side of the screen is your speed by percentage. Directly underneath it is a call to change your current speed. If you’re totally nailing that guitar solo on 80% but want to try it a bit faster, you can change your speed using the D-pad on the controller you’re using to move up or down in speed.
+
+
+
+The Section area at the top middle of the screen is what part of the song is currently playing. Not much to read into here! There’s also a notification for “Options”, which will bring up a familiar menu. There is one difference to this menu – Practice New Section. By selecting this, you can change sections you want to practice within the same song without having to go back to the Music Library. In order to quit this session of Practice Mode, you can open up the options menu and select “Back to Music Library”.
+
+
+
+The top right of your screen is your accuracy of notes by percentage. This will only show you your accuracy based on the selected range of sections you’ve chosen to practice. The “Best” percentage underneath it is your highest accuracy of notes for the entire session; if you do better the second time around, your percentage will reflect that here! Note that your Best % is not saved – when you leave this practice session, this number will be lost.
+
+
+
+
+
+
+
+
+
+Practice Mode on Vocals
+
+
+
+Vocals are a smidge different than other instrument Practice Modes. While you see a similar screen to the other version, this mode has a few notable changes to it.
+
+
+
+If you’re practicing vocals under the “Solo” option, you’ll see a change to the left side of options. You’ll notice that the speed percentage in the top left is no longer there; this is because vocal Practice Mode does not have Speed Select! It would both sound and feel a bit goofy to include speed percentages for vocals, but you’ve got something much better instead. By pressing the left bumper / L1, you can toggle the Guide Pitch on or off. The Guide Pitch is your best (robotic) friend that can hit all of those notes perfectly, and provide guidance to your own voice when in Practice Mode!
+
+
+
+When practicing under “Harmonies”, the Guide Pitch toggle now becomes a cycle. You can now use the left bumper / L1 to cycle between guide pitches, depending on their availability in your chosen song. You can cycle between the Lead, Harmony 1, Harmony 2, or having no guide pitches on at all. The additional cycle is located right underneath it, and is what I like to call the “scored setting”: by pressing the left trigger / L2, you can cycle between what your Accuracy % is being scored on. The mode defaults to “Lead and Harmonies”, which is everything; sing whichever part you want, and you will be scored accordingly. You can also cycle between Lead Only, Harmony 1 Only, and Harmony 2 Only. When chosen, that specific part will be illuminated (all others will be dimmed) and you will be scored for that part only.
+
+
+
+If you have a scored setting set to a specific part, the Guide Pitch will only toggle between Off and that specific part. For example, if you have the scored setting set to “Lead Only”, the Guide Pitch will only be able to cycle between Lead or Off. Try out different harmonies and guide pitches to get that tuning down just right!
+
+
+
+
+
+Time to Practice!
+
+
+
+That’s all you need to know about Practice Mode! It’s almost time for you to dig in to Rock Band 4’s newest feature and get practicing to tunes in your library. Keep up to date on the latest news, updates, features, and more by following the Rock Band Facebook, Twitter, and Instagram channels!
+
+
+

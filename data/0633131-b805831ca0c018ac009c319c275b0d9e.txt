@@ -1,0 +1,25 @@
+Wouldn’t it be nice if, come Election Day, we had the ability to vote when we wanted, where we wanted. Say, on-the-go from our mobile phones, or at a convenient voting station outside the supermarket?
+
+According to the US Census Bureau, only 57.5% of Americans voted in the 2012 election, with the top reasons for not voting being a conflicting schedule and illness or disability. There is such a high percentage of Americans who didn’t vote; it makes one wonder how different the results might be if the voting experience was significantly more convenient for citizens.
+
+That being said, there have been a few attempts to improve the voting experience. Way back in the day, the only option was to show up at a voting site and cast your vote with a pencil and paper. Now, with the evolution of technological advancements, there are two main types of electronic voting meant to improve the voting experience.
+
+I-Voting
+
+One attempt to improve the voters’ experience is Internet voting, which is only allowed in some states for those who meet the qualifications. Arizona, for example, has taken the step to implement online voting in order to help the disabled and ill to vote. Each registered voter signs up to receive a personal identification number in the mail. The voters then have the option to cast their vote over the Internet from their homes.
+
+There is also the option of an absentee ballot, which can be requested if the voter knows in advance that they won’t be able to make it to a voting location on Election Day. The voter must request a ballot before a certain date which is then mailed to their home. They are required to mail the ballot back by a certain date or else it isn’t counted.
+
+Absentee ballots are a great option for those who remember to request a ballot in advance, however, if you miss the deadline you’re stuck voting at the polling site like everyone else. Internet voting also comes with its own set of drawbacks. It excludes the less fortunate who may not have access to the Internet, which is a major issue if someone is disabled but doesn’t have the means to access the Internet.
+
+E-Voting
+
+An additional attempt at improving the UX of voting is e-voting. This voting method still requires the voter to appear at the voting location, however, there are electronic voting machines available instead of the old-fashioned pen and paper to ensure a smoother experience.
+
+Even though this new technology is a great step, there are those who have trouble using new technology and there isn’t a system in place to provide the required assistance.
+
+So, what’s stopping us from making the necessary improvements to the UX?
+
+Although there have been steps taken to improve the user experience for voters, there is still one major roadblock. Most officials maintain that nothing sent over the Internet is secure, therefore it is not of popular opinion to open up a more accessible Internet voting option due to the fear of hackers and online viruses.
+
+So, on November 8th you may be voting the old-fashioned way or you may be a lucky Internet voter, either way, with all the technological advancements I wouldn’t give up hope that the future holds a more personalized, easy and most importantly secure voting experience.

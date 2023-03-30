@@ -1,0 +1,75 @@
+Since 2006, honeybees in the United States have been dying at alarmingly high rates. And scientists are still exploring why.
+
+Bee experts tend to cite a mix of different culprits: The parasitic Varroa destructor mite has been attacking honeybee hives in the United States. Poor nutrition caused by a lack of crop diversity may make the bees less resilient. And, on top of that, some newer pesticides do seem to make honeybees more susceptible to infections.
+
+In other words, the prevailing view is that pesticides are only one factor here. "If we took pesticides out of the equation tomorrow, I think there's no doubt we would have reduced colony losses," says Dennis vanEngelsdorp, an entomologist at the University of Maryland who has been closely tracking the decline of honeybees. "But even without pesticides, we'd still be seeing significant losses — losses that are unsustainable."
+
+In the past few weeks, however, a number of news outlets have suggested that a newer class of pesticides known as neonicotinoids are, in fact, the main reason why US honeybees are dying. These outlets have been trumpeting a recent study by Harvard researcher Chensheng Lu — a study that, it turns out, has been heavily criticized by other entomologists and beekeepers.
+
+It would be great if the honeybee mystery was solved once and for all. But the latest much-hyped study on pesticides and bees doesn't seem to do that. So here's a rundown of the controversy — and what we know about pesticides and honeybee deaths.
+
+A controversial Harvard study on pesticides and bees
+
+The recent media frenzy started with a paper by Harvard researcher Chensheng Lu that was published in an obscure Italian journal called The Bulletin of Insectology. (Lu has had trouble getting his work on honeybees past peer review in many US journals.)
+
+Experts criticized the Harvard study for feeding the bees unrealistic pesticide doses
+
+"We found that neonicotinoids were highly likely to be responsible for colony collapse disorder, " is how Lu summarized his paper to me.
+
+Let's unpack that sentence: Neonicotinoids, or "neonics," are a relatively new class of pesticides that are derived from nicotine and affect the nervous systems of insects. They are usually applied to seeds and taken up by the plant itself. Neonics have become popular because they're considered more effective than older insecticides and less toxic to humans — they're widely used on crops like corn, soybeans, and canola. Studies have also found that honeybees are likely exposed to low levels of neonics through pollen, nectar, or dust.
+
+"Colony collapse disorder," meanwhile, refers to a specific set of symptoms found in many dying bee colonies since 2006. One main symptom is a hive with a live queen but few adult honey bees present — and no corpses. Colony collapse is not the only problem facing bees. In fact, says vanEngelsdorp, it hasn't been observed in the last three winters, even though the bees are still dying at high rates. But it's been an issue in the past.
+
+Now to the paper itself: what Lu did was study 18 honey bee colonies around central Massachusetts in the winter of 2012-2013. At each location, he fed one-third of the colonies a high-fructose corn syrup treated with imidacloprid, a widely-used neonicotinoid pesticide. Another third were fed syrup with clothianidin, another popular neonic. And the final third were "control" hives.
+
+The result: in 6 of the 12 colonies that were treated with neonicotinoids, bees died at elevated rates and fled the hives — exhibiting some (but not all) of the symptoms of "colony collapse disorder." Case closed, right?
+
+Well, not quite. Bee experts quickly criticized the study, complaining that Lu had exposed his bees to an unrealistically high dose of pesticides — roughly 135 parts per billion in the corn syrup. As California beekeeper Randy Oliver points out, that's far above the levels that even pesticide manufacturer Bayer concedes is lethal for bees (about 50 parts per billion), and it's way above what bees are likely to encounter in the wild from things like crop nectar (usually less than 5 parts per billion).
+
+These complaints aren't new — a similar study that Lu did in 2012 was heavily criticized for the same reasons. Lu told me that he lowered the dosage for this newest study. Yet outside experts said that the amounts of pesticide he was using were still unrealistically high, and that Lu hadn't actually simulated colony collapse disorder.
+
+"This study is a total distraction," vanEngelsdorp said. "It's not surprising that those bees died — those doses weren't field realistic. The only surprise was that the bees didn't all die right away."
+
+In that case, this study isn't too useful. After all, everyone agrees that neonicotinoids are lethal to bees in extremely large doses. But bees aren't getting drenched in these pesticides in the real world. What we want to know is whether the smaller everyday doses that bees might encounter through pollen or nectar or dust could have adverse effects. That's a much more important question — but it's also much harder to study.
+
+What we do know about pesticides and bee deaths
+
+Now, one flawed study doesn't mean pesticides are harmless. Far from it. Pesticides can certainly hurt bees. A variety of studies have shown, for example, that exposure to certain fungicides and pesticides (including neonicotinoids) can make bees more susceptible to infections.
+
+Other peer-reviewed studies, meanwhile, have shown that low doses of neonicotinoids can affect honeybee performance — making it harder for them to find their way home or to produce new queens.
+
+But the evidence is far more ambiguous on whether exposure to neonicotinoids is what's driving the current decline in honeybees. One of the clearest overviews of this topic came in a paper published in Pest Management Science in 2012 by three leading honeybee researchers in Britain, France, and the United States.
+
+Among other things, the authors noted that the timing doesn't fit perfectly: in California, for instance, honeybee colonies began declining in the mid-1990s, before neonicotinoids became widely used. And, even though neonic use has ramped up dramatically since, the decline of bees has actually slowed somewhat (see chart).
+
+Similarly, Australia uses neonicotinoids quite widely, but its honeybee colonies remain fairly healthy — possibly because the country is free of the Varroa mite. So there's clearly more going on.
+
+"We conclude that dietary neonicotinoids cannot be implicated in honey bee declines," the authors wrote, "but this position is provisional because important gaps remain in current knowledge."
+
+It's still not clear whether pesticide exposure is a major factor in honeybee decline
+
+Another expert review convened by the US Department of Agriculture in 2013 also noted that the evidence was murky: "It is not clear, based on current research, whether pesticide exposure is a major factor associated with U.S. honey bee health declines in general, or specifically affects production of honey or delivery of pollination services."
+
+That 2013 review concluded that lots of different factors working together seemed to be causing the decline of honeybees. The parasitic Varroa destructor mite was likely killing off many bees in the winter. A variety of viruses were closely associated with colony collapse disorder. Poor nutrition was also a factor — the conversion of open land to cropland for corn and soy has left the bees with less to eat. And, yes pesticides of all sorts could exacerbate these problems.
+
+One reason there are still so many question marks, vanEngelsdorp explains, is that it's extremely difficult to test how low levels of pesticides in the environment might affect entire colonies. It's one thing to look at how doses might affect individual bees in a lab. It's another to try to expose full colonies to crops treated with neonicotinoids but keep nearby control colonies separate — especially when honeybees can travel for miles and have complex social habits.
+
+Why Europe banned pesticides anyway
+
+Faced with such ambiguous evidence, however, the European Union and the United States have taken very different regulatory approaches toward neonicotinoids.
+
+Europe banned neonicotinoids out of caution
+
+In 2013, the European Commission announced a two-year ban on neonicotinoids so that officials can review the evidence on the topic and "take into account relevant scientific and technical developments."
+
+The United States, by contrast, has declined to ban neonicotinoids for the time being. Instead, the Environmental Protection Agency will conduct a review on the topic that's expected to take five years. Regulators aren't going to restrict neonicotinoids until they have clear evidence that the pesticides are a major factor in the decline of honeybees.
+
+There are arguments in favor of each approach. Europe has often used the "precautionary principle" for cases like these. We don't know for sure whether neonicotinoids are hurting the bees, so the burden of proof is on pesticide users to prove that they're harmless. Hence the two-year ban. Better safe than sorry.
+
+The US government, by contrast, is essentially saying that it's up to critics to prove that pesticides are harmful. After all, pesticides are a billion-dollar industry, crucial for many types of agriculture. And the neonicotinoids in question are less toxic to humans and other mammals than the pesticides they replaced — so it's not as if a ban would be entirely cost-free either.
+
+Ultimately, these are two different ways of dealing with ambiguous evidence that reflect two completely different approaches to regulation. And it's not clear who's right — though Europe's two-year ban may end up giving us some valuable info on neonicotinoids and honeybees.
+
+In the meantime, honeybee researchers are also trying to tackle some of the other pressing honeybee issues. For instance, one survey for the winter of 2012-13 found that beekeepers who frequently treated their colonies for Varroa mites lost 26 percent fewer colonies than those that didn't. It's not clear that using these treatments more widely will save the honeybees. But it's a reminder that the honeybees have lots of problems besides pesticides.
+
+Further reading

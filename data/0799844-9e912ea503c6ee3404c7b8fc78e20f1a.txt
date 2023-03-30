@@ -1,0 +1,9 @@
+Cortana is already in Windows Phone 8.1, Windows 10, Windows 10 Mobile and even as a beta app in Android. Now there's word that Microsoft's digital assistant could be deeply integrated into the next version of Cyanogen OS.
+
+Kirt McMaster, the co-founder and CEO of Cyanogen, said that his company is working with Microsoft to add Cortana in the Android-based Cyanogen OS. According to what he told the International Business Times:
+
+"When Apple launched Apple Music at WWDC, they showed the Siri integration with Apple Music. Siri doesn't power Spotify like that so we can do these kind of things with for example, integration of Microsoft's Cortana into the OS enabling natural language to power Spotify and other services."
+
+He added that the integration would not be offered in the form of an app, like the current Android beta:
+
+"Natural language coupled with intelligence is very important but as an application it doesn't rally (sic) work because you need to be embedded into the framework of the OS because that is where you get all the signal from the services that makes that intelligence smarter."

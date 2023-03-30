@@ -1,0 +1,33 @@
+The quantum Fredkin gate has been experimentally realized for the first time
+
+Researchers from Griffith University and the University of Queensland have overcome one of the key challenges to quantum computing by simplifying a complex quantum logic operation. They demonstrated this by experimentally realising a challenging circuit -- the quantum Fredkin gate -- for the first time.
+
+"The allure of quantum computers is the unparalleled processing power that they provide compared to current technology," said Dr Raj Patel from Griffith's Centre for Quantum Dynamics.
+
+"Much like our everyday computer, the brains of a quantum computer consist of chains of logic gates, although quantum logic gates harness quantum phenomena."
+
+The main stumbling block to actually creating a quantum computer has been in minimising the number of resources needed to efficiently implement processing circuits.
+
+"Similar to building a huge wall out lots of small bricks, large quantum circuits require very many logic gates to function. However, if larger bricks are used the same wall could be built with far fewer bricks," said Dr Patel.
+
+"We demonstrate in our experiment how one can build larger quantum circuits in a more direct way without using small logic gates."
+
+At present, even small and medium scale quantum computer circuits cannot be produced because of the requirement to integrate so many of these gates into the circuits. One example is the Fredkin (controlled- SWAP) gate. This is a gate where two qubits are swapped depending on the value of the third.
+
+Usually the Fredkin gate requires implementing a circuit of five logic operations. The research team used the quantum entanglement of photons -- particles of light -- to implement the controlled-SWAP operation directly.
+
+"There are quantum computing algorithms, such as Shor's algorithm for factorising prime numbers, that require the controlled-SWAP operation.
+
+The quantum Fredkin gate can also be used to perform a direct comparison of two sets of qubits (quantum bits) to determine whether they are the same or not. This is not only useful in computing but is an essential feature of some secure quantum communication protocols where the goal is to verify that two strings, or digital signatures, are the same," said Professor Tim Ralph from the University of Queensland.
+
+Professor Geoff Pryde, from Griffith's Centre for Quantum Dynamics, is the project's chief investigator.
+
+"What is exciting about our scheme is that it is not limited to just controlling whether qubits are swapped, but can be applied to a variety of different operations opening up ways to control larger circuits efficiently," said Professor Pryde.
+
+"This could unleash applications that have so far been out of reach."
+
+###
+
+The team is part of the Australian Research Council's Centre for Quantum Computation and Communication Technology, an effort to exploit Australia's strong expertise in developing quantum information technologies.
+
+The research has been published as A quantum Fredkin gate in Science Advances (DOI:10.1126/sciadv.1501531)

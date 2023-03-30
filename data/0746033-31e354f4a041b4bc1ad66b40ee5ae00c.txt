@@ -1,0 +1,25 @@
+We noted last month that Verizon was throttling Netflix and YouTube usage for ‘unlimited’ plan users even before they hit the 22GB level at which the company says it may reduce bandwidth – and it has now been revealed that this was just stage one.
+
+Verizon is now starting to throttle all video on its ‘unlimited’ plans, with bandwidth limited to as little as 480p when watching on a smartphone …
+
+NordVPN
+
+As The Verge reports, Verizon is splitting out its so-called unlimited plan into three versions.
+
+Go Unlimited: $75/month. Video capped to 480p on smartphones, 720p on tablets.
+
+Beyond Unlimited: $85/month. Video capped to 720p on smartphones, 1080p on tablets.
+
+Business Unlimited: Price varies. Video capped to 480p on smartphones, 720p on tablets.
+
+Not only this, but unlike the previous plan which allowed the carrier to reduce your data speeds after 22GB in one month, small-print in the basic Go Unlimited plan lets Verizon do so any time there is network congestion – aka the company not providing enough bandwidth to meet customer needs. The company does say than anyone unhappy with performance on this plan can upgrade to Beyond.
+
+Existing customers can keep their current plan, and you’ll also get 15GB of full-speed LTE hotspot usage (up from 10GB) – but that still won’t protect you from video throttling.
+
+This is what’s likely going to enrage Verizon customers most. No matter what plan you’re on — whether it’s the old, grandfathered unlimited data plan or a tiered plan or the new unlimited plan — Verizon is taking a tighter grip over video streaming. “Moving forward, HD video on all legacy plans will also match Beyond Unlimited’s HD quality.” So you’ll soon be limited to a maximum video quality of 720p streaming on phones and 1080p if you’ve got a tablet on your plan.
+
+The company claims that nobody can tell the difference between 720p and higher on a phone and 1080p and better on a tablet, claims which are clearly ridiculous on an iPhone and iPad.
+
+Customers were able to circumvent the previous Netflix- and YouTube-specific throttling by using a compatible VPN, and this should also work with other video feeds. The new limits kick in tomorrow for new customers, and ‘soon’ for existing ones, so it seems we won’t have to wait long before we find out.
+
+Check out 9to5Mac on YouTube for more Apple news:

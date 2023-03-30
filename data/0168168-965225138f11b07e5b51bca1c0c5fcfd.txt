@@ -1,0 +1,43 @@
+App updates can either be a blessing or a curse. For developers, space for improvement never runs out meanwhile it can be pain for the users as they tend to get adjusted or find the new update way too complicated. But no matter what the update is, you’d want to update out of curiosity or just end up updating the app by accident. After you’ve updated the app, there’s no way to go back to older version through the Google Playstore. No need to panic or worry, as you can easily reverse what you’ve done by simply downloading the older versions from the Internet.
+
+
+
+Before you begin, make sure to enable installation from unknown sources on your phone. Which can be done by navigating to settings > security. By enabling this, you’ll be allowed to install apps from outside the Google Playstore.
+
+
+
+
+
+
+
+
+
+How to download old versions of apps by AndroidDrawer
+
+
+
+There are many sites out there that offer old versions of apps available for download but majority of those websites are unsafe as they usually contain viruses hence it’s recommended you follow the websites listed on this article as they’ve been tested by me personally on Samsung Galaxy S6.
+
+
+
+AndroidDrawer is very easy to use, all you’ve to do is:
+
+Go on their website by: Clicking Here.
+
+Use the search bar on the top right corner of the website to search for the App
+
+Scoll down till you find the version of the app you want to download.
+
+Press the download button to start downloading the .apk file.
+
+Open it to start installing.
+
+
+
+Note: Make sure to disable auto-update or else the app will just auto update itself from Google Playstore. If this happens, just re-install via the file you downloaded earlier.
+
+
+
+How to download old versions of apps by APKMirror(EXTRA): If you can’t find the version you’re looking for on AndroidDrawer, second option is to download the .apk file from another site ” APKMirror “. The installation method is exactly the same.
+
+Like this: Like Loading...

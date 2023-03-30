@@ -1,0 +1,51 @@
+One of the fundamental challenges of police body cameras boils down to privacy: How can we empower citizens and hold police accountable, while protecting both groups?
+
+Unfortunately, neither the San Diego Police Department nor civil liberties experts can offer much clarity yet on how average folks might practically benefit when they’re the ones captured on body camera footage.
+
+The devices exist to foster transparency – at least in theory. If there’s a dispute about what happened between a citizen and an officer, body camera footage should provide an unbiased record. But San Diego Police Chief Shelley Zimmerman has clarified that body cameras are an investigative tool for officers, not a transparency tool for the public — and indeed, some basic details about body camera footage are shrouded in mystery. The department won’t illuminate key details when it comes to its body camera policies – particularly citizens’ rights when they’re involved in an incident captured on camera.
+
+Here’s what I’ve been managed to pull out of the darkness.
+
+At the Department’s Discretion
+
+“There is a huge gaping hole in the Public Records Act for investigative records, and the courts have given a lot of latitude to law enforcement agencies to determine what is an investigative record,” said Margaret Dooley-Sammuli, criminal justice and drug policy director for the ACLU of California. “The San Diego Police Department does consider all of these videos to be investigative record – exempted, therefore, from the Public Records Act.”
+
+Dooley-Sammuli is talking about the California’s Public Records Act, which allows citizens – not just journalists – to request information and records from state and local public agencies. This includes all communications related to public business, but not things like personnel files or anything deemed an investigative record.
+
+The department’s current body camera policy, an 11-page document that primarily dictates how officers and superiors will use the devices, makes little mention of what to do if a civilian requests to see footage, or whether they’re allowed to in the first place. There’s this line, though: “Public release of digital evidence is prohibited unless approved by the chief of police or their designee.”
+
+Dooley-Sammuli said your options for viewing footage you appear in are pretty limited. The clearest route would be in cases of a criminal investigation or civil lawsuit.
+
+If you’ve been charged with a crime caught on a body camera, most likely your attorney would demand to see that footage so they could factor that into their defense. Once the case against you has been filed, the prosecution would turn over discovery materials – evidence against you – to the defense. If a defense attorney suspects there’s more material being withheld – say, body camera footage – they’d make a written request to the prosecutors for that video. If prosecutors don’t comply, the defense could bring an action in court for a judge to order they produce that footage.
+
+“It’s pretty clear that we would be entitled to receive the video,” Alex Landon, a criminal defense attorney in San Diego, told me. “Certainly the DA’s office in this community recognizes that to be the case.”
+
+But let’s say you want to file a complaint against an officer for inappropriate behavior. You can request to see video of the interaction where said misbehavior went down, but ultimately it’s up to the department whether it’ll allow you to see it.
+
+“If you have a vigilant department, that video should then be reviewed [internally]. It’s unlikely I think that they would choose to share it with that person,” Dooley-Sammuli said.
+
+Victims might face added insult to injury if they request to see videos of crimes against them.
+
+“If you’re the victim – again, this is at the discretion of the department – you have no real representation in this process, which is part of a big problem with our criminal justice system,” Dooley-Sammuli said. “It’s not about you really, it’s about the state and the actor. But if you went in and asked to see it, then the department may be again have total discretion. They may want to not share it with anyone or let anyone view it outside the case, especially during the investigation, or during the prosecution. But I don’t think anything would bar them from allowing a victim to see what happened.”
+
+So what if you wanted to waive your right to privacy after being caught on police body camera footage to release that video to the media or another interested party? “The department would say, rightfully, that you can waive your rights but not necessarily officers’,” Dooley-Sammuli said.
+
+• The department is working to revise its policy. In May, following an officer-involved fatal shooting in the Midway District, SDPD changed its rules: Officers will now be trained to start recording before they arrive at calls likely to result in an enforcement contact, said Matt Tortorella, a spokesman for the department.
+
+Beyond that revelation, though, SDPD has not responded to multiple attempts to clarify or confirm details about its policies.
+
+Dooley-Sammuli said she has met with Zimmerman on several occasions to discuss the ACLU’s recommendations – a biggie would be requiring supervising officers to spot-check officers’ footage, reviewing actual video at random to see if the body cameras are being used according to policy – and said a new version of the policy with a handful of changes should be out any day now.
+
+I asked Dooley-Sammuli what revisions Zimmerman had described during their meetings. “The changes to the body camera policy that the chief mentioned are that officers ‘should’ notify that camera is on; should keep camera on during transport; supervisors will do random audit to check that there are at least as many recordings as reports filed,” Dooley-Sammuli said in an email.
+
+Legislative Intervention
+
+State lawmakers seem to be just as antsy as I am for some clarity on departments’ body camera policies and for consistency across departments. Some major changes could be coming down the pipeline from Sacramento – just not any time soon.
+
+• Assemblywoman Shirley Weber’s AB 66 sought to standardize body camera policies for departments across the state. The bill would have dictated when officers need to notify people they’re being recorded, when they need to turn on their cameras, how storage should be managed and more.
+
+One of the more controversial changes would’ve barred officers from viewing body camera video before filing their reports. That got stripped out when the bill hit the Assembly’s Privacy and Consumer Protection Committee in April.
+
+Under pressure from law enforcement, Weber agreed to allow officers to view footage before writing their reports – “a 180 of our original policy,” Joe Kocurek, Weber’s spokesman, said in an email. “We decided not to bring it to the Assembly floor like that and parked it in the Appropriations committee. The vehicle is dead, but the policy is not. We’re committed to establishing statewide guidelines for their use. Stay tuned.”
+
+• State Sen. Joel Anderson is planning a body camera bill, but hasn’t revealed any details about what it might do – just that it will broadly seek to address the privacy of people recorded by the cameras, and the privacy of officers. There hasn’t been much official movement on this one, and Anderson’s office couldn’t say if any specific policy changes had been proposed. “SB 195 is a work in progress, and we are working closely with our stakeholders to get it right the first time,” a spokeswoman for Anderson said in an email.

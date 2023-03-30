@@ -1,0 +1,19 @@
+HP today announced the imminent release of webOS 2.0 and Palm Pre 2. webOS 2.0 is both the first major update to the webOS smartphone platform, and the first major webOS release by HP since the company bought Palm in April this year. Like the original Palm Pre, the Palm Pre 2 will be a CDMA phone. Unlike the first model, which was exclusive to Sprint, the new Phone will launch on Verizon.
+
+The new operating system features are evolutionary rather than revolutionary, and webOS 2.0 will build on the strengths of webOS 1. webOS offered full multitasking; webOS 2.0 improves management of multiple running applications by allowing related tasks to be grouped together. webOS provided a unified view of contacts whether they were from Exchange, Facebook, LinkedIn or various other services; webOS 2.0 makes this system pluggable, so that any web service can integrate seamlessly. The unified messaging client will be able to speak to more messaging services, adding Yahoo! Messenger support.
+
+webOS 2.0 will also include beta support for Flash 10.1, and improved programmability through integration of the popular node.js JavaScript-based runtime environment.
+
+The post-Pre Pre
+
+Hardware-wise, the Palm Pre 2 is an evolved version of the Palm Pre. The processor speed has been boosted to 1 GHz and the design is a little sleeker, but it's a clear derivative of the existing Pre, and retains the vertical slider keyboard design. Two versions will be sold, a CDMA version and a UMTS version. The UMTS model will be on sale in France this Friday. The CDMA version will be exclusive to Verizon, with a release date in the coming months. This model will also be available in Canada, though no carrier details or release date are available at this time. Verizon customers will also have an exclusive Skype Mobile application, allowing Skype calls and messaging.
+
+The UMTS model will also be available in the US as an unlocked developer handset. Pricing still hasn't been announced yet, but this will allow developers to buy a device for testing their applications without having to buy a corresponding phone contract.
+
+The Palm Pre 2 will ship with webOS 2.0. HP says that existing users of webOS devices will receive an over-the-air update to the new version in the coming months.
+
+A ray of hope
+
+For those webOS fans out there, on the whole this announcement is good news. webOS's future as a smartphone platform is still not entirely clear, and talk of webOS printers soon after the acquisition didn't inspire confidence. Updated hardware, updated software, and new relationships with carriers should assuage many fears. webOS 2.0 and the Palm Pre 2 both appear to be solid upgrades; not radical, but nonetheless worthy. The introduction of a developer handset is also encouraging. Palm struggled to get developers on board, and one thing that can stand in the way of dabbling in a new phone platform is the need to take out an expensive contract for each test handset. Offering unlocked, contract-free hardware solves that problem.
+
+A little less encouraging is HP's reticence on pricing and availability. The new phone and operating system will be shipping in just a few days in France, so the lack of specific availability information for both the new phone and the software upgrade for existing customers is a little disappointing. There may also be some disquiet among current Sprint (Palm Pre) and AT&T (Palm Pre Plus) users with the announcement that the new handset will be available on Verizon—it means that anyone who likes webOS and wants to upgrade will have to switch carriers, which is perhaps not the best way to reward those who have already committed to the platform.

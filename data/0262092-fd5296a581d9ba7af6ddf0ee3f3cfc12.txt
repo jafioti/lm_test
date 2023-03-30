@@ -1,0 +1,340 @@
+Display Modes Wed, 17th-Jun-2015, 10:29 PM BnetId: Crescendo.568 Race: Clan: IXL Location: Melbourne Total Posts Made: 385 Race:Location: 1 x5.Crescendo Tourneys Joined: 5 After the GG: Probe becomes the God of Meta Cup #3 After the GG is an interview series where I celebrate a SEA player's moment of triumph, whether the event is local or on the international stage, and try to share their thoughts with you all.
+
+
+
+This week I have a chat with Rinehart, aka 'eCKo'Probe' who recently melted his way through the brackets of the Gods of Meta Cup in a dominating display of Protoss power.
+
+
+
+---
+
+
+
+Congratulations on taking home the win, Probe. Your sentry/stalker play throughout the GMC was the kind of thing which gives Zerg players nightmares. But I'm actually going to jump into the middle of the tournament with my first question - when facing fellow eCKo member Schnitzel you offraced as Terran while Schnitzel played as Zerg. Before we get into those games, I'd like to ask: why did you offrace for that Bo3?
+
+
+
+Schnitzel is switching to zerg currently and I didn't really want to play PvP. I had been playing Terran for a few days on Na ladder and thought Schnitzel would be easy enough. So we agreed to play it offrace. It was probably a mistake as my TvZ is terrible.
+
+
+
+
+
+In your first game with Schnitzel the harassing power of zerglings was used to deny your natural, and the game did not end well. What were your thoughts as you ended that game and entered the lobby for game two?
+
+
+
+After the first game I really thought I was going to lose 0-2. His zerg was better than all the patchmasters I was playing on Na, so I wasn't very confident. I had a small hunch I might be able to win if I get established on three bases so I just built lots of bunkers to stop his aggression.
+
+
+
+
+
+Zerglings Imba, Plz Nerf
+
+
+
+
+
+
+
+In game two, you made a ForGG amount of hellions, and there was a lot of barbecued zerglings. However, the standout moments were when you held the waves of roach/bane pushes with the help of your hidden base. It seemed to put you in a good mindset, as the third game turned into a brutal slugfest from the moment you held the ling/bane rush right up until you faced his Broodlords, Ultralisks, and Infestors. What were your favourite moments from those games?
+
+
+
+The best moment was winning the third game. I had never really played against broodlord/ultralisk and even though I had bases in the bottom side of the map it felt like I was going to lose. It was really hard to deal with him switching between the two tech routes.
+
+
+
+
+
+I'm now going to jump back to the start of the GMC with the Group C Bo3 Round Robin. The thing which I think needs to be highlighted here is that you did not drop a single map in that group. You faced Chase, Schnitzel, DeeCN, South, and ZergCola. First of all, I'd like to know which of those opponents gave you the most difficult games?
+
+
+
+I didn't find any of the games overly difficult. If I remember correctly, the games with Chase were the hardest. I was always ahead and certain I would win, but he wouldn't die.
+
+
+
+
+
+You continued your trend of not dropping a map while playing your main race by taking out Nickyboy 3-0. Although the VODs were down, I heard you used Mothershipcore/Zealot pressure quite effectively in those games. Could you share with us how those three games went? What happened in them?
+
+
+
+I have only just recently started going Gate Nexus in PvZ. With it you can do a strong Zealot/Stalker/Mcore poke with a follow up oracle. It is really strong pressure and it just killed Nickyboy in the first and second games. The idea is to kill a queen or two to make the oracle stronger and that is exactly what happened. In game three he did a 1 base speedling all in. I managed to wall off my natural with a cannon behind it and he left as I held my natural. I don't think 13/12 is a good build on 2 player maps because you can just do this wall and get a free win.
+
+
+
+
+
+Definitely the kind of thing to make any zerg player wince in pain. And with that you made your way into the finals against Alopex. The first game was on Coda, and your Zealot/Stalker/MothershipCore pressure into oracle did damage once again. The highlight of the game, I think, was your forcefield placement when he tried to deny your third with his zerglings. What goes into being able to execute forcefields like that?
+
+
+
+Practice. I screw it up all the time and lose sentries. The trick for third defences is also to have them right up against a wall or a nexus. Then you just have to relax and stay calm and you will do fine.
+
+
+
+
+
+Legal maphacks AKA how to play tower defense games within a match of SC2
+
+
+
+
+
+
+
+It certainly paid off there! In game two on Expedition Lost, however, you dropped your first map playing protoss when Alopex opened with the SPL Proxy Hatch next to the back rocks. Although scouted, a ling runby was able to slip into your main a split second before you could wall off with a pylon. It was a close-fought game, but eventually Alopex closed it out. With hindsight, was there anything you would have done differently? Did the nature of that game have any influence on your choice of tactics for the next map?
+
+
+
+
+
+I still don't know how to beat the build, but in hindsight, my reaction to it was probably good enough. For some reason the probe didn't build the pylon the first time I sent it. If I had actually started the pylon, or had enough experience with the build to be walling it off earlier I think I would have held. Expedition Lost is a terrible map for PvZ anyway, so it didn't impact my mindset for the rest of the series. I didn't expect to win there.
+
+
+
+
+
+Game three, on Echo, seemed to go a lot more smoothly as your gateway expand moved swiftly into a game of Sentries/Blink Stalkers v Alopex' Roach/Hydra. Here Alopex was unable to keep his fourth alive thanks to your multi-tasking and twin-pronged assaults. It was a fantastic game, and I wanted to know if you had any thoughts to share on the match?
+
+
+
+Echo is a really good map for PvZ. You can deny fourth bases from the zerg for a long time and on the counter attack it is quite an easy hold. Echo is the Best PvZ map in the current pool so I wasn't surprised I won here.
+
+
+
+
+
+The fourth game on Cactus Valley seemed, from a viewer's perspective, to be a mis-step in what had up until then been near-perfect game sense on your behalf. Alopex applied early speedling pressure, and you cancelled your natural. Your oracle was deflected, and Alopex' continued speedling pressure kept your natural from being completed until after the 8 minute mark. You scouted Alopex' Spire, and started producing phoenix. However, in a clever read of the situation Alopex made a hydra den and switched into roach/hydra once more, rather than mutalisks, to seal the win. Was there anything you took away from that game, or any insights based on hindsight?
+
+
+
+I had lost that game ever since I had my nexus delayed. It is quite annoying that on four player maps, if you scout the wrong direction (which I did) you will lose to a 13/12. That being said, even when I get into those situations I can usually find a way to get back into it, but Alopex is really good and understands how I play those kinds of games. He reacted perfectly to it and did everything right.
+
+After losing to a whole bunch of speedling allins that weekend, I think I have fixed it
+
+
+
+
+
+With ACL Sydney on the horizon, that is good to hear! At the end of that game, with the score evened out to 2 maps each, did you ever contemplate switching up your own builds? Why/Why not?
+
+
+
+With the next map being Vaani (another favourite of mine), I did not even consider doing something different. Stalker/Sentry is really strong on Vaani and my games on it are similiar to my echo games. I was therefore pretty confident I could take it in a macro game with Stalker/Sentry.
+
+I do have a lot of other builds I could have used, but Alopex is really solid, so I wasn't confident they would win.
+
+
+
+
+
+In game 5 on Vaani, given the current metagame, it was no surprise to see Alopex take the gold. Initially he seemed to keep your hands full with his speedlings then ling/hydra. However you held his assault with your stalkers and sentries, much as you expected, and took him to pieces by warping in zealots and dark templar behind his next push.
+
+
+
+The following game on Iron Fortress, however, saw a mis-click on your oracle when you accidentally activated envision alongside your zealot pressure. Given how close that game ended up being throughout, do you think the game might have turned out differently if you had done more damage in that early pressure?
+
+
+
+Obviously if the pressure did more damage I would have been in a really good state. However, I think it was doomed to fail even with proper oracle control as soon as it was scouted. The pressure I put on was not the reason I lost though. Iron fortress is really hard to stop those 3 base lair busts. I thought my defence initially was the right thing to do, but I committed way too many forcefields early on and as soon as I moved up the ramp into the third I allowed Alopex to get a massive concave and the game was pretty much over. I decided to commit to dt's and not ht's so I didn't have much chance of breaking out.
+
+
+
+
+
+Now, to preface this next question, I want to state that game 7 on Inferno Pools was my favourite game to watch out of the entire GMC. Alopex opened 13/13, but this was the first time in the event that you went forge expand. You mentioned afterwards that this was a MyungsiK build and, rather than steal any of your thunder, I'd like you to walk us all through the build and what it entails.
+
+
+
+Firstly, I opened FFE because I knew he would be going 1 base speed. It is just what zergs do on that map. You then follow it up with a quick stargate and robo. In this game I went for an oracle and then void ray. Other times I have gone phoenix. I think the phoenix style might be the better one. You then ferry a probe over to the island with a warp prism and take the island third. While putting on pressure with the warp prism you sit at your natural with void colo and recall probes over to your third. It is a really strong style and as soon as you add storm you push out and try and deal damage to the zerg. One drawback I have found, is that the zerg can expand a lot more than usual, and you may struggle to shut it down, so you have to be on top of warp prism harass and using hidden pylons to harass.
+
+
+
+
+
+Before we get into the finer details of the game, I want to give an award to the Oracle Who Lived, even with a flock of mutalisks on its tail across most of the map. Whilst maybe a minor part of the overall game, it was an epic chase scene!
+
+
+
+On the topic of mutalisks - given Alopex' faked spire mindgames on Cactus Valley - when he built a spire once more you still made phoenix. Was it the nature of inferno pools which convinced you it wasn't a fake out like it had been in game four, or was it some other factor?
+
+
+
+
+
+Because he had hidden the spire and the fact mutalisk are the only way he could attack my island, I was sure it wasn't a fake out. Even if it was, I am still confident that he can't break my natural ramp.
+
+
+
+The survival of the oracle also made my day when I watched the VOD later. What a champ.
+
+
+
+
+
+Award for Most Epic Chase Scene goes to this Oracle right here:
+
+
+
+If you look closely, you can see how frustrated the mutalisks are.
+
+
+
+
+
+One of the things which struck me as a defining factor of this game was the way you responded to Alopex' tech switches. First, the phoenix to deflect the mutalisks of course, but when some well-placed fungals wiped out your phoenix count you switched into Voidray/Collossus as Alopex brought Ultralisks into the field. At every occasion you seemed to have an answer for what Alopex brought to bear. Was this from a familiarity with Alopex' playstyles, or through scouting or other factors?
+
+
+
+No matter what he goes for, void/colo is always a good answer. In fact I think ultralisk is one of the better ways to deal with void/colo, but it still worked out well for me.
+
+
+
+The only changes I make based on my scouting is how quickly I get ht (If I see vipers), and if I add tempest (If I see broodlords).
+
+
+
+
+
+That awkward moment when fungals take out all the phoenix. At least it freed up supply
+
+
+
+
+
+
+
+There was one particular push where, for a moment, it seemed Alopex was about to take the game with his large force bolstered by ultralisks. However, you held brilliantly. What was going through your mind as Alopex' army rolled in?
+
+
+
+That I was screwed. Luckily I killed his overseer so the dts helped clean up the rest. Even without dts I probably would have held because I had a really good position and lots of cannons. However, I was really worried that I would lose, but it turned out okay!
+
+
+
+
+
+Really, this is not the kind of army you want knocking at your door:
+
+
+
+
+
+However, they were lured to their doom with promises of a sick rave party. The lasers were real:
+
+
+
+
+
+
+
+It was incredibly well done. After winning that engagement, you were able to pull Alopex apart, continuing to snipe far-flung zerg bases with DTs while your main army of collossus, archons, voidrays and immortals pushed into the heart of his territory. When the GG was typed and Alopex tapped out, how did you feel to have come out on top of such a close-fought series?
+
+
+
+Really happy. To have beaten Alopex, such a strong opponent in a really close bo7, with the final map being inferno pools, I was so glad. I really did not expect to win so it was also a nice surprise.
+
+
+
+
+
+Certainly, if folks have not watched the VOD of those matches against Alopex, I highly recommend they get on that ASAP! Now, there was one other question on the minds of the viewers throughout that final series: why the constant change of clan decal to different members of the Japanese girl idol group AKB48? (Bonus interview points if you have links to the images you used for each game)
+
+
+
+I like to mess with the casters. When I go back and watch the VOD it is always funny to see them freak out and go "did he just change his decal? ... omg I think he did". The reason it was Yamamoto Sayaka was because that was who I was listening to during the series. I don't have the image links but go watch these
+
+
+
+
+
+At present I understand you are preparing for ACL Sydney. Any shoutouts or call-outs you'd like to make before the event starts? It was definitely funny when the casters noticedAt present I understand you are preparing for ACL Sydney. Any shoutouts or call-outs you'd like to make before the event starts?
+
+
+
+I will try my best at ACL Sydney and thanks to all my practice partners and teammates. I call out Pox for not being a casual and lying to the community . YOP YOP #YOP
+
+
+
+
+
+Speaking of #YOP, at the time of this interview, you are currently #22 in the OSC rankings. Will we be seeing you in more OSC events as the year progresses? Are you going to aim for the Grand Finals?
+
+
+
+I am usually busy on Monday nights and struggle to be around for Seacraft, but I will be trying to qualify through other events. I want to qualify so I can play and possibly beat some of the Koreans.
+
+
+
+
+
+I look forward to seeing it! Probe, thank you for taking the time to have a chat with me. Once again, congratulations for a brilliant run in the GMC, and for securing your victory over Alopex with seven hard-fought and entertaining games!
+
+
+
+
+
+---
+
+
+
+For a region as zerg-heavy as SEA has been for a long time, it makes things exciting to see our protoss players stepping up!
+
+
+
+I look forward to seeing what he brings to bear at ACL! Will this be the Year Of Probe?
+
+
+
+GLHF all!
+
+
+
+
+
+---VODs---
+
+Round 1 v Schnitzel Bo3 -
+
+Finals v Alopex Bo7 -
+
+
+
+#YOP
+
+
+
+Quick Comments Pox: T____T mGGNemesis: Another lovely well written read :D is an interview series where I celebrate a SEA player's moment of triumph, whether the event is local or on the international stage, and try to share their thoughts with you all.This week I have a chat with Rinehart, aka '' who recently melted his way through the brackets of the Gods of Meta Cup in a dominating display of Protoss power.---Schnitzel is switching to zerg currently and I didn't really want to play PvP. I had been playing Terran for a few days on Na ladder and thought Schnitzel would be easy enough. So we agreed to play it offrace. It was probably a mistake as my TvZ is terrible.After the first game I really thought I was going to lose 0-2. His zerg was better than all the patchmasters I was playing on Na, so I wasn't very confident. I had a small hunch I might be able to win if I get established on three bases so I just built lots of bunkers to stop his aggression.The best moment was winning the third game. I had never really played against broodlord/ultralisk and even though I had bases in the bottom side of the map it felt like I was going to lose. It was really hard to deal with him switching between the two tech routes.I didn't find any of the games overly difficult. If I remember correctly, the games with Chase were the hardest. I was always ahead and certain I would win, but he wouldn't die.I have only just recently started going Gate Nexus in PvZ. With it you can do a strong Zealot/Stalker/Mcore poke with a follow up oracle. It is really strong pressure and it just killed Nickyboy in the first and second games. The idea is to kill a queen or two to make the oracle stronger and that is exactly what happened. In game three he did a 1 base speedling all in. I managed to wall off my natural with a cannon behind it and he left as I held my natural. I don't think 13/12 is a good build on 2 player maps because you can just do this wall and get a free win.Practice. I screw it up all the time and lose sentries. The trick for third defences is also to have them right up against a wall or a nexus. Then you just have to relax and stay calm and you will do fine.I still don't know how to beat the build, but in hindsight, my reaction to it was probably good enough. For some reason the probe didn't build the pylon the first time I sent it. If I had actually started the pylon, or had enough experience with the build to be walling it off earlier I think I would have held. Expedition Lost is a terrible map for PvZ anyway, so it didn't impact my mindset for the rest of the series. I didn't expect to win there.Echo is a really good map for PvZ. You can deny fourth bases from the zerg for a long time and on the counter attack it is quite an easy hold. Echo is the Best PvZ map in the current pool so I wasn't surprised I won here.I had lost that game ever since I had my nexus delayed. It is quite annoying that on four player maps, if you scout the wrong direction (which I did) you will lose to a 13/12. That being said, even when I get into those situations I can usually find a way to get back into it, but Alopex is really good and understands how I play those kinds of games. He reacted perfectly to it and did everything right.After losing to a whole bunch of speedling allins that weekend, I think I have fixed itWith the next map being Vaani (another favourite of mine), I did not even consider doing something different. Stalker/Sentry is really strong on Vaani and my games on it are similiar to my echo games. I was therefore pretty confident I could take it in a macro game with Stalker/Sentry.I do have a lot of other builds I could have used, but Alopex is really solid, so I wasn't confident they would win.Obviously if the pressure did more damage I would have been in a really good state. However, I think it was doomed to fail even with proper oracle control as soon as it was scouted. The pressure I put on was not the reason I lost though. Iron fortress is really hard to stop those 3 base lair busts. I thought my defence initially was the right thing to do, but I committed way too many forcefields early on and as soon as I moved up the ramp into the third I allowed Alopex to get a massive concave and the game was pretty much over. I decided to commit to dt's and not ht's so I didn't have much chance of breaking out.Firstly, I opened FFE because I knew he would be going 1 base speed. It is just what zergs do on that map. You then follow it up with a quick stargate and robo. In this game I went for an oracle and then void ray. Other times I have gone phoenix. I think the phoenix style might be the better one. You then ferry a probe over to the island with a warp prism and take the island third. While putting on pressure with the warp prism you sit at your natural with void colo and recall probes over to your third. It is a really strong style and as soon as you add storm you push out and try and deal damage to the zerg. One drawback I have found, is that the zerg can expand a lot more than usual, and you may struggle to shut it down, so you have to be on top of warp prism harass and using hidden pylons to harass.Because he had hidden the spire and the fact mutalisk are the only way he could attack my island, I was sure it wasn't a fake out. Even if it was, I am still confident that he can't break my natural ramp.The survival of the oracle also made my day when I watched the VOD later. What a champ.No matter what he goes for, void/colo is always a good answer. In fact I think ultralisk is one of the better ways to deal with void/colo, but it still worked out well for me.The only changes I make based on my scouting is how quickly I get ht (If I see vipers), and if I add tempest (If I see broodlords).That I was screwed. Luckily I killed his overseer so the dts helped clean up the rest. Even without dts I probably would have held because I had a really good position and lots of cannons. However, I was really worried that I would lose, but it turned out okay!Really happy. To have beaten Alopex, such a strong opponent in a really close bo7, with the final map being inferno pools, I was so glad. I really did not expect to win so it was also a nice surprise.I like to mess with the casters. When I go back and watch the VOD it is always funny to see them freak out and go "did he just change his decal? ... omg I think he did". The reason it was Yamamoto Sayaka was because that was who I was listening to during the series. I don't have the image links but go watch these https://youtu.be/QCHWHlOD9wM and this https://youtu.be/--Py_Iz82gc I will try my best at ACL Sydney and thanks to all my practice partners and teammates. I call out Pox for not being a casual and lying to the community. YOP YOP #YOPI am usually busy on Monday nights and struggle to be around for Seacraft, but I will be trying to qualify through other events. I want to qualify so I can play and possibly beat some of the Koreans.---For a region as zerg-heavy as SEA has been for a long time, it makes things exciting to see our protoss players stepping up!I look forward to seeing what he brings to bear at ACL! Will this be the Year Of Probe?GLHF all! http://www.twitch.tv/pressuretested/c/6659855 (t:12m10s) http://www.twitch.tv/fenn3r/v/5339569 (t:39m15s)#YOP
+
+#WhyILoveSC2: Writing articles and interviews for the OSC and Exile5.
+
+
+
+___________________________________Writing articles and interviews for the OSC and Exile5. @x5_Crescendo - follow for SC2 info, interview alerts, and fanboy gleetweets. Last edited by x5.Crescendo; Wed, 17th-Jun-2015 at 10:39 PM . OLD POST Wed, 17th-Jun-2015, 11:06 PM Who's Who: BnetId: DevianT.811 Race: Location: Melbourne, Australia Total Posts Made: 2,266 Race:Location: 2 Eddie MVP
+
+Tourneys Joined: 19 19 Mr Steady (2011)
+
+Achievements (5)
+
+
+
+It was a great series vs Alopex
+
+Congrats on the win, hope to see more! #YOPIt was a great series vs AlopexCongrats on the win, hope to see more!
+
+Follow me
+
+OSC World Rankings + database. Masters Cup Hall of Fame. Success is not final, failure is not fatal: it is the courage to continue that counts! More GG, More Skill. GLHF ___________________________________Follow me @EddieSC2 for all SEA SC2 NewsSuccess is not final, failure is not fatal: it is the courage to continue that counts! More GG, More Skill. GLHF OLD POST
+
+
+
+« Previous Thread | Next Thread » Thread Tools Show Printable Version Email this Page Display Modes Linear Mode Switch to Hybrid Mode Switch to Threaded Mode
+
+
+
+Similar Threads Thread Thread Starter Forum Replies Last Post [Interview] WCS Season 2 Qualifiers: Get to know Probe MaruMarine Starcraft 2 General Discussion 13 Sat, 19th-Apr-2014 10:37 PM [mGG] The God of Meta Cup (GMC) mGGNemesis Clan mGG Latest News 26 Wed, 21st-Aug-2013 7:45 PM [ZvZ] Where does the ZvZ meta sit? Plottel Strategy & Improvement 4 Fri, 19th-Jul-2013 4:01 AM [mGG] GMC (God of Meta Cup) mGGNemesis Clan mGG General 58 Sun, 7th-Jul-2013 1:18 PM
+

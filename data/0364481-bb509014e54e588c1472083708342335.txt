@@ -1,0 +1,17 @@
+Twitch, the Amazon-owned video streaming platform which is today used by over 2 million broadcasters, announced today its plans to begin selling video ads in its partners’ live streams which can’t be blocked by third-party ad blockers. These ads will roll out this week, and will be delivered through Twitch’s new SureStream video technology platform, which also offers smoother and more reliable streams, including ads, the company claims.
+
+The goal is to offer broadcasters a better experience than third-party ad networks could provide, which Twitch says cause technical issues due to the way they insert ads from external sources. But obviously, the larger goal here is to bring more of those potential advertising dollars in-house, so Twitch can profit by hosting its ads natively.
+
+The SureStream platform also addresses the problem that advertisers face with regard to the growing use of ad blockers. Twitch’s SureStream ads, once enabled, won’t be able to be bypassed by viewers, even if they have a third-party ad and content blocker enabled, Twitch noted in its announcement. This also means Twitch’s partner broadcasters will be able to generate more ad revenue, as their ads are no longer blocked. (Twitch and streamers will have an ad revenue share split, but the company declines to say how much.)
+
+Some ad blockers may figure out how to workaround SureStream, but to what extent is still unclear. For what it’s worth, Twitch’s blog post puts it like this: the technology “will reduce the efficacy of such software.”
+
+Advertisers, meanwhile, will also benefit by being able to reach Twitch’s wider audience, as well as by the overall performance enhancements, and by being able to more quickly pull problematic advertising, says Twitch.
+
+“Since the video ads played by our streamers during their broadcasts are an important source of revenue for them, it’s our responsibility to constantly improve the advertizing experience for all parties in the Twitch ecosystem,” said Jonathan Simpson-Bint, Chief Revenue Officer at Twitch, in an announcement. “SureStream helps ensure they can keep doing what they love, while providing a more seamless experience for viewers. It also helps attract and retain advertisers who are now able to effectively reach an elusive audience.”
+
+Of course, there are a number of viewers today – both on Twitch and other streaming platforms – who can’t stand having to watch ads. But until now, they’ve been able to work around the problem by using ad blockers. That means this change could have the side benefit of pushing more Twitch viewers to upgrade to ad-free viewing. This is available today to those who subscribe to specific streamers who offer ad-free viewing as a perk to subscribers, as well as in the recently launched program, Twitch Prime.
+
+As the name implies, Twitch Prime is a spinoff from parent company Amazon’s Prime membership program, and offers a variety of benefits for subscribers, including free loot (like in-game skins, characters, and more), one free channel subscription per month, discounts on new releases and free release-day delivery, mobile clip sharing, video uploads, loyalty badges, transcoding, and more, in addition to ad-free viewing.
+
+SureStream is beginning to roll out today, and will reach all viewers in the months ahead, the company says.

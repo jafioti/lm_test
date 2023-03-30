@@ -1,0 +1,101 @@
+There are literally hundreds of desktop 3D printers emerging on the market, each with a multitude of variables to consider. This review was restricted to printers that are currently available or scheduled for initial delivery in the 4th quarter of 2013. Additionally, we only included the most valuable product offered from any single manufacturer to help narrow the playing field. Our quest was to find the top 10 most valuable 3D printing machines available to those looking for a printer by the end of the year. Here is what we found:
+
+#10. Cubify Cube X
+
+Build Envelope (mm): 275x265x240 Build Volume (in3): 1098 Top Build Speed (mm/s): 15 Top Travel Speed (mm/s): 50 Min Layer Resolution (micron): 100 Positioning Precision (micron): 200 Theoretical min. Tolerance (micron): 300 Number of Print Heads: 2 Material Compatibility: ABS, PLA Price: $2499
+
+Website – http://cubify.com/
+
+The Cube X is a one of the most commercialized 3D printers available. As such it is refined, aesthetically pleasing and offers robust customer support. It also has an extra large build volume and a dual extruder setup. Unfortunately it is also the slowest printer on our top ten list, making it excruciatingly painful to actually use the full build area. The print accuracy is subpar and the unit only supports two materials at this time.
+
+#9. Form 1
+
+Build Envelope (mm): 125x125x165 Build Volume (in3): 157 Top Build Speed (mm/s): 60 Top Travel Speed (mm/s): 90 Min Layer Resolution (micron): 25 Positioning Precision (micron): 25 Theoretical min. Tolerance (micron): 50 Number of Print Heads: 1 Material Compatibility: Acrylate Photopolymer resin Price: $3299
+
+Website – http://formlabs.com/
+
+The Form 1 is the only SLA entry which made our top ten list. The minimum tolerances are amazing but you will pay for it in increased material costs by being locked into the proprietary resin. The build volume is also very small which limits the type of parts which can be made. If you must have the highest accuracy possible and are content with making small parts, this is the machine for you.
+
+#8. Robo3D
+
+Build Envelope (mm): 255x255x205 Build Volume (in3): 800 Top Build Speed (mm/s): 30 Top Travel Speed (mm/s): 60 Min Layer Resolution (micron): 80 Positioning Precision (micron): 100 Theoretical min. Tolerance (micron): 180 Number of Print Heads: 1 Material Compatibility: ABS, PLA Price: $699
+
+Website – http://www.robo3dprinter.com/
+
+The Robo3D printer is a very welcome addition to the new line of “economy” rapid prototyping machines. Its print speeds are mediocre and accuracy average, but the build volume is very generous. With a price point under $700, it is the perfect entry level 3D printer for those who do not have prior FFF experience.
+
+#7. Type-A machines Series 1
+
+Build Envelope (mm): 255x229x229 Build Volume (in3): 816 Top Build Speed (mm/s): 90 Top Travel Speed (mm/s): 250 Min Layer Resolution (micron): 50 Positioning Precision (micron): 50 Theoretical min. Tolerance (micron): 100 Number of Print Heads: 1 Material Compatibility: PLA Price: $1695
+
+Website – http://www.typeamachines.com/
+
+Type-A machines has refined its Series 1 unit to be optimized for PLA. By tuning their machine for a single material they have been able to provide a very high level of precision at relatively fast build rates. If you are interested in printing exclusively in PLA, this machine likely holds the highest value to you.
+
+#6. Pirate 3D
+
+Build Envelope (mm): 150x100x120 Build Volume (in3): 110 Top Build Speed (mm/s): 30 Top Travel Speed (mm/s): 60 Min Layer Resolution (micron): 100 Positioning Precision (micron): 20 Theoretical min. Tolerance (micron): 120 Number of Print Heads: 1 Material Compatibility: ABS, PLA Price: $347
+
+Website – http://pirate3d.com/
+
+Pirate 3D has been a huge Kickstarter success due to its mission of being the first truly plug-and-play personal 3D printer. It leverages the power of cloud computing to make the creation of objects seamless and entertaining. The printer has average speed and accuracy along with a limited build volume, but this is meant to be more of an entertaining gadget than a production unit. With a price point under $350 and its appeal to the mainstream, we expect these to be very popular around the holidays.
+
+#5. Replicator 2X
+
+Build Envelope (mm): 246x155x153 Build Volume (in3): 355 Top Build Speed (mm/s): 90 Top Travel Speed (mm/s): 200 Min Layer Resolution (micron): 100 Positioning Precision (micron): 11 Theoretical min. Tolerance (micron): 111 Number of Print Heads: 2 Material Compatibility: ABS, PLA Price: $2799
+
+Website – http://store.makerbot.com/
+
+Makerbot has lost a lot of traction in the personal 3D printer market with the proliferation of open source alternatives, but the Replicator 2X still makes the top five list. This newest Replicator revision is above average in both speed and accuracy even though it has a dual extruder configuration. The build volume is average at best, but the unit makes up for this by including an enclosure allowing for a temperature controlled build chamber. If you don’t need to make large parts or use exotic materials but need the speed an accuracy of a production printer, consider the Replicator 2X.
+
+#4. AW3DXL
+
+Build Envelope (mm): 300x200x178 Build Volume (in3): 672 Top Build Speed (mm/s): 150 Top Travel Speed (mm/s): 400 Min Layer Resolution (micron): 100 Positioning Precision (micron): 40 Theoretical min. Tolerance (micron): 140 Number of Print Heads: 1 Material Compatibility: ABS, PLA, LAYWOOD-D3, Nylon, PC Price: $2295
+
+Website – http://airwolf3d.com/
+
+The AW3DXL is actually the printer we use for the majority of our production parts. It offers a large build volume and extremely fast print speeds while maintaining standard print tolerances. The unit supports over five different materials at this time allowing for extreme design flexibility. These printers ship fully calibrated with 10 hours of bench testing to ensure everything is working properly. If you are looking for a rugged and versatile 3D printer that is ready for production and easy to service, look no further.
+
+#3. SUMPOD MEGA
+
+Build Envelope (mm): 600x600x600 Build Volume (in3): 13,157 Top Build Speed (mm/s): 90 Top Travel Speed (mm/s): 200 Min Layer Resolution (micron): 100 Positioning Precision (micron): 20 Theoretical min. Tolerance (micron): 120 Number of Print Heads: 1 Material Compatibility: ABS, PLA, LAYWOOD-D3, Nylon, PC Price: $3750
+
+Website – http://www.sumpod.com/
+
+There is beating the competition and then there is blowing it away. That is what Sumpod did with the build volume of their aptly named Mega 3D printer. This unit can make parts nearly two feet in any direction. Furthermore, it can do it at higher than average speeds and tolerances. The frame of the unit is also very accommodating to enclosure panels which would greatly benefit taller ABS prints that tend to delaminate in open air. It supports five different materials at this time. If you just want one printer and have the money to invest, this is definitely worth considering.
+
+#2. Lulzbot TAZ
+
+Build Envelope (mm): 298x275x250 Build Volume (in3): 1,238 Top Build Speed (mm/s): 200 Top Travel Speed (mm/s): 400 Min Layer Resolution (micron): 75 Positioning Precision (micron): 100 Theoretical min. Tolerance (micron): 175 Number of Print Heads: 1 Material Compatibility: ABS, PLA, LAYWOOD-D3, Nylon, PC Price: $2195
+
+Website – http://www.lulzbot.com/
+
+The TAZ is an extremely well rounded workhorse production printer. It comes with an extra large build volume which it can fill at exceedingly fast build speeds while maintaining industry average print tolerances. It supports five different materials at this time and is very easy to service. If you are looking for a well rounded and robust printer that will allow for a high level of design flexibility, this is an excellent option.
+
+#1. QU-BD Rapid Prototyping Mill*
+
+Build Envelope (mm): 320x333x275 Build Volume (in3): 1,792 Top Build Speed (mm/s): 500 Top Travel Speed (mm/s): 1000 Min Layer Resolution (micron): 100 Positioning Precision (micron): 8 Theoretical min. Tolerance (micron): 108 Number of Print Heads: 1 Material Compatibility: ABS, PLA, LAYWOOD-D3, Nylon, PC Price: $1999
+
+Website – http://www.qu-bd.com/
+
+This printer falls into the “it’s too good to be true” category. The advertised specifications are simply amazing for the price point. The aluminum rack and pinion positioning system allows for ultra fast build speeds while maintaining very tight tolerances. The build volume is extra large and the printer supports over five materials for ultimate design flexibility. At a price point under $2000, we would be on the waiting list yesterday if we believed these specifications could be accurate.
+
+*Disqualified
+
+The specifications advertised for the QU-BD rapid prototyping machine are so impressive that it has generated some skepticism as to the accuracy of their claims and the legitimacy of the company itself. This unit is currently advertised as being sold out with an 8 week lead time, however, their website does not seem to have been updated in several weeks and according to forums, several deposit holders are growing impatient and wary of delays from previously stated deadlines. Delays are common when introducing cutting edge technology to the market, but since the company themselves cannot guarantee a QU-BD unit ordered today would be delivered before the new year, we have temporarily disqualified them from consideration. We will be tracking this company closely to see what they can deliver to customers in 2014.
+
+Here is the modified comparison chart with QU-BD removed, leaving the top nine remaining printers for consideration this year:
+
+The calculations used to generate the standings evaluated six production parameters for each printer: unit cost, build volume, build speed, minimum print tolerances, number of print heads, and number of supported materials. Each parameter was scaled dimensionally such that all factors were weighted equally.
+
+There are of course some attributes that cannot be properly quantified, such as the value of local customer service support and general ease-of-use of the machine. These aspects need to be considered on a personal basis since each individual has their own preferences. Someone with no 3D printing experience would likely place a higher value on customer service and robust technical documentation while experienced users are likely more interested in the raw production value as captured in the graph above.
+
+Due to the content of this article, we will be updating the information frequently as new products and specs come to the market. We look forward to seeing more and more competition come 2014.
+
+Thank you for reading our article.
+
+Follow us on Twitter @SD3DPrinting
+
+Like us on Facebook https://www.facebook.com/sd3dprinting
+
+Any questions or comments, please email us at inquiry@sd3dprinting.com

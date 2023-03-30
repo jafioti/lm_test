@@ -1,0 +1,11 @@
+If you were looking forward to boasting about your Hackermeter score as a means of getting your next coding gig, you’re gonna have to make new plans: the two-month old startup has been acquired by Pinterest, and will be shut down.
+
+The premise behind Hackermeter was a fairly simple one: they didn’t think the classic résumé was good enough for hiring coders, so they set out to replace it. You’d prove your chops through a series of coding tests (from a fibonacci sequence generator to some lightweight cryptography), with each challenge being graded based on you and your code’s efficiency.
+
+Potential employers could playback your code keystroke-by-keystroke (partly to see how your code spills out of your brain, and partly as a small barrier to copy/pasting challenge solutions from elsewhere), as well as create challenges of their own.
+
+Hackermeter’s launch was met with its fair share of criticism, with most naysayers pointing out that similar ideas had been tested many a time before by companies like HackerRank, CodeEval, and a host of others — and yet, the good ol’ résumé lived on.
+
+Both Pinterest and Hackermeter’s founders declined to share the terms (we’re still digging, regardless, and will update this post if we hear specifics), but it’s safe to say it wasn’t a massive one. The product was just two months old, its team still small, and, beyond the funds that came with their stint in Y-Combinator’s Winter 2013 class, they hadn’t raised much money. According to their AngelList profile, they were in the middle of trying to raise $750k. Add in the fact that Pinterest already plans on closing it down, and this is quite clearly meant primarily to be a talent acquisition.
+
+The company’s co-founders, Lucas Baker and Frost Li, will both join Pinterest as engineers.

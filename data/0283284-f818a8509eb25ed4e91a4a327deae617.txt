@@ -1,0 +1,49 @@
+I will no longer support this mod. I am sorry for the inconvenience. If you wish to maintain this mod, shoot me a PM.
+
+JWIN Mod
+
+Adds no items or such, just a bunch of helpful utilities.
+
+My Mission
+
+Asked on reddit over here what convenience features people would like to see in a mod. Got a lot of great replies, some people are awesome at suggesting things! Anyways, I am turning this into a full-on Utility Mod, with a few goals
+
+No Decrease in FPS - I want this to be able to be added to a pack without any significant footprint.
+
+Mod Compatability - I want to ensure that no other mods run into issues with this, so I am making it completely non-invasive.
+
+Convenience without being OP - I don't want gameplay to suffer, and I don't want this mod to be just another cheap way to process ores. This is a convenience mod mainly, I don't want it to be seen as another cheap way to do x or get to y.
+
+Client / Server Separation - This will not add any blocks or items on its own. Certain features will be available to any client with the mod, certain will be available to all clients connected to a server with the mod, such as improved bed mechanics and ore stacking.
+
+So far in the mod, I have some convenience features related to rotating blocks, mobs preventing sleep, animals being able to breed, and ores cluttering your inventory. Any suggestions? Throw them into the issue tracker with the "Suggestion" tag.
+
+Features
+
+Different kinds of ores, ingots, nuggets, and ingot blocks you pick up will all stack.
+
+Bed sleeping is improved, mobs will only prevent sleep if they have direct line-of-sight to you and can path to you.
+
+Animals will occasionally emit particles when they are unable to breed. *Re-enabled. Woo!*
+
+Sticks, wrenches, and crowbars will rotate Logs and the like. Adding a config option to add more blocks, such as chisel blocks and such.
+
+Animals will eat nearby dropped items (corresponding to their breeding items) and breed.
+
+Hostile Mobs will not spawn on leaves by default.
+
+Chunk Overlay akin to those formerly added by NEI
+
+Mob Spawning Overlay akin to those formerly added by NEI.
+
+Crops can be right-clicked to harvest them without breaking the crop.
+
+An album of a few of the features here.
+
+Modpacks
+
+Feel free to put it in a modpack, just drop "Blur" or "SSBlur" somewhere.
+
+Redistribution
+
+You may redistribute this, if you provide proper credit to "Blur" or "SSBlur".

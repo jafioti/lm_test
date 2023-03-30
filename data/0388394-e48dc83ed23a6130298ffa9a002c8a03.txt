@@ -1,0 +1,15 @@
+That’s what the institutions do—but, in addition to having different responsibilities, each holds a different kind of of power. ICANN has tremendous power over how the modern web works: It’s in the middle of a years-long process to allow many, many more words than “com” or “org” to follow the dot in a web address. But it doesn’t have a significant say in what bits look like when they get to your computer. The two standards-making bodies, the Internet Engineering Task Force (IETF) and World Wide Web Consortium (W3C), have huge consultative and technical power (the IETF determines what constitutes the literal Internet Protocol) but very little national oversight. And the Internet couldn’t work without the regional IP registries, but they act more as nodes in the system, as technical entities, than as leaders. Still more organizations have advisory clout but no concrete role: These include the Internet Society.
+
+The leaders of 10 organizations signed the statement in Montevideo, Uruguay. They include ICANN, the standards-making IETF and W3C, the Internet Society, and the five regional registries. But of those 10 organizations, the U.S. has oversight powers over only one: ICANN. So if the Uruguay statement concerns the United States, then it really concerns the functioning of ICANN.
+
+And three bullet points in the statement imply ICANN. Here’s the main one:
+
+[The signatories] called for accelerating the globalization of ICANN and IANA functions, towards an environment in which all stakeholders, including all governments, participate on an equal footing.
+
+The globalization of ICANN: This may sound unprecedented, but, for ICANN, it isn’t a new goal.
+
+“ICANN has been agitating for greater independence from the U.S. government for many, many, many years, basically since it was founded,” A. Michael Froomkin, a law professor at the University of Miami, said in a phone interview. Froomkin writes about Internet law, including two widely cited articles about ICANN’s relationship with the U.S. government.
+
+In the 1990s, the U.S. government found itself in control of the servers which controlled the domain name system behind the burgeoning web. For a number of reasons, it didn’t want to entirely retain this power, and it sought a way to delegate it. So the government—the Clinton administration, at the time—privatized control of the “root” DNS servers in a non-profit body called ICANN, which would administer domain names. This happened in 1998; since then, ICANN has operated the system. Since then, too, its power and independence has grown, and the U.S. reaffirmed its delegation of the DNS to ICANN while insisting it could step in in case of emergency.
+
+Most recently, in September 2009, the U.S. and ICANN agreed on an “Affirmation of Commitments” The U.S. permitted the corporation more independence, but retained its power to take over the root server in an emergency.

@@ -1,0 +1,19 @@
+We've seen a couple of brute force anti-drone devices designed to snatch the tiny machines out of the sky, but Battelle's DroneDefender is one of the first to do it with an invisible beam delivered in an ultraportable, gun-like form.
+
+The device uses radio control frequency disruption to halt and bring down drones in a way that keeps the drone intact while preventing it from setting off any kind of self-destruct sequence.
+
+See also: 2016 will be the dawn of the drone age
+
+That last point is important because small drones are increasingly being used for aerial surveillance. In the case of industrial espionage, the ability to snag a drone intact in order to investigate its source could be vital.
+
+Capable of five hours of continuous use, the device has a range of 400 meters and jams ISM bands (radio frequencies reserved for industrial, scientific and medical devices) and GPS signals. A look at a brief video demonstration (below) shows a user targeting and bringing down a small drone with ease, just outside of what looks like a guarded facility.
+
+Of course, there are other non-contact anti-drone solutions already available, such as the Falcon Shield and the Blighter AUDS (Anti-UAV Defence System), but the DroneDefender is far more portable and lightweight (less than 10 pounds) than those stationary systems.
+
+"This is just the kind of tool we need to safely counter a drone threat," Dan Stamm, a lead researcher on the project, said in a press statement. "The DroneDefender can help protect us from those who may wish to do us harm. It can help us in numerous settings, from the White House lawn to bases and embassies overseas; from prisons and schools to historic sites. It easily and reliably neutralizes the threat."
+
+However, the anti-drone device, which was unveiled back in October, mysteriously disappeared from public view soon after. A visit to Battelle online reveals that the device has been entirely scrubbed from the company's website. When we attempted to contact the company to ask questions, we received an automated reply that confirmed the removal of the DroneDefender, as well as a hint as to why it was removed.
+
+"FCC regulations (47 CFR 15) prohibit the marketing or sale of this device to entities other than U.S. Government agencies," reads the statement. "We are examining ITAR [International Traffic in Arms Regulations] and other export regulations at this time. Due to communication spectrum regulations and legal limitations on its use, we do not have near-term plans to pursue commercial sales."
+
+So for now, the drone stopping gun is back to being a really cool weapon for the government, while civilians are still left with more crude means of stopping drones. Although disappeared from its website, the company promises a return to public view for the DroneDefender sometime in 2016, with a focus on sales to U.S. governmental agencies.

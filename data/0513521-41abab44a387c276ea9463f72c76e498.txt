@@ -1,0 +1,33 @@
+Recorded music was once incredibly fragile. Before the days of digital music, an independent band might press only a few thousand, or even a few hundred copies of a vinyl record. Those albums only became more rare over the years as copies were scratched, broken, or thrown out. Likewise, master recordings could be damaged or lost, making the record difficult or impossible to reissue.
+
+But today, thanks to the wonders of digitization, recordings can be backed up and saved indefinitely. When a formerly obscure band hits it big, fans can instantly find their early work, without having to hunt it down in used record stores or waiting for a reissue, thanks to streaming music services.
+
+The trouble is that, even as music has become more durable, it has—paradoxically—also become more ephemeral. Your physical records don't evaporate if the store you bought it from closes shop or the record label that published them goes out of business. If a streaming music company goes under, a stockpile of important cultural artifacts could go with it.
+
+SoundCloud lost $44.19 million dollars in 2014–even as it increased revenue to $15.37 million.
+
+Fears that exactly this could happen erupted this week when a financial statements from popular audio hosting site SoundCloud surfaced online. The company, which has become a vital resource for independent musicians and podcasters, lost $44.19 million dollars in 2014 even as it increased revenue to $15.37 million, according to the regulatory document filed with the UK government. The revelation led to immediate speculation that SoundCloud could go offline, taking with it the 110 million audio tracks it hosts.
+
+It wouldn't be the first time a massive trove of digital music disappeared. In 2003, CNET shut down the original version of music publishing service mp3.com, which once hosted 750,000 song files. Three years later, the Internet Underground Music Archive, consisting of over 680,000 songs, went offline as well.
+
+Threat to the Underground
+
+SoundCloud says those fears are overblown. The financial document in question is now more than a year old, and it doesn't reflect the $77 million dollars in funding the company secured last year. "We’re focusing on enabling creators to get paid for their creativity," a spokesperson said in a provided statement. "And on building a financially sustainable platform that our community can enjoy for years to come."
+
+It's too early to write the obituary for SoundCloud, but it isn't the only audio service struggling to make ends meet. Last November, Rdio confirmed that it would file for bankruptcy sell its assets to Pandora.
+
+'It’ll be the majors losing their access to the next generation of hitmakers too.'
+
+Now Pandora itself is rumored to be for sale. Spotify, meanwhile, may be looking for a $500 million cash infusion. Losing SoundCloud, however, would be a bigger cultural blow than losing another of the major streaming sites.
+
+While those services all host a similar catalog of music, SoundCloud has become home to countless unsigned musicians and independent broadcasters. Although unsigned artists can upload their music to services like Apple Music and Spotify, they generally have to pay a middleman like CD Baby or Tunecore to do so. SoundCloud enables musicians to publish their work directly and for free, without the need for a lengthy approval process. Meanwhile, more established artists can use it to preview tracks or connect directly with fans.
+
+"If the service goes the way of Grooveshark, it won’t just be underground artists like Plastician that lose their access to a wealth of undiscovered talent," FACT Magazine wrote last year of the company. "It’ll be the majors losing their access to the next generation of hitmakers too."
+
+Saved From Oblivion
+
+Fortunately there are alternatives to SoundCloud, such as Bandcamp, which a spokesperson told us has been profitable since 2012, and YouTube, which has become an increasingly important part of Google's overall strategy. But SoundCloud users would have to re-upload all of their work—if they even still have copies of it. Much of what lives on SoundCloud today would likely vanish forever.
+
+Of course, someone could end up hosting backups of the site. An organization called the Archive Team has dedicated itself to preserving the web, and has already managed to save many sites from oblivion–sometimes years after the fact. For example, in 2012 the Internet Underground Music Archive made a surprise comeback when the organization uploaded backups of the original site to the Internet Archive. Archive Team founder Jason Scott says the group is already looking at SoundCloud, though there are several other sites the team plans to archive first.
+
+But history tells us that today's most financially stable companies and organizations could become tomorrow's nostalgic memories. Even the venerable Internet Archive could one day disappear. That's why the Archive Team started a project to backup it up. Perhaps something like Interplanetary File System, which aims to create a more distributed way of storing data online, could one day make the web more resilient to the ebbs and flows of corporate dollars. But until then we must remember that nothing lasts forever, not even on the Internet.

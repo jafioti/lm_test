@@ -1,0 +1,189 @@
+Slice the sashimi, pour some sake and get comfy under the heated coffee table. I’d like to tell you about this wonderful country I call home.
+
+Quick Disclaimer
+
+I’ve been living in Japan for about five years and have enjoyed every day of it. I was happy to be asked to share information about web design and eCommerce in Japan, but, truth be told, I am a communications guy with a few years’ experience in Japanese mass communications and business, culture studies and an eCommerce user. I’m confident my skill set provides a good starting point from which to write this article, however, to round out my observations and experience I interviewed two good friends from different sectors of the web design industry: designer Sachiyo Fujiwara of Sandlot, Inc., and Shota Maehara, sole proprietor of Me3 Designs.
+
+Culture Based on Simplicity
+
+In Japan I still have “Wow” moments all the time. Such contrast. Bustling cities straddle traditional temples; kimono-clad wedding patrons surf the net on smart phones; enterprising businessmen hustle past wooden-shoed monks chanting prayer and collecting donations.
+
+It’s a passive, polite culture which is characterized by simplicity, cleanliness and modern minimalism. And that’s not meant negatively: we have to make do with what we have in the coastal and scant flat lands of Japan (60% mountains), but we do very well indeed.
+
+Clean, simple, open designs give my home and city a deceptively expansive feel. Cars are smaller yet built to maximize available cabin space. Minimalism here means I can eat simple food, comprising a few ingredients, not overdone in any way. Modern clothing mimics western pants over traditional kimono most of the time, but style here still retains simplicity, so much so that the kids who wear flashy gear have garnered the moniker チャラい (charai), or gaudy folk.
+
+So why is it, when I visit Japan’s most popular eCommerce site, I see this?
+
+Chaos. Countless columns. Tiny little pictures of low quality. More information than I can stand to read in… forever probably. The colors of the top navigation tabs run through the visible light spectrum. Twice.
+
+This national sporting goods chain starts off well enough:
+
+but then carry on scrolling and you get more of the same:
+
+Where’s the simplicity and minimalism?
+
+Communication
+
+The culture of a country sews threads throughout everything its members see and say. Here, details are a welcome aspect of communication and therefore web design too, as a website conveys information and sells the company and its products in place of a live salesperson. Details are needed because risk is absolutely not tolerated. More is better. Way more is best. People in general tend to gravitate to what’s reassuring and, here in Japan, buyers and businesses remain loyal to products, vendors and employees even when problems arise. They ride it out.
+
+“Details are needed because risk is absolutely not tolerated.”
+
+Those Bright Colors
+
+A thought about all those bright colors: the party district in Tokyo is organized per se, but as a massive melange of fluorescence visible from Mars. It makes Las Vegas look like a string of holiday lights around your dorm room window. Information grabs you by the retina and trips you over the sidewalk as you try to keep up. There and elsewhere are coin-slot pachinko parlors, and all these bright and blinky attributes remind me of the first eCommerce website we looked at: rakuten.co.jp.
+
+Essentially, most Japanese websites are going to be designed to cater to the reassurance needed by their consumers. Therefore they tend to be chock-a-block with information, buttons, and boxes, laden with bright colors to hold attention and organize the chaos, provide reassurance and gain the trust of the largest buying demographic segments of a society whose GDP is 60% consumption. If you build it they will not necessarily come. But if you build it the right way, they will never leave. Brilliant don’t you think?
+
+
+
+The Flipside
+
+It’s high time I mentioned that international companies tend to break the mold. Take a look at this screenshot from western www.toyota.com:
+
+And this one from Japan, www.toyota.jp:
+
+Both boast a similar full screen image. Scrolling down reveals more neat and tidy layout features. Clean. Large images. Understated. Simple yet stylish. I have a moment to breathe and imagine myself in the vehicle. This Toyota website is from one of the largest companies in the world and definitely in Japan. With this in mind they have implemented designs which are consistent and speak to billions, not millions.
+
+On a smaller scale, Shota says, a few large-ish companies like CookPad and Uniqlo are designing websites which go against the mainstream as well. Check these out:
+
+This can best be described as an incremental step towards simplicity. And looking at the western equivalent for Uniqlo, while the branding remains true, there are definite differences:
+
+Sachiyo asserts that in 2014 Japan’s most popular overall website was Yahoo Japan and that’ll continue into 2015. Here I noticed a strikingly “busy” similarity between the .jp and .com pages from Yahoo.
+
+By and large I doubt most Japanese websites will be streamlining and simplifying the contents of eCommerce pages for quite some time. For now many will observe the western trends, see what blooms, adopt the designs that work really well and trim the ones that stick out too far. There are flashes of brilliance and imagination at the base level and conformity at the corporate level.
+
+
+
+Traditional Aesthetics
+
+We’ve discussed some of the characteristics of Japanese web design as they relate to social demand and global trends. But there are key visual characteristics in some web designs which share traits with traditional Japanese art as well. For example, 和柄 (wagara), a pattern or design created by combining elements of Japanese painting and Chinese calligraphy.
+
+You may be familiar with a kimono cloth displaying gorgeous giant blue wave patterns made immortal by the artist Hokusai:
+
+The Great Wave off Kanagawa (神奈川沖浪裏 Kanagawa-oki nami-ura)
+
+Here’s another that shows the repetitive geometric patterns often seen raked into Japanese rock gardens. This example is known as the 青海波 (seigaiha) pattern (literally, blue wave of the sea):
+
+Also, gold and red together make a striking combination that resemble the colorful array of autumn hues which grace the hillsides from mid-September to November.
+
+Red-on-yellow catches the eye and it’s very popular in Japanese art, pop culture, web design, and former designs of the Japanese national flag.
+
+In today’s Japanese web design these rich contrasting hues can most notably be found on the pages of traditional 旅館 (ryokan) guesthouses. The most popular tourism site for trips which include stays in ryokan guesthouses sports a brand new, clean look (yay!) splashed with traditional color and wagara. These aesthetics carry over to nearly every page, top to bottom on this directory, and deeper to the actual guesthouse websites themselves.
+
+The Cute Factor
+
+Ahhhhh, the “cute” factor. Japan is a gentle, nonviolent country and that core cultural thread is sewn throughout eCommerce and mobile communication.
+
+Even those purists who brave the tech onslaught armed with only a basic flip phone are texting and taking 6MP food pics like crazy, and more than making up for lack of cutting-edge smart phone emojis with the most creative punctuation you’ve ever seen. There’s a corner of the interwebs dedicated to the art form:
+
+✌.ʕʘ‿ʘʔ.✌
+
+(┛◉Д◉)┛彡┻━┻
+
+And this next site is focused on making basic text emojis as cute as possible. There are about fifty emotions and an index within each to choose from. I can’t imagine how much time was spent on this but the world is cuter because of it:
+
+Kaomoji means face (kao) and emoji, married together in cuteness bliss.
+
+Emojis are fantastically popular, border on ridiculously cute, and you can throw down a few yen and buy the cutest dang emojis you’ve ever seen and many you’ve never imagined. Everything here is ­kawaii. On the web, in text messages, on Facebook posts, and beyond to TV and print media, cute culture pervades. Cute little animals, mascots, figurines, emojis, you name it, they probably have it.
+
+Typography
+
+Typography within the Japanese language has undergone quite a transformation thanks to digital media and eCommerce. The Japanese language has in total over 100,000 traditional characters 漢字 (Kanji) and 104 syllabic sound structures ひらがな (Hiragana) and カタカナ (Katakana), yet most adults know maybe 4,000. Some Kanji are outdated and it’s no sweat if you don’t know them, but Hiragana and Katakana are a must, and all three are taught from an early age. It’s fun to be taught first-grade level Kanji by my buddy’s six-year old, as I recognize only about 75.
+
+Sachiyo believes that designers who rely on Hiragana and Katakana, have shifted to the western-style horizontal arrangement of words and stick to only a few select fonts. A great many fonts make the symbols difficult to decipher. The Kanji used online, says Shota, is a “winning combo” of not-too-obscure but still descriptive symbols. By and large the combination works. With my own eyes I’ve seen this approach work effectively. These days, my colleagues and native friends are reading eCommerce pages with speed and ease but they have surprising difficulties with certain types of dated literature.
+
+“So many Japanese are forgetting how to write kanji characters that cultural experts believe the country may eventually scrap the use of Chinese pictograms in favour of the 46 simplified hiragana characters.” - Julian Ryall, South China Morning Post
+
+English here is as exotic and aesthetically appealing as Japanese and Chinese in the West. In the West we have no clue what those symbols say, but we don’t mind. Take a look at this t-shirt. Pretty cool eh?
+
+Yeah, that’s the word for hemorrhoid.
+
+In the same way, English is embraced in pop culture and fashion design, usually at the behest of correct spelling and grammar too. You will regularly see words misused and misspelled in lieu of style and layout. Take a look at some of these classic clothing designs on imgur.com.
+
+Despite my efforts to produce a concrete example of this occurrence in web design (and recollection of seeing sites that fit the example), I couldn’t find a thing. You can find plenty of websites which have been run through online translation tools, but we all know they can be hideous, so I filtered them out.
+
+What we did find was watered-down English-language versions of Japanese sites. Maybe the decision-makers erred on the side of caution. For example this popular everything store included only directions to the store locations on its English site, rather than the full compliment of information stuffed into the Japanese sites.
+
+Additionally, on the English version there are plenty of elementary typographic hiccups that could be cured with just a little TLC. It’s likely that the store will take a hit in earnings as a result of this, and it’s certainly frustrating for users.
+
+
+
+All in all, the sheer number of available symbols in the Japanese language is a hurdle in web design and eCommerce. Full translations and mastering English in design and content is tough on the 1.4% of us here who aren’t Japanese. Designers are trying to be conscious of this and do their best to toe the line between user comprehension, time/cost and unique, effective marketing.
+
+Japanese Consumption and the Web
+
+I’m having another “Wow” moment. I’m sitting on the floor with my legs crossed under a table that’s covered by a huge blanket, while built-in heated coils gently toast me. Haven’t used the home heat in a week. I bought this nifty kotatsu table on the web and paid COD–yup, cash on delivery–24 hours later when it arrived at my door. I could have paid by credit card but had the cash on hand that day. It tickles me pink to understand it’s still safe in Japan for furniture drivers to carry COD tills with them. And I downright guffaw to think that a few years ago so few people had credit cards that COD was the way to get things done. I took delivery of my $500 microphone COD too, in a blazing fast 21 hours. And the driver apologized for keeping me waiting out of politeness. Now that’s service.
+
+In a way eCommerce in Japan isn’t all that different from the West. You can buy tons of cool stuff online and have it delivered. But that’s a huge change from ten years ago says Shota, who now reminisces of shopping trips with mom and dad on the weekends before he moved out. Via car or train, with cash.
+
+In my COD bliss I’m aching to gush just a little about the customer service here and incredible politeness of Japanese people. I absolutely love it. That is all.
+
+Notable Differences
+
+However there are differences in eCommerce unique to this culture.
+
+First, speed. Blazing speed.
+
+Then yes, COD.
+
+But also, there is a large diverse eCommerce industry for food.
+
+For instance, most people order their traditional New Year’s Day 御節 (osechi) feast for delivery. Log on, designate the number of people, how much you want, pay and relax. Nowadays you have to order osechi weeks in advance or you’ll be getting it from the convenience store on New Year’s Day. It’s become that popular.
+
+You can also send people food gifts, and not just fruit baskets. I’ve been out of the West for five years now and don’t recall if you can order signature-certified 和牛 (Wagyū) Hida beef and all the trimmings to arrive at your boss’ doorstep at precisely the requested time, and pay a very modest up-charge for the convenience.
+
+We love Japanese food. If we’re gassed after a long week and don’t want to go out, we logon by smart phone or desktop for sushi that arrives precisely on time, packed in reusable service ware that you bag and leave outside your door after eating the food. The next day a driver makes the rounds to pick it up. That never gets old to us!
+
+There are a few services deeply rooted in Japanese culture that have made the transition to eCommerce quite nicely.
+
+With a few exceptions, like my buddy’s uber-techie 66 year old grandmother, this blossoming of eCommerce has been fertilized by a new style of consumer with decidedly different views than older generations, a good deal more time spent at home, and a few changes to commerce laws.
+
+“After decades of behaving differently, Japanese consumers suddenly look a lot like their counterparts in Europe and the United States. - Brian Salsberg
+
+
+
+The Tech Scene
+
+Japan is known the world over for pioneering many technological innovations. This daring attitude is and isn’t part of the web culture. Japan has some really unique services for consumers like the one’s I’ve mentioned, and websites sprung up to help make the eCommerce transition smooth. So smooth that in 2013 Japan ranked #2 on the Global Retail E-Commerce Index and leads developed countries across a range of criteria including eCommerce marketing and national infrastructure to support it. I say again, as a non-Japanese speaker I took delivery of a $500 microphone delivered COD in 21 hours. Japan is spending ridunculous amounts of money on eCommerce.
+
+
+
+Japan are studs of ecommerce among developed nations but in web design, both Shota and Sachiyo agree that the deep systems and extraordinary benchmarks set in the West are still out of reach for this place. National and large companies stick with tried and true designs; you can pull a CEO out of his comfort zone only so far, they say. Younger, more daring web designers may opt for working as the sole IT guy in an SME where they get some creative elbow-room to play, or as independent contractors like Shota. Sachiyo says that web culture basically developed in the West–that’s where the trails were blazed, and Japan is still playing catch-up.
+
+Devices and Commuting
+
+I frequently ride the train in-between rush hour. I do a lot of people watching then. People are open books of nonverbal queues, it’s so much fun. On Wednesday I counted three books among 46 people, six people dozing off and 37 handheld communication devices of some sort, across all ages.
+
+The number of cell phone owners in Japan soared to nearly 110 million people last year. That’s 86% of the total population. Think of that in terms of Japan’s mass transit commuters with time to chill on the train; it’s a great opportunity to socialize and shop, two things Japan does well.
+
+Up to date figures are difficult to come by, but in 2013 22% of online shopping in Japan was conducted through mobile devices. It was worth approximately $USD 9.7 billion (source).
+
+Social Networking
+
+Twitter is huge in Japan, in fact the Asia-Pacific region is Twitter’s largest emerging market in spite of China’s complete ban of the network.
+
+“Markets in Asia-Pacific are among those driving Twitter user growth worldwide - emarketer
+
+
+
+At the moment Japan sports similar per capita statistics as America in terms of Facebook users as a percentage of the national population, around 50%. Nearly everyone you see (minus the absolute oldest and youngest people) are on Facebook. Since Facebook’s arrival circa 2008, home team social media platform Mixi has been getting kicked in the pants. Mixi still has a decent following but I don’t (neither do you) see Facebook going anywhere soon.
+
+“In 2017, it is estimated that there will be around 55.7 million social network users in Japan, up from 48.2 million in 2013. - statista.com
+
+Japan also utilizes Line for a goodly portion of free text and telecommunications, with about 50 million+ users.
+
+Looking West
+
+It can’t be understated how hugely important it is to have responsive designs for all eCommence sites that want to survive out here. All of Shota’s and the majority of Sachiyo’s projects have to be responsive. Responsive design used to be a total pain in the you-know-what for these folks because designers needed to build sites on multiple sources for mobile and PC. Thank goodness that’s no longer the case, they say, as Shota’s head falls into his hands. But Shota says web designers still have to coddle IE 6 and 7 users out of the dark ages by sticking to target systems like IE 8, 9 and IOS through 2015 and beyond. Web designers and corporate decision-makers seem to be playing nicer at the moment, with 2015 forecast to be a continuing, albeit slow progression to responsive WordPress themes with modern designs and graceful interaction. As with so much here, the big corporations will set the pace and tone, and many will wait and watch. That could prove to be frustrating for the bolder designers and indies but hey, you gotta make a living.
+
+With so many responsive sites that are customizable the Japanese have fallen in love with the daring/safe hybrid of trusted quality and customizable features, such as in WordPress. EC-Cube is also a very, very popular eCommerce site platform here because it’s like WordPress but the whole system has a Japanese interface which is customized to include shipping and payment options specific to Japan.
+
+
+
+The upside is it’s in Japanese; the downside is that it’s a little more complicated and twice the buildup cost of WordPress. He started to tell me more about what EC-Cube is but I was suddenly struck with a case of narcolepsy and awakened as soon as he concluded.
+
+As I mentioned earlier Japan is known as being a pioneer of technology. But the journey of researching this article, talking with my friends and my personal experience in doing business here leads to the question: are they reinventing the wheel or are they trying to make it better? There’s a difference.
+
+Conclusion
+
+In conclusion, the web design and eCommerce industries in Japan are two separate entities which share little similarity but benefit from symbiosis. On one hand you have a handful of gorgeous, seamlessly flowing websites, traditional wagara-influenced sites that reflect the limitless grace and beauty of traditional Japanese art, and an amalgamated mish-mash of casino lights that should post advisories for those with sensitive eyes. But on the other hand you have eCommerce, a mammoth money tree that resembles a swelling baobab after a downpour. Flashing emoji-bears and all, those mish-mash websites are makin’ it rain in Japan.

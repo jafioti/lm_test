@@ -1,0 +1,19 @@
+I guess you all know the story how a comma “,” killed a man - the king wrote: Freedom not, death instead of Freedom, not death.
+
+Well, something similar happened to Plasma recently. There was one (yes, just one) extra letter in the code, and the consequences were (not for all users, but a significant amount of them):
+
+Panels didn’t have the resize controls, while the buttons for locking and other stuff remained.
+
+System tray looked half-dead.
+
+Buttons lost their backgrounds. Text was still shown.
+
+Folder view lost the ‘selection’ controls.
+
+Lancelot lost the no-click activation.
+
+… and probably a lot more things I didn’t notice
+
+So, a couple of minutes ago, I’ve made the smallest patch ever which killed a dozen bugs :)
+
+Just remember that, whenever you step on a flower, it can produce a tsunami on the other end of the globe! :)

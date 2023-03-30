@@ -1,3 +1,5 @@
+use std::fmt::Debug;
+
 use dfdx::prelude::tensor_collection::{ModuleVisitor, TensorCollection, TensorOptions};
 use dfdx::prelude::*;
 use rand_distr::Uniform;
@@ -30,7 +32,7 @@ pub struct LearnedPositionalEmbedding<
 }
 
 /// Pass in an unbatched pre-embedded sequence, add positional embeddings in
-impl<const MAX_LEN: usize, const DIM: usize, SEQ: Dim, D: Device<f32>, T: Tape<f32, D>>
+impl<const MAX_LEN: usize, const DIM: usize, SEQ: Dim, D: Device<f32>, T: Tape<f32, D> + Debug>
     Module<Tensor<(SEQ, Const<DIM>), f32, D, T>>
     for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D>
 {
@@ -41,13 +43,11 @@ impl<const MAX_LEN: usize, const DIM: usize, SEQ: Dim, D: Device<f32>, T: Tape<f
         input: Tensor<(SEQ, Const<DIM>), f32, D, T>,
     ) -> Result<Self::Output, Self::Error> {
         let (input, tape) = input.split_tape();
-        let indexes: Tensor<(SEQ,), usize, D> = input
-            .device
-            .tensor_from_vec((0..input.shape().0.size()).collect(), (input.shape().0,));
         self.weight
             .clone()
             .put_tape(tape)
-            .try_gather(indexes)?
+            .try_slice((..input.shape().0.size(), ..))?
+            .realize::<(SEQ, Const<DIM>)>().unwrap()
             .try_add(input)
     }
 }
@@ -58,7 +58,7 @@ impl<
         BATCH: Dim,
         SEQ: Dim,
         D: Device<f32>,
-        T: Tape<f32, D>,
+        T: Tape<f32, D> + Debug,
     > Module<Tensor<(BATCH, SEQ, Const<DIM>), f32, D, T>>
     for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D>
 {
@@ -69,13 +69,11 @@ impl<
         input: Tensor<(BATCH, SEQ, Const<DIM>), f32, D, T>,
     ) -> Result<Self::Output, Self::Error> {
         let (input, tape) = input.split_tape();
-        let indexes: Tensor<(SEQ,), usize, D> = input
-            .device
-            .tensor_from_vec((0..input.shape().1.size()).collect(), (input.shape().1,));
         self.weight
             .clone()
             .put_tape(tape)
-            .try_gather(indexes)?
+            .try_slice((..input.shape().1.size(), ..))?
+            .realize::<(SEQ, Const<DIM>)>().unwrap()
             .try_broadcast_like(input.shape())?
             .try_add(input)
     }
@@ -86,38 +84,22 @@ impl<const V: usize, const M: usize, E: Dtype, D: DeviceStorage> NonMutableModul
 {
 }
 
-impl<const MAX_LEN: usize, const DIM: usize, D: Device<f32>> BuildModule<D, f32>
-    for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D>
-{
-    fn try_build(device: &D) -> Result<Self, D::Err> {
-        let bound = 1. / (MAX_LEN as f32).sqrt();
-        let weight = device.try_sample(Uniform::new(-bound, bound))?;
-        Ok(Self { weight })
-    }
-}
 
-impl<const MAX_LEN: usize, const DIM: usize, D1: Device<f32>, D2: Device<f32>> ToDevice<D2>
-    for LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D1>
-{
-    type Output = LearnedPositionalEmbedding<MAX_LEN, DIM, f32, D2>;
-    fn to_device(&self, device: &D2) -> Self::Output {
-        LearnedPositionalEmbedding {
-            weight: self.weight.to_device(device),
-        }
-    }
-}
 impl<const C: usize, const M: usize, D: SampleTensor<f32> + Device<f32>> TensorCollection<f32, D>
     for LearnedPositionalEmbedding<C, M, f32, D>
 {
-    fn iter_tensors<V: ModuleVisitor<Self, f32, D>>(visitor: &mut V) -> Result<(), V::Err> {
-        visitor.visit_tensor(
-            "weight",
-            |s| &s.weight,
-            |s| &mut s.weight,
-            TensorOptions::reset_with(|t| {
-                let b = 1. / (C as f32).sqrt();
-                t.try_fill_with_distr(Uniform::new(-b, b))
-            }),
+    type To<E2: Dtype, D2: Device<E2>> = LearnedPositionalEmbedding<C, M, E2, D2>;
+    fn iter_tensors<V: ModuleVisitor<Self, f32, D>>(visitor: &mut V) -> Result<Option<Self::To<V::E2, V::D2>>, V::Err> {
+        visitor.visit_fields(
+            Self::tensor("weight",
+                |s| &s.weight,
+                |s| &mut s.weight,
+                TensorOptions::reset_with(|t| {
+                    let b = 1. / (C as f32).sqrt();
+                    t.try_fill_with_distr(Uniform::new(-b, b))
+                })
+            ), 
+            |weight| LearnedPositionalEmbedding {weight}
         )
     }
 }

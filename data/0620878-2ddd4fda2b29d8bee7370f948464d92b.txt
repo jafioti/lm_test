@@ -1,0 +1,71 @@
+GoFundMe Removes Bitcoin From Africa Youth Campaign
+
+Bitcoin’s advantages to worthy fundraising drives is in the spotlight again, after crowdfunding site GoFundMe removed a campaign that included a Bitcoin donation address.
+
+Also read: BitGive: Charity 2.0 Platform Will ‘Revolutionize Philanthropy’
+
+Reasons for Suspension
+
+GoFundMe later reinstated the campaign – a restaurant training and employment program for youth in Uganda – but only after references to Bitcoin were removed from the description at the request of GoFundMe’s staff.
+
+Bitcoin.com contacted GoFundMe to ask if there is any official policy regarding Bitcoin specifically, or campaigns using alternate donation channels.
+
+The company responded, saying the notification to any campaign organizer who sets up alternate payment methods outside the GoFundMe platform reads:
+
+“We are reaching out to let you know that we have removed the alternate payment information from your campaign. It is against our Terms & Conditions to offer visitors other ways to donate online from your GoFundMe campaign.”
+
+Background to the Uganda Campaign
+
+Hip hop activist and recording artist Rob Hustle (best known for his track “Call The Cops“) told Bitcoin.com the Uganda restaurant campaign grew out of a video he produced for Ugandan community worker Anthony Ojok.
+
+Ojok works with child soldiers and homeless kids in Uganda – helping them to get them off the streets, feeding them, and getting them an education. He explained:
+
+There are a lot of African aid programs. But, many of them work on a handout basis. They look at hungry children as the problem, and free meals as the solution. Plus, they are administered by the government, which is often corrupt and inefficient at distributing aid. It’s not a sustainable model. Anthony wanted to do something different.
+
+Rather than providing handouts, Ojok plans instead to apprentice the kids and teach them job skills that could help them earn money, develop careers, or even operate businesses. His program is similar to vocational training courses offered in Western countries.
+
+“Instead of looking at hungry children as the problem, he saw them as the solution to the problem. Instead of aid, he wanted to teach them business and a trade,” Hustle added.
+
+Problems Getting Money Where It’s Needed
+
+Hustle met Ojok through his friend Brian Bajari, a Monterey CA pastor and TED speaker who works with the homeless, and travels the world talking to like-minded people. Bajari told him about the work in Uganda and Hustle decided to help out.
+
+He made a video highlighting Ojok’s work and goals, and the group decided to put it on GoFundMe to raise donations. They immediately ran into problems, however, because GoFundMe does not operate in some countries and does not allow people based in Africa to withdraw money.
+
+This is ostensibly to avoid scams, but also cuts off many legitimate charities and causes who happen to be based in Africa – a continent in need of more attention and constructive economic projects.
+
+Bajari turned to a local charity called Spero Collaborative, which has assisted previously on his African missions, to act as an intermediary to withdraw the money and sent it to Ojok in Uganda.
+
+They still wanted a way for Ojok to receive the money directly, though, and decided to use Bitcoin. Bajari set up a Bitcoin wallet and Hustle added Bitcoin donation instructions to the campaign page.
+
+As soon as he did that, however, the campaign was suspended from GoFundMe’s site.
+
+GoFundMe’s Request
+
+When Spero contacted GoFundMe to investigate, it received this response:
+
+“It looks like the only thing we will need you to do to make your campaign live once again is remove the mention of how to donate via Bitcoin, at the bottom of your campaign. Once you remove that from your campaign, we can review this once again and make this live for you to raise donations again.”
+
+Once references to Bitcoin were removed, the campaign page was reinstated.
+
+Cutting Off a Potent Funding Source
+
+Hustle said he thinks there is nothing about including a separate Bitcoin donation channel that would compete with GoFundMe’s system since it does not have a Bitcoin option of its own. He said:
+
+This hurts us in a few ways. First, Bitcoin is the safest way to send money to Africa. It protects people from corrupt officials, predatory banks, and other instabilities that plague the region. It doesn’t require you to have credentials, permits, or paperwork. And, it doesn’t require exorbitant fees to be paid in order to transfer the money. It allows us to raise and send money to impoverished regions cheaply, safely and efficiently.
+
+Unfortunately, as in other sectors of the economy, the attributes of Bitcoin that make it such an attractive option for commerce also see it run afoul of international financial regulations.
+
+Identification requirements, anti-money laundering laws, and paper trails of names and organizations involved in transactions have long been necessities for any international transfer of funds. Sometimes, with its pseudonymous peer-to-peer payments, Bitcoin is too good at what it does.
+
+Bitcoin Needs Reputable Independent Campaigns
+
+Bitcoin’s advantages to charity are obvious, allowing donations of any size to reach their target, giving the money maximum impact on the projects it funds. Organizations like the BitGive Foundation raise Bitcoin donations for selected campaigns, but it is not an open crowdfunding site like GoFundMe or Indiegogo.
+
+Like other cross-border payment platforms, crowdfunders are also subject to scrutiny by regulators who may crack down on providers if they suspect misuse – therefore, their restrictions on users can also be strict.
+
+Anyone is still free to use Bitcoin as a donation mechanism for independent campaigns – getting widespread attention and proving credibility is always, however, a challenge reputable organizers must overcome.
+
+What do you think? If popular crowdfunding platforms aren’t an option, how can Bitcoin best be used to fund worthy projects? Let us know in the comments.
+
+Images courtesy of GoFundMe, Bitgive

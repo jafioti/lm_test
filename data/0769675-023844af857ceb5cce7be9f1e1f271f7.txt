@@ -1,0 +1,39 @@
+My next book will be "Windows Phone 8.1 Field Guide," an update to "Windows Phone 8 Field Guide." Unlike the original book, which was a gift to the Windows Phone community, this new book will be paid, and created and sold in a manner similar to "Windows 8.1 Field Guide." That is, it will be very inexpensive and updated frequently as I write it.
+
+Here's the awesome new cover design, again by Martin McClean:
+
+I've not done a lot of actual new writing yet, but in investigating what needs to be changed between the previous book and the new edition, it seems like it should be a fairly straightforward update. (Which makes sense since Windows Phone 8.1 is a fairly straightforward update to Windows Phone 8.) These things never go exactly as planned, obviously. But I'm hoping this can be finished by the end of the summer.
+
+Some of the big content additions will include:
+
+Cortana. Obviously. I'll be updating the Search chapter (and renaming it to the Cortana + Search) to address Cortana.
+
+Action Center. Windows Phone 8.1's new notification center is a big deal. I'm not sure yet if the bulk of this content goes in the Store or Windows Phone User Experience chapter, but suspect both will be updated to accommodate this feature in some way.
+
+Sense apps. Battery Saver, Wi-Fi Sense, Data Sense and Storage Sense all need to be in there, and storage is an issue I didn't cover adequately in the first book, so this may require a new chapter or whatever.
+
+Camera + Photos. There's a new Camera app and of course the Photos hub is completely different now. I will cover Nokia Camera as well, since 80+ percent of Windows Phones have this app.
+
+Calendar. The Calendar app has been updated significantly so that chapter will need to be updated.
+
+Messaging + Skype. Messaging has been changed a lot (for the worse) and now Skype is a standard part of the OS. So the Messaging chapter will become Messaging + Skype.
+
+Social networking integration. The way you integrate Facebook, Twitter and other social networks has changed a lot, so that will require some work. Possibly a new chapter plus new info throughout the book as needed (sharing photos, etc.), and of course the People chapter.
+
+Maps. There are some changes to this app, but the bigger deal is that 80+ percent of Windows Phones have Nokia Maps. So I'll look at adding that (again, I had meant to do that for a WP8 book update).
+
+Windows Phone Store. Big changes to the Store, so big changes to that chapter.
+
+There are a ton of smaller changes (from a content in the book perspective) too, like the Word Flow keyboard's new shape typing functionality, custom volume settings, soft button (Start, Back, Search) support and so on.
+
+Additionally, I'll be updating the book to better match the evolving "Field Guide" style, as I did with "Windows 8.1 Field Guide." So I'll be removing the chapter numbers, updating the document style, removing/editing unnecessarily long parts, and so on.
+
+And of course I'm thinking about new content areas. Android/iPhone switcher how-to's, and the like.
+
+So lots to do. I'll try to post a first version of the manuscript soon. This one will be a bit different since in some cases I can just update the entire book whereas in others—like Calendar, Messaging + Skype and some others—I'll want to make iterative new chapter updates too. But overall, it should work much like the previous book.
+
+For now, you'll be able to find new book updates at the Windows Phone Book web site. But I'm going to integrate my separate book sites into a single site this summer, most likely to be called Field Guide Books. (It currently resolves to the Windows 8.1 Field Guide web site.)
+
+Oh, and "Windows Phone 8 Field Guide" will of course still be free. It's not going away.
+
+More soon. But if you have any topics you need covered in this book, please let me know.

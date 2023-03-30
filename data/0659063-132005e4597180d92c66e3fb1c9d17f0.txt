@@ -1,0 +1,17 @@
+Everyone seems to understand the tax avoidance at the heart of Apple’s bond offering—the world’s largest bond offering is perhaps its biggest tax dodge—to the point where the Financial Times wonders where the outrage is and speculates that Americans regard tax avoidance with “greater sophistication” than their British cousins.
+
+We can learn something from this bet: What Apple’s managers, including CEO Tim Cook and CFO Peter Oppenheimer, think of the prospects for a change in the American practice of taxing the foreign earnings of multinationals. Like many tech companies with funds overseas, Apple has called for a holiday, or even better, an end, to that practice.
+
+The idea is under discussion in Washington, with lawmakers promising to give it their all and some Republicans speculating that tax reform could become a condition for raising the country’s borrowing limit in September. Which would be crazy—would you risk a global financial meltdown to close some loopholes?—but would certainly get the issue on the map.
+
+But the markets might give us better data about the prospects of reform than political rhetoric. Apple’s new debt is essentially a decision to sell tax reform short.
+
+On paper, Apple doesn’t need to borrow to pay its shareholders—it had $142 billion in cash on its books as of its most recent report. But most of that cash is held overseas, and the company would have to pay 35% corporate income tax to bring it back to the US for its to shareholders. Instead, the company is borrowing $17 billion and paying interest of around $300 million a year. Plus, the company can deduct interest expenses from its taxes, so it will effectively pay about one-third less, or closer to $200 million per year. The decision allows Apple to avoid around $8 billion in taxes (probably less) from bringing back $17 billion from abroad to pay investors.
+
+If, in the next few years, Congress were to go ahead and pass either a repatriation holiday or simply move to a system that only taxes profits earned in the country, Apple would likely be able to bring its cash home at a significant tax discount. The 2004 repatriation holiday allowed foreign income to be taxed at 5%, which would cost Apple about $900 million in taxes to bring home $17 billion in cash.
+
+For Apple’s bond deal to make sense, it has to expect that effectively paying about $200 million a year for the next three years and more to follow for $17 billion in cash will be cheaper than waiting for legislation that would allow it to pay $900 million in one go for the same amount. And while incredibly low rates help make the equation sensible, there’s also the reputation cost to consider—what it says about your company’s growth prospects when it borrows money to pay investors for a higher stock price.
+
+To be sure, Apple may just be looking at a slightly longer timeline than Congress. To meet its goal of returning $50 billion to investors by 2015, Apple will need more cash, perhaps borrowing $15 or $20 billion annually. That makes next year another chance for Apple to consider the cost-benefits of waiting for a change in the tax code. The more debt Apple takes on, the farther off it sees changes.
+
+Ultimately, Apple’s decision only works out if you assume there won’t be a foreign tax holiday in the next several years, which doesn’t bode well for major changes in the tax code. And while Apple’s managers might not be political oracles, the $3.7 million the company spent on its Washington lobbying staff last year should add some credence to their assessment.

@@ -1,0 +1,7 @@
+But as a general mindset our philosophy is we want to reach as many people as possible in the world regardless of what device they're using, with as many of our services as possible. In that context i think it's just a matter of time. I can't say for now when that will be yet. Assistant is brand new, its available today on Allo and Google Home and Pixel. Allo runs on multiple different devices so that's one way you can get the Assistant on other devices but gradually the team will improve things and scale it.
+
+Do you worry about fragmentation on Android?
+
+We care a lot about providing a consistent environment for developers. For developers, in the case of APIs on a single platform differentiation is not a good thing. So when manufacturers build their devices we have two mechanisms, the CDD (Compatibility Definition Document) and the CTS (Compatibility Test Suite).
+
+The CDD is basically the bounding box of form factor - on watch or phone or tablet or whatever it is - what you can do, if it’s a phone you must have a touchscreen, you must have this and that. The CTS is a test suite that the manufacturer runs on the software that they’ve built, it verifies every single API implemented the way a developer would expect that’s consistent, and only when those things pass are these manufacturers able to participate in the Google Play ecosystem, so that’s how we make sure from an app developer's perspective there’s consistency.

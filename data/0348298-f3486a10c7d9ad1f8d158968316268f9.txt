@@ -1,0 +1,67 @@
+You can't retrospectively calculate the exact footprint of a variable as two variables can share the same allocated space in the memory
+
+Let's try to share memory between two arrays, we see that allocating the second array costs half of the memory of the first one. When we unset the first one, nearly all the memory is still used by the second one.
+
+echo memory_get_usage()."
+
+"; // <-- 433200 $c=range(1,100); echo memory_get_usage()."
+
+"; // <-- 444348 (+11148) $d=array_slice($c, 1); echo memory_get_usage()."
+
+"; // <-- 451040 (+6692) unset($c); echo memory_get_usage()."
+
+"; // <-- 444232 (-6808) unset($d); echo memory_get_usage()."
+
+"; // <-- 433200 (-11032)
+
+So we can't conclude than the second array uses half the memory, as it becomes false when we unset the first one.
+
+For a full view about how the memory is allocated in PHP and for which use, I suggest you to read the following article: How big are PHP arrays (and values) really? (Hint: BIG!)
+
+The Reference Counting Basics in the PHP documentation has also a lot of information about memory use, and references count to shared data segment.
+
+The different solutions exposed here are good for approximations but none can handle the subtle management of PHP memory.
+
+calculating newly allocated space
+
+If you want the newly allocated space after an assignment, then you have to use memory_get_usage() before and after the allocation, as using it with a copy does give you an erroneous view of the reality.
+
+// open output buffer echo "Result: "; // call every function once range(1,1); memory_get_usage(); echo memory_get_usage()."
+
+"; $c=range(1,100); echo memory_get_usage()."
+
+";
+
+Remember that if you want to store the result of the first memory_get_usage() , the variable has to already exist before, and memory_get_usage() has to be called another previous time, and every other function also.
+
+If you want to echo like in the above example, your output buffer has to be already opened to avoid accounting memory needed to open the output buffer.
+
+calculating required space
+
+If you want to rely on a function to calculate the required space to store a copy of a variable, the following code takes care of different optimizations:
+
+<?php function getMemorySize($value) { // existing variable with integer value so that the next line // does not add memory consumption when initiating $start variable $start=1; $start=memory_get_usage(); // json functions return less bytes consumptions than serialize $tmp=json_decode(json_encode($value)); return memory_get_usage() - $start; } // open the output buffer, and calls the function one first time echo ".
+
+"; getMemorySize(NULL); // test inside a function in order to not care about memory used // by the addition of the variable name to the $_GLOBAL array function test() { // call the function name once range(1,1); // we will compare the two values (see comment above about initialization of $start) $start=1; $start=memory_get_usage(); $c=range(1,100); echo memory_get_usage()-$start."
+
+"; echo getMemorySize($c)."
+
+"; } test(); // same result, this works fine. // 11044 // 11044
+
+Note that the size of the variable name matters in the memory allocated.
+
+Check your code!!
+
+A variable has a basic size defined by the inner C structure used in the PHP source code. This size does not fluctuate in the case of numbers. For strings, it would add the length of the string.
+
+typedef union _zvalue_value { long lval; /* long value */ double dval; /* double value */ struct { char *val; int len; } str; HashTable *ht; /* hash table value */ zend_object_value obj; } zvalue_value;
+
+If we do not take the initialization of the variable name into account, we already know how much a variable uses (in case of numbers and strings):
+
+44 bytes in the case of numbers + 24 bytes in the case of strings + the length of the string (including the final NUL character)
+
+(those numbers can change depending on the PHP version)
+
+You have to round up to a multiple of 4 bytes due to memory alignment. If the variable is in the global space (not inside a function), it will also allocate 64 more bytes.
+
+So if you want to use one of the codes inside this page, you have to check that the result using some simple test cases (strings or numbers) match those data taking into account every one of the indications in this post ($_GLOBAL array, first function call, output buffer, ...)

@@ -1,0 +1,23 @@
+Nobody likes thieves and thieves (mostly) don’t like if people are at home and watch TV. I thought why not simulate a running TV to deter thefts.
+
+Well I had an old Seeeduino (Atmega 168P) lie around, together with a LiPo Rider Pro and a 6Ah Batterie pack. I added two WS2801 LED pixels and added some lines of Arduino Code – my Arduino Theft Protection was finished.
+
+Put the box in a dark corner of your appartement and it looks like a TV is running.
+
+Here’s an image of the “Arduino Theft Protection” in a box:
+
+
+
+A look inside the box:
+
+
+
+I published the code in my GitHub repo. I optimised the code to save the battery – instead of delay() my sketch put the Arduino into the sleep mode.
+
+Here is a very bad video of the Theft Protection in action.
+
+
+
+Edit 18.1.2013:
+
+Just a note about the power usage, I charged the LiPo Rider only about 1.5 hours, the battery wasn’t fully charged. The box is running each night for about 8h. This means the Arduino Theft Protection Box is running for more than 100 hours until today without a single recharge.

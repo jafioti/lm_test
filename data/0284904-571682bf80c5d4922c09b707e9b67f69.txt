@@ -1,0 +1,25 @@
+The productivity benefits of automation
+
+on the shop floor are well known, with the latest example coming from Raytheon's production of cruise missiles.
+
+The Tomahawk cruise missile is the USA’s “weapon of choice,” according to Mike Jarrett, Raytheon Air Warfare Systems vice president. Already fired in combat over 2,300 times, the GPS-enabled missile can be launched from submarines or ships and fly 1,000 miles into defended airspace to strike its target.
+
+In this unclassified footage of a Navy training exercise, a Tomahawk punches a hole precisely through a steel shipping container.
+
+See for yourself:
+
+Recently, Raytheon delivered the 4,000th Tomahawk Block IV cruise missile to the US Navy. This latest model has several improvements with more planned in 2019. New features include the ability to fly for hours in a figure-8 holding pattern and respond to on-demand course adjustment commands. The new missiles also feature improve comms and navigation systems, a more powerful warhead and a multi-mode target seeker, enabling it to attack sea-based targets on the move.
+
+Missile seekers are precision sensors which have typically demanded intensive, highly skilled labor. However, Raytheon has expedited this precision manufacturing process by implementing a robotic cell. This custom automation cell assembles tight-tolerance seeker components with minimal human supervision. Raytheon uses a FANUC six-axis robot for this cell.
+
+For more information, read the Raytheon article here.
+
+Robotic cell designed to assemble seeker optical components. (Image courtesy of Raytheon.)
+
+Raytheon manufactures Tomahawk missiles at its Missile Systems campus in Tucson, Arizona. Components and sub-assemblies of the 20-foot cruise missiles are manufactured in one department, with the warhead and rocket motor elements integrated later. Final testing and fueling are the last steps before a finished run of Tomahawks are shipped.
+
+According to Capt. Mark Johnson, US Naval Systems Command, the Tomahawk is a critical part of the Navy’s arsenal. "Working with Raytheon, we plan to continue upgrading and delivering Tomahawks far into the future," he said.
+
+The US Navy plans to include Tomahawk cruise missiles in its arsenal beyond 2040. The missiles are also used by the British Armed Forces.
+
+Follow these links for more stories about industrial robotics and missiles.

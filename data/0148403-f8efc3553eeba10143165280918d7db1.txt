@@ -1,0 +1,27 @@
+Tropical Cyclones
+
+
+
+
+
+Tropical Cyclones
+
+Kerry Emanuel
+
+Program in Atmospheres, Oceans and Climate
+
+Massachusetts Institute of Technology
+
+Cambridge, MA 02139, USA
+
+Introduction
+
+Tropical cyclones are magnificent storms that form over warm tropical oceans and usually die over cold water or land. They are also terribly lethal and destructive: a single storm in Bangladesh in 1970 killed nearly half a million people. The deadliest natural disaster in United States history was the great Galveston Hurricane of 1900, which resulted in the deaths of about 6000. Even in developed nations today, tropical cyclones are among the most costly natural disasters. Hurricane Andrew, in 1992, caused upwards of $ 25 billion in damage in Florida and Louisiana. Much has been learned about this fascinating natural phenomenon, but many of its aspects remain enigmatic. This short course is designed to provide an overview of the physics of tropical cyclones as well as a delineation of some of the outstanding problems in understanding their nature.
+
+
+
+
+
+Kerry Emanuel
+
+Mon Apr 13 10:50:48 EDT 1998

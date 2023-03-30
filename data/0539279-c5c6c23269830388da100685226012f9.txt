@@ -1,0 +1,43 @@
+Among the deluge of Visual Studio 2013 releases in October, we shipped the 2013 release of Team Explorer Everywhere – updating the experience for team members working in Eclipse and/or on non-Windows environments. Team Explorer Everywhere includes an Eclipse plug-in, a cross-platform command line client, and a Java SDK for building custom tools that access TFS.
+
+In addition to a good number of bug fixes, the 2013 release significantly improves the Team Explorer experience and adds new capabilities to both the Team Foundation Version Control and Git version control experiences.
+
+You can download Team Explorer Everywhere 2013 from the Download Center or install the TFS plug-in for Eclipse from directly within your Eclipse IDE (update site URL: http://dl.microsoft.com/eclipse/tfs). If you run into any problems installing or using any of the TEE components, visit the Eclipse and Cross-Platform Tools forum.
+
+Some highlights from the 2013 release:
+
+Improved Team Explorer (with dockable views)
+
+The Team Explorer view in TEE was greatly improved in the 2013 release. The look now matches the much improved look of the Team Explorer view in Visual Studio. TEE borrowed some of the nice organizational and navigational enhancements added in Visual Studio as well. Quick access is provided to the most commonly used functions using a context menu that appears when you right-click on a tile. For example, right-clicking on the Builds tile makes it easy to view completed or queued builds. We have also increased the number of places where you can launch into the web access portal, which saves time when needing to access a function that might only be available from the web.
+
+Dockable views have also been added. You can now undock the Pending Changes and Builds views and position them anywhere within the workbench window. Both views also now appear under Window > Show View, which makes it possible to add these views to another perspective. For example, you can show the Pending Changes right in in the Java perspective and have quick access to view and check-in your pending changes.
+
+Find in Source Control
+
+The Find in Source Control feature, which was previously shipped in the Power Tools, has now been fully integrated into the TEE product. This feature enables quick searching for files and folders in source control, with filtering by name, path, or check out status. This makes it particularly easy to find files that are currently checked out by any user or a specific user and/or under a path. Once results are returned, you can check out a file for edit, undo a pending change, view history, view properties, open in Source Control Explorer, or copy its full path to the clipboard.
+
+Note: check out status and the ability to check out a file for editing in the results view are only available if the Show checkout status checkbox was checked when the search was performed.
+
+Add to Source Control
+
+In TEE 2013 RTM, we significantly improved the experiences around adding files to TF source control. The UI was rebuilt as a multi-page wizard instead of a dialog. The new a wizard has several big improvements including support for adding symbolic links to source control, creating workspace mappings directly when files to non-mapped source control folders are added, automatically filtering out local files that are already in source control, and importing files from local folders which are outside of workspace mappings.
+
+Symbolic links
+
+With 2013, TEE now supports symbolic link (symlink) transparently on Linux-based operating systems. Just like regular files, symbolic links can be added to source control and changes (like add, edit, and delete) can be detected, pended, and subsequently updated in source control. Developers have the full capability version control when working with symlinks (history, branching, merging) and when symlinks are downloaded from version control, they are created as symbolic links in the file system.
+
+Import for Projects in Git repositories
+
+To make it easy to start working with code hosted in Git repositories on TFS, TEE 2013 includes a wizard for cloning and importing projects into your workspace. This wizard enhances the base import wizard provided by the Eclipse EGit tools and provides the ability to clone multiple repositories at one time (useful for large projects where code is spread across multiple repositories). For repositories hosted on Team Foundation Service, the wizard guides you to setup alternate credentials, which is required since the EGit tools do not support federated authentication like TEE does. Once alternate credentials are setup and stored in the Eclipse Secure Storage (the wizard will do this for you), you will not be prompted to re-supply credentials as you work with the EGit tools. The wizard does the following:
+
+Clones one or more Git repositories from TFS to your local workstation Detects and imports Eclipse projects found in these cloned repositories Sets up connections to cloned repositories in EGit
+
+Integration with Eclipse EGit tools
+
+To support working with Git repositories in TEE, we made the decision to leverage and extend the existing Eclipse EGit tools (these tools are included in the most popular Eclipse packages and are well-integrated into Eclipse). A connection to a remote repository hosted in TFS can be manually configured in EGit (note: make sure to use alternate credentials when setting up your connection to a repository hosted in Team Foundation Service) or is setup when you use the import wizard provided by TEE. Once this connection is established, you can use the EGit tools to perform basically any Git function, like committing, pushing, and creating new branches.
+
+To see the full set of EGit tools, open the Git Repository Exploring perspective (under Window > Open Perspective > Other), find your repository, and right-click. Right-clicking on a file or folder in the Navigator, Package Explorer, or other workspace views will show resource-level options (like Commit) under the Team sub-menu.
+
+I encourage you to download the newest version of TEE and start exploring these new features. As always, your feedback to the forum is always appreciated. We are continually enhancing TEE, and have some really cool stuff planned for the next updates. Stay tuned.
+
+Brian

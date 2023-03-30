@@ -1,0 +1,15 @@
+Not surprisingly, as a peon, I don’t get to interact with Bill very often, so my few interactions are almost by definition memorable.
+
+I’ve posted this story before, but it deserves to be recycled in honor of Bill’s last few days.
+
+This happened back in the mid 1980’s, we were doing a project review for Lan Manager 1.0 with him.
+
+One portion of the meeting was about my component, DOS Lan Manager (basically an enhanced version of the MS-NET redirector, with support for a fair number of the Lan Manager APIs on the client). My boss and I were given the job of presenting the data for that portion. One of the slides (not Powerpoint, it didn’t exist at the time – Lucite slides on an overhead projector) we had covered the memory footprint of the DOS Lan Manager redirector. For DOS LM 1.0, the redirector took up 64K of RAM. And Bill went ballistic. “What do you mean 64K? When we wrote BASIC, it only took up 8K of RAM. What the f*k do you think idiots think you’re doing? Is this thing REALLY 8 F*ing BASIC’s?” The only answer we could give him was “Yes”J. To this day, I sometimes wonder if he complains that Windows XP is “16,000 F*ing BASIC’s”. We didn't ignore Bill's comment, btw (you never want to do that). We worked on reducing the footprint of the DOS redirector by first moving the data into LIM Extended memory, next by moving the code into expanded memory. For LAN Manager 2.1, we finally managed to reduce the below 640K footprint of the DOS redirector to 128 bytes. It took a lot of work, and some truly clever programming, but it did work.
+
+Since the last one was recycled, here’s a bonus BillG memory. I may have discussed this one in the past in a C9 video but I can’t find any references on my blog about it.
+
+Shortly after my 15th anniversary at Microsoft, I got an invitation to a dinner at BillG’s house for all the employees with more than 15 years of service (I had just squeaked into that rather elite group). There were about 100 of us with our significant others at the dinner, and not surprisingly Bill was totally mobbed (even among groups of old-timers Bill still gets loads of people pestering him, I guess it goes with the territory). About half way through the dinner, Bill’s daughter and her nanny came out to play on the swings before bedtime.
+
+Bill immediately disentangled himself from his various conversations and went over to the swing-set and spent about 20 minutes pushing his daughter on the swings. He could have ignored her and let the nanny deal with it, he could have simply given his daughter good night kisses and gone back to the party, but he didn’t. He blew all these hideously senior Microsoft people off and went to spend time with his daughter.
+
+That was when I realized how much parenthood had changed Bill for the better.

@@ -1,0 +1,79 @@
+What You'll Be Creating
+
+Some years ago, Zillow released its neighborhood boundary files for the United States via Creative Commons Sharealike 3.0 license. It's a great resource. If you're interested in maps for other countries, check out OpenStreetMaps.
+
+However, if you haven't used geographic shapefiles before, it can be a bit confusing as to how to integrate Zillow's map data into your own application.
+
+I've built a free, open source demo application, MapApp, to demonstrate how to use the Zillow neighborhood boundaries and integrate them with Google Maps, geolocation and geocoding.
+
+MapApp is built using the Yii Framework and can be run on any MySQL, PHP-capable server. MapApp also leverages Google Maps API, HTML5 Geolocation helper from estebanav, eGeocoder and egMap (the latter two are Yii extensions).
+
+Setting Up Your Server
+
+To get started, you can find the MapApp code on GitHub. Follow the installation steps which have been tested for Ubuntu 14.04 at Digital Ocean but should work with any version of LAMP.
+
+You can either clone the repository or download a copy. Configure the Apache site (as described in the installation steps) and restart Apache.
+
+The process takes about 45 to 60 minutes. There's a lot to setup: configuring your server, your DNS, unpacking the code, setting up your Apache server, your MySQL database, installing the configuration file, running the active record migration, installing the mapping libraries, downloading and importing and adjusting the Zillow data.
+
+If you'd like to save time, I offer a pre-configured image of MapApp for Digital Ocean. However, you'll learn more if you walk through all of the steps yourself.
+
+Prepare the Zillow Neighborhood Data
+
+Once you've created your MySQL database for MapApp, it's time to get the Zillow data.
+
+Install the Geospatial Data Abstraction Libraries and unzip:
+
+Make a directory to temporarily store the Zillow data and copy the download scripts.
+
+Customize the batch file to download the files for the states that you want (e.g. California, Oregon, Washington, or all). Then, run the download script. This will download all of the desired zip files from Zillow:
+
+Then, prepare the MySQL import scripts:
+
+Customize the list of states in the script whose shape files you would like to import into MySQL. You'll also need to customize the database name, credentials and neighborhood table name in your local file and run the script. This will use the ogr2ogr tool to import the shape (.shp) files into MySQL:
+
+Configuring MapApp
+
+You'll need to customize the /docs/config-mapapp.ini file with your own settings, especially the MySQL access settings:
+
+Then, run the active record database migration to initialize MapApp. Database migrations are part of the Yii Framework, and serve to create tables and schema in a programmatic way:
+
+When prompted, enter a user name, email and password for your administrator account. This is what you'll use to login in to MapApp's home page.
+
+Finally, you'll need to run a script to reverse the geographic coordinates in the Zillow neighborhoods MySQL table. Visit http://yourdomain.com/neighborhoods/reverse. Depending on the number of Zillow state files you imported, this could take a few minutes. I've found that ogr imports the Zillow latitude and longitude data in an opposite coordinate order than Google Maps requires.
+
+Using MapApp
+
+Visit your home page at http://mapapp.yourdomain.com. Login with the user name and password you created during the database migration.
+
+Browsing and Viewing Neighborhood Maps
+
+Browse your imported neighborhoods and click on any you wish to view. The next neighborhood link makes it easy to see more than one. You can also search by neighborhood name, city, state or county
+
+I'm using the Yii extension egMap to display Google Maps using the Zillow neighborhood polygon data. However, any PHP library for Google Maps or JavaScript will work just as well.
+
+The prepareMap function in the Neighborhoods model requests the Zillow polygon data from the database as well as the center point of the neighborhood (called a centroid). We use the centroid to position the viewport of the map.
+
+The Neighborhoods controller view action renders the page with the map:
+
+Using HTML5 Geolocation
+
+Click on Geolocation in the navigation bar to locate your neighborhood from your WiFi address. This will not work via cellular.
+
+You will likely need to grant permission to your browser for geolocation for this feature to work (look for a popup below the address bar).
+
+Then, you'll be able to click the Lookup Your Location Automatically option:
+
+Sometimes you'll need to refresh to get the correct response after granting permission - or from certain WiFi locations. We're using the geoposition script from estebanav to support HTML5 Geolocation with the widest possible browser support.
+
+Once your location is found, we'll show your location on a map with your Zillow neighborhood as well as Geocoding information looked up independently.
+
+We use the Yii eGeocoding extension to look up additional data about your location. This is mainly to show additional sources of data you can use beyond the Zillow boundary data.
+
+Going Further
+
+If you'd like to see more, including drawing your own region maps, try out my side-project, Geogram. It allows you to create email-powered communities around neighborhoods, user-created regions, places and the Google Places directory.
+
+Geogram has a number of extended mapping and email features. If you're interested in a tutorial on Geogram's use of the Mailgun email API, read How Geogram built a free group email service using Yii for PHP with MySQL. I may write a tutorial about drawing regions for Google Maps in the future - post a comment below if you want to read that. You might also be interested in some of my other Yii-based tutorials. I will be writing a Yii Framework introduction for Tuts+ soon.
+
+Please feel free to post corrections, questions or comments below. You can also reach me on Twitter @reifman or email me directly.

@@ -1,0 +1,25 @@
+After failing last year in its attempt to force a local Internet service provider to block online piracy, a major record label is now taking on a much bigger opponent. Yesterday, EMI Records filed a lawsuit against the Irish state for not fulfilling its obligations under European law which would otherwise allow for the "blocking, diverting or interrupting of internet communications" which breach copyright law.
+
+In October 2010 at the High Court, Mr Justice Peter Charleton acknowledged that record companies in Ireland (Warner, Universal, Sony and EMI) were being harmed by Internet piracy but that laws to cut off file-sharers and block sites were not enforceable in the country.
+
+The case had been brought by the major labels (headed by EMI) against local ISP UPC in an attempt to force it to block Internet piracy.
+
+“It is not surprising that the legislative response laid down in our country in the Copyright and Related Rights Act 2000, at a time when this problem was not perceived to be as threatening to the creative and retail economy as it has become in 2010, has made no proper provision for the blocking, diverting or interrupting of internet communications intent on breaching copyright,” Justice Charleton’s judgment began.
+
+The Judge noted that by not having this legislative mechanism in place, Ireland is non-compliant with its obligations under European law.
+
+To address this situation and to appease the labels, late 2011 the government promised to publish an order early this year that would allow rightsholders to go to court to prevent the country’s ISPs from supplying a service which could provide access to infringing sites.
+
+But despite the promises from Ireland’s Minister of State for Enterprise, EMI – who previously threatened to sue the state if they didn’t take the action promised in the previous paragraph – seem to have run out of patience before January even completes its second week.
+
+Yesterday, EMI Records (Ireland) filed a lawsuit against the Irish state for failure to correctly implement certain provisions of EU copyright law.
+
+Lawyer and lecturer at University College Dublin, TJ McIntyre, believes that the labels will rely on a principle under which damages against a state are possible if three conditions are met.
+
+“First, that the result prescribed by the directive should entail the grant of rights to individuals; secondly, that it should be possible to identify the content of those rights on the basis of the provisions of the directive,” he writes.
+
+McIntyre adds that the third condition, that there should be a “causal link” between the breach of the State’s obligation and the losses suffered by (in this case) the labels, could prove problematic.
+
+“Establishing a causal link between Irish law and filesharing will be difficult, particularly given the evidence from elsewhere that blocking is ineffective,” he concludes.
+
+Site blocking could be a last resort for the record labels. Following an investigation into the legality of a 3 strikes-style regime operated by Irish ISP Eircom, in December the country’s Data Protection Commissioner ordered the practice to be brought to a halt on privacy grounds.

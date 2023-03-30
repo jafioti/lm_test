@@ -1,0 +1,251 @@
+Market Governance of Bitcoin — FAQ
+
+Elliot Olds Blocked Unblock Follow Following Mar 21, 2017
+
+A more up to date version of this FAQ can now be found here.
+
+Why does this FAQ exist?
+
+There are two main theories of how upgrades to Bitcoin should be decided upon: Market Governance (sometimes called Market Consensus) and Near-Unanimous Social Consensus Governance.
+
+It is impossible to understand Bitcoin’s block size debate or the debate about when hard forks are appropriate without understanding Market Governance. Despite this, Market Governance is often badly misunderstood by participants in these debates. This FAQ is an attempt to correct that.
+
+What are Market Governance and Near-Unanimous Social Consensus Governance?
+
+A full description of both can be found here.
+
+Market Governance is the theory that when serious disputes arise about how Bitcoin should be upgraded (which can’t be resolved via discussion), giving users a choice by creating a hard fork will result in the dispute being resolved by market forces in a way that preserves Bitcoin’s important properties. This market process involves users deciding which rules they want to use, and deciding how to value coins on the networks produced by each rule set.
+
+Near-Unanimous Social Consensus Governance is the theory that no forward-incompatible change to the Bitcoin protocol should be attempted unless nearly all Bitcoin users agree with it. The “social” part of the name comes from the fact that this consensus is measured mostly via human interaction on forums, IRC, mailing lists, in person meetings, etc. Supporters of this theory believe that it should be enforced via social norms which regard controversial hard fork attempts as inappropriate or unethical.
+
+What’s all this “governance” stuff? That doesn’t sound very Bitcoin-like!
+
+Here “governance” just refers to the mechanism by which changes to the protocol either occur or not. Bitcoin governance need not have any relationship to the type of governance used by countries or other centralized organizations.
+
+Is Market Governance the same thing as Emergent Consensus?
+
+No. Emergent Consensus is a specific algorithm which allows users of Bitcoin software to automatically adjust their maximum block size setting based on the behavior of the rest of the network. One can be in favor of Market Governance and against the Emergent Consensus algorithm.
+
+What do Market Governance supporters specifically want to happen? Aren’t we already in a Market Governance situation?
+
+It’s impossible to totally escape governance by the market, as long as people are free to create forks and use whichever cryptocurrency network they want.
+
+However, a large part of the Bitcoin community currently advocates Near-Unanimous Social Consensus Governance, which attempts to put a social barrier between protocol decisions and the market. This barrier is enforced by people using social pressure to discourage support for all controversial hard forks, or claiming that others are unethical for advocating controversial hard forks.
+
+The main message of Market Governance advocates is “To the extent that people ease off of social pressure against controversial hard forks, Bitcoin will be better off. Bitcoin will be able to adapt more quickly while also preserving its important properties without a social barrier between it and the market.”
+
+If controversial hard forks became acceptable, wouldn’t Bitcoin’s most important properties be at risk?
+
+This is unlikely, because Bitcoin’s most important properties (censorship resistance, limited coin supply, the potential for anonymity, etc.) are properties that make a currency more valuable. Any fork that compromised these properties would be less attractive to users and its adoption and market value would be much lower than that of the non-compromised network.
+
+Being more attractive to users is enough for the non-compromised fork to flourish, because power ultimately rests with users.
+
+For a longer description of why the market would preserve the 21 million coin limit, see this post.
+
+Market Governance reminds me of voting. Why would we expect the market to make better decisions than a voting system?
+
+The most important differences between market valuations and voting are:
+
+In markets you are punished for being wrong, and rewarded for being right. Over time those with good judgment gain influence and those with poor judgment lose influence.
+
+In markets you can add weight to your “vote,” proportional to how confident you are. Your reward or loss is proportional to this weight. This gives people with the best judgment and expertise a strong incentive to devote lots of resources to correcting any errors they see in market prices, and it gives people with poor judgment or low expertise an incentive to stay out of the market.
+
+In markets “votes” are open to the whole world, which includes lots of very smart people whose main goal is not biased by any personal stake in the outcome. Their goal is simply to profit. In markets you profit by correcting pricing errors. So everyone else in the world who likes money has an incentive to ensure prices are accurate in any market they have access to.
+
+Incentives are very powerful, and the above incentives lead markets to be far more accurate than voting systems could ever be.
+
+Can’t Market Governance be easily manipulated by holders of large amounts of coins, or other wealthy groups?
+
+In markets, attempts to manipulate prices are expected to make prices more accurate in the medium and long term.
+
+When someone tries to manipulate prices in a market, they are essentially giving their money away to those with accurate information. Therefore signs that a market is being manipulated serve as advertisements for free money, drawing in profit-seekers to correct the manipulation like sharks drawn to blood.
+
+This is roughly what happened with the ETH/ETC split in Ethereum. ETH holders tried to drive down the price of ETC to kill it. However, because ETC actually had some value (as a version of Ethereum that was more committed to a “code is law” philosophy) the market quickly adapted. The result was that people who sold ETC to drive down its price ended up giving their money away.
+
+Is Market Governance just a variant of democracy?
+
+No. We’ve already seen why voting and market decisions are different. However, even if market prices were determined exactly like democratic elections, Market Governance would still be very different from democracy.
+
+In a democracy the majority forces the minority to adopt its favored outcome. In Bitcoin no one can force anyone else to do anything. People are free to join, leave, continue using, and create forks without anyone stopping them, even if they’re part of a minority.
+
+I run Bitcoin because I want to only have to trust math and code. Doesn’t Market Governance make me also need to trust the market?
+
+No matter which form of governance is used by Bitcoin, it’s impossible to escape the fact that when you use Bitcoin you are trusting other people to value your coins in the future. You could own 1,000 bitcoins and consider yourself rich, but if next month people stop caring about bitcoins your 1000 coins will be worthless even though nothing about math or Bitcoin’s code has changed.
+
+When using any cryptocurrency you always need to trust the market to some degree.
+
+If we had a persistent hard fork and both networks attempted to claim the name “Bitcoin”, wouldn’t that be confusing for users?
+
+Yes, this would be more confusing the more equal in popularity the two networks were. This is one of the costs of controversial hard forks, and one of the reasons that we would expect splits to not happen unless both sides felt strongly that it was in their best interest.
+
+Doesn’t a split risk the network effect of both sides of a fork?
+
+Yes. This is another cost of splitting, and is another reason why different sides in a disagreement will often try hard to work out a solution which doesn’t result in a split.
+
+Because of the strength of network effects, in some cases one side will at first intend to maintain a separate network but then succumb to pressure to join the majority network when it becomes clear which network the economy prefers.
+
+In other cases after a persistent split the smaller network might feel so strongly about the issue driving the split that it regards continuing to reject the new network rules as worth the cost.
+
+If each side of the split is aiming to fill a different niche or if one side is confident that they’ll be supported by an overwhelming majority of the economy, the expected cost of a split is reduced.
+
+Do Bitcoin forks undermine the concept of digital scarcity?
+
+A powerful argument against the idea that a network split would compromise digital scarcity is the fact that although a split creates more coins on a different network, people’s ownership of those coins remains in proportion to their ownership before the split. If you own 0.001% of all bitcoins, then no matter how many times the Bitcoin network splits you’ll own 0.001% of the coins on every chain. If one of the forking chains becomes the most valuable chain in the future, your wealth is preserved and you’ve suffered no dilution. See this post for an exploration of the implications of this idea.
+
+The fact that so many altcoins exist yet Bitcoin retains its dominant position is another argument against the idea that people will lose faith in digital scarcity as other digital tokens appear.
+
+Don’t hard forks allow “double spending”, since the same coins can be spent on both chains?
+
+Not according to the traditional concept of “double spending.” When a chain forks, there are two separate networks and the corresponding coins on each network are not the same coins. Double spending refers to spending the same coins multiple times on the same network.
+
+As noted in Do Bitcoin forks undermine the concept of digital scarcity?, a chain fork is not inflationary because everyone’s proportional ownership of coins is preserved on each chain.
+
+In a hard fork situation it’s possible for users to behave unethically by misleading others about which fork they’re sending them coins on, but this is a different issue than double spending.
+
+Does Market Governance take into account “adversarial thinking”?
+
+Adversarial thinking involves thinking about systems like an attacker who is extremely motivated to break or take advantage of those systems. People who design systems without considering adversarial thinking usually are assuming that everyone will behave in a somewhat “nice” (or at least normal) way.
+
+As we’ve seen above, the built in incentives of markets make them very resistant to manipulation. Anyone who helps reverse price manipulation automatically profits by doing so.
+
+It could be argued that Near-Unanimous Social Consensus Governance is vulnerable to motivated adversaries, because any group that wants to attack Bitcoin can simply join the Bitcoin community and then oppose any hard forks. They’ll then have veto power over hard forks, and the Bitcoin community will have no defense.
+
+An objection might be that even though this attack is very easy, it isn’t so bad because the Bitcoin protocol is already pretty good, and we can do a lot with soft forks. The argument would then depend on how harmful it actually is for an attacker to be able to veto hard forks.
+
+Another objection might be that the community could detect attackers because their arguments for not forking would be bad, then ignore these attackers. This could lead to a useful political strategy of accusing your sincere opponents of being insincere attackers in order to override them. We already see this type of accusation from both sides of the Bitcoin governance debate today. A governance system that leads to this strategy seems bad for the health of Bitcoin’s community.
+
+Why do Market Governance advocates prefer hard forks to soft forks?
+
+Hard forks require users to opt-in, and they allow the market to make an explicit choice between the new network rules and the old network rules.
+
+Soft forks require users to opt-out, but users can only opt out if they coordinate among themselves and create a hard fork of their own. This is a large burden on users who want to opt out, because coordinating with similar users in a decentralized network is hard, and hard forks require development work. If no one who wants to opt out organizes their own hard fork, then the soft fork essentially bypasses the market decision process and forces everyone onto a network that uses the new rules.
+
+Some soft forks can be done in a way that doesn’t impact those who don’t care about the soft fork, other than requiring them to install new software to maintain full node security. (Using the terminology that Paul Sztorc defines here, these forks have no “meanness”). In these cases, not letting people opt out isn’t a big deal.
+
+Can’t a group advocating a hard fork essentially destroy Bitcoin by forking away with a large fraction of the network?
+
+Not really. Due to Bitcoin’s voluntary nature, if there exists a group of people who are committed to not forking, they can continue using their preferred network among themselves and there’s little that anyone else can do about it.
+
+Imagine that initially 10,000 cypherpunks are using Bitcoin. Then Bitcoin appears in the media and 1,000,000 casual users join the network. They don’t appreciate Bitcoin’s properties, they just use it because it seems “cool.” Now imagine that someone proposes a fork that is cleverly designed to seem even cooler than the current Bitcoin network to casual users. The casual users all join the new fork and the original network is back to the initial 10,000 cypherpunks.
+
+Has Bitcoin been destroyed? Not unless you believe it was in a destroyed state before the casual users arrived. (Technically, the original users may have to do a hard fork to reset the mining difficulty after the 1,000,000 users leave).
+
+Do hard forks allow the developers behind the new fork to take control of the protocol?
+
+For the new fork to gain users, these users have to choose to join the new network. Any future changes that developers want to make via a hard fork would similarly have to be chosen by the users. Users are always free to reject further changes by the same group of developers, or to switch to software written by other developers.
+
+So in a sense, developers “control” the protocol to the same extent that a cereal producer “controls” what you eat for breakfast. If you eat their cereal every day it’s because you’ve chosen to eat it, because you like it better than other cereals. However, this doesn’t give your preferred cereal producer the power to make you eat whatever they want you to eat. If they released a new cereal that was simply a box of dirt, you wouldn’t end up eating dirt for breakfast. Instead you’d decide not to “upgrade” to the new cereal.
+
+In other words, developers only have the power to present the user with options. The user always has the ultimate power to choose which options to accept. On the other hand, we know that many users don’t pay that much attention to software updates. Maybe some people will automatically accept updates from their existing software because it’s easy. To the extent that people do this, any developer team who ends up producing popular Bitcoin node software will have more power than we’d expect under an idealized situation.
+
+Note that when one group complains that a group of developers is trying to take control of the Bitcoin protocol, they are essentially admitting that they believe the producers of the current popular node software already control the protocol in the same way that they’re worried that the new team will control it.
+
+Wouldn’t Market Governance make Bitcoin more political?
+
+Politics arises when a group is faced with some decision, and at least two subgroups with influence over the decision disagree. Political behavior is behavior aimed at influencing the decision in question in a way that is biased toward one’s own subgroup. This can involve threats, backroom coalition building, debate, or other persuasion techniques.
+
+Let’s consider how the governance question being resolved in either direction would likely impact political behavior.
+
+If the governance question were resolved in favor of Near-Unanimous Social Consensus Governance, political behavior around other issues would involve each subgroup who wanted a hard fork trying to build near-unanimous consensus for their preferred solution. If one subgroup was getting close to near-unanimous agreement, they may try to portray the opposing subgroup as so irrational that their objection shouldn’t count. They may also portray the opposing subgroup as “attackers,” hence not a genuine part of the community. There could also be politics around competing soft fork proposals. Note that all subgroups are bound together in this model and none can achieve their goals without persuading (and affecting) others.
+
+If the governance question were resolved in favor of Market Governance, political behavior would look more like what we see between Bitcoin and Ethereum. Supporters of each network would talk about how great their network is and how bad the other network is, in an effort to increase their network effect. However it would be difficult to demonize people using other networks too much, because such people generally don’t actively do anything to you or stop you from doing anything. Much of the animosity in Bitcoin stems from the fact that two subgroups are fighting over one network.
+
+We’d expect conflict to never get too extreme under Market Governance because the amount of conflict required before one side decides to split is lower under this model. This is similar to how a rule forbidding divorce would be expected to result in more very high conflict marriages than a rule making divorce easy, because forbidding divorce takes away a method of ending conflict before it gets extreme. See Balaji Srinivasan’s excellent talk describing how “exit” is generally preferable to “voice” as a governance mechanism.
+
+We’ve seen an example of how hard forks can act as a safety valve to end political disagreements in the ETH/ETC split. Initially there was a lot of anger and toxicity in the community as different subgroups fought over the direction of Ethereum. Then the network split, the politics died down, and the sides have mostly left each other alone as they pursue their different visions.
+
+Note that it is impossible to completely eliminate politics from cryptocurrencies. Money’s value and usefulness depends on network effects, which are based on the currencies people choose to use, which is something that can be influenced via persuasion.
+
+If Bitcoin Core believed Market Governance was a good idea, what might they do differently?
+
+One difference would be that when there was some controversial and uncertain trade-off that had to be made, Bitcoin Core would be more willing to present the market with options instead of deciding ahead of time how the trade-off should be made.
+
+What is it about hard forks that makes Market Governance supporters think they are fundamentally ethical?
+
+The main virtue of hard forks is that they allow everyone to make an explicit, voluntary choice about whether they want to stick with the old network rules or join a fork of the network with new rules.
+
+Market Governance supporters believe that people have a right to (1) run whatever software they want, (2) use or not use any cryptocurrency network whenever they want, and (3) value coins on a network however they want.
+
+From the Market Governance perspective, a hard fork is mostly the aggregation of a bunch of people exercising their rights to do the three things above.
+
+Hard forks do involve one more controversial step: naming the new fork. See the next question.
+
+Isn’t it unethical for supporters of a new fork to call it “Bitcoin”?
+
+It depends on the effect of using the name.
+
+Words are tools to help humans communicate and think more easily. Although some words have a precise definition, “Bitcoin” is not such a word.
+
+Supporters of a hard fork that keeps the “Bitcoin” name might believe that nothing essential about Bitcoin is changing with the fork. These people view Bitcoin as a software project whose aim is to maintain a shared ledger with some key properties, using the general architecture described in the Bitcoin whitepaper.
+
+Imagine if transaction malleability somehow had to be fixed with a hard fork. Many people would not consider transaction malleability a fundamental part of Bitcoin’s identity. They wouldn’t feel compelled to rename the network if such a hard fork occurred.
+
+Others might claim that even in the case of a hard fork fixing transaction malleability, if anyone wanted to keep using the original rules the new fork should change its name. These people might view “Bitcoin” as referring to the specific network rules in effect right now.
+
+Without existing agreement about whether “Bitcoin” refers more to the project in general or a specific set of network rules, it seems most natural to fall back onto a utilitarian argument which considers the purpose of names/definitions.
+
+Since names exist to help us communicate and think about things clearly, a relevant question is: does calling the new fork “Bitcoin” help people understand it better, or does it mislead them? If you called the new network “Bitcoin”, and then explained the fork history to people, would they feel mislead by the fact that you called it “Bitcoin” earlier? If so, and if you know this, then calling the new fork “Bitcoin” is probably unethical. If people would not feel mislead after a full explanation of what’s going on, then using the name “Bitcoin” is OK.
+
+We can also imagine situations where giving a fork an entirely new name would be misleading to users. For instance if 99% of Bitcoin’s network joined a fork that only fixed transaction malleability but this fork was named “Foocoin”, potential new users hearing this name might have no idea of the network’s connection to Bitcoin and might lose a lot of context unnecessarily.
+
+When evaluating how to name a new fork, the main criteria should be maximization of the understanding of whoever hears the name, and minimization of confusion and deception.
+
+Are hard forks attacks, where promoters of the new chain try to forcefully take over the network?
+
+Because hard forks give every user a choice about which network to join, they are not inherently forceful.
+
+See here for a discussion of whether causing pressure from network effects is unethical.
+
+It is possible for hard fork supporters to use force if they go out of their way to do so. For instance they might 51% attack the original chain. This is not in line with the philosophy of Market Governance because it prevents users from making a voluntary choice.
+
+What about when hard fork supporters deceive people about the effects of their proposed fork? Isn’t that unethical?
+
+Yes — if deceiving people is generally unethical, then it doesn’t magically become ethical when part of a hard fork campaign.
+
+If you pay attention to most people’s criticisms of hard forks, you can usually trace back their objections to a belief that the hard fork is being done in a deceptive way, or that the forking group is going out of its way to cause unnecessary harm to users.
+
+Market Governance supporters don’t claim that all hard fork attempts/tactics are ethical, just that hard forks are ethical when they are free of deception and when they make reasonable attempts to avoid causing unnecessary harm.
+
+If the original network is much smaller after a fork, aren’t its users essentially forced to join the new network because of network effects? Isn’t this unethical?
+
+If almost all Bitcoin users join a new network, the users who don’t like the new network are in a bad situation. They can stay on the old network but the value and usefulness of their coins on that network are reduced. They can join the new network, but they apparently don’t like something about its rules. These people were better off before the fork.
+
+Imagine a situation in which there was no fork. Instead, the majority of Bitcoin users decide to sell all their coins and stop using Bitcoin. The users who still want to use Bitcoin are worse off. Their coins are less valuable because they’ve lost a lot of network effect and demand for bitcoins is reduced. Is this unethical?
+
+If you think that’s unethical, what is the solution? Should Bitcoin users be able to prevent other Bitcoin users from selling their coins, or from leaving the network?
+
+Market Governance supporters generally believe that no one has a right to force other people to provide them with a network effect. Other people might join your network, and you might benefit from that, but you don’t have a right to make them stay and continue to benefit you. People might make you worse off by leaving the network, but they never promised you they would use it forever.
+
+Imagine you have a girlfriend. In some sense you are providing each other with a network effect. You both enhance each other’s lives. One day your girlfriend decides to leave you for another man. She has withdrawn her part of the network effect and your life is now worse than it would have been if she didn’t leave. It should be clear that just because you’re worse off, that doesn’t mean that your girlfriend leaving you was a violation of your rights or somehow unethical.
+
+When you use any currency you’re taking a risk that other people will value it less or use it less in the future.
+
+Aren’t the current Bitcoin validity rules sacred?
+
+Following Bitcoin’s current validity rules is a means to an end. Bitcoin software is a tool to make it easier for people to maintain a shared ledger with properties that they like: resistance to censorship, limited coin supply, etc.
+
+Imagine a magical ledger which could guarantee the properties above, as well as perfect privacy, no transaction fees, infinite throughput, and the best scripting language that you can imagine. The magical ledger requires no proof of work. Transactions are ordered according to when they’re first seen by the magic ledger, instead of via mining. Double-spends are impossible.
+
+Assume there is zero chance that the magical ledger could ever behave in a way other than as the perfect ledger described here.
+
+Suppose we know the magical ledger will come into existence on May 1st 2017, and everyone who owns bitcoins at this time will get a proportional amount of magical ledger coins.
+
+If such a magical ledger existed, would it still be important to run the Bitcoin software?
+
+The reason people run Bitcoin software is that it’s currently the best way for a group of people to maintain a shared ledger with the properties that are important to Bitcoin users. If it were possible to maintain this shared ledger in a sufficiently better way, Bitcoin software would be pointless and people would stop using it and stop valuing its tokens.
+
+It’s important to keep this in mind when deciding how attached we should be to any particular version of the Bitcoin software.
+
+How can we ensure that specific hard forks are ethical?
+
+Hard forks should be done in a way that minimizes deception, and strives to allow everyone to make an informed choice about which network they prefer (or to delegate this choice in a way they’re happy with).
+
+Hard fork developers should try reduce collateral damage where possible. For instance, hard fork authors should strive to minimize harm from replay attacks, and should take steps to prevent the original chain from orphaning the new chain if it ever overtakes it. Hard fork authors should also work with SPV wallet developers to ensure that SPV users can make an informed choice in the event of a hard fork.
+
+I’m still not sure how I feel about Market Governance. Where can I read more?
+
+Two of the most prolific and clear writers on the theory of Market Governance are the reddit users Capt_Roger_Murdock and ForkiusMaximus. Click on their names to browse their comments and posts.
+
+Some of the following links appeared spread throughout the FAQ, but they’ll be listed here for easy reference:
+
+Special thanks to ForkiusMaximus and Mengerian for reviewing early drafts of this FAQ.

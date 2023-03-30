@@ -1,0 +1,15 @@
+In response to an incident that lacked any relation to the last fingerprint-related news, a Minnesota court ruled against a recent Fifth Amendment appeal regarding device passwords. The Minnesota Court of Appeals ruled that ordering an individual to unlock a device with a fingerprint “is no more testimonial than furnishing a blood sample, providing handwriting or voice exemplars, standing in a lineup, or wearing particular clothing.”
+
+The case in question involved Matthew Vaughn Diamond, a man Carver County District Court found guilty in 2015 of burglary and theft, among other crimes. Other news outlets cite arrest records from far before 2015, but the records showed no relevance to the January 2017 ruling. The Carver County District Court fought Diamond over his phone’s contents—he locked the phone with a fingerprint and refused to unlock the phone for the court. He argued, initially, that forcing his fingerprint violated both his Fourth and Fifth Amendment rights. However, the Minnesota Court of Appeals heard only the Fifth Amendment appeal.
+
+According to the Fifth Amendment, compelled self-incrimination is a violation of human rights. “The Supreme Court has held that ‘a witness may have a reasonable fear of prosecution and yet be innocent of any wrongdoing. The privilege serves to protect the innocent who otherwise might be ensnared by ambiguous circumstances’.” Additionally, the “right to remain silent” from the Miranda Rights, read to an arrestee at the time of arrest, granted a suspect the ability to refuse questions. Additionally, at the minimum, gave suspects the right to avoid answering questions legally and without fear of immediate repercussions.
+
+Judge Smith, however, argued that forcing Diamond to unlock the phone with his fingerprint did not share specific enough similarities to a suspect’s decryption of a hardrive or similar device.
+
+“By being ordered to produce his fingerprint, however, Diamond was not required to disclose any knowledge he might have or to speak his guilt. The district court’s order is, therefore, distinguishable from requiring a defendant to decrypt a hard drive or produce a combination. Diamond argues, however, that the district court’s order effectively required him to communicate “that he had exclusive use of the phone containing incriminating information.”
+
+This does not overcome the fact that such a requirement is not testimonial. Also, Diamond provides no support for the assertion that only his fingerprint would unlock the cellphone or that his provision of a fingerprint would communicate his exclusive use of the cellphone.” (Appeal Filing)
+
+In 2014, a Circuit Court Judge in Virginia made the same ruling. Judge Steven C. Frucci, the Circuit Court Judge in question, made a more vivid decision. He said that “giving police a fingerprint is akin to providing a DNA or handwriting sample or an actual key, which the law permits. A passcode, though, requires the defendant to divulge knowledge, which the law protects against, according to Frucci’s written opinion.”
+
+Diamond’s phone contained incriminating evidence, and he subsequently received a 51-month sentence.

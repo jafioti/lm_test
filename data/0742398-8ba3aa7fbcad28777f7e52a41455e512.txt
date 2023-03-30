@@ -1,0 +1,23 @@
+For most people BitTorrent is nothing more than a great protocol that assists in transferring large data files from A to B. However, there is a subset of BitTorrent users that has a hard time controlling their download habits, and consequently they disrupt the networks at thousands of ISPs, offices and schools. Luckily, the IT multinational HP has developed a vaccine to treat these poor people.
+
+Vaccines are hot. Traditionally they were a biological preparation to prevent people from getting a disease, such as the vaccinations children get for polio, mumps and measles. In the last few years, however, new types of vaccines have popped up that aim to treat addictions such as smoking and cocaine.
+
+In the true sense of the word the latter examples are not really vaccines, but the term is probably used for branding purposes. This trend has now been ported to the digital world by Hewlett-Packard (HP).
+
+Where vaccines used to be limited to treating biological threats, HP has recently trademarked the term ‘digital vaccine’ for a wide range of treatments that prevent digital diseases – and addictions. The company has introduced a wide range of vaccines that can be injected into their TippingPoint product. These help network administrators to fight network ‘infections’.
+
+HP’s vaccines protect networks against outside attacks, vulnerabilities and zero-day threats. But that’s only the beginning. At a press event in Barcelona earlier this week the company introduced another type of digital vaccine, one that deals with heavy BitTorrent users.
+
+Named the Application Digital Vaccine (AppDV), the new ‘vaccine’ can be injected directly into the TippingPoint system. With only one treatment the network is protected against users who have a habit of downloading via BitTorrent and those who engage in various other unwelcome behaviors.
+
+“AppDV filters can allow IT managers to completely block top social networking, IM, P2P, Webmail, streaming audio/video, online gaming, and tunneling applications. Or, if needed, managers call [sic] allow access to recreation apps like Facebook or MySpace, while simultaneously denying user access to embedded chat and email functions within those applications,” gloats HP about their latest piece of tech.
+
+AppDV has already proven to be very effective at the University of Leeds in the UK where it nearly killed all BitTorrent traffic. According to Dave Neild, head of network development at the university, the ‘vaccine’ reduced the network load significantly and completely eliminated the cease and desist letters from copyright holders they used to receive regularly.
+
+At this stage it is unknown whether users of the network continue feeding their addiction in other places, but the University of Leeds is reportedly clean now.
+
+The only downside to the setup is that many people who use BitTorrent for their day job, or to update to the latest version of Starcraft 2, are unable to do so thanks to the vaccine. Luckily HP’s technology allows network administrators to make individual exceptions for those who show responsible downloading habits. Under strict supervision, some people are allowed to use a few bytes a day.
+
+All in all the system is a great tool to keep networks clean and healthy according to HP. Net Neutrality issues aside, we assume that many ISPs would agree and would love to stick a needle in their network to keep BitTorrent addiction from spreading even further.
+
+To be continued…

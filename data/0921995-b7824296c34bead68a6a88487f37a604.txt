@@ -1,0 +1,15 @@
+We are pleased to announce that we’re extending per-second billing, with a one minute minimum, to Compute Engine, Container Engine, Cloud Dataproc, and App Engine flexible environment VMs. These changes are effective today and are applicable to all VMs, including Preemptible VMs and VMs running our premium operating system images including Windows Server, Red Hat Enterprise Linux (RHEL), and SUSE Enterprise Linux Server.
+
+These offerings join Persistent Disks, which has been billed by the second since its launch in 2013, as well as committed use discounts and GPUs; both of which have used per-second billing since their introduction.
+
+In most cases, the difference between per-minute and per-second billing is very small -- we estimate it as a fraction of a percent. On the other hand, changing from per-hour billing to per-minute billing makes a big difference for applications (especially websites, mobile apps and data processing jobs) that get traffic spikes. The ability to scale up and down quickly could come at a significant cost if you had to pay for those machines for the full hour when you only needed them for a few minutes.
+
+Let’s take an example. If, on average, your VM lifetime was being rounded up by 30 seconds with per-minute billing, then your savings from running 2,600 vCPUs each day would be enough to pay for your morning coffee (at 99 cents, assuming you can somehow find coffee for 99 cents). By comparison, the waste from per-hour billing would be enough to buy a coffee maker every morning (over $100 in this example).
+
+As you can see, the value of increased billing precision is mostly in per-minute. This is probably why we haven’t heard many customers asking for per-second. But, we don’t want to make you choose between your morning coffee and your core hours, so we’re pleased to bring per-second billing to your VMs, with a one-minute minimum.
+
+We’ve spent years focusing on real innovation for your benefit and will continue to do so. Being first with automatic discounts for use (sustained use discounts), predictably priced VMs for non-time sensitive applications (Preemptible VMs), the ability to pick the amount of RAM and vCPUs that you want (custom machine types), billing by the minute, and commitments that don’t force you to lock into pre-payments or particular machine types/families/zones (committed use discounts).
+
+We will continue to build new ways for you to save money and we look forward to seeing how you push the limits of Google Cloud to make the previously impossible, possible.
+
+To get started with Google Cloud Platform, sign up today and get $300 in free credits.

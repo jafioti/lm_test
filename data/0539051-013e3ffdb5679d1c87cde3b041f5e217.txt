@@ -1,0 +1,81 @@
+What the developers have to say:
+
+Why Early Access?
+
+Play as a turtle-shelled gunslinger
+
+
+
+Play as a telepath with amnesia
+
+
+
+Dig a tunnel anywhere in the world
+
+
+
+Swap stories with an albino ape mayor
+
+
+
+Clone yourself, mind-control the clone, and then hack off your own limbs
+
+Approximately how long will this game be in Early Access?
+
+How is the full version planned to differ from the Early Access version?
+
+A completed main plot
+
+
+
+Tile art for every tile
+
+
+
+Improved UI and graphical effects
+
+
+
+Sound and Music
+
+
+
+Less bugs
+
+What is the current state of the Early Access version?
+
+Over 70 mutations and 24 player castes and kits
+
+
+
+Hundreds of monsters
+
+
+
+Dozens of overland regions with unique ecosystems
+
+
+
+Scores of conversable hand-crafted NPCs and infinite procedural ones
+
+
+
+Rich and varied sidequests
+
+
+
+Hundreds of items and a tinkering system to craft them
+
+
+
+Themed dungeons—ruined sectors of a fossilized arcology
+
+
+
+Diseases, storied artifacts, history books, the poetic ramblings of a mad goatman, cryogenic chambers, and cybernetic implants
+
+Will the game be priced differently during and after Early Access?
+
+How are you planning on involving the Community in your development process?
+
+is a colossal project. We've weaved a rich, exotic, and well-researched culture around deeply simulated physical and political systems. The world is expansive, the gameplay is unpredictable, and the plants are sentient. For example, you can:Before calling it, we want to watch the community play, and as the strange, unexpected stories of their characters unfold, we want to use them to refine the systems and make the game better.”“We don't have a strict timeline. At the very least,will remain in Early Access until you can complete the main plot. In the mean time, we'll be adding all sorts of items, monsters, NPCs, quests, new regions, new systems, tweaks to old systems, and more sentient plants.”“The full version will have:Additionally, it'll feature refinements to all the game's systems, more monsters and items, new sidequests and locations, and more lore.”already has a tremendous amount of game, amounting to 50-100 hours of play. There are:Most of the major systems are already in the game. The big missing piece is the resolution of the main plot, and that's our #1 development focus.Also, while Caves of Qud is very stable considering the complexity of the engine, there are some late-game save corruption and crashing issues. We'd love your help identifying these bugs! If you encounter them, please give us the details so we can reproduce them.”“We plan to increase the price by at least 50% when we exit Early Access.”“You're going to teach us how to play—from bizarre bug reports...'I can walk even though a saw-handed robot cut off both my feet.'—to emergent weirdness...'Farmer Mehmet's procedurally generated backstory said he hates the Wardens for repeatedly beating him at dice, so he attacked Warden Ualraig, and Ualraig killed him.'We can't possibly play through all the permutations ourselves, so we're asking for your help. We're active on the Steam forums, Twitter, and our website—tell us your story.”

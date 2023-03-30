@@ -1,0 +1,23 @@
+The word “Kubernetes” may not roll off the tongue as easily as the word “Google,” but it is nonetheless an important project many outside the software community have probably not ever heard of.
+
+Google has long been known as being a highly secretive organization, one which guards its inner workings with an almost fanatical devotion, but a major shift in company policy took place in June 2014. That’s when Google announced the start of Kubernetes, an open source project made available to the masses.
+
+The groundwork had been set for greater collaboration and further exploration of one of the driving forces behind Google’s operations. Now, one year later, it’s important to look at the Kubernetes project, understand why Google began it, and what it could mean for the future.
+
+While Kubernetes is open source, it must be noted that it doesn’t mean Google is giving away all of their secrets. Kubernetes only contains a portion of Google’s Borg, a software tool that helps to drive a myriad of functions, from Gmail to Maps to Google Search.
+
+Even though the Kubernetes project only partially reveals the inner workings of Borg, it’s still a significant step in more transparency. The cluster manager has gotten some major participation from people outside of Google, truly establishing a new attitude for the company.
+
+Of course, Google didn’t create this open source project only for altruistic means. In many ways, Kubernetes is a response to the changing cloud computing landscape and the intense competition generated from there. Many Google competitors such as Microsoft, EMC, and VMware have explored open source options, so Google had to act.
+
+Increased collaboration with the software community allows developers and coders to become more familiar with the platform companies would like them to use. Indeed, Kubernetes is meant to push software developers to use one of Google’s cloud services: Google Compute Engine. Businesses have to choose what platform they want to host their own services, and with so many choices out there, Google needed a way to make their own cloud platform more available. With the open source project in full swing, developers can now understand how to build and host their new applications with Google.
+
+Google also hopes to share the benefits of their open source project with others, giving them added incentive to adopt Google cloud services. The company saw that their cluster management system lead to greater developer productivity at minimal to no additional operational overhead while also increasing workload portability.
+
+By offering such advantages through open source software, Google could establish stronger relationships with partners and customers. This has largely happened in the past year, with Google working closely with companies such as Red Hat and CoreOS.
+
+As for what’s next for Google and Kubernetes, those partnerships are expected to grow and multiply as more and more companies become familiar with the code Google uses. Competition among cloud providers will also likely heat up as they battle for developer attention through open source projects. Providers are trying to solidify their clientele, making them exclusive to their offered platform. Organizations are moving to the cloud in waves, and any extra incentives providers can give will go a long way toward shoring up support for their respective platforms.
+
+Google is no stranger to looking on the outside of the company for innovation. Open source is the way to go to put more minds on the important task of software development. Google sees the Kubernetes project as a vital ingredient in the ongoing battle for cloud customers.
+
+An accessible platform for cluster management is crucial to business success these days, and the more Google can provide it, the more they’ll attract interested businesses. June 2014 may represent a turning point not just for Google but for everyone else intent on using and developing through the cloud.

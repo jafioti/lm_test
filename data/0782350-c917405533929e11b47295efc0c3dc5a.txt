@@ -1,0 +1,37 @@
+A court in Germany has ruled that terms that software giant SAP stipulated in its software licensing contracts were invalid after finding that they ran contrary to EU copyright principles.
+
+The regional court of Hamburg upheld complaints made about SAP's licensing terms by German software reseller Susensoftware GmbH. Susensoftware had claimed that SAP had engaged in unfair business practices by deploying licensing terms that unfairly restricted the reselling of SAP software.
+
+Munich-based intellectual property law expert Igor Barabash of Pinsent Masons, the law firm behind Out-Law.com, said that the Hamburg court had referred to a decision by the Court of Justice of the European Union (CJEU) in a dispute between rival software providers Oracle and UsedSoft before determining that SAP's licensing terms were unduly discriminatory.
+
+In a statement sent to Out-Law.com, SAP said that the resale of used software would still be subject to conditions. The company did not comment on whether it plans to appeal against the ruling.
+
+Businesses wishing to use original SAP products are required to agree to licensing terms set by the software developer. The licensing terms at dispute in the ruling gave SAP the right to prevent the transfer of a software licence between an initial licensee and a third party in certain circumstances.
+
+Under the terms, initial licensees of SAP software needed SAP's consent before they could transfer its licensing rights to a third party. The third parties had to provide a written declaration that they would use SAP's software in line with the licensing terms SAP had set out. SAP reserved a right to refuse the transfer of software from the initial licensee to a third party if it deemed the use of its software by the new user to be contrary to its legitimate interest.
+
+However, the regional court in Hamburg invalidated the clause (ruling in German) after ruling that it was not compatible with EU copyright principles. Under the so called principle of exhaustion software owners generally lose the right to control the distribution of their copyrighted computer programs following the 'first sale' of that material within the trading bloc, "with the exception of the right to control further rental of the program or a copy thereof".
+
+SAP said that press reports in Germany following the ruling had wrongly given the impression that SAP customers could transfer its software without any restrictions. It said initial licensees would still be prohibited from transferring only some of the licenses they bought from SAP to third parties. Uniform splitting of volume based licenses purchased is banned, in line with the CJEU's ruling in the Oracle and UsedSoft case, it said.
+
+A second clause contained in SAP's licensing agreement required users of the software to inform SAP if they were using its software in a way which exceeded what was provided for under that agreement. Under the terms, businesses were obliged to purchase additional licenses from SAP to cover this additional use.
+
+The regional court in Hamburg invalidated that clause too on the basis that it required buyers of SAP software to acquire additional licenses exclusively from SAP and not from third party resellers such as Susensoftware. The clause was unduly discriminatory towards buyers of SAP software, it ruled.
+
+However, SAP said that, in practice, the company had only ever applied the clause to initial licensees and not to third party acquirers of the software.
+
+"The Regional Court of Hamburg clearly refers to the CJEU case in its reasoning and says that the two clauses in the terms and conditions are unduly discriminating against SAP customers and are not in line with the decision in the Oracle and UsedSoft case," Barabash said.
+
+In July 2012, the CJEU ruled that software owners exhaust their rights to control the resale of their copyrighted products after they have sold them within the EU, regardless of whether the sale concerns a physical product or one downloaded from the internet. It said that, as a result, the original purchaser of the software can sell on 'used' copies of the software to others but that they must delete any copy they have made for their own use when they make that sale.
+
+However, the Court said that the original purchaser cannot divide up the number of licenses for the software they buy from the copyright owner and then sell on the right to use those licences that they do not need.
+
+"The interesting thing about the new decision from Hamburg is that it is not a software developer that was initiating legal action to protect its software market through eliminating used license resellers, as was the case in the Oracle and UsedSoft case," Barabash said. "The positions of the attacker and the defendant are switched. It was a used software reseller claiming that a software developer was violating general copyright principles and putting resellers at a great disadvantage through the use of invalid and restricting terms and conditions."
+
+Barabash said that the German Act Against Unfair Business Practices allows businesses to bring claims against other companies even where there is no direct legal relationship between the parties.
+
+The expert predicted that SAP would file an appeal to the court's ruling in the hope that, even if the original ruling is upheld, the higher court will provide more detailed guidance on the admissibility and inadmissibility of restrictions in licensing agreements.
+
+"It has been unclear until now, in light of the CJEU's ruling in the Oracle and UsedSoft case, whether there were loopholes software developers could use to avoid their licensing terms being affected by the judgment in that case," Barabash said. "It seems, however, that German courts will look to implement that judgment in a very strict way in a manner that will benefit resellers."
+
+Copyright © 2013, Out-Law.com

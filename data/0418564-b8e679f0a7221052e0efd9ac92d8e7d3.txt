@@ -1,0 +1,119 @@
+This article was taken from the July 2012 issue of Wired magazine. Be the first to read Wired's articles in print before they're posted online, and get your hands on loads of additional content by subscribing online.
+
+Markus "Notch" Persson is bopping his bald head to "Sexy and I Know It", one hand holding a glass of Dom Perignon, the other in the air. The Café Opera, a nightclub in Stockholm, is heaving; dry ice blasts the audience while Redfoo, one half of electropop outfit LMFAO, mixes bass-heavy songs on stage. Persson's booth is in the middle of the crowd; Jakob Porser, a cofounder with Persson of games studio Mojang, ignores the rest of the 1997 magnum and mixes Grey Goose vodka with Red Bull. He hands one to Persson, who points to the 1.5-litre bottle and says, "We're going to finish this." Carl Manneh, the third cofounder, huddles with Persson and Porser in the booth. The three board members of Mojang chink glasses.
+
+It's the small hours of a Monday in February. Mojang is celebrating two milestones. The first is raising £280,000 for three charities, by making a new game from scratch in 60 hours. The second is selling five million copies of
+
+Advertisement
+
+Minecraft, a blocky-looking game created by Persson three years ago. Originally a download-only game for PC,
+
+Minecraft has earned 33-year-old Persson £45 million and turned him into a celebrity in web and gaming culture. He's known to millions as "Notch" (the top definition of Notch on Urban Dictionary: "Another word for Jesus"). As Persson was shown into the Café Opera, several clubbers recognised him. They asked to shake his hand. Being worshipped, Persson says, "is a bit weird. I guess people feel like they kind of know me. The game developer me, or the Twitter persona, that's Notch. It's a censored version. The real me is Markus."
+
+Read next Minecraft's Better Together update lets you play with others across devices Minecraft's Better Together update lets you play with others across devices
+
+One weekend in summer 2009, before he became Notch and started wearing a fedora, Persson made Minecraft.
+
+It isn't like other games. There are no instructions, no levels, no mission structure, no story, no lives, no points, no clear goal. You start Minecraft in the middle of a randomly generated, blocky-looking world about eight times the size of Earth and are completely free to do what you want. You can go exploring or you can get creative. Every block in the world, whether it represents a tree, gravel or rock, can be harvested and subsequently "crafted" into a product -- swords, pickaxes, torches. The two mouse buttons give the game its mechanic: one breaks blocks, the other places them. Your only aim is to survive. As night falls, this gets harder: zombies, spiders and other ne'er-do-wells emerge, meaning you have to find and build shelter.
+
+Advertisement
+
+Minecraft doesn't get more complicated than that, which is its appeal: a virtual version of Lego, it offers infinite creativity and control. Where other world-building games such as Sim City allow players to place pre-built structures, Minecraft lets you make anything you want, from huts to cathedrals. The randomly generated worlds stretch forever and can be beautiful: archipelagos or rainforests stretching kilometres high; cave systems with flowing water and lava, and rare metals which offer the possibility of entirely new creations. Minecraft has no beginning and no end.
+
+Players build gigantic digital monuments -- the Taj Mahal, the USS Enterprise and a functioning calculator -- all hucked out of the randomly generated dirt, stone and wood. There are 4.5 million YouTube search results about
+
+Minecraft, in which fans guide newbies or show off their virtual creations. Three million players log in every week; there are 240 million logins each month. Last November, 4,500 people from 23 countries paid between $99 and $139 (£63 and £89) (more than Persson has spent marketing the game) to attend Minecon, a conference dedicated to Minecraft at the Mandalay Bay Hotel in Las Vegas; the oldest delegate was 77 years old, the youngest four.
+
+Read next WIRED Awake: 10 must-read articles for May 31 WIRED Awake: 10 must-read articles for May 31
+
+Peter Molyneux, an influential game designer, calls Minecraft "the best game of the last ten years. [Persson] didn't stick to the old rules of game design that most developers slavishly obey. The gift was giving people a world to play with. Minecraft trusts in people's ability to find their own entertainment in a digital experience, to choose whether they're going to build or destroy. It is a glimpse into a new world of digital entertainment." Persson has, according to Ian Livingstone, founder of Games Workshop and an adviser to the UK government on video games, "singlehandedly changed the world of videogames". Working by himself, a stocky, bearded developer from the middle of Sweden created a hit to compete with titles from multibillion-dollar companies such as Electronic Arts and Zynga.
+
+Advertisement
+
+Persson did it by assuming gamers wanted more than another shooter or farming title. As youareminecraft.com says, "the game has revealed how much creativity lies undiscovered within us". Persson unleashed it and changed the rules of a £40bn industry.
+
+Just over 60 hours before the visit to Café Opera, the 18 employees of Mojang were preparing for a game jam -- a well-practised format in which developers create a new game in a short period of time. Inside the Mojang offices in Stockholm, developers sits at desks strewn with hardware,
+
+Minecraft merchandise and Nerf guns. Two minutes into Mojam and 100 people have bought the yet-to-be-finished -- or even planned -- game. "That means we have to make it now," says Persson.
+
+After an hour, 993 donors have given $6,000 (£3,700). Pizzas are ordered and eaten, and then Mojang gets to work. Persson, dressed in a green Lacoste shirt and wearing his fedora, holds a design meeting in a small room with a whiteboard.
+
+Read next Catch 'em all in Minecraft with fan-made Pokémon Cobalt and Amethyst Catch 'em all in Minecraft with fan-made Pokémon Cobalt and Amethyst
+
+Thanks to a public vote, Mojang's latest game will be a real-time strategy shoot-em-up set in a steampunk ancient Egypt. "The combination of themes we got was a bit weird," says Persson, "but I think we'll pull something off."
+
+The team talk for half an hour, throwing out concepts ("we've got to have mechanised scarab beetles!"). Persson stands at the back of the room, guiding the discussion. "Let's just get started," he eventually says. Mojang will have to write the game code, network and rendering from scratch. Every developer returns to his desk.
+
+Persson sits at his in the corner, pulls on his green headphones and starts coding.
+
+When he started Minecraft, in summer 2009, he was on his own. Over the course of a weekend in May, he wrote a basic game, which mashed up others such as Dwarf Fortress and Infiniminer into something entirely its own, and mentioned it on the TIGSource forum -- a site for independent games players and creators. A month later, he charged people €10 (£8) to download the game. Minecraft sold 40 copies that first weekend.
+
+People started talking about it: they had to, because there were no instructions. You could figure out how to make a bed, say, by trial and error -- three slabs of wood, three bundles of wool -- but it was easier to ask others. Persson also released Minecraft as an alpha -- the core gameplay was established, but the game was, deliberately, left incomplete. Every Friday, Persson would update it, adding features. Every time, sales rose. "The main reason, I think, is because people talk about the game," says Persson. He had always been an active member of the TIGSource discussions and now he engaged with Minecraft's early players, on the forums, on Twitter (Notch has 660,000 followers) and on his Tumblr page.
+
+Read next Last year's huge Dyn attack has been linked back to Minecraft Last year's huge Dyn attack has been linked back to Minecraft
+
+As players created their own worlds, Persson was expanding the universe in dialogue with those players.
+
+Minecraft became the talk of 4chan and Reddit. When sales hit 15,000, Persson knew he was on to something bigger than an indie release. In summer 2010, Persson set up Mojang, along with Porser, with whom he had worked at Flash-games developer King.com, and Manneh, his former CEO at jAlbum, a photosharing site. By now, sales had reached 200,000 and PayPal, suspecting fraud, froze Persson's account. Mojang would license Minecraft's IP from Notch Development, meaning most money would go to Persson. A beta version of the game came out in November 2010. On January 12, 2011, Minecraft passed a million units sold. By April, it was at two million units. August, three million. Notch announced Minecon. A few days before the November event,
+
+Minecraft sold its four millionth copy. The game, constantly updated, still had not been released. It came out of beta, priced at €19.95 (£16), on 18 November; the official release has sold 1.5 million copies. The independent developer had gatecrashed the big video-games publishers' party. And he was having more fun than they were.
+
+Persson has a recurring dream. "Just wandering around the woods with my friends as a child, just barely not getting lost, which was kind of scary." Markus Alexej Persson was born in June 1979 and grew up in Edsbyn, a small town in the dead centre of Sweden. "I was mainly outdoors," he says, "exploring the woods." His mother was a nurse and his father worked for the Swedish railway. "My dad was a really big nerd -- he got a Commodore 128 and built his own modem." At seven years old, his parents divorced ("It was pretty bad -- I lost contact with my dad for several years") and he moved to the suburbs of Stockholm with his mother. Persson started exploring the Commodore. "We had some tapes full of pirated games. The first game I bought was Bard's Tale. I didn't understand any of it. Too much English."
+
+Persson never read the instructions.
+
+Read next Minecraft arrives on Apple TV as Pocket Edition gets Ender update Minecraft arrives on Apple TV as Pocket Edition gets Ender update
+
+At eight, Persson started programming, with the help of his sister. She would read out code listed in magazines. "That's how I learned to program. I'm really a cowboy programmer." The same year, he showed his father his first game, a text adventure; he couldn't save the game itself, as he didn't know how, so every time the computer was switched off, he'd retype it. Persson was well-liked at school, if not one of the popular kids. At 16, he transferred to a "gymnasium" -- secondary education in Sweden -- where he had one friend. He became a loner. "I started spending time at home, just programming, just games. I was obsessed with Doom. I wanted to replicate it." Persson reverse engineered the entire engine, an achievement he rates behind only Minecraft itself. After school, he joined the IT boom in Stockholm, working as a web programmer. He left after a couple of years, figuring it would be easy to find another job; then the tech bubble burst. "So I was unemployed, doing remote-school stuff, for two years. Living at home with Mum."
+
+He found work as a programmer and created, with a coworker, a sandbox game called Wurm Online; as in Minecraft, players created worlds, terraforming the land and mining underground. Persson then joined Midas, which would later be renamed King.com. The company produces a huge number of Flash games. Persson would make a new game every two months, and says he made 25-30 in total. He also met Porser. Alex Norstrom, now vice-president of growth at Spotify, used to work at King.com. "What separated Markus from other developers at King was he had a deep knowledge about games," he says. "The King way of making games is to spec it out. Markus had a little bit of everything in him -- he's more like a one-man show." Persson quit King.com after being banned from making games in his spare time. He spent the next month making Minecraft.
+
+As Minecraft became more and more popular, Mojang was courted by investors; the three "Mojangstas" started living the high life. "During the spring of 2011, I had VC conversations every single day for three months," says Manneh. "I probably talked to 100-150 VCs." One of those investors was Sean Parker, the cofounder of Napster and first president of Facebook. He flew into Stockholm to meet Mojang, who made it clear that they were in no way looking for funding, as they had told every other investor. Still, they talked with Parker for a couple of hours about the potential of Minecraft and the video-games industry in general ("He was a super fun guy, I have to say, but I don't think his heart was in the games-development business," says Porser). Parker mentioned he had his private jet at the airport. "And then he asked if we wanted to come to a party in London," remembers Persson. "Yes!" The four flew to London to watch Cee Lo Green play a private party at The Box, a club in Soho. "We went and partied all night and came back the morning after," Manneh remembers.
+
+Mojang was able to turn down the investment because by the end of 2011 Minecraft had made about £52 million in revenue -- not far off the £62 million Rovio took from Angry Birds in 2011 (Wired 04.11).
+
+Minecraft merchandise -- T-shirts, foam pickaxes, cardboard character heads -- accounted for eight percent of those revenues. With the licensing deals, Mojang itself made £4.5 million in profit up to the end of 2011; the rest went to Persson (for 2011, he said it was £33 million). "I keep these big piles of cash under my bed," Persson deadpans. Thanks to Parker, Persson has acquired a taste for private jets himself, "because it's so awesome. Not to buy them, that's very expensive, but there are good ways to rent them." He's bought watches, too, from Baume & Mercier. Persson's rule is that he saves half of his earnings, and spends the other half. "Which is a huge amount of money -- there's no way to spend that much money. But there's no way I can go broke." Persson is generous with his wealth; he gave his £2.2 million Mojang dividend for 2011 to his employees.
+
+Read next The robo 'gym' where Minecraft is being used to train super smart AI The robo 'gym' where Minecraft is being used to train super smart AI
+
+The other thing Persson likes is parties. As Vu Bui, a filmmaker and photographer who produces videos for Mojang, puts it: "Markus loves getting wasted."
+
+Minecon's closing party was at Encore, a club in Vegas. "I was way too drunk. I was partying and everything went pitch black. Then I opened my eyes and I was in my bed."
+
+Person didn't dream of anything that night in Vegas, let alone exploring the woods. For all the private jets and parties, he still spends most of his free time playing video games, including Minecraft. "I do have a pretty huge ego -- yeah, well, more like pride over the game," he says. "But no, I'm not Jesus at all. I'm just a vocal guy who happened to have a big success." When Persson plays Minecraft, he doesn't build the extravagant structures you can see on YouTube. "I can't build anything close to what others do. Something about exploring is just very fun to me. I still get that thrill, when you find a cave."
+
+A few weeks before Mojam, Double Fine, an indie developer in the US, announced a fund on Kickstarter, a crowd-funding site for creative projects, aiming to raise $300,000 (£192,00) over the course of a month for the development of a new adventure game. In 24 hours, they raised $1 million, becoming the then best-funded project in the history of Kickstarter. In 2010, several independent games developers set up The Indie Fund, a for-profit investment vehicle to encourage the creation of indie titles. It has backed six new titles so far and the two released have both been profitable; one of those, Dear Esther, an eerie and obtuse adventure game, made money 16 hours after release. Other recent titles such as Journey,
+
+Fez and The Witness have found that experimental, challenging gameplay can equal financial success. "We're in the middle of a renaissance for indie gaming," says Persson. And it's partly because of Minecraft. "Notch is the poster boy for the growing number of indie developers who are leading the disruption in a golden age of games," says Livingstone. "Mojang has torn up the rule book."
+
+Read next Government 'behaviour czar' brands Minecraft too gimmicky for use in schools Government 'behaviour czar' brands Minecraft too gimmicky for use in schools
+
+Persson wants to spend his new wealth investing in games, but is wary of becoming a capo of indie gaming, dispensing favours and making developers just by attaching his name to them. "I don't want to be Don Corleone. We want to avoid a position where we decide what gets published," he says. But Mojang is making its first steps towards becoming a publisher; last year it put out Cobalt, an indie title from Oxeye Game Studio. "It's a great way of making more money, and building brand awareness for Mojang." It's the first step in moving beyond Minecraft; the company recently released Scrolls, the title Porser has been working on for the past two years, a card-swapping game. "We're trying to port Minecraft accounts to Mojang accounts," says Manneh. "We're developing more games, so that it will be easier for the user to make games."
+
+Scrolls will follow the Minecraft model of early release and continuous updates. "Minecraft has proved it to be a very successful business model," Manneh says.
+
+Should Mojang be more ambitious?
+
+Rovio, the maker of Angry Birds, is, technically, an independent games developer; it's pushed that brand so hard that it's aiming for a billion-dollar IPO in Hong Kong later this year.
+
+Mojang doesn't want that scale. "I'd rather have us be part of an uprising of many companies in the rebellion against Zynga and EA," says Persson. Porser says, "All three of us, we're in it for the fun. We don't want to be a huge company." Manneh says that Mojang doesn't plan to expand beyond 25 employees or take investment. "We can take them on without the money. The way we develop games is very cost-effective." Independent gaming is as much about the spirit as the technicalities of ownership: like indie music, it is becoming a proper genre in itself. Rovio has said it wants to be a new Disney. Persson says, "We're more like Pixar." "Minecraft will be our main revenue driver for quite some time," says Manneh. "And we want to focus on making the best of that opportunity." Mojang ported the title to mobile devices last year and has so far sold 1.4 million paid copies at £4.29 each. The company recently released an Xbox version too, which should help
+
+Read next Minecraft: Education Edition is out now Minecraft: Education Edition is out now
+
+Minecraft reach a different demographic. "We look at the targets and projections we had last year, it's not even in the same ballpark," says the CEO. "We thought sales would be declining. But the rate is still climbing." Manneh estimates that profits for 2012 will be double those for 2011. This spring Mojang will launch Minecraft Online, providing a global network of servers for multiplayer. "If you really want to reach the mass market, it needs to be easier to set up," says Manneh. How many players do they think they'll reach? "Fifty to 100 million," replies Manneh. "These are numbers just taken out of my butt, but if we look at 22 million registered users now, and the adoption rate, tying it in with Facebook Connect..." Mojang is creating an API, so that other developers can modify the game; Mojang will publish the best mods.
+
+Persson himself is no longer directly involved with Minecraft; he handed over day-to-day development to Jens "Jeb_" Bergensten last year. Persson is working on a new game, 0x10c, that takes the extreme freedom and innovative business model of Minecraft, and pushes both further. "It's quite ambitious," he says. Set in space, it's a sandbox title on an intergalactic scale; each player has a ship, which he or she can use to fight battles, mine, trade and loot, and explore planets.
+
+0x10c will be multiplayer, so Persson expects advanced economies to develop. The feature most exciting Notch fans, though, is the ship's computer -- a working 16-bit CPU. "More programmatically advanced" players can create their own programs on this; Persson released the specs for the programming language as he himself started work on the game; within a week, several Reddit users had created their own emulators and one had even created a working version of Minecraft in the language. As in Minecraft, players can create anything -- even malicious code that could corrupt the game itself -- and swap and sell programs in the game. "I won't stop viruses," Persson wrote on Twitter in the early stages of development. "The players will do that." He is also experimenting with pricing: single-player mode will be a one-off payment, but multiplayer will require players to pay a monthly fee. As he did for Minecraft, Persson will release 0x10c early and "let players help me shape the game as it grows".
+
+Persson doesn't feel pressure with his new title, because even he thinks he can't create another Minecraft. "Minecraft is a massive phenomenon.
+
+It's not realistic for anything to come close." Persson is also designing, not programming, a "secret project" codenamed "Rex Quadro", for which Mojang has signed a deal with an outside company; Manneh says the deal could "make a big impact". Persson won't say any more: his mind is on the game jam. "I just want to go back to coding."
+
+Advertisement
+
+Sunday evening, February 2012. There are a few minutes left before time is up on the game jam. As Mojang hits several fundraising targets, in increments of $100,000, employees perform stunts to the camera streaming the whole 60 hours. Wine glasses full of Red Bull litter the desks, along with empty beer and vodka bottles. "This is actually starting to feel like a game now," says Persson, still typing with a machine-gun clatter on his keyboard. The deadline passes; Persson decides to "cheat by a few minutes" and a little later he finishes the last of thousands of lines of completely fresh code. "OK. The game is done." He claps and beams, beatifically. "Let's do this every weekend!" At closing time, the total raised is $436,097.08, from 77,234 buyers. The finished game, called Catacomb Snatch, isn't a masterpiece, but it's fun and playable; not bad for 60 hours. LMFAO's "Shots" starts playing loudly on the stereo. The Mojangstas wrap up and make their way to the Café Opera, singing along: "I'm fucked up... Shots shots shots shots shots..."
+
+Persson takes his fedora from the coat stand and leaves too.
+
+This article was taken from the July 2012 issue of Wired magazine. Get access to our iPad edition at no extra cost with a print subscription and be the first to read Wired's articles -- try a subscription to Wired by subscribing online now.

@@ -1,0 +1,220 @@
+I hear that question a LOT. No, we
+
+weren’t sleeping, but sometimes it takes a minute for a plan to come
+
+together. And don’t you love it when a plan comes together?
+
+Your BeagleBone Black is on the way and below are the whys and hows.
+
+Buying a BeagleBone Black back around October last year was easy—and
+
+then suddenly they were gone. Having a big launch and then slowing
+
+down to a more steady pace of production is what is normally expected.
+
+Demand was strong, but distributors were showing a small amount of
+
+stock and people were getting their boards on demand. Based on the
+
+status, distributors had requested CircuitCo (the Richardson, Texas
+
+based manufacturer of all official BeagleBoard.org boards) to provide
+
+boards at a certain pace, and production dropped from about 6,000 a
+
+week at launch to around 3,000 a week.
+
+BeagleBone Black, however, isn’t your typical development board and word started to spread about cool projects that could be made. Then came Radio Shack, filling their stores with Make’s Getting Started with BeagleBone kit. Then the Christmas rush. Then the Georgia Tech massively open online course on control of mobile robots hosted on Coursera. We had a couple of small production boosts, but haven’t been able to make any dent in the demand. Everyone is starting to find out what BeagleBone Black can do, using it in their classes, hobbies, prototypes—and products.
+
+The BeagleBoard.org terms and conditions clearly say we
+
+aren’t responsible for the quality in end products. Nevertheless, the
+
+quality speaks for itself and many people are choosing to simply drop
+
+them into things beyond just a few prototype units. In practice, we’ll
+
+never know unless you try to return a bunch of boards at once for
+
+repairs. Our desire is that people using the boards in products work
+
+directly with a contract manufacturer or distributor to enable boards
+
+builds to be planned out in time and with terms and conditions that
+
+won’t hurt BeagleBoard.org’s ability to supply classrooms, hobbyists
+
+and professionals building prototypes.
+
+People building products aren’t the only source of the high demand.
+
+Some of our distribution partners, most notably Adafruit and Special
+
+Computing, put quantity limits of one board per customer
+
+to help improve availability for individual makers. Even with the quantity
+
+limit in place, I observed boards being sold off Adafruit’s website
+
+at a rate of about 2-3 PER MINUTE.
+
+This all leads to the obvious conclusion: we need more capacity. To
+
+accomplish this, we are taking a multiple prong approach of increasing
+
+capacity at CircuitCo as well as bringing on an additional
+
+manufacturer. These two prongs are summarized below.
+
+Prong #1 – Ramping up production at CircuitCo
+
+Ramping up production costs money. More test equipment is needed.
+
+Orders on various parts must be accelerated. Additional staff must be
+
+hired to run additional shifts. CircuitCo has been fantastic at taking
+
+the risk for us, but the margins for BeagleBone Black aren’t the
+
+friendliest for them to take on these additional costs. At initial
+
+launch, it is a benefit for them to get exposed to more customers for
+
+their core business, complex circuit assembly and engineering
+
+services, but shipping more of the exact same board isn’t going to
+
+give them a lot more exposure.
+
+We’re really close to shifting the distribution shipped on our boards
+
+from Angstrom Distribution to Debian. Feedback from different people,
+
+especially Adafruit, tells us this will improve usability in the
+
+largest segments of our community. Angstrom Distribution is much more
+
+customizable and is very friendly to professional developers looking
+
+to tweak the most out of the system, but for many novices it
+
+introduces a barrier to learning. Debian is the basis for Ubuntu,
+
+includes ARM Cortex-A8 support in their mainline and is very familiar
+
+to a huge population of developers. It also takes a bit more space on
+
+the flash storage to provide the best user experience.
+
+To provide the best experience of using Debian on BeagleBone Black, we
+
+are connecting the switch-over to an increase in the on-board eMMC
+
+flash storage from 2GB to 4GB, leaving more free room in which you can
+
+work. The eMMC is faster and more reliable than micro-SD cards, so
+
+this is adding a lot of value—and a little bit of cost.
+
+These BeagleBone Blacks with Debian and 4GB eMMC will be called Rev C
+
+and they will likely cost a bit more at most distributors. This extra
+
+money is helping CircuitCo pay for the additional expense of the eMMC,
+
+but also to cover costs for ramping production to higher-than-ever
+
+rates.
+
+With the additional capacity CircuitCo is bringing on, we expect to be
+
+able to fill all end-user back-orders for the Rev B boards by early
+
+May and shift all production to Rev C. With around 150,000 boards on
+
+*distributor* back-orders, we’ll be working with distributors to
+
+quickly accept board shipments such that CircuitCo isn’t sitting on
+
+any units.
+
+Come mid-May, you should be able to easily get your hands on a Rev C
+
+board. Some distributors are already taking back-orders for them now.
+
+We’ll continue to try to push as many boards as we can through
+
+distributors *not* taking back-orders as well to make sure there is a
+
+continuity of supply.
+
+Prong #2 – Enabling production of the BeagleBoard Compliant Element14
+
+BeagleBone Black
+
+We’ve launched a BeagleBoard Compliant logo
+
+program. Element14 is currently the exclusive
+
+licensee of this logo program and has agreed to pay a small royalty to
+
+the BeagleBoard.org Foundation as part of this license. It means that
+
+we’ve verified they can produce quality clones of BeagleBone Black. It
+
+will be up to them to maintain the quality. As with everything going
+
+on around BeagleBoard.org, we’ll be closely monitoring the public
+
+BeagleBoard mailing list for any and
+
+all feedback.
+
+Element14 is the parent company for Embest, who has been making
+
+BeagleBone Black replicas for the China market since the initial
+
+launch back in April of last year, so they have some experience
+
+already. This move takes them beyond just China and will keep them in
+
+more lock-step with software and hardware revisions coming from
+
+BeagleBoard.org. To satisfy demand, they initially offered some of the
+
+Embest-branded boards in the US market, but you’ll see the future
+
+BealgeBoard Compliant boards will be branded as “element14 BeagleBone
+
+Black”.
+
+Element14 has a world-wide reach and a notable production capacity.
+
+With all of the growing demand for BeagleBone Black, they will need
+
+it. This is a huge win for open hardware! Continue the discussion on
+
+the
+
+BeagleBoard mailing list
+
+.
+
+–Jason
+
+Share this: Share
+
+
+
+Tweet
+
+
+
+
+
+
+
+
+
+
+

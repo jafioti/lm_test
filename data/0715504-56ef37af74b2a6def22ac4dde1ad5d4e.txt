@@ -1,0 +1,11 @@
+YouTube Once Again Building A Paywall On Which Old Media Can Hang Itself
+
+from the haven't-we-done-this-before dept
+
+Cable and satellite channels, which traditionally rely on a dual revenue stream model, are eyeing YouTube’s subscription service to generate revenue from older shows and new programming, according to another person familiar with the project.
+
+People seem really good at forgetting history. While most people realize that Google bought YouTube early on in that company's existence, they tend to forget that this was, in part, because YouTube was beating the pants off of Google's own online service called Google Video. The big difference? Google Video's launch focused very much on selling videos and using annoying DRM that had to check in with a server any time you wanted to watch. It was a complete and total failure, which probably cost an even larger amount when you realize it made Google more desperate to buy YouTube.A few years later, Google tried again , playing up the ability to pay for videos... and once again it flopped pitifully . A 10 day test brought in just a little bit over $10,000 -- which is hardly worth the effort involved.Perhaps the third time's the charm? People are reporting that YouTube is getting ready to launch a paywall feature , which may have 50 "channels" locked up behind the wall. The idea is to be more of a Hulu or Netflix-type competitor, though rather than a flat fee for access to all locked up content, YouTube thinks people will pay $1.99/month per channel. That seems... pretty high. Perhaps they're hoping that times have changed and what failed in the past is now okay because people are accustomed to paying for this kind of thing. However, I still have trouble seeing how this succeeds. If anything, this just seems like a tool with which Hollywood can hang itself. It may jump on this thinking that it's a great new way to build an online revenue stream, without realizing all the potential hazards.I'm sure plenty of old school execs are thrilled about this idea... until they see the actual numbers. This isn't about helping the old industry adapt, but giving them the tools to see how unlikely they are to succeed with a paywall.
+
+Filed Under: overhype, paywall, subscriptions, videos, youtube
+
+Companies: google

@@ -1,0 +1,43 @@
+We’re still basking in all the novelty and excitement of our Lightbend rebrand. Over the last week, the amount of congratulatory messages and compliments we’ve received on our new website design and project initiatives has been overwhelming and flattering––a huge and sincere thank you to all of our supporters.
+
+The announcement also surfaced some important questions about our commitment to the Scala ecosystem. We decided to address them through a short Q&A blog post. We hope you find the responses assuring and clear. Feel free to reach out to us directly with any other concerns or thoughts.
+
+Is Scala still important to Lightbend?
+
+Scala is more important to Lightbend’s products and strategy than ever before. It’s so important that we must acknowledge that the Scala language is bigger than any single company. Similarly, Lightbend is also bigger than Scala alone. Let’s look at some facts:
+
+We continue to build our products and tools in Scala. Scala is the foundation of everything we build, including Lagom.
+
+We continue to view Scala as a strategic aspect of our business. Scala is the most effective way for us to build our software and we continue to believe that Scala is the best path forward for the entire industry. Embracing Java doesn’t change that.
+
+We continue to invest in the Scala ecosystem and community, developing relationships and partnerships with other organizations that lead to Scala’s continued future successes.
+
+We remain fully committed to the Scala language. Half of the top-10 Scala contributors are with Lightbend, and the Scala team is the largest of any of our engineering teams.
+
+Lightbend is growing fast. That puts us in an even better position to support Scala, even as we embrace Java as a first-class citizen on Reactive Platform. It’s no longer only about programming languages; we long ago moved from being a programming language company to a company that supports a complete Reactive Platform. The name change is a logical consequence of that.
+
+Why is Lagom Java-first?
+
+Many factors affected the decision to release Lagom first with a Java 8 API and then a Scala API to quickly follow.
+
+First, the overwhelming demand in the Java community for tools that can help decompose and revitalize aging monolithic systems. A primary benefit of Lagom is the ability to simplify the journey from “Monolith to Microservices” with a guided approach.
+
+Second, we did our research. After engaging with customers that have enterprise deployments of Scala, Akka, and Play, we discovered something: successful enterprises using Scala don’t need Lagom so urgently. They’ve already adopted and successfully deployed Reactive systems based on Microservices and Fast Data architectures.
+
+Finally, since 2011, every release we’ve made has been Scala-first, followed shortly thereafter with Java support. But we’ve found that it can be challenging to migrate expressive Scala APIs to Java. For Lagom, beginning with the Java API will let us extend to Scala more easily.
+
+It’s also worth noting that Lagom is implemented primarily in Scala. We believe that Scala is the best language for the job, even when the first API we’re offering is for Java.
+
+How will you continue to commercially support the Scala ecosystem and community?
+
+Lightbend will continue to offer commercial support, training, and services for Scala. We will continue to host and sponsor Scala meetups, hackathons, and conferences that lead to the proliferation of new ideas and shared visions for the language and its surrounding ecosystem.
+
+Scala is core to all of the technologies we create and/or directly support—Play, Akka, sbt, Scala IDE, Apache Spark, Slick, and Lagom. By embracing the Java community, we are not abandoning the Scala community. Nothing has changed in that regard. We remain dedicated to the language and will continue to invest in its success, including adding engineers to the Scala team as the company continues to grow.
+
+Share
+
+Comments
+
+Cookies are required for this functionality.Allow Cookies
+
+View All Posts or Filter By Tag

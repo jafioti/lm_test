@@ -1,0 +1,23 @@
+File Transfer Time Calculator
+
+Not all set
+
+Free calculator to estimate the time a file will to take to transfer.
+
+Kilo*1: 1024 1000 Overhead: 0% 5% 10% 20% 30% 40% 50% bit Bytes KB (Kilobyte) MB (Megabyte) GB (Gigabyte) TB (TeraByte) PB (PetaByte) EB (ExaByte) -->--> Bits/s (bps) Kbit/s (kbps) Mbit/s (mbps) Gbit/s (gbps) Bytes/s (B/s) Kilobytes/s (KB/s) Megabytes/s (MB/s) Gigabytes/s (GB/s) OR: Select speed by interface... USB 1.0 (1.536 Mbit/s) 1.1 (12 Mbit/s) 2.0 (480 Mbit/s) 3.0 (3.2 Gbit/s*2) Firewire 100 (98.304 Mbit/s) 200 (196.608 Mbit/s) 400 (393.206 Mbit/s)
+
+800 (786.432 Mbit/s) 3200 (3145.7 Mbit/s) SATA I (1.5 Gbit/s) II (3 Gbit/s) III (6 Gbit/s) PATA 66 (528 Mbit/s) 100 (800 Mbit/s) 133 (1064 Mbit/s) SAS I (2400 Mbit/s) II (4800 Mbit/s) Wired LAN ThinNet - (10 Mbit/s) Fast Ethernet - (100 Mbit/s)
+
+Gigabit Ethernet - (1000 Mbit/s) 10 Gb Ethernet - (10 Gbit/s) Wireless LAN A - (54 Mbit/s) B - (11 Mbit/s) G - (54 Mbit/s) N - (100 Mbit/s) Modem (14.4 Kbit/s) (28.8 Kbit/s) (33.6 Kbit/s) (56 Kbit/s) Fibre (full duplex) 1GFC (200 MB/s) 2GFC (400 MB/s) 4GFC (800 MB/s)
+
+8GFC (1600 MB/s) 10GFC (2550 MB/s)
+
+This File Transfer Time Calculator is used to determine the approximate time that a file would take to transfer over a particular interface . The speeds are optimistic because the actual inferface will be slowed down by overhead (ex: requests for the information, syncs, ...), more than one transfer at a time, and the interface not performing at the standard speed.
+
+Some Similar Tools:
+
+*11024 is most used. The 1000 byte conversion is mainly used by hard drive manufacturers because it makes it look like the drives hold more.
+
+*2From USB3.0 specification: "it is realistic for 400 MBps or more to be delivered to an application." - from section: 4.4.11 Efficiency
+
+Check out a new tool that can help you generate UUIDs online.

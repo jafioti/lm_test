@@ -1,0 +1,151 @@
+I recently got a Chromebook and decided to install Ubuntu on it. There are two ways (that I know of) of doing this: using Crouton , which uses a chroot environment and lets you run both Chrome OS and Ubuntu in the same time and you can switch between the two using a keyboard shortcut, and ChrUbuntu , which works you can dual boot with Chrome OS but it only supports x86-based Chromebooks.
+
+
+
+
+
+Since I have an ARM-based Chromebook (HP Chromebook 11 - it's not on sale currently due to some issues with the charger), I've used Crouton. I actually prefer Crouton for the way it allows switching between Chrome OS and Ubuntu without having to restart.
+
+
+
+
+
+If you own a Chromebook and want to install Ubuntu using Crouton, here's how to do it. I've tested this on HP Chromebook 11, but it should work on any Chromebook.
+
+Demo video
+
+Below you can watch a quick demo of Ubuntu (Xfce) running on my ARM Chromebook in chroot using Crouton:
+
+Note: The video is laggy because my ARM Chromebook can't do a proper screencast using ffmpeg do the the CPU. Chrome OS / Ubuntu don't lag when using the Chromebook.
+
+How to install Ubuntu on your Chromebook using Crouton
+
+Warning:
+
+
+
+
+
+1. The first thing you need to do is enable Developer Mode on your Chromebook:
+
+
+
+
+
+a) Firstly, you need to reboot the Chromebook in Recovery Mode. To do this, press and hold the Esc and Refresh keys and then press the Power button while holding the other two keys (on older Chromebooks there's a physical switch for this).
+
+
+
+
+
+After it reboots, you should see a yellow exclamation point on the screen - press Ctrl + D (there's no prompt - you have to know to do it).
+
+
+
+
+
+b) You'll be asked if you want to enable Developer Mode - confirm and after doing so, wait. It will take a while and a new screen will pop up and then the Chromebook will reboot, starting the process that enables the Developer Mode. This should take about 15 minutes.
+
+
+
+
+
+c) After it's done, you'll see a screen with a red exclamation point. You don't need to do anything, just wait until your Chromebook reboots into Chrome OS.
+
+
+
+
+
+Now each time your Chromebook starts, you'll see a warning screen telling you that OS verification is OFF. This adds extra time to the boot process but you can skip it by pressing Ctrl + D.
+
+
+
+
+
+You can also find instructions on enabling Developer Mode for each Chromebook model, HERE
+
+a) Download Crouton
+
+
+
+
+
+You can download Crouton from HERE . Make sure the downloaded file is saved in the Downloads folder.
+
+
+
+
+
+b) Install Ubuntu
+
+
+
+
+
+Start the terminal on your Chromebook by pressing Ctrl + Alt + T. Then type "shell" in the terminal.
+
+
+
+
+
+You can now begin installing Ubuntu. Before proceeding, I'll briefly explain the commands below:
+
+by default, Crouton will install Ubuntu 12.04 LTS (Precise) but I added "precise" to the first command below so you can see how you can change the Ubuntu version. You can see a list of supported Ubuntu versions by running " sh -e ~/Downloads/crouton -r list "
+
+" in Developer Mode, the default configuration is completely insecure and you won't be prompted for a password when using "sudo" in the Chrome OS terminal. For this reason, I recommend encrypting the chroot by using "-e"
+
+"-t" means "targets" which is what Crouton uses to decide what to install. The target can be the desktop environment (in the two commands below) such as "unity", "xfce" and so on or other "packs" like "touch" for instance. Use "sh -e ~/Downloads/crouton -t help" to see all the available targets and find out more about this.
+
+If you're using a Chromebook with a touch screen, also add the "touch" target, like this (example for Xfce): "-t xfce,touch". More tips for Chromebook Pixel HERE.
+
+For ARM Chromebooks: it's important to note that Unity only works in Ubuntu 12.04 (because only Unity 2D works due Xephyr lacking EGL support).
+
+Ubuntu 12.04 with Unity running on HP Chromebook 11
+
+To install Ubuntu 12.04 with Unity (2D) and enable encryption, use the following command:
+
+sudo sh -e ~/Downloads/crouton -r precise -t unity -e
+
+
+
+Ubuntu 13.10 with Xfce running on HP Chromebook 11
+
+To install Ubuntu 14.04 with Xfce and enable encryption, use the command below: and enable encryption, use the command below:
+
+sudo sh -e ~/Downloads/crouton -r trusty -t xfce -e
+
+In the same way, you can also install gnome (GNOME Shell), cinnamon, kde or lxde.
+
+The installation should now start and it will take a while. When it finishes, you'll be prompted to enter an username and password for your new Ubuntu installation.
+
+To start Unity, in the Chrome OS terminal (Ctrl + Alt + T), type "shell" and then:
+
+sudo startunity
+
+Or, to start Xfce, open the Chrome OS terminal (Ctrl + Alt + T), type "shell" (if you didn't already) and then:
+
+sudo startxfce4
+
+You can switch between Chrome OS and Ubuntu on ARM by using: Ctrl + Alt + Shift + Back and Ctrl + Alt + Shift + Forward (on x86-based Chromebooks, the keyboard shortcuts are: Ctrl + Alt + Back or Ctrl + Alt + Forward and then also press Ctrl + Alt + Refresh).
+
+
+
+
+
+To exit the Ubuntu desktop, simply select "Logout".
+
+Removing Ubuntu / Crouton
+
+There are two ways of removing Ubuntu / Crouton. You can either reboot your Chromebook, press SPACE when the boot screen prompts you to disable the Developer Mode and follow the instructions - this will clean up everything, including any changes you've made to your Chrome OS.
+
+
+
+
+
+Or you can remove all the chroots - to do this, exit Ubuntu (exit Unity/Xfce or whatever you're using) and use the following command in the Chrome OS terminal (Ctrl + Alt + T, then type "shell"):
+
+cd /usr/local/chroots sudo delete-chroot * sudo rm -rf /usr/local/bin
+
+Tomorrow I'll publish a new article with some things to do after installing Ubuntu on your Chromebook, like installing some "base" applications, getting Ubuntu Software Center to work and some other fixes. Stay tuned!
+
+following the instructions below may void warranty!Start UbuntuFor more information, see Crouton @ GitHub Update - also see: Things To Do After Installing Ubuntu On A Chromebook Using Crouton

@@ -1,0 +1,47 @@
+Pedalling is such a simple thing that many cyclists never think about it, however a small improvement in technique can already result in major performance improvements and minimize the risk of injury. During a bike ride your legs make thousands of revolutions to turn the pedals around. To do this as smoothly and efficiently as possible requires a complex coordination of multiple joints.
+
+The typical cycling cadence of trained cyclists lies between 90 and 100 revolutions per minute (rpm). This doesn’t correspond to older scientific studies that have demonstrated that the highest metabolic efficiency results from cadences of 50-60 rpm. Improving the pattern of muscle recruitment can improve pedalling dynamics in cyclists, but from a physiological or tactical perspective there is not one optimal cadence for all cyclists.
+
+Gross efficiency and cycling economy
+
+Gross efficiency and economy are two terms that describe how well we use our energy for cycling. When a power monitor shows 250 Watts this refers to the mechanical power that is used for turning the cranks. This is only a small part of the overall energy that the body has processed to metabolize stored fuels. Most of the energy from the nutrients we take is converted to heat, such that the average gross efficiency of the body is only 20-25%.
+
+Economy is a broader term that focuses more on the overall cost of movement. Cycling economy incorporates gross efficiency but focuses on how much energy was used to ride a set distance such as a 10 kilometer time trial. In case your gross efficiency doesn’t change and you used about 1000kJ for a ride and then rode the same ride the next day with different wind directions and you only used 950kJ, then your cycling economy improved.
+
+Thus, the term cycling economy is most important when talking about using as little energy as possible to ride with a set power output or speed. Cycling economy is easy to measure for cyclists who are using a power meter. So, it’s relatively easy to test the effects of different gearing, pacing, and bike positions on cycling economy.
+
+Standing versus seated pedaling during a climb
+
+Cycling is mostly a non-weight-baring activity because the bike helps you to minimize the need to support your body weight and removes the impact forces. But when you’re standing on the pedals, you are no longer supporting your weight on the saddle, and you have to rely on your muscles to keep upright. This requires more energy and makes you less economical compared to a seated position. Wind resistance is also higher because you increase your surface area while standing. From the other side you’re able to leverage more of your weight over the pedals and recruit extra muscles. This makes it possible to apply a greater force on your pedals and increase power output.
+
+It is obvious that you're able to produce a higher power output when sprinting and standing, as are the higher heart rates when climbing and standing. Standing creates more stress on the cardiovascular and aerobic system but it doesn’t decrease your efficiency. So standing on your pedals doesn’t cost you more energy when you consider the higher power output that you’re able to produce. However, extended standing while climbing must be practiced to optimize economy. For heavier riders, who have to support more weight, it might be more efficient and economical to remain seated while climbing5.
+
+Left-right balance in pedaling
+
+Our left en right side are not built equally. The repetitive use of the dominant hand or leg can result in differences in the balance of muscles and skeleton between the two sides. This can eventually lead to muscle imbalances and injuries. Several studies showed that pedaling asymmetry exists, suggesting that the dominant leg performs a greater percentage of the overall work 1 2 7.
+
+Cadence and power output seem to affect asymmetry values. Endurance and tempo rides resulted in a higher asymmetry values compared to rides at a higher cadence and power output 1 7. The reason for this and whether it also affects efficiency remains unknown.
+
+Optimal cadence for cyclists
+
+According to older studies the optimal cadence, in terms of efficiency was shaped like an inverted U. Peak efficiency occurred at 50-60 rpm. The tests used for these studies were relatively short (<10 min), and power output was constant and low (±125 Watts). The preferred cadence used by Pro cyclists is much higher. They perform near the limit of efficiency and have adopted cadences that are likely optimal given their individual characteristics.
+
+More recent studies attempted to address some of the problems of the older studies, and found that the optimal cadence in terms of efficiency was 80 rpm with only minor decrements at 100 rpm3 4. Another study found that gross efficiency was similar for 80 rpm, 100 rpm, and 120 rpm at intensities below threshold. At power outputs above threshold performance was impaired at a cadence of 120 rpm compared to 80 rpm and 100 rpm6. At realistic power outputs it seems that optimal efficiency and performance can be achieved at cadences between 80 rpm en 100 rpm.
+
+Find your own optimal cadence
+
+Cadence selection is different among riders for several reasons including the type of event, power output, maximizing comfort, and minimizing fatigue. When you have a power meter it is possible to find your optimal cadence by testing yourself at three different cadences. In one training you could do three short intervals (e.g. 5 or 10 minutes with enough rest between them) at a freely chosen cadence, 10 rpm below your freely chosen cadence, and 10 rpm above your freely chosen cadence. Afterwards you can compare the intervals and see which interval is more economical. You could do this with several intervals in one training (e.g. 1 min 5 min , and 10 min) and repeat them one and two weeks later at different cadences. It is important to keep the condition during each test the same.
+
+1. Carpes, F. P., Rossato, M., Faria, I., & Bolli Mota, C. (2007). Effect of pedaling technique on muscle activity and cycling efficiency. Journal of Sports Medicine and Physical Fitness, 47:51-57.
+
+2. Daly, D. J., & Cavanagh, P. R. (1976). Asymmetry in bicycle ergometer pedaling. Medicine and Science in Sports, 8:204-208.
+
+3. Foss, O., & Hallen, J. (2004). The most economical cadence increases with increasing workload. European Journal of Applied Physiology, 92:443-51.
+
+4. Foss, O., & Hallen, J. (2005). Cadence and performance in elite cyclists. European Journal of Applied Physiology, 93:453-62.
+
+5. Millet, G. P., Tronche, C., Fuster, N., & Candau, R. (2002). Level ground and uphill cycling efficiency in seated and standing positions. Medicine and Science in Sports and Exercise, 34:1645-52.
+
+6. Mora-Rodriguez, R., & Aguado-Jiminez, R. (2006). Performance at high pedaling cadences in well-trained cyclists. Medicine and Science in Sports and Exercise, 38:953-957.
+
+7. Smak, W., Neptune, R. R., & Hull, M. L. (1999). The influence of pedaling rate on bilateral asymmetry in cycling. Journal of Biomechanics, 32:899-906.

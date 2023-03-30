@@ -1,0 +1,25 @@
+Is there anything that Google DeepMind can’t do? It can defeat Go champions, potentially help those fighting blindness, and now it’s helping Google itself to become more environmentally friendly.
+
+
+
+Bloomberg reported that the technology giant was able to use the artificial intelligence to reduce power consumption in its data centers. According to a blog post, DeepMind was able to help reduce the amount of energy used for cooling by up to 40 percent, which equates to around an overall 15 percent reduction.
+
+Advertisement
+
+This is impressive considering Google said it used around 4,402,836 MWh (megawatt-hours) of electricity in 2014. For perspective, that’s around what 366,903 US homes use yearly.
+
+DeepMind was acquired by Google in 2014. The artificial intelligence company builds neural networks that run off of algorithms, basically creating machines that can adapt in a way similar to how humans learn.
+
+Google has been using machine learning for a couple years in order to run the data centers more efficiently, but implemented DeepMind a few months ago. By utilizing the data that had been accrued over those couple years, engineers were able to train the neural networks to recognize the average Power Usage Effectiveness (PUE), or the ration between total building energy use and IT energy use. By using this, and predicting what future numbers would look like, the DeepMind was able to calculate the proper actions.
+
+Advertisement
+
+“It controls about 120 variables in the data centers. The fans and the cooling systems and so on, and windows and other things,” DeepMind Co-Founder Demis Hassabis said.
+
+This makes sense if you look at other DeepMind applications. It’s been programmed to get the high score in games, so why not get the “high score” in energy usage? The algorithms that it utilizes can also be used for even more applications in the future. Even Google said it’s going to use the neural network more “broadly” throughout the company.
+
+It seems like a good investment, especially considering that Google bought DeepMind for more than $500 million. Might as well get some use out of it.
+
+Advertisement
+
+[Bloomberg, Google]

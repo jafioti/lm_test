@@ -1,0 +1,63 @@
+Image: Kari Kosonen / Yle
+
+Hydrocarbons are among the world’s most important compounds, as they are refined into fuels for use in cars, ships and aircraft. They are also used in the production of plastics.
+
+In Finland, a pilot plant known as Soletair – a joint venture between the Technology Research Centre of Finland VTT and the Lappeenranta University of Technology LUT -- has been set up to use hydrogen extracted from water and carbon dioxide captured from air as raw materials to produce hydrocarbons.
+
+The experimental facility was constructed using three shipping containers and is located on the campus of the Lappeenranta University of Technology in southeast Finland. The process requires a great deal of electricity, so the facility generates its own energy from an on-site solar power plant.
+
+Essentially, the final product is a renewable carbon-neutral oil whose usage does not accelerate global warming.
+
+"We can produce gasoline, diesel, kerosene and the raw material for plastics. In practice the product can replace the fossil fuel-based crude oil that is now used in refineries," explained VTT lead researcher Pasi Vainikka.
+
+Existing technology with a new twist
+
+To the layman’s ear, extracting crude oil from air and water sounds revolutionary, but there is nothing especially new about Soletair’s technology.
+
+Hydrogen is separated from water using electrolysis. Carbon dioxide is recovered from air using a unit that resembles an air scrubber or purifier, which is used in craft such as space shuttles and submarines.
+
+Carbon dioxide and hydrogen are combined using the Fischer-Tropsch synthesis method that has been known for nearly 100 years. What is new is the networking among the devices and the use of solar energy as a power source.
+
+Image: Yle Uutisgrafiikka
+
+One of the main goals of the research project has been to validate the technical functionality of the process in one spot.
+
+"Technologically, the ability to replace crude oil is in place. That’s what we want to demonstrate," Vainikka said. After surmounting initial hurdles, researchers have been able to make the equipment work in sync.
+
+When Yle visited the experimental site, a shipping container full of tubes was pouring a clear liquid into a sample bottle. Due to its chemical properties the product is suitable for refinement as is.
+
+The plant also produces a solid, waxy substance that looks and feels like wax from an old-fashioned paraffin candle.
+
+Implications for the transport sector
+
+As an experimental facility, Soletair will produce about 200 litres of renewable fuels and chemicals for research purposes during the summer. By contrast, global consumption of fossil fuels is roughly 100 million barrels per day.
+
+Understandably, Soletair’s end product will be more expensive than traditional crude oil. The research team has estimated that if the price of the solar power used in the process is 25 euros per megawatt hour, then Soletair oil would cost approximately 140 US dollars a barrel between 2030 and 2040. That is on par with the price of crude oil from back in January 2008, but today’s prices are less than 50 dollars a barrel.
+
+Image: Kari Kosonen / Yle
+
+However project leaders point out that the production costs of solar energy are falling and the technology used by Soletair will become cheaper with mass production.
+
+Soletair production would be cheapest in areas such as North Africa, where solar energy is almost limitless. In Finland, the technology could run on alternative energy sources such as wind, nuclear or hydro power.
+
+Oil is still the most important primary energy source in the world and it is widely believed that replacing it is the most difficult aspect of combating climate change. We could probably use electric cars, but heavy mass transit such as cargo shipping, air transportation and the chemical industry will need hydrocarbons for some time.
+
+A crucial question facing the expansion of technology like Soletair’s would therefore be extending strict emission reduction targets from electricity and heat production to transportation.
+
+"If the air transport industry has to significantly reduce emissions, then something like this might become indispensable," Vainikka observed.
+
+Electricity from storage to business activity
+
+The Soletair project also involves another debate flashpoint in energy technology – electricity storage. The proliferation of solar and wind energy means that sunny and windy days may create more energy than is needed for consumption.
+
+"Battery technologies are becoming common but creating large-scale energy storage also requires chemical processes. This is an example of that," said LUT professor Olli Pyrhönen.
+
+Image: Kari Kosonen / Yle
+
+At the Soletair plant, extra electricity is stored as hydrocarbons. Pyrhönen said that he sees solutions like Soletair as a major business opportunity for Finnish companies. It can be deployed as a mobile plant that can be taken wherever decentralised power generation is located.
+
+"Finland has top-quality process industry expertise. I see that the system could well become a product or products for process industry equipment manufacturers."
+
+The 2.5 million-euro Soletair facility is a joint venture project involving 20 researchers and several energy sector firms, including ABB, Woikoski and Gasum.
+
+Similar projects are also in the works in the United States and the global oil giant Shell is using a similar kind of synthesis at a project in Qatar -- however that project uses fossil-based natural gas as a raw material.

@@ -1,0 +1,25 @@
+Chrome 43 Beta is making its official debut today on a variety of platforms (including Chrome for Android, Windows, Mac, Linux and Chrome OS), and with it comes several new features—with MIDI for Web being perhaps the most notable.
+
+Google has also this evening announced an update to Chrome OS that bumps it to version 42.0.2311.87. The update, which comes on the heels of Chrome 42, adds a handful of new features and visual changes. First off, the Files app has been refreshed to feature a Material Design interface…
+
+Samsung U28E590D 28-Inch 4K Monitor
+
+Furthermore, the calculator app in the latest Chrome OS has been updated with interface tweaks, as well. The update also adds support for password-protected up files.
+
+The full change log from Google for version 42.2.2311.87 is below:
+
+Files app has been refreshed to follow the suit with Material Design
+
+Support for password-protected zip files
+
+Updated calculator app
+
+Default typeface on all Chromebooks has been updated to Roboto for Latin, Greek and Cyrillic scripts, to be more consistent with Material Design.
+
+In addition to those new features, the update also includes a plethora of bug fixes, security enhancements, and performance improvements. Google says the update will rollout over the next few weeks, so it may take a while to hit your respective Chrome OS device.
+
+As for Chrome 43 Beta, there are a handful of improvements across the board:
+
+The newest Chrome Beta channel release includes Web MIDI support, new features to improve security and compatibility and a number of small changes to enable developers to build more powerful web applications. Unless otherwise noted, changes described below apply to Chrome for Android, Windows, Mac, Linux and Chrome OS.
+
+Be sure to check out this video of Web MIDI in action:

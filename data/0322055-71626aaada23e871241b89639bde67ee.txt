@@ -1,0 +1,95 @@
+This was the year the Deep Web went mainstream.
+
+Edward Snowden’s disclosures about the NSA’s mass surveillance programs started an ongoing conversation about what it means to be anonymous on the Internet. The meteoric rise and ultimate fall of Silk Road cast a new light on the role of technology in the war on drugs. And Bitcoins turn toward international acceptance has put its most notorious customers in the spotlight.
+
+For the the anonymous Internet, there’s never been a year quite like this one. Here are the people—or groups—who made it happen, for better or worse.
+
+1) Dread Pirate Roberts, captain of the Silk Road
+
+Ross Ulbricht, the man the FBI claims is Silk Road founder Dread Pirate Roberts, is sitting in a Brooklyn jail facing a trial that will decide the rest of his life. What he did in 2013 changed the way we think about the war on drugs.
+
+Silk Road, the Deep Web black market, was launched in 2011. By 2013, it was experiencing unprecedented growth. An an anonymous figurehead, Roberts presided over the most successful and sympathetic challenge to federal and international laws that the Internet has ever seen.
+
+At least, it was sympathetic for a while. Today, Ulbricht stands accused of four murder plots, among the other major charges. The trial, which will kick off in earnest in 2014, will bring the Deep Web square into the spotlight in an unprecedented fashion.
+
+2) Dread Pirate Roberts II, the heir apparent
+
+Dread Pirate Roberts was so influential that his followers enthusiastically took up his mantle, adopted his name, and followed his every footstep. The new Roberts aimed to avoid the security mistakes that ultimately brought down the original marketplace, founding a new Silk Road that quickly became one of the most talked-about black markets on the Deep Web, even as its top competitors crumbled.
+
+Over the last week, it appears that the new Dread Pirate Roberts has gone into hiding, abondaning the market, after three of his top lieutenants were arrested. But unlike its predecssor, the new Silk Road will live on. A new leader has already emerged thanks to detailed contingency plans made to avoid the panic that struck the original site.
+
+Due in large part to the leadership of DPR II and his staff, the new Silk Road is a hydra: Cut off the head and a new one will grow back in its place.
+
+3) Backopy, the honest anonymous tycoon
+
+Once upon a time, there were two lions of the Deep Web world of black markets: Dread Pirate Roberts was loud, charismatic, and at times cultish. Backopy, the man who founded Black Market Reloaded just a few months after Silk Road, was quiet, independent, and smart.
+
+Backopy’s market was smaller but still made six-figure profits for much of its existence. Guns were Black Market Reloaded’s speciality, setting it apart from Silk Road, and one of the distinguishing features that made Backopy a muted icon of the Deep Web.
+
+When Silk Road went down, the spotlight moved to Black Market Reloaded. Backopy was trusted, his market was time-tested, and the wares were good. Backopy and the vendors likely made millions in the course of that month.
+
+The post-Silk Road chaos in the Deep Web eventually took its toll. Black Market Reloaded was proven to be insecure. However, unlike other Deep Web owners, Backopy never did wrong by his patrons. He insured any stolen money and gave weeks to withdraw funds after announcing that Black Market Reloaded would be shut down due to security concerns.
+
+Few people know Backopy’s politics, fewer know the man himself, but most everyone who came into contact with him believe he’s honest, which is a rarity in anonymous realms.
+
+4) OptimusCrime, proprietor of your criminal superstore
+
+OptimusCrime runs HackBB, one of the top hacking and identity theft markets online. If you’d like to buy stolen credit cards, fake documents, or no-strings-attached bank accounts, HackBB is your criminal superstore. Hackers and thieves can learn to rig ATMs to take down card information or built a network of zombie computers to mine Bitcoin.
+
+So much money runs through HackBB that it’s a regular target for hackers and scammers. In March, one of those aggressors succeeded in emptying HackBB’s accounts and completing what was, up until that point, the most lucrative heist in Deep Web history.
+
+HackBB suffered multiple attacks through this summer. Today, however, the website has slowly returned to its full glory as the most popular hacking Deep Web site. The criminals are buzzing about HackBB, and the profits are flowing to OptimusCrime.
+
+5) Eric Eoin Marques, t he alleged owner of Freedom Hosting
+
+More than just a place to buy drugs, Silk Road symbolizes resistance to the worldwide war on drugs. Dread Pirate Roberts was almost a folk hero among his customers.
+
+Contrast that with Freedom Hosting, the Deep Web hosting service that enabled massive child pornography websites to thrive. Freedom Hosting, run by an anonymous creator who the FBI says is Irishman Eric Eoin Marques, also hosted important Deep Web institutions like TorMail, the secure and popular encrypted email service. Silk Road vendors made millions using TorMail as a bulwark against police action.
+
+When Marques was arrested on Aug. 3, as many as half of all Tor hidden services ceased to exist. It was, for better or worse, the end of an era.
+
+6) The Czech, the great con
+
+Sheep Marketplace launched in early 2013 as yet another alternative to buying drugs from Silk Road. The site took a long time to gain any traction. It wasn’t until Silk Road wfell that potential customers and vendors checked out Sheep Marketplace. The nameless owner promised to fix up the market to accommodate the new migrants.
+
+To the new owners, it became obvious at some point that a scam would be much safer and more profitable than running a black market business long term. The Czech owner, whose location we can surmise from a series of security issues that plagued the market, began to lay the groundwork for his plan. A group of other Czech vendors were in on it too and began to collect as much money as possible before the gig was up.
+
+Finally, early this month, the site stopped allowing users to withdraw money.All 96,000 bitcoins—worth $95 million at the time—were gone. That’s the kind of money that can get people killed. There had been a handful of big Deep Web scams before Sheep Marketplace, and people will continue to scam for a long time to come. But it’ll likely be a long time before anyone collects as much wealth in one fell swoop.
+
+7) ZZZ
+
+Every other person on this list accesses the Deep Web using Tor, the anonymity software used by Julian Assange, Edward Snowden, Dread Pirate Roberts, and more.
+
+ZZZ heads a project to build an alternative: the Invisible Internet Project, known as I2P.
+
+I2P, which boasts about 30,000 active users, is similar in many ways to Tor. However, I2P offers several unique benefits over Tor and, if necessary, can actually be used on top of Tor for an added layer of anonymity.
+
+Under ZZZ’s guidance, the project has seen over 100-percent growth over the last year. As numerous major Tor websites are taken down by police, more and more Deep Web users are turning to I2P to supplement their anonymous surfing with Tor or to replace Tor altogether.
+
+Don’t get the wrong impression: There’s little in the way of competition. I2P developers believe that a rising tide lifts all ships: Tor and I2P are both fighting together to create a better anonymous Internet.
+
+Update: Shortly after this story published, ZZZ reached out to us on Twitter expressing concern over his inclusion in a list otherwise full of criminals, and asked that we remove his name. Indeed, we want to emphasize that there is nothing remotely criminal about ZZZ’s work. He’s one of the most important programmers working on anti-censorship software today and his impact is such that omitting him from this list would go against our better judgement.
+
+ZZZ isn’t the only “non-criminal” having an impact on the Deep Web. But the people who use the Deep Web for other purposes, such as journalists and activists, tend to leave no trail. Criminals have a financial incentive to make a name and build a brand. As such, it’s important to emphasize that some of the most important and beneficial work conducted on the Deep Web is untrackable and unsearchable—as it was meant to be.
+
+8) The mayor of Lolita City, the pedophile king
+
+To the surprise of no one, the biggest collection of child pornography ever assembled resided on the Deep Web. It was called Lolita City. Although the site went down in early August when Freedom Hosting was seized by law enforcement, its contents are still available for download and its owner is still in possession of an unthinkable collection of illegal pornography.
+
+Lolita City has been the target of outside attacks for years. In 2011, the hacktivist collective Anonymous famously took it down, garnering glowing headlines. It was an empty victory. By 2013, Lolita City boomed to 15,000 members and 1.3 million images and videos with more being uploaded every few minutes. It had never been so easy to access so much child porn.
+
+Unlike the unnamed pedophile forum also on this list, this was a porn website, not a support forum. And it was the biggest of its kind. On the Deep Web, many people are waiting for its return.
+
+9) Loera and Vladimir, owners of the best drug marketplace that never was
+
+Launched in March 2013 and doing $500,000 in business by June, Atlantis approached the black market business like a startup. It added auto-encryption to its website to aid easy security, lowered prices, invested in stability, and engaged in a playfully aggressive war of words with Silk Road, the market dominating the industry at the time.
+
+In June, the owners launched a minute-long commercial that shocked the world with its slick production values.
+
+On Sept. 20, about one week before the FBI shut down Silk Road and arrested Ross Ulbricht, Atlantis’s executives announced they were shutting down due to “security concerns outside of our control.”
+
+Despite Atlantis’s Silicon Valley startup approach to the industry, they weren’t making a dent in Silk Road’s profits. Still, it had a loyal customer base. If it had stuck around for a few more months, there’s little doubt it would have become the de facto king of Deep Web black markets once Silk Road shut down. Instead, Atlantis got out unscathed.
+
+The question of whether they knew about Silk Road’s impending doom has been asked over and over again. We’ll never know the specifics, but it seems clear Atlantis knew something.
+
+Illustration by Jason Reed

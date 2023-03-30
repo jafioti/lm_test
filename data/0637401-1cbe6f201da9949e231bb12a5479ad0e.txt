@@ -1,0 +1,17 @@
+NVIDIA’s upcoming GeForce GTX 860M has been tested by the guys over at NotebookReview forums. The mobile chip is part of NVIDIA’s upcoming GeForce 800M series which features several new SKUs based on Kepler and the latest Maxwell core architecture.
+
+NVIDIA GeForce GTX 860M Features Maxwell GM107 Core
+
+NVIDIA had recently launched their Maxwell core architecture codenamed GM107 which was fused in the GTX 750 and GTX 750 Ti graphics cards. The GM107 core architecture now comes to mobility in the form of the GTX 860M which is the mid-range graphics chip featuring an on-board soldered design which would be adopted by notebook manufacturer’s.
+
+For specifications, we are looking at the fully enabled GM107 core as featured on the GeForce GTX 750 Ti. The GeForce GTX 860M features 640 CUDA Cores, 40 Texture Mapping Units and 16 Raster operators. The 860M packs a 2 GB GDDR5 memory buffer which runs across a 128-bit wide bus at a frequency of 5 GHz effective. So we are looking at 80.2 GB/s bandwidth throughput. The core clocks are mentioned to be inaccurate considering the GPU-Z hasn’t yet updated with the correct information but considering the GTX 750 Ti, we might be looking at around 900 MHz – 1 GHz clock speeds and the overclocking potential of these chips would be great since the Maxwell core has already proved to be a great overclocker.
+
+Compared to the GeForce GTX 760M which featured the Kepler GK106 core with 768 CUDA Cores and a 2 GB GDDR5 memory that ran across a 128-bit bus, the GeForce GTX 860M is a slight downgrade if the core count is to be compared but it should be pointed that Maxwell cores are more powerful then Kepler cores and the GM107 is alot efficient requiring around 40-45 Watts of power compared to the 55-60W for the Kepler GK106 core. So we are looking at better performance from the GeForce GTX 860M along with a much power efficient design that requires lower power and runs cooler.
+
+The GPU-Z that has been passed along from the forums show MSI as the subvendor so we are inclined to believe that this chip is part of MSI’s Gaming (G-Series) notebook lineup which also recently saw an updated design with AMD’s Solar Series graphics card. Performance estimates show better performance of the GTX 860M versus the GTX 770M in 3DMark 11 in performance mode while the chip lacks slightly behind in Extreme mode which is mainly due to the higher VRAM, 192-bit bus and Core design but Maxwell still shines in performance per watt. Have a look at the performance comparisons posted below (Courtesy of NotebookReview Forums):
+
+GPU Name Geforce Mobility VRam (GPUZ) TDP Memory Width (Bus) Package MXM GTX 880M 8GB GDDR5 105W 256Bit GB3-256 Yes GTX 870M 6GB GDDR5 100W 192Bit GB3-256 Yes GTX 860M 4GB GDRR5 75W 128Bit GB3-256 Yes GTX 860M 2GB GDDR5 40-45W 128Bit GB4B-128 Onboard GTX 850M 2GB GDDR5 40W 128Bit GB4B-128 Onboard GTX 845M 2GB GDDR5 30W 128Bit GB4B-128 Onboard GTX 840M 2GB GDDR5 30W 128Bit GB4B-128 Onboard
+
+NVIDIA GeForce GTX 860M GPU-Z Shot:
+
+NVIDIA GeForce GTX 860M Benchmarks:

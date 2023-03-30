@@ -1,0 +1,38 @@
+The Office of Personnel Management (OPM) chief blamed outdated security systems for two recent cybersecurity breaches, but told a House committee that the agency still prevents 10 million hacking attempts each month.
+
+OPM Director Katherine Archuleta attempted to defend her agency’s cyber defenses and responses to the hacks that left millions of federal employees’ personal information vulnerable at a hearing of the US House of Representatives Committee on Oversight and Government Reform on Tuesday morning, despite jabs, insults and snide comments from committee members.
+
+READ MORE: ‘Outrageous failure’: Database hack compromised all US federal workers – union
+
+“In an average month, OPM, for example, thwarts 10 million confirmed intrusion attempts targeting our network. These attacks will not stop — if anything, they will increase,” she said, noting that she has pushed for an “aggressive effort” to update old systems, deploy new firewalls and implement two-factor authentication to gain access to OPM systems.
+
+But those efforts weren’t enough for Oversight and Government Reform Chairman Jason Chaffetz (R-Utah) because they “didn’t work, so you failed utterly and totally,” he said. “This has been going on for a long time.”
+
+OPM’s security practices were “akin to leaving all the doors and windows in your house open and expecting that nobody would walk in and nobody would take any information,” Chaffetz said. “How wrong they were.”
+
+The OPM Inspector General has issued report after report detailing OPM’s security shortcomings.
+
+One shortcoming not mentioned in the hearing was a decision by the OPM director to send an email to federal employees detailing the data breach from the agency’s chief information officer that was not sent through the CIO’s governmental email address ‒ meaning from a .gov email ‒ but through a contractor with a .com email. The email was also not digitally signed, showing it to be secure.
+
+That email, provided to RT, “looks almost like a textbook phishing example,” federal employee Teri Centner said in a blog post, who noted that “countless recipients assumed the email was fraudulent.”
+
+On June 4, OPM announced that hackers had accessed the system of the US government agency responsible for gathering personal information on federal employees and granting security clearances, potentially affecting the data of 4 million people. The agency detected the initial breach in April, but believes it may have occurred in December 2014, Archuleta said Tuesday.
+
+While investigating that breach, the government found a second hack had occurred, in which the intruders managed to steal the entire federal database of Standard Form 86. The 127-page-long form is submitted by individuals for a cavity-like background search, prior to gaining security clearance, and contains highly personal information about the individual, including possible drug and alcohol abuses, and financial and criminal histories. In addition, it contains a reference section with extremely sensitive information concerning the applicant’s contacts and relatives, including their personal data.
+
+“[We] have now confirmed that any federal employee from across all branches of government whose organization submitted service history records to OPM may have been compromised even if their full personnel file is not stored on OPM’s system,” Archuleta testified.
+
+The compromised data could include personally identifiable information such as Social Security numbers and dates of birth of OPM employees, but Archuleta refused to directly say what had been stolen. She also declined to give Chaffetz the exact number of employees that had been affected by the two breaches beyond the 4.2 million previously announced.
+
+“We do not have that number at this time,” Archuleta said, because various agencies “feed into OPM background investigation system,” and OPM is still working with these agencies to figure out exactly who was affected.
+
+“This is one of those hearings when I think I’m going to know less coming out of the hearing than I did when I walked in, because of the obfuscation and dancing around that we’re all doing here,” Rep. Stephen Lynch (D-Massachusetts) said. “I wish you were as strenuous and hard-working at keeping information out of the hands of hackers as you are keeping information out of the hands of Congress and federal employees. You’re doing a great job stonewalling us, but hackers, not so much.”
+
+Michael Esser, OPM’s assistant inspector general for audit, told the House committee that the agency has a history of failing to meet basic computer network security requirements, dating back to at least 2007. He added that for years those running OPM’s information technology had no IT background. He also said the agency hadn’t disciplined anyone for the OPM’s repeated failure to pass cyber security audits.
+
+On Monday, some congressional staffers learned that their information could have been compromised by the hacks, CQ Roll Call reported. While those who work on Capitol Hill are not considered federal government employees, when they leave the Hill, their retirements are processed by OPM, Rep. Gerald Connolly (D-Virginia) said.
+
+“What it seems to be is: If you worked up here for ‘x’ number of years and you terminate your employment and you leave government service, they give a final report, which may turn out not to be final, about your retirement status to OPM,” Connolly said after attending a classified briefing on the breaches for House members.
+
+
+

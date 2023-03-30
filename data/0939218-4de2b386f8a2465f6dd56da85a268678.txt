@@ -1,0 +1,23 @@
+In 1938 Alvin Hansen, who did more than anyone else to bring Keynesian economics to America, gave a landmark speech to the American Economic Association. (The speech is behind a paywall, but Tim Taylor has a good summary here.) In it, he made the case for “secular stagnation” — a persistently depressed economy. His arguments were pretty good, too: slow population growth and slow technological progress, he argued meant low investment demand — and even very low interest rates wouldn’t be enough to make up for the shortfall.
+
+Incidentally, for those who believe that the new interest in secular stagnation vindicates arguments like those of Greider, notice that technological progress in the secular stagnation story has the opposite sign; instead of worrying that rapid technological progress will destroy jobs, secstaggers (we are going to need a word!) worry that slow technological progress will mean not enough investment demand.
+
+Of course, it didn’t happen at the time; but many people took the wrong conclusion from Hansen’s failed prediction. They took it to mean that secular stagnation could not happen in real life, that the magic of the marketplace would always find a way to restore full employment. But given what actually happened — a baby boom and a wave of productivity growth that Hansen failed to anticipate — his theory never got a real test.
+
+Moreover, you could very much argue that Japan since the 1990s fits Hansen’s story quite well. Stagnating population? Check. Slowing technological progress? Well, not so clear cut, but certainly Japan didn’t progress after 1990 the way it did before. Persistently depressed economy? Oh yes.
+
+And now we’re talking about the same thing for advanced western economies. And this time the theory is getting more explicit: Eggertsson and Mehrotra (pdf and very wonkish) have an excellent paper showing how this can happen.
+
+There are two things I really like about the EM paper. First, it shows that I was wrong. Second, it shows that I was right.
+
+On the wrongness side of the ledger: In my original Japan piece (pdf), I offered a little model of a liquidity trap in which, for simplicity, I assumed infinitely-lived agents. This was a gadget, not a fundamental assertion — that is, it was a way to push aside complexities I din’t think were central to the logic. The rest of the literature has followed the same path of least mathematical resistance.
+
+As Eggertsson and Mehrotra point out, however, this approach effectively rules out anything like secular stagnation: the real interest rate eventually must equal the discount rate of whichever players matter on the margin. So a liquidity trap has to be a temporary phenomenon driven by a temporary shock. Since this fitted in with what policymakers wanted to hear, and with the general presumption that Hansen-type stories can’t be right, it went largely unquestioned.
+
+But EM show that once you have overlapping generations, you can indeed have secular stagnation. So this is kind of an object lesson in how strategic simplifications in modeling — which are necessary! — can lead you to overlook important possibilities.
+
+On the other hand, EM confirm my hypothesis of a timidity trap: while an inflation target, if believed, can bootstrap you out of secular stagnation, it has to be a sufficiently bold target. Announce your commitment to 2 percent inflation when the economy needs 4, and nothing happens.
+
+I need to work a lot more on the mechanics of this paper; I’m wondering in particular whether there is a possibility of sustaining the economy with permanent fiscal expansion.
+
+But important stuff.

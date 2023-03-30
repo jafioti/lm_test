@@ -1,0 +1,53 @@
+IE’s big leap forward; CSS3 selectors fully supported
+
+In the past few days I’ve been revising the CSS compatibility table with information about the latest crop of browsers. There’s no doubt about it: this is IE9’s show. It just supports nearly everything. No hassle, no buts.
+
+Besides, CSS3 selectors are now fully supported by all browsers but one. And that one browser is not IE. It’s, curiously, Opera.
+
+IE improvements
+
+Microsoft has finally taken the big leap forward we’ve been waiting for ever since they announced their decision to restart IE development back in 2005.
+
+IE9 promises to be an excellent browser. Its CSS support is now at par with that of the other browsers — although each browser still has its specific areas where it performs less. But we cannot in good faith say that IE is behind the others any more.
+
+There are only a very few declarations in my test that IE9 does not support. CSS columns, gradients, text-shadow , resize , and text-stroke are the only ones, and the latter two are WebKit-only.
+
+Even better news: Microsoft’s filters seem to have just disappeared from IE9. It supports normal opacity; no more filters required. Also, the gradient filter is gone, leaving IE (temporarily?) not supporting it.
+
+Another golden oldie that got dropped is cursor: hand , the MS proprietary alternative to cursor: pointer . That’s not really important in practice (IE6 already supported both syntaxes), but it’s a powerful symbol of the changes that the IE team has wrought.
+
+With so much excellence around I was almost glad when I found one single bug: IE9 doesn’t handle white-space: pre-line right. This bug will be fixed, though. It’s typically a minor point that crops up in a beta and is removed from the final product.
+
+Kangax studied the JavaScript and DOM changes and finds significant improvements. He also lists quite a few things that still have to be addressed, but those items strike me as fairly minor points, most of which are probably honest oversights.
+
+Test it!
+
+By the way, if you want IE9 to be an excellent browser, do what Kangax and I did and test it. Then write up the results, and point out bugs or possible improvements. The IE team needs this feedback, and I know from experience that they do read this kind of posts and try to improve their product.
+
+If you know of another series of tests that somebody has put IE9 through, pleae leave a comment.
+
+CSS3 selectors and Opera
+
+CSS3 selectors are now fully supported by all browsers but Opera. Not that Opera’s sins are manifold: there are two bugs the Opera team will have to solve in order to join the fully-compliant browsers:
+
+The mess the browser makes with dynamic nth-child and nth-of-type declarations. Statically it works fine, but as soon as you add elements with JavaScript Opera goes completely haywire.
+
+This is all the more odd since Opera supports dynamic nth-last-child and nth-last-of-type declarations absolutely fine. I don’t understand the difference.
+
+This is all the more odd since Opera supports dynamic nth-last-child and nth-last-of-type declarations absolutely fine. I don’t understand the difference. The :target pseudo-class does not react properly to use of the Back or Forward functionality.
+
+Both are relatively minor issues, although both have been plaguing Opera for ages now. All other browsers have had similar nth-child problems, but they have been solved fully.
+
+New tests
+
+I already talked about the support for the background module. There’s no question here: IE9 has the best support; Firefox the worst.
+
+I added :nth-last-child() and :nth-last-of-type() and :first-of-type, :last-of-type, and :only-of-type tests, this being the only CSS3 selectors I did not test yet. All browsers support them fine.
+
+We can also welcome a whole new slew of values for list-style-type. Binary, lower- and upper-hexadecimal, lower- and upper-norwegian, and octal are now supported by Safari 5 and Chrome 5. I’m not sure if these values are terribly important, but binary lists will look cool on any nerd-type of site.
+
+I also added test pages for border-radius, box-shadow, gradient, text-shadow, and text-stroke. These properties are more of a mixed bag; the first two are universally supported; the last three are not supported by IE9, while Firefox lacks text-stroke.
+
+All in all this was time well spent. CSS3 is really coming on strong, and there’s no more excuse not to try your hand at it.
+
+Comments are closed.

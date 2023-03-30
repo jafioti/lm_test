@@ -1,0 +1,23 @@
+I always try to release a “major” update at least twice a month – on the first and fifteenth days of every month. For example, August 1st and August 15th. So…where’s the update?
+
+The last “major” update was a mere week ago, on July 24th. I’m still going to aim for two major updates per month, but it looks like I’ve been thrown off of my “1st and 15th” schedule…so, when should you expect the next build?
+
+I’d love to say that the next update will be ready by August 7th, but it’s possible that I might need more time than that. I really don’t want that to be the case, so I’m going to work extra hard to get this update out to you as soon as possible! I hope that you’re going to enjoy it once it’s ready!
+
+Edit – August 1st 4:00 AM
+
+Oh, boy! I learned a few things tonight!
+
+My plan was to make the next update combat focused; I was planning to add the ability to fight against teachers, and add “sanity-based killing animations” – in order words, the lower your sanity, the more prolonged and brutal your killing animations would be.
+
+I believed that I had all of the assets required to implement the new sanity-based combat system, but now that I’ve had a chance to review all of the animations that were delivered to me, I’ve come to realize that a few adjustments are required.
+
+I feel 100% satisfied with the “short, bladed weapon” animations and circular saw animations, but I feel that the “long, blunt weapon” animations need some improvement. I’ve also learned that some of the “long, bladed weapon” animations use incorrect timing and will require adjustments. As a result, I can’t implement the sanity-based combat animations at this point in time. I can write the code and set up the system, but without a complete set of all required animations, the system can’t go live.
+
+So, when will I have improved “long, blunt weapon” animations and fixed katana animations? It’s difficult to say; the animation volunteers have lives of their own. They have jobs, school, family, et cetera. I’ll just have to wait patiently until they become available to help me out.
+
+On the plus side, I don’t think there is anything stopping me from adding the ability to fight back against teachers. I can also use this time to work on the rival introduction video. I can also use this time to implement Matchmaking.
+
+In short, the new sanity-based combat system won’t be implemented as soon as I hoped it would, since I need to wait for animation adjustments. However, I’m still going to write the code for the new system, so that it can be activated as soon as I get the new assets. Additionally, the development of other new features will continue at full speed.
+
+Thank you for your patience, and thank you for following the development of Yandere Simulator!

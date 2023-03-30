@@ -1,0 +1,19 @@
+CNET
+
+Microsoft has rolled out a major new update for Windows 10 that's causing headaches for some users.
+
+Pushed out last Wednesday, a major update for Windows 10 dubbed KB3081424 is designed as a cumulative update, which means it incorporates all of the bug fixes previously released for the new OS. But KB3081424 is proving itself to be buggy.
+
+After the update fails to install properly the first time around, Windows 10 tries to roll it back as is standard procedure. But since the update is automated and forced, Windows tries to install it again after rebooting, causing a loop of reboots for some users. Writer Adrian Kingsley-Hughes of CNET sister site ZDNet wrote about his travails trying to install the update on Sunday and getting stuck in a series of reboots. I installed the update on Sunday, but it ran smoothly on my Windows 10 Lenovo laptop. So as usual, the problem seems to affect only a certain percentage of users.
+
+The glitch points out an inherent flaw in Microsoft's new policy of mandating that updates be installed in Windows 10. In previous versions of Windows, you had the choice of opting to have updates installed automatically or installing them yourself, or not installing them at all. So the control was in your hands. But for Windows 10, Microsoft made the decision to force updates on users, so each update is going to install whether you want it or not. This policy is clearly designed to try to protect users by making sure all Windows 10 PCs have the latest bug fixes and security patches. The problem, as seen in this case, is that some updates themselves are buggy. So forcing updates on Windows 10 users is a policy with definite pitfalls.
+
+Now playing: Watch this: Windows 10 settings you should change right now
+
+On a Microsoft Windows forum, other users wrote about their trouble trying to install the update. One user said the update fails and the PC reboots every single time. Another person tried to manually install the update rather than waiting for Windows to install it but ran into the same glitch.
+
+The cause of the problem, according to a Saturday article from Forbes, is a bad entry in the Registry, which is the viewable and editable database for virtually all key Windows settings. After failing, the initial installation writes a bad entry to the Registry that prevents further attempts to reinstall the update correctly. Forbes suggests a workaround to the problem, which is also documented on the Windows forum thread.
+
+The temporary fix involves deleting certain keys in the Registry to get rid of the bad entry and then letting the update try again. Those of you skilled and comfortable working with the Registry may be fine attempting this procedure, making sure that you back up the associated Registry keys before you delete them. Those of you not familiar or comfortable working with the Registry should probably hold off until Microsoft comes out with an official fix.
+
+Microsoft did not immediately response to CNET's request for comment.

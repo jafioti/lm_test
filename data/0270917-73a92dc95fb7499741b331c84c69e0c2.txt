@@ -1,0 +1,167 @@
+This week I decided to do some work with the Project Honey Pot http:bl API. I have been using this mostly as part of other scripts used to gather information from logs.This API was rather interesting as it is a DNS query rather than the normal URL/HTTP methods I have been working with.
+
+“Project Honey Pot is a web-based honeypot network, which uses software embedded in web sites to collect information about IP addresses used when harvesting e-mail addresses for spam or other similar purposes such as bulk mailing and e-mail fraud. The project also solicits the donation of unused MX entries from domain owners.” -Wikipedia
+
+I would suggest reading the Terms of Service if you plan on using this API for any production systems, or any kind of dynamic blocking:
+
+The code can be found on Pastebin here
+
+Or on my Github here
+
+
+
+#https://www.projecthoneypot.org/faq.php
+
+function Get-projecthoneypot() {
+
+#https://www.projecthoneypot.org/terms_of_service_use.php
+
+Param(
+
+[Parameter(Mandatory = $true)][string]$ip,
+
+[AllowEmptyString()]$api_key="<YOUR API KEY HERE>"
+
+)
+
+$ip_arr = $ip.split(".")
+
+[array]::Reverse($ip_arr)
+
+$ip = $ip_arr -join(".")
+
+$query = $api_key+ "." + "$ip" + ".dnsbl.httpbl.org"
+
+try {
+
+$response = [System.Net.Dns]::GetHostAddresses("$query") | select -expandproperty IPAddressToString
+
+} catch {
+
+return $false
+
+}
+
+$decode = $response.split(".")
+
+if($decode[0] -eq "127") {
+
+$days_since_last_seen = $decode[1]
+
+$threat_score = $decode[2]
+
+switch ($decode[3]){
+
+0 { $meaning = "Search Engine"}
+
+1 { $meaning = "Suspicious"}
+
+2 { $meaning = "Harvester"}
+
+3 { $meaning = "Suspicious & Harvester"}
+
+4 { $meaning = "Comment Spammer"}
+
+5 { $meaning = "Suspicious & Comment Spammer"}
+
+6 { $meaning = "Harvester & Comment Spammer"}
+
+7 { $meaning = "Suspicious & Harvester & Comment Spammer"}
+
+default {$meaning = "Unknown"}
+
+}
+
+$return_obj = [PSCustomObject] @{
+
+last_seen = $days_since_last_seen
+
+threat_score = $threat_score
+
+meaning = $meaning
+
+}
+
+return $return_obj
+
+} else {
+
+return “Illegal response”
+
+}
+
+}
+
+To break down the function a little bit to the interesting tid bits there is the DNS query:
+
+
+
+$ip_arr = $ip.split(".")
+
+[array]::Reverse($ip_arr)
+
+$ip = $ip_arr -join(".")
+
+$query = $api_key+ "." + "$ip" + ".dnsbl.httpbl.org"
+
+try {
+
+$response = [System.Net.Dns]::GetHostAddresses("$query") | select -expandproperty IPAddressToString
+
+} catch {
+
+return $false
+
+}
+
+
+
+The api wants each bit of information broken down as a subnet. First I break the ipv4 address into an array, reverse the order. So 192.168.0.1 becomes 1.0.168.192.
+
+We then combine the api key to the front of the query. So if your apikey is 12345abcdef your dns query looks like 123456abcdef.1.0.168.192 Then to hit the correct the dns servers we add the FQDN: 123456abcdef.1.0.168.192.dnsbl.httpbl.org the dns server will then respond with an IP.
+
+The response from the honeypot API DNS servers is the form of an Ip address. Always starting with 127 we can confirm the query is correct and then move on to the next octet:
+
+
+
+$decode = $response.split(".")
+
+if($decode[0] -eq "127") {
+
+$days_since_last_seen = $decode[1]
+
+$threat_score = $decode[2]
+
+switch ($decode[3]){
+
+0 { $meaning = "Search Engine"}
+
+1 { $meaning = "Suspicious"}
+
+2 { $meaning = "Harvester"}
+
+3 { $meaning = "Suspicious & Harvester"}
+
+4 { $meaning = "Comment Spammer"}
+
+5 { $meaning = "Suspicious & Comment Spammer"}
+
+6 { $meaning = "Harvester & Comment Spammer"}
+
+7 { $meaning = "Suspicious & Harvester & Comment Spammer"}
+
+default {$meaning = "Unknown"}
+
+}
+
+
+
+The second octet is the number of days since a qualifying incident caused the ip to be logged.
+
+The third octet is the score the system gives the ip as a threat level. The level goes from 0 to 255. 255 being the highest threat. The system qualifies threat by a variety of methods.
+
+The final octet is the behavior the project spotted from the IP.
+
+That is all for this week. Thanks for reading.
+
+Sharing is caring!

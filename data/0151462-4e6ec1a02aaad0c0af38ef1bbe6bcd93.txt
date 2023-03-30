@@ -1,0 +1,55 @@
+July 4th weekend is fast approaching, and we hope you've begun planning for the festivities. Over here, we've begun preparations ourselves, along with the latest community highlights and dev Q&A!
+
+Battle Hero of the week
+
+Most "High Caliber" Medals Earned
+
+XBOX: steroidkakrot with a total of 66 Medals earned!
+
+PS4: MJcyz04 with a total of 49 Medals earned!
+
+Clan HeroeS
+
+Xbox
+
+7F with a clan average of 1,069!
+
+-RC with a clan average of 1,061!
+
+TNG- with a clan average of 1,029!
+
+HTB with a clan average of 1,028!
+
+PG with a clan average of 1,006!
+
+PS4
+
+1R with a clan average of 1,042!
+
+ENS with a clan average of 1,015!
+
+W with a clan average of 987!
+
+SAS_ with a clan average of 982!
+
+SOLO with a clan average of 980!
+
+DEV Q&A
+
+Will you offer the "Shark" T7 Combat Car to other players as well?
+
+We'll have to think up something fun to tie into it. Suggestions are always welcome.
+
+Will we ever have large scale matches (30vs30 on dedicated maps)?
+
+We've been playing it on PC in the test, and it's really interesting. We'll have to evaluate the possibility of supporting it once we upgrade to the version of the server that has it.
+
+When will the Update 3.8 audio issues be fixed?
+
+We're trying to do a mid-version patch for audio but it was too complex. Fixes will be applied in Update 3.9 which is currently in testing.
+
+Will we see functioning lights on tanks?
+
+We've tested that out already and got it working, but we're not that happy with the results of 60 lights bouncing around, and there were performance implications if the tanks got too close to each other. It's something we hope to revisit one day.
+
+battle heroes

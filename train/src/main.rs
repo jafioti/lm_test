@@ -23,7 +23,7 @@ use rand_distr::Distribution;
 
 // Training
 const BATCH_SIZE: usize = 12;
-const BATCH_ACCUM: (usize, usize) = (40, 40);
+const BATCH_ACCUM: (usize, usize) = (4, 4);
 const MAX_TRAIN_SEQ_LEN: usize = 128;
 const LR: (f32, f32) = (6e-4, 6e-4);
 
@@ -36,31 +36,23 @@ const HEADS: usize = 8;
 
 fn main() {
     let mut train_dataset = simple_openwebtext(
-        "/home/jafioti/Datasets/openwebtext",
-        1_500_000,
-        5_500_000,
+        "../data",
+        1_000,
+        5_000,
         MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
     let mut test_dataset = simple_openwebtext(
-        "/home/jafioti/Datasets/openwebtext",
+        "../data",
         0,
-        10_000,
+        1_000,
         MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
-    // let mut test_dataset = wikitext103(
-    //     "/home/jafioti/Datasets/WikiText/wikitext-103/wiki.test.tokens",
-    //     0,
-    //     usize::MAX,
-    //     MAX_TRAIN_SEQ_LEN,
-    //     BATCH_SIZE,
-    // );
     let dev: Cuda = Default::default();
     let mut model =
         Model::<30528, EMBED_DIM, FF_DIM, LAYERS, HEADS, MAX_SEQ_LEN>::build_on_device(&dev);
 
-    model.load("../checkpoints/step_138240000.npz").unwrap();
     let mut opt = Adam::new(
         &model,
         AdamConfig {
@@ -160,7 +152,7 @@ fn train_epoch<
         let flat_vec: Vec<usize> = input.into_iter().flatten().collect();
         let input = dev
             .tensor_from_vec(flat_vec, (batch_size, seq_len))
-            .trace_into(gradients.take().unwrap_or_else(|| model.alloc_grads()));
+            .traced(gradients.take().unwrap_or_else(|| model.alloc_grads()));
 
         // Run through model
         let output = match model.try_forward(input) {
@@ -207,7 +199,9 @@ fn train_epoch<
                 if let Err(e) = opt.update(model, &grads) {
                     println!("{} {e:?}\n", "Update Error:".bold().red());
                 }
-                model.zero_grads(&mut grads);
+                if let Err(e) = model.try_zero_grads(&mut grads) {
+                    println!("{} {e:?}\n", "Zero Grads Error:".bold().red());
+                }
                 gradients = Some(grads);
             }
             loss_accum = 0.;
@@ -428,7 +422,7 @@ fn simple_openwebtext(
         // Unzip inputs and targets
         .map(|indexes: Vec<(Vec<usize>, Vec<usize>)>| indexes.into_iter().unzip());
 
-    Dataloader::new(pipeline).load_block_size(10_000)
+    Dataloader::new(pipeline).load_block_size(1_000)
 }
 
 struct OpenWebTextLoader {
@@ -570,22 +564,13 @@ fn vec_one_hot_encode<const V: usize, E: Dtype + Float, D: Device<E>>(
     dev.try_tensor_from_vec(data, (batch_size, seq_len, Const::<V>))
 }
 
-pub fn try_cross_entropy_with_logits_loss<
-    Ax: dfdx::shapes::Axes,
-    S,
-    E: Dtype,
-    D: Device<E>,
-    T: Tape<E, D>,
->(
+pub fn try_cross_entropy_with_logits_loss<S: Shape, E: Dtype, D: Device<E>, T: Tape<E, D>>(
     logits: Tensor<S, E, D, T>,
     target_probs: Tensor<S, E, D>,
-) -> Result<Tensor<Rank0, E, D, T>, D::Err>
-where
-    S: Shape<LastAxis = Ax> + ReduceShape<Ax>,
-{
-    let last_axis_numel = E::from_usize(<S as HasAxes<Ax>>::size(logits.shape())).unwrap();
+) -> Result<Tensor<Rank0, E, D, T>, D::Err> {
+    let last_axis_numel = E::from_usize(<S as HasAxes<S::LastAxis>>::size(logits.shape())).unwrap();
     logits
-        .try_log_softmax::<Ax>()?
+        .try_log_softmax::<S::LastAxis>()?
         .try_mul(target_probs)?
         .try_mean()?
         .try_negate()?

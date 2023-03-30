@@ -1,0 +1,270 @@
+The Second Dream has Arrived!
+
+The monumental update is finally here - The Second Dream introduces the first cinematic Quest which answers the question many players have been asking for nearly three years; "What is a Warframe?"
+
+The new Ivara Warframe, Sortie Missions, Conclave expansion, a host of new weapons and accessories, and so much more are also live!
+
+See what our Devs have to say about this extensive new update:
+
+New Cinematic Quest: The Second Dream
+
+The Sentient Hunhow has enlisted the Stalker to destroy the Tenno by exploiting a long forgotten secret. A secret that cuts to the heart of what it means to be a Tenno.
+
+The Second Dream is available to all players who have completed the Quest: Natah.
+
+24-Hour Code Rewards
+
+If you entered the 24-hour codes on our teaser website, the below are the free rewards for each corresponding day! Please note: The rewards will show up in your inbox upon login, no action is required. Please note that this is for PC Tenno redemption only for now:
+
+Day 1: Kubrow Egg
+
+Day 2: 5x Uncommon Fusion Cores
+
+Day 3: 3-Day Credit Booster
+
+Day 4: Orokin Catalyst Blueprint
+
+Day 5: Orokin Reactor Blueprint
+
+Day 6: 5x Rare Fusion Cores
+
+BONUS PRIZE: If you’ve inputted all 6 codes successfully, you get the new Stalker Noggle Statue!
+
+New Tileset: Orokin Moon
+
+What we know of the Moon is a mystery, and entering its halls requires the completion of The Second Dream Quest.
+
+Master the Seven Principles on the Orokin Moon
+
+The Halls of Ascension are tightly wound into the fabric of known Orokin civilization. Uncover secrets along your path across the moon. Challenge yourself in seven unique rooms across seven principles for new unique Mod rewards. The measure by which the Orokin were judged will now put you to the test.
+
+New Warframe: Ivara
+
+With her quiver of tactical arrows, this huntress prowls unseen and strikes without warning.
+
+Ivara’s Abilities are as follows:
+
+• Quiver - Cycle through and shoot one of four tactical arrows:
+
+o Cloak Arrow: Creates a defensive bubble that cloaks allies and shields them from attacks.
+
+o Dashwire Arrow: Fires a zipline.
+
+o Slumber Arrow: Induces a temporary slumber in target.
+
+o Noise Arrow: Creates a noise at the point of impact to attract enemies.
+
+• Navigator - Assume control of a projectile and guide it to its targets.
+
+• Prowl - Become invisible, steal loot from unsuspecting enemies then go on the offensive with increased headshot damage.
+
+• Artemis Bow - Summon a mighty bow and unleash a volley of devastating arrows.
+
+
+
+Obtain Ivara today through the Market or through Easy, Medium and Hard Spy missions!
+
+New Weapons and Stances
+
+• War: The Stalker’s sword as bestowed on him by the Sentient Hunhow.
+
+• Rubico: Scope out the enemy with this long-range revolver style rifle.
+
+• Talons: The claws of these tactical bombs dig into the target and detonate on command.
+
+• Lacera: In the practiced hands of a master this blade and whip weapon becomes exceedingly devastating.
+
+• An additional weapon may be hidden within the Second Dream.
+
+• New Single-Sword Stance: Vengeful Revenant! Hate... Dread... Despair…!
+
+
+
+New Enemies
+
+Sentient forces have appeared, but more are obscured from our sensors. Players can discover more about these ancient enemies in the Second Dream Quest.
+
+Login Reward System Update
+
+• The Login Reward System has been given a total overhaul, and will now give players increasingly valuable rewards with each daily login.
+
+• Logins are tracked cumulatively, and players will not be penalized for missing any number of logins.
+
+• Players with a higher Mastery Rank will have increased chance to receive rare (or more valuable) rewards.
+
+• Each level of Mastery Rank will provide a 5% increase to obtaining improved rewards.
+
+• Login Rewards are randomly generated.
+
+• The following unique weapon has been added to the Login Reward System:
+
+o Azima: This unconventional machine pistol packs a deadly surprise. (Note: This weapon is a day 100 Login Reward Exclusive)
+
+
+
+Sniper Rifle Revisions
+
+The following changes have been made to all Sniper Rifles:
+
+• Sniper Rifles now have a variable zoom that can be adjusted in two ways:
+
+o Firstly, your right mouse button is a 'held' aim.
+
+o Secondly, your middle-mouse button (alt-fire) adjusts zoom levels.
+
+• Each level of zoom will provide a stat bonus that is applied to each shot. These bonuses are specific to each Sniper Rifle and will be indicated in the scope.
+
+• Successive kills with a Sniper Rifle will apply toward a combo counter, which will apply a damage bonus for each successive kills.
+
+• The Sniper Rifle’s combo counter will reset after a period of delay, or when the player misses their next shot.
+
+• Sniper Rifle scopes have received a visual overhaul.
+
+
+
+Sortie Missions
+
+Sortie Missions are now available for all Tenno Mastery Rank 4 or higher!
+
+• Sortie Missions are difficult endgame Missions for experienced Tenno that can be completed alone or with a group.
+
+• Each Sortie Mission will have its own unique requirements or enemy modifiers, favoring Tenno that have a versatile arsenal.
+
+• Players can access Sortie Missions through the Sortie Icon through the upper right hand corner of the World State Window in Navigation.
+
+• Sortie Missions will change daily, and players must complete all three connected Missions to receive a reward from that Season’s pool.
+
+• Each Sortie Season will last for a period of 15 days before cycling in a new Season with an updated loot table.
+
+• Players can review the rewards for the current Season in the World State Window.
+
+• Please note: Sorties must be played in order and all three missions must be completed to receive a reward!
+
+
+
+New Game Mode and Reward Changes:
+
+• Infested Excavation - this popular game mode can now be played against Infested enemies and can be found on the following nodes:
+
+o Earth, Tikal
+
+o Europa, Cholistan
+
+o Phobos, Zeugma
+
+o Venus, Malva
+
+o Pluto, Hieracon
+
+• Many Survival and Excavation missions have been rebalanced so that the mission rewards match the difficulty of the mission, the enemies spawned are appropriately challenging, and the enemy level scaling is consistent. This includes tuning such as reducing caps of Sapping Osprey, and ensuring similar leveled nodes have a similarly difficult mix of enemies.
+
+o Malva, Wahiba, Elara, and Piscinas went from 'Easy' rewards to 'Medium'.
+
+o Cameria, Cassini, and Selkie went from 'Hard' rewards to 'Medium'.
+
+o Lillith, Wendell, and Zeugma went from 'Medium' rewards to 'Hard'.
+
+• Tuned Energy Cell Carrier spawn-rates to be similar for all Excavation missions.
+
+• Adjusted rewards for Excavation and Survival missions to replace over-popular Mods with credit bundles.
+
+• Dark Sector Survival and Dark Sector Excavation missions reward tables have been updated to better match regular missions, including the addition of Void Sabotage Keys and Fusion Core bundles.
+
+• T4 Keys have been added to reward tables for the following missions:
+
+o Eris, Zalba
+
+o Pluto, Hieracon
+
+o Ceres, Gabii
+
+• There is now a 30-Second window in Interception missions once you've intercepted the message to kill all enemies and collect loot. Once this 30 seconds is up, you'll be prompted by the Reward screen. This should prevent progression stoppers in Rounds where the game thinks there are enemies left.
+
+
+
+New Cosmetics
+
+• Salix Syandana: Ivara’s cocoon-like Syandana.
+
+• Pakal Syandana: Formed from the bones of Sentient fighters and given to the Stalker by Hunhow.
+
+• Pakal Stalker Armor: Formed from the bones of Sentient fighters and given to the Stalker by Hunhow.
+
+• Pakal Kubrow Armor: Pakal style armor, fashioned for a Kubrow.
+
+• Scimitar Sotz Skin: Cast the Stalker’s caustic shadow across the Scimitar with this skin.
+
+
+
+Revive 2.0
+
+• Players now have 4 Revives available per Mission. Returning to your Landing Craft will refresh all Revives between missions.
+
+• Players can no longer purchase Revives in the Arsenal.
+
+• Revives used in Missions will cost experience for each Revive used. This feature is currently disabled, but will be activated in a future Update.
+
+
+
+Additions
+
+• New Landing Craft: Scimitar
+
+o Scimitar: This blade-like landing craft is armed with Barrage Air Support. Find the Scimitar in the Market today!
+
+• Simulacrum Arsenal: Players can now adjust their Warframe loadouts while in the Simulacrum for more efficient testing.
+
+• The Simulacrum has been given a visual overhaul!
+
+• Maroo’s Bazaar: Found on Earth, Maroo’s Bazaar is a place where players can go to trade or advertise their goods.
+
+o Players can set themselves available for a trade openly by selecting the ‘Trade’ option above the Emote wheel when in the Relay’s Concourse. Selecting this option again will make you no longer available for trade.
+
+o Players can initiate a trade by focusing on the player they wish to trade with, and then selecting the ‘Trade’ option above their Emote wheel.
+
+o One player must make themselves available to trade in order to initiate a trade.
+
+o Normal trade limitations are still in place for Trades done through Maroo’s Bazaar.
+
+• Clan Warlords can now downsize the tier of their Clans. Do this by visiting your Dojo!
+
+• Trinity’s skirt has been given its own physics!
+
+• Lotus VO has been added to inform players when a fellow Tenno is downed and in need of Reviving!
+
+• Foundry Rush costs will now offer a scaled Rush Platinum price once an item reaches 50% craft completion.
+
+
+
+Rhino Changes:
+
+The following changes have been made to Rhino, and are available for all players immediately:
+
+• Rhino has been given a passive: Heavy Impact!
+
+• Rhino Charge has received the following changes:
+
+o Rhino Charge can now gore enemies caught in his path!
+
+o Rhino Charge now has a re-cast combo counter (mechanically identical to Valkyr's Ripline and Atlas' Landslide).
+
+o Duration mods no longer affect Rhino's Charge.
+
+o Range mods will now affect Rhino Charge's distance.
+
+o Rhino Charge’s distance is now based on his ability combo counter.
+
+o Rhino Charge will now result in a Blast proc on targets if Iron Skin is active while Charging.
+
+o Rhino Charge will deal double damage against targets affected by Rhino Stomp.
+
+• Iron Skin has received the following changes:
+
+o Iron Skin has damage absorb period at beginning and is affected by armor, like Snow Globe and Tectonics.
+
+• Rhino Stomp has received the following changes:
+
+o Fixed 'double getup' when enemies affected by Rhino Stomp get ragdolled.
+
+o Rhino Stomp is recastable now and picks up new enemies in range.
+

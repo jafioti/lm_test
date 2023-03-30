@@ -1,0 +1,9 @@
+BruControl is software to monitor, control, and automate small scale process machinery. It was designed for breweries, but can be used for many other applications such as food processing, manufacturing, home automation, or industrial control systems.
+
+BruControl utilizes readily available, user-supplied micro-controller boards such as Arduinos to serve as a control system’s input and output “interface”. BruControl can work with one or more of these interfaces, connected locally via USB or remotely via Ethernet or Wi-Fi network to control multiple machines or systems simultaneously.
+
+BruControl has a touchscreen-friendly user interface which is intuitive and flexible and uses configurable graphical elements to represent physical devices, timers, alarms, graphs, user controls, etc. Systems can be built in stages without the constraints of a dedicated hardware system.
+
+BruControl can be used simply as a digital control panel, replacing physical indicators, switches, and discreet hardware controls, or as a multi-tasking automated logic controller via its rich yet simple script language.
+
+BruControl requires no programming knowledge or additional software installation and supports a broad range of inputs, outputs, and algorithms, including digital, analog, PWM, counter, hysteresis, duty cycle, approach logic, PID, and special digital devices such as 1-wire and RTD temperature, local LCD displays, and others.

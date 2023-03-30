@@ -1,0 +1,7 @@
+A programming language is Turing complete if it equivalent to a Turing machine. In practice, it means that any algorithm can be implemented. Most programming languages are Turing complete, including SQL, ECMAScript, Java, C, and so on. For years, I have been telling my students that CSS is not Turing complete.
+
+Maybe I need to change my story. Apparently, HTML5 + CSS3 is now also Turing complete because it can be used to program a Rule 110 automaton. I have not yet had time to investigate further. Does it rely on specific features of CSS3 and HTML5? Were previous versions of HTML+CSS also Turing complete?
+
+On Wikipedia, there is a nice story about how when Matthew Cook proved that Rule 110 was Turing complete, Wolfram Research, the egotistical company behind Mathematica, censored the proof using a court order. Cook apparently had the last laugh, as his proof is now available online. What kind of idiotic company uses court orders to censor the publication of a purely mathematical theorem?
+
+Source: Thanks to Jakob Voß for the pointer.

@@ -1,0 +1,735 @@
+Important Notes:
+
+1) I am an Olympus Malaysia employee.
+
+2) This is a user experience based approach review of a camera. I spent considerable amount of time shooting, and I am writing this blog review based on that shooting experience, with plenty of sample photographs to show and support my findings.
+
+3) This is not a full technical analysis review site. There are many of such sites out there, I am not equipped with sufficient expertise and equipment to perform elaborate technical tests.
+
+4)I may be biased (who isn't?) but that does not mean I cannot shoot photographs, share them, and write about my experience using the camera, all which are still valid. Do not just rely solely on my review alone, there will be plenty others available for you to make a more rounded conclusion.
+
+5) All images were shot in RAW and converted to JPEG directly via Olympus Viewer 3 software. Very minimal post-processing were applied (minor exposure compensation, white balance tweak, etc).
+
+6) Important image parameters: White Balance Auto (warm color off), Sharpness, Contrast, Saturation = 0, Noise Filter = OFF, Gradation = Normal
+
+
+
+
+
+Today, Olympus is launching the new Olympus OM-D E-M10 Mark II, the second generation of the premium compact E-M10 series in the OM-D system line-up.
+
+
+
+
+
+The OM-D series is aimed at professional and serious enthusiasts wanting more from their camera and expect the best of the best that the system can offer. Characteristics that define an OM-D include large Electronic Viewfinder (EVF), powerful image stabilization system, DSLR like controls and features (twin dials, plenty of shortcut customizeable function buttons, good ergonomics and handling etc), high performance in terms of AF speed/camera response, as well as the final image quality results delivered by the camera. E-M1 and E-M5 series are weather-sealed, while the E-M10 series, including the new E-M10 Mark II is not. It is crucial to note that the OM-D E-M10 Mark II is not a direct replacement of E-M10, and sits comfortably between E-M5 Mark II and E-M10.
+
+
+
+
+
+The key highlights of the OM-D E-M10 Mark II:
+
+I like the new design of the E-M10 Mark II. It looks cleaner, simpler and more straight to the point. I'd pick silver if I were to choose one.
+
+The first thing you will notice that made E-M10 Mark II stood out from all other OM-D cameras is the dial knob designs. The knobs are thicker, with rougher texturing all around, and this is also on the Mode Dial as well. The dials are almost built "on top" of the camera top plate, which made them look like large, dialable buttons. The shutter button is placed directly on top of the front dial. I like how the Mode Dial is placed close together with the two main control dials, so that I can see and control everything in the same spot, rather than having to move my fingers elsewhere.
+
+The power button is also redesigned, and has a stiffer clutch to it. You will need to assert significant amount of force to turn the power on and off, which would prevent accidental switching when the camera is in the bag. Another interesting observation is that, you will need to turn the camera on to be able to raise the built in pop up flash (rotate counter-clockwise to power on from off, and the rotate further along the same direction to raise the pop up flash). This also prevents the built in flash from being accidentally raised up. Very clever design I must say.
+
+
+
+
+
+I treasure the beefier thumb-hook, which added a good amount of thickness to the overall hand-holding of E-M10 Mark II. The resting of thumb area helped stabilize the camera better, and improved the handling of the E-M10 Mark II significantly.
+
+
+
+
+
+
+
+
+
+IMAGE QUALITY
+
+
+
+
+
+Let us get the obvious stuff out of the way.
+
+
+
+
+
+During the course of shooting with the E-M10 Mark II and coming home with hundreds (possibly more than a thousand) photographs of various photography subjects, scrutinizing the images at different ISO settings and lighting conditions, I can safely say that the image quality from the E-M10 Mark II is similar to E-M5 Mark II/E-M1. Considering the E-M10 Mark II is sharing the same sensor as the E-M5 Mark II, with similar image processing engine Truepic 7, there is no noticeable improvement (if there is any) in the E-M10 Mark II.
+
+
+
+
+
+Nonetheless, the E-M10 Mark II is not created to replace or surpass the E-M1 or the E-M5 Mark II, hence we should not be expecting it to do so. While competing manufacturers have released newer cameras with newer and improved image sensor with dramatically increased image quality, the E-M10, priced lower than the higher end range of cameras, delivers head to head with what the competitors at the similar range can offer. It is also true that the 16MP image sensor is getting old, and the good news of a new sensor used in the Panasonic GX8 brought hope of better performing image sensor. I personally would expect such sensor, or even a better one, to be fitted in the coming successors of E-M1 or E-P5 (whenever they will happen).
+
+
+
+
+
+Since the image quality is the same, I did my image quality tests slightly differently this time. Instead of using all the high performing lenses, such as PRO lenses and the super sharp prime lenses all the time, I purposely decided to use the most basic of all Olympus M.Zuiko lenses as my primary set up: the original ket lens, M.Zuiko 14-42mm F3.5-5.6 EZ Pancake Zoom lens, as well as the versatile, and budget friendly M.Zuiko 40-150mm F4-5.6 R lens. I have used these two lenses on the E-M10 Mark II for the majority of the images shown in this blog review entry. I have also used M.Zuiko 25mm F1.8, 45mm F1.8 and 75mm F1.8, in situations when I do need the larger aperture (eg, low light).
+
+
+
+
+
+As expected from OM-D Image Quality, the 16MP sensor may be old now, but still delivers. I was pleased to see the detail rich results, beautiful colours and good contrast in the photographs. Even by using merely the kit lens and the basic telephoto zoom lens, I was able to produce excellent results.
+
+
+
+
+
+45mm f1.8 lens, 1/640sec, F1.8, ISO400
+
+40-150mm R lens, 150mm, 1/20sec, F5.6, ISO1600
+
+This image was taken at full zoom 150mm, at 1/20sec hand-held. The 5-Axis Image Stabilization works well in long telephoto shots.
+
+Crop from previous image
+
+40-150mm R lens at 116mm, 1/200sec, F5.3, ISO1600
+
+Crop from previous image. Even at ISO1600, the fine details are fully intact.
+
+
+
+
+
+
+
+
+
+CAMERA HANDLING
+
+
+
+
+
+There is an external grip ECG-3 which is built specifcically for the E-M10 Mark II, which adds beefier hand gripping area, suitable for larger hands, or if you are handling larger and heavier lenses. Adding the ECG-3, you get better stability and more comfortable handling, this is in fact a highly recommended add-on accessory if you intend to shoot long hours with the E-M10 Mark II.
+
+
+
+
+
+here and here. Considering I was using mostly the 14-42mm EZ and 40-150mm R lenses, I decided NOT to use the ECG-3 grip. I want to experience how the handling of the original camera without the additional grip is. To do that I purposefully shoot insect macro, the worst torture test for camera handling. In case you do not know how I shoot my insect macro, I hold the camera with lens attached on my right hand, shooting single handedly, while my left hand is holding the external flash with a diffuser attached. For full information about my macro shooting techniques please read the blog entriesand
+
+
+
+
+
+For the macro shots, instead of just using all M.Zuiko 60mm F2.8, I intentionally shot quite a few insects with the mere M.Zuiko 14-42mm EZ kit lens, with the Macro Converter MCON-P02 attached. For higher magnification photographs, I used the venerable 60mm f2.8 macro lens, and this was my ultimate test for camera handling.
+
+
+
+
+
+Tian Chad, an awesome photography blogger who helped shoot this behind the scene image. Thanks toan awesome photography blogger who helped shoot this behind the scene image.
+
+
+
+
+
+Tian Chad. Another shot taken by
+
+
+
+
+
+
+
+
+
+The handling of the E-M10 Mark II is surprisingly good. It is noticeably better than the original older E-M10. I remember I did try shooting macro with the old E-M10 once, which I forgot to bring out the ECG-1 (external camera grip for the older E-M10) and it was NOT a comfortable shooting experience, and I struggled in balancing the lens and camera while executing my single handed shooting technique on the insect macro shots. This did not happen when I was using the E-M10 Mark II. On the whole, everything felt more balanced and I can hold the camera steadier this time. Even without the aid of the external grip!
+
+
+
+
+
+I believe it has something to do with the raised shutter button The position of the shutter button in the E-M10 Mark II is higher (by at least a few centimeters) than the older E-M10, and also the the "thumb-hook" is beefier. The added width and depth for thumb-resting area added much needed grip, in combination with the earlier mentioned higher position of the shutter button, somehow worked. This is extremely difficult to describe but you just have to hold BOTH E-M10 and E-M10 Mark II together, side by side and you will immediately tell the big difference in terms of handling. It may not look obvious, but once the camera is in your hand you can immediately feel the effect. And yes, all the subsequent macro photographs were taken with the E-M10 Mark II without the added ECG-3 grip.
+
+
+
+
+
+In comparison with all OM-D cameras, I would rank E-M1 to be the best in terms of ergonomics and handling, followed by E-M5 Mark II together with E-M10 Mark II. Both felt good, but not as good as the E-M1 with significantly beefier hand-holding area. However it is also worth noting that E-M1 is also larger and heavier than the other two cameras.
+
+
+
+
+
+60mm Macro lens , 1/100sec, F5.6, ISO200
+
+
+
+
+
+14-42mm EZ lens, 42mm, 1/100sec, F7.1, ISO500
+
+
+
+
+
+60mm Macro lens at full 1:1 magnification, 1/125sec, F11, ISO200, Wireless Flash used
+
+60mm Macro lens at 1:1 magnification, 1/125sec, F10, ISO200, Wireless Flash used
+
+60mm Macro lens at 1:1 Magnification, 1/125sec, F13, ISO200, Wireless Flash Fired
+
+60mm Macro lens at 1:1 magnification, 1/125sec, F123, ISO200, Wireless Flash fired
+
+
+
+
+
+60mm macro lens at 1:1 magnification, 1/160sec, F13, ISO200, Wireless Flash fired
+
+I know this dragon fly eye shot is getting redundant after so many times I have done so, hence no 100% crop for this time. We shall do 100% crop on other subjects.
+
+
+
+
+
+
+
+
+
+The camera handles well for general shooting conditions, besides macro. I have brought the camera out for several days of shooting. For a full day outing, from early morning till late night, I never felt that the camera was a burden. The fact that the camera was small and light allowed it to be carried around easily. I felt no strain on my neck or shoulder (I use the provided default strap) and I did not feel any pain in my wrist either. I used the smaller lenses which match the size of the E-M10 Mark II camera of course.
+
+
+
+
+
+THE ELECTRONIC VIEWFINDER
+
+
+
+
+
+I used the EVF for 80% of my shooting, and I find it to be large, comfortable and very useful. The colours look a little different than the older LCD panels used for all OM-D EVF before. The colours are more vivid, but not to the overly saturated point. While shooting insect macro, the EVF was crisp and clear enough for me to judge areas in focus while I was pulling off full 1:1 magnification.
+
+
+
+
+
+S-OVF - SIMULATED OPTICAL VIEWFINDER
+
+
+
+
+
+There are two additions of new features to the new Electronic Viewfinder, though not revolutionary, may work well to improve overall shooting experience. These two features were implemented in response to what the users/photographers have requested.
+
+
+
+
+
+In my initial coimments on the electronic viewfinder implementation in my E-M5 Review 3 years ago, I did mention that at times I do wish I have an optical viewfinder, an ability to actually see what my eyes see, not what the camera sees. Yes, the new "what you see is what you get", previewing the end results of the images even before pressing the shutter button can help mitigating and minimizing the mistakes in exposure and white balance settings, and have saved many lives (including my own), helpful in so many situations. However, the electronic viewfinder always appear too bright, vivid and processed, that when you pull your eyes away from the viewfinder, the reality as your eyes see it suddenly appear less dramatic, with duller colour and darker overall appearance.
+
+
+
+
+
+There are also situations when exposure and white balance is not the priority, but seeing what is happening is crucial. When I am in a dark environment, say a pub or bar, I want to know that the scene is actually dark, and be able to respond to that accordingly, rather than the super bright result which the LCD screen or electronic viewfinder provideds. Hence the Simulated OVF is a new option that simulates as closely as what the eyes can see in real life. That includes the colors as seen with naked eye, which I find can be quite a good experience. Often one main issue is that when photographers view through electronic viewfinder they see corrected white balance, thus looking natural and disconnected from what they were shooting. The S-OVF shows very close to the colors before the white balance correction, as well as the brightness/darkness of the ambient conditions.
+
+
+
+
+
+If you do not like this, it can be turned off, and the S-OVF can be assigned to one of the many shortcut buttons.
+
+
+
+
+
+When did I choose to use the S-OVF function? I activated it throughout my insect macro shooting session. It is one scenario when I do not need "what you see is what you get", and by using flash the live preview of exposure was not needed (at F13, 1/160 seconds, ISO200, the live preview will give a difficult to see dark image). Hence I have always mentioned I preferred an optical viewfinder when shooting insect macro with extreme magnification, and the S-OVF worked well in this regard.
+
+
+
+
+
+AF TARGETING PAD
+
+
+
+
+
+
+
+
+
+
+
+
+
+Normally when shooting through the EVF, the back LCD screen will be switched off (either automatically by eye sensor, or you have to switch to EVF manually). Now you can make full use of the LCD screen even while shooting with the electronic viewfinder. Enabling the AF targeting pad, you can use the back LCD screen to change focusing points while shooting through the EVF. You can use your finger to trace along the screen to move the focusing points around the frame.
+
+
+
+
+
+The main purpose of having this feature is to minimize pulling away from framing through the EVF, hence having less chance of missing a shot while shooting.
+
+
+
+
+
+14-42mm EZ lens at 42mm, 1/40sec, F5.6, ISO1600
+
+14-42mm EZ lens at 42mm, 1/250sec, F5.6, ISO200
+
+
+
+
+
+14-42mm EZ at 20mm, 1/50sec, F4.1, ISO400
+
+14-42mm EZ lens at 1/60sec, F5.6, ISO200
+
+25mm F1.8 lens, 1/125sec, F2.8, ISO200
+
+40-150mm R lens at 62mm, 1/320sec, F6.3, ISO200
+
+
+
+
+
+
+
+
+
+5-AXIS IMAGE STABILIZATION: POWERFUL AND USEFUL
+
+
+
+
+
+In comparison to the older E-M10 (3-Axis IS), the new E-M10 Mark II is a huge upgrade when it comes to the built in body image stabilization system, which stabilizes in full 5-Axis. I am sure many will ask if the image stabilization is similar to the E-M1 or E-M5 Mark II. In the official specification sheets, the E-M5 Mark II has full 5 Steps EV stabilization, while the E-M10 Mark II, though having 5-Axis IS as well, is rated at 4 Steps EV compensation. There is that one step EV difference. However, to be entirely honest, when I was out shooting and torturing the camera, deliberately slowing down the shutter speed, I did not particularly notice any difference, or lacking of stabilization than what I experienced previously shooting with the E-M5 Mark II. The E-M10 Mark II may not be as powerful on paper but in piratical shooting conditions, it was more than sufficient.
+
+
+
+
+
+I tested the Image Stabilization in all 4 areas of critical shooting conditions that require extra steadying of the camera: long telephoto zoom shooting (I shot hand-held the opening Owl shot at full 150mm with 1/20sec shutter speed), Macro/Close up shooting (plenty of samples, you will know how bad the shake is at 1:1 magnification), night scenes especially city skyline, and slow shutter creative shots (eg panning, slow motion blur shots, etc).
+
+
+
+
+
+One important aspect of the 5-Axis Image Stabilization I did not test in this blog review is the use in Movie Recording. I understand that the 5-Axis Image Stabilization works just as well as the E-M5 Mark II, providing smooth, shake-free, cinematic quality movie recording without the aid of any stabilization equipment or rigs, and everything done fully hand-held. I acknowledge my own shortcoming when it comes to video recording, which is not exactly my forte, and whatever I am doing in showing the capabilities of the video recording may not be the best representative of what the camera can do. Thus, I shall leave the movie recording part of those who know what they are doing.
+
+
+
+
+
+OM-D MOVIE on E-M10 Mark II
+
+Speaking of video recording, I shall describe based on my limited experience shooting video with the camera and my understanding of the product. The video specifications are very similar to E-M5 Mark II, having multi framerate options 24p, 25p, 30p, 50p and 60p recording in full 1080 HD quality. The 5-Axis Image Stabilization works just as well as the E-M5 Mark II, with similar video output. However, the E-M10 Mark II is missing audio input, as well as audio output for monitoring purpose.
+
+
+
+
+
+Coming back to what the 5-Axis Image Stabilization can do for still shooting, I was impressed, and it almost felt like I was using either the E-M1 or E-M5 Mark II.
+
+
+
+
+
+How important is image stabilization?
+
+
+
+
+
+To me, powerful IS is very important, as most of my shooting needs are hand-held. I can understand if you shoot mostly in studio with tripod setup, or landscape shooters with tripod and long exposure shooting. For many photographers who move with minimal gear setup, like myself, who almost never brought along a tripod, having powerful IS can help stabilize my shots, without having to worry about too slow of shutter speed, or need to bump up ISO settings unnecessarily. Having steady shots at slower shutter and keeping the ISO lower both work hand in hand in producing better quality image quality! Once you have experienced how effective and beneficial the 5-Axis Image Stabilization is, there is no turning back. It just works so well it has become an integral part of what creates great image quality.
+
+
+
+
+
+14-42mm EZ at 28mm, 1/15sec, F10, ISO200
+
+14-42mm EZ at 1/10sec, F3.5, ISO200
+
+Crop from previous image
+
+14-42mm EZ at 14mm, 1/2sec, F5.6, ISO400
+
+14-42mm EZ at 14mm, 1/2sec, F3.5, ISO400
+
+Crop from previous image
+
+25mm F1.8 lens, 1/10sec, F5.6, ISO640
+
+Crop from previous image
+
+45mm F1.8 lens, 1/8sec, F11, ISO3200
+
+Crop from previous image
+
+
+
+
+
+AUTOFOCUS PERFORMANCE
+
+
+
+
+
+The AF was fast, responds immediately, and I never had any issues with fast click to capture situations. I did not test the continuous AF, and I only use Single-AF, which worked for me in most situations. I do not observe any improvements in terms of speed over E-M5 Mark II or E-M1.
+
+
+
+
+
+PACKED WITH FEATURES, FEATURES AND MORE FEATURES
+
+
+
+
+
+The thing about Olympus OM-D system is that the cameras may look small, light-weight, and we expect the OM-D to deliver fast performance and high image quality. However, it is often overlooked that in comparison to competitors, Olympus offers a long list of photography features, creative shooting options, and some one of its kind capabilities, unique shooting functions. I am listing the features/shooting functions down, as far as I can remember:
+
+
+
+
+
+Live Time/Live Bulb
+
+the ability to preview long exposure shooting on your live view LCD screen, as the image develops during shooting. very useful tool for light painting.
+
+
+
+
+
+Live Composite
+
+Image stacking done in camera, and previewed live on LCD screen as it happens, much like live time/bulb
+
+
+
+
+
+Live View Boost 2
+
+Even in near pitch darkness, as shooting the night sky, the stars are visible when this setting is enabled, allowing for easy composition even in very dark situations.
+
+
+
+
+
+Built in Wifi
+
+For remote control of the camera via smart devices, and quick transfer of images
+
+
+
+
+
+Art Filter
+
+Olympus were the pioneers of Art Filters, which is popularized by Instagram filters now.
+
+
+
+
+
+Color Creator
+
+Built in color selector, for creative control and effects.
+
+
+
+
+
+Highlight & Shadow Control
+
+Ability to tweak highlight and shadow of the S-Cirve live while shooting
+
+
+
+
+
+Tilt Screen with Touch AF Shutter
+
+Not a unique feature now as many cameras have tilt or swivel screen now, but the touch AF is still the fastest and most responsive in class, and can be very useful in many situations.
+
+
+
+
+
+Built in Wireless TTL Flash Control
+
+The intenal flash built into the E-M10 Mark II serves as a commander for multiple wireless external flash units, with full TTL capabilities. In fact, the opening product photographs of the E-M10 Mark II were shot with multiple wireless flash set up, creating a mini studio effect.
+
+
+
+
+
+SSWF (Super Sonic Wave Filter) Dust Reduction
+
+Amongst many cameras Olympus boasts to have the best SSWF dust filter on sensor.
+
+
+
+
+
+RAW Converter built into camera
+
+Olympus already has ability to convert RAW files inside the camera since many years ago. Some other manufacturers only started to include this.
+
+
+
+
+
+Optimized JPEG Output
+
+Olympus has been known to have the one of the best JPEG engines, producing optimized images, corrected from lens flaws (distortion, colour aberrations, softness due to diffraction correction, compensation of sharpness for different lenses, etc).
+
+
+
+
+
+Full electronic shutter (silent mode), and first curtain electronic shutter options
+
+The full electronic shutter can be enabled for fully quiet operation, and first curtain electronic shutter to mitigate shutter shock issue.
+
+
+
+
+
+Having all the features packed into such a small camera makes it more than just an ordinary camera, it can do a lot more than most other cameras in the similar class.
+
+
+
+
+
+14-42mm EZ lens at 35mm, 1/13sec, F5.6, ISO320
+
+14-42mm EZ lens at 31mm, 1/10sec, F5.6, ISO400
+
+14-42mm EZ at 42mm, 1/25sec, F5.6, ISO1250
+
+
+
+
+
+OLYMPUS M.ZUIKO 14-42mm F3.5-5.6 EZ
+
+
+
+
+
+I have shot so much with this kit lens 14-42mm EZ pancake zoom lens I can do a whole separate review just for this lens alone.
+
+
+
+
+
+The lens, designed to be super slim, compact and light, is the perfect companion to the E-M10 Mark II. The size fits the camera perfectly, making the camera and lens combo a truly compact and portable system.
+
+
+
+
+
+A kit lens is still a kit lens, and these days, with the internet screaming everyone to upgrade to better lenses, The kit lens has always been neglected. I always find it sad when this happens, especially to many people who are very new to photography, who has not much experience handling the camera and immediately decided the kit lens is not good enough and jumped into more expensive lenses.
+
+
+
+
+
+For learning photographers, even hobbyst like myself I have no issues picking up the kit lens and shoot. This may go against what Olympus and many other manufacturers who will pressure you to buy and upgrade to more expensive lenses, but I do believe a kit lens is a good lens. Especially this M.Zuiko 14-42mm EZ lens, I am perfectly happy with the image quality. Combining the capabilities of the 5-Axis Image Stabilization and high ISO shooting, I am quite pleased with the results of the lens. The images come out sharp and detailed. The versatility to zoom from 14mm to 42mm made it such a useful lens in many situations.
+
+
+
+
+
+Yes, we will all upgrade and buy better lenses at some point, but to many first time system camera users (upgrades from compact or smartphone camera) please do not give up on the kit lens too soon. It is a wonderful lens, capable of delivering great results, and a good point to start photography from.
+
+
+
+
+
+If you do not believe me, then take a look at this blog entry and see that most of the images were taken with the 14-42mm EZ lens. Yes, some even in very dimly lit situations!
+
+
+
+
+
+
+
+
+
+HIGH ISO SHOOTING WITH E-M10 MARK II
+
+
+
+
+
+One of the main questions that many will ask would be how the camera performs in dimly lit situations. Yes the E-M10 Mark II can shoot in low light, in fact it can deliver good results, up to ISO6400. I will shoot up to ISO3200 comfortably and stretch to ISO6400 without hesitation if needed, but would not go further than that. The high ISO capability is closely similar to what I have expected from the E-M5 Mark II. The chroma (colour) noise is well supressed even at higher ISO settings, but details started to degrade dramatically from ISO6400 onward.
+
+
+
+
+
+I shot these Marvel Hero legos (fake ones) in a very dark cafe. It was so dim that even at ISO6,400, with widest open aperture of F5.6 for 42mm tele end of the kit lens, I can only get about 1/20seconds shutter speed. As usual, for my high ISO tests, I did not just shoot my subjects at ordinary conditions and raise the ISO numbers unnecessarily. I test my subjects in rather difficult lighting situations and use the high ISO numbers accordingly.
+
+
+
+
+
+14-42mm EZ lens at 42mm, 1.6sec, F5.6, ISO200
+
+Starting image, at ISO200, raised incrementally up to ISO12800, as compiled in the collages below.
+
+
+
+
+
+
+
+
+
+The color integrity is well maintained up to ISO6400, with minimal desaturation occurring. The colors appear duller/less saturated in ISO12800 image, but almost no color shift or color bleeding. Fine details are very good even at ISO3200, but dropped noticeably at ISO6400. Images are soft and noise is destructive at ISO12800.
+
+
+
+
+
+Yes Olympus OM-D may not be a champion when it comes to high ISO shooting, but having a wide range of F1.8 prime lenses (with f1.4 and F1.2 offerings from Panasonic which are fully compatible), shooting at ISO3200 and occasionally ISO6400, there is rarely a need to go beyond what the system can do. Surely, if you have to push further, the Micro Four Third system at this time is not for you.
+
+
+
+
+
+I am perfectly happy with what the camera can do at high ISO. For my shooting needs? More than sufficient I dare day.
+
+
+
+
+
+Ariff AB performing at Gaslight Cafe at Plaza Damansara. That place was seriously dark! Perfect location to test out the E-M10 Mark II and push the ISO. I went to shootperforming at. That place was seriously dark! Perfect location to test out the E-M10 Mark II and push the ISO.
+
+
+
+
+
+25mm F1.8 lens, 1/6sec, F1.8, ISO3200
+
+
+
+
+
+25mm F1.8 lens, 1/20sec, F5.6, ISO6400
+
+Crop from previous image
+
+25mm F1.8 lens, 1/50sec, F1.8, ISO12800
+
+
+
+
+
+25mm F1.8 lens, 1/80sec, F1.8, ISO6400
+
+25mm F1.8 lens, 1/80sec, F1.8, ISO6400
+
+75mm F1.8 lens, 1/80sec, F1.8, ISO6400
+
+25mm F1.8 lens, 1/80sec, F1.8, ISO6400
+
+
+
+
+
+As I was shooting the acoustic solo performance by the amazing Ariff AB, I decided to use "Silent Shutter" mode, enabling the full electronic shutter. The environment was quiet, even with the soft mechanical shutter sound of the E-M10 Mark II, it would have been a distraction as I was shooting. The silent shutter worked well and I can continue shooting without worrying about contributing the sound pollution.
+
+
+
+
+
+
+
+
+
+25mm F1.8 lens, 1/6sec, F4, ISO6400
+
+
+
+
+
+As usual, for your pixel-peeping pleasures, you may download full resolution of selected images (18 in total) from this entry at the following link. The images for download are almost straight out of camera, with JPEG converted directly from Olympus Viewer 3 with no further adjustments.
+
+
+
+
+
+What I liked about E-M10 Mark II
+
+Felt like a mini E-M5 Mark II, similar AF performance, image quality, and overall features
+
+Powerful and effective 5-Axis Image Stabilization
+
+Feature Packed, High Performing camera, in a small, light package
+
+Improved handling and ergonomics, better than the older E-M10
+
+Superb value for money!
+
+
+
+
+
+What I wish can be improved
+
+Poor overall battery life. I can shoot about 300 shots on a single battery charge. The battery life is even poorer than the older E-M10.
+
+The OLED electronic viewfinder has unnatural colors. The colors look better in the older LCD EVF on E-M1/E-M5 Mark II which I prefer.
+
+Maximum mechanical shutter speed topped at 1/4000sec, instead of 1/8000sec.
+
+(note: if electronic shutter is used, maximum shutter speed is 1/16000sec)
+
+I hope this would be the last camera from Olympus using the same old image sensor.
+
+I can understand generally some people will not be satisfied with similar image quality as older cameras, though the OM-D image quality is still very good by today's standards.
+
+
+
+
+
+
+
+
+
+Using the E-M10 Mark II to me felt like I was using the older, more expensive E-M5 Mark II, minus a few features (weather sealing, 40MP high res shot, swivel screen, and 1/8000sec mechanical shutter). You get similar image quality, camera performance, and basically all the unique and useful shooting functions. E-M10 Mark II now has 5-Axis Image Stabilization which benefits both image and video recording, In short, I would describe the E-M10 Mark II as a camera that can do anything a mid-level APS-C DSLR can do (low light shooting, interchangeable lens, rendering shallow depth of field, having large viewfinder, good handling and controls), with added bonus of powerful image stabilization system and packed with long list of useful shooting features.
+
+
+
+
+
+If you are looking for top of the line Full Frame DSLR image quality (shooting at ridiculously high ISO numbers) then this OM-D E-M10 Mark II is not the right camera for you, and was never intended to fit into that category. E-M10 Mark II may not qualify to be in the race of Megapixels and high ISO wars which are going rampant these days, but it is also a camera that will not fail you in almost all shooting conditions (except a few extreme cases). I would rather have a reliable camera that works well and deliver with confidence, exactly what E-M10 Mark II is.
+
+
+
+If you want to get a mid level DSLR or mirrorless system camera with advanced shooting features and high performance, the E-M10 mark II should sit very high in your list of considerations.
+
+
+
+
+
+Do you have any requests or specific tests of the E-M10 Mark II you wish me to perform? Please do not hesitate to voice out. I should be able to do something this weekend. Nothing video related though, I am not the right person for the job when it comes to video.
+
+Olympus OM-D E-M10 Mark II is available from B&H here.
+
+Please support by blog by liking and following me on my Facebook Page. lympus OM-D E-M10 Mark II is available from
+
+Continuing the tradition of the OM-D strength, now the E-M10 Mark II has 5-Axis Image Stabilization, much like the elder siblings E-M5 Mark II and E-M1. The Image Stabilization works in both still and movie recordings.E-M10/E-M10 Mark II is the smallest of the OM-D series, but still fully built in metal body and high grade material.E-M5 Mark II and E-M1 share the same LCD viewfinder (0.74x magnification), but the E-M10 Mark II is slightly smaller at 0.62x, with high resolution of 2.36 Million Dots and 100% frame coverage.Olympus AF system has been known to be super fast and accurate and this continues in the E-M10 Mark II. The E-M10 Mark II also uses the similar image sensor and processing engine (Truepic 7) as the E-M5 Mark II, so I am expecting the camera to deliver very similar image quality.Art Filters, HDR Mode, Color Creator, etcFor full specifications please visit the official product
