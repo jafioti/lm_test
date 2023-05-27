@@ -4,7 +4,7 @@ use rand_distr::uniform::SampleUniform;
 use dfdx::{
     nn::modules::*,
     shapes::Dtype,
-    tensor::{DeviceStorage, PutTape, SplitTape},
+    tensor::{PutTape, SplitTape, Storage},
     tensor_ops::{Device, TryAdd},
 };
 
@@ -81,7 +81,7 @@ pub struct TransformerEncoderBlock<
     const FF_DIM: usize,
     const MAX_LEN: usize,
     E: Dtype,
-    D: DeviceStorage,
+    D: Storage<E>,
 > {
     pub self_attn: MultiHeadAttention<MODEL_DIM, NUM_HEADS, MAX_LEN, MODEL_DIM, MODEL_DIM, E, D>,
     pub norm1: LayerNorm1D<MODEL_DIM, E, D>,
@@ -98,7 +98,9 @@ where
     E: Dtype + Float + SampleUniform,
 {
     type To<E2: Dtype, D2: Device<E2>> = TransformerEncoderBlock<M, H, F, MAX_LEN, E2, D2>;
-    fn iter_tensors<V: ModuleVisitor<Self, E, D>>(visitor: &mut V) -> Result<Option<Self::To<V::E2, V::D2>>, V::Err> {
+    fn iter_tensors<V: ModuleVisitor<Self, E, D>>(
+        visitor: &mut V,
+    ) -> Result<Option<Self::To<V::E2, V::D2>>, V::Err> {
         visitor.visit_fields(
             (
                 Self::module("self_attn", |s| &s.self_attn, |s| &mut s.self_attn),
@@ -106,7 +108,12 @@ where
                 Self::module("ff", |s| &s.ff, |s| &mut s.ff),
                 Self::module("norm2", |s| &s.norm2, |s| &mut s.norm2),
             ),
-            |(self_attn, norm1, ff, norm2)| TransformerEncoderBlock {self_attn, norm1, ff, norm2}
+            |(self_attn, norm1, ff, norm2)| TransformerEncoderBlock {
+                self_attn,
+                norm1,
+                ff,
+                norm2,
+            },
         )
     }
 }

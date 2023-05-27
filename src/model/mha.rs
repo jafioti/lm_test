@@ -64,7 +64,7 @@ pub struct MultiHeadAttention<
     const K_DIM: usize,
     const V_DIM: usize,
     E: Dtype,
-    D: DeviceStorage,
+    D: Storage<E>,
 > {
     pub w_q: UnbiasedLinear<EMBED_DIM, K_DIM, E, D>,
     pub w_k: UnbiasedLinear<EMBED_DIM, K_DIM, E, D>,
@@ -87,39 +87,52 @@ where
 {
     type To<E2: Dtype, D2: Device<E2>> = MultiHeadAttention<M, H, MAX_LEN, K, V, E2, D2>;
 
-    fn iter_tensors<W: ModuleVisitor<Self, E, D>>(visitor: &mut W) -> Result<Option<Self::To<W::E2, W::D2>>, W::Err> {
+    fn iter_tensors<W: ModuleVisitor<Self, E, D>>(
+        visitor: &mut W,
+    ) -> Result<Option<Self::To<W::E2, W::D2>>, W::Err> {
         visitor.visit_fields(
             (
                 Self::module("w_q", |s| &s.w_q, |s| &mut s.w_q),
                 Self::module("w_k", |s| &s.w_k, |s| &mut s.w_k),
                 Self::module("w_v", |s| &s.w_v, |s| &mut s.w_v),
                 Self::module("w_o", |s| &s.w_o, |s| &mut s.w_o),
-                Self::tensor("biases", |s| &s.biases, |s| &mut s.biases, TensorOptions::detached(|t| {
-                    let mut mask = vec![E::zero(); H * MAX_LEN * MAX_LEN];
-                    let ratio = 2_f32.powf(-(2_f32.powf(-((H as f32).log2() - 3.))));
-                    for h in 0..H {
-                        // ALiBi
-                        let m = -ratio.powi(h as i32 + 1); // Negative to apply minus mask
-                        for i in 0..MAX_LEN {
-                            for j in 0..i {
-                                mask[h * MAX_LEN * MAX_LEN + i * MAX_LEN + j] =
-                                    E::from_f32((i as f32 - j as f32).abs() * m).unwrap();
+                Self::tensor(
+                    "biases",
+                    |s| &s.biases,
+                    |s| &mut s.biases,
+                    TensorOptions::detached(|t| {
+                        let mut mask = vec![E::zero(); H * MAX_LEN * MAX_LEN];
+                        let ratio = 2_f32.powf(-(2_f32.powf(-((H as f32).log2() - 3.))));
+                        for h in 0..H {
+                            // ALiBi
+                            let m = -ratio.powi(h as i32 + 1); // Negative to apply minus mask
+                            for i in 0..MAX_LEN {
+                                for j in 0..i {
+                                    mask[h * MAX_LEN * MAX_LEN + i * MAX_LEN + j] =
+                                        E::from_f32((i as f32 - j as f32).abs() * m).unwrap();
+                                }
+                            }
+
+                            // Causal
+                            for i in 0..MAX_LEN {
+                                for j in i + 1..MAX_LEN {
+                                    mask[h * MAX_LEN * MAX_LEN + i * MAX_LEN + j] = -E::infinity();
+                                }
                             }
                         }
+                        t.copy_from(&mask);
 
-                        // Causal
-                        for i in 0..MAX_LEN {
-                            for j in i + 1..MAX_LEN {
-                                mask[h * MAX_LEN * MAX_LEN + i * MAX_LEN + j] = -E::infinity();
-                            }
-                        }
-                    }
-                    t.copy_from(&mask);
-
-                    Ok(())
-                }))
+                        Ok(())
+                    }),
+                ),
             ),
-            |(w_q, w_k, w_v, w_o, biases)| MultiHeadAttention { w_q, w_k, w_v, w_o, biases},
+            |(w_q, w_k, w_v, w_o, biases)| MultiHeadAttention {
+                w_q,
+                w_k,
+                w_v,
+                w_o,
+                biases,
+            },
         )
     }
 }
@@ -164,22 +177,19 @@ where
         let v = self
             .w_v
             .try_forward(v.retaped::<T>())?
-            .try_reshape_like(&(s2, H, V / H))
-            .unwrap()?
+            .try_reshape_like(&(s2, H, V / H))?
             .try_permute::<_, Axes3<1, 0, 2>>()?;
 
         let k = self
             .w_k
             .try_forward(k.retaped::<T>())?
-            .try_reshape_like(&(s2, H, K / H))
-            .unwrap()?
+            .try_reshape_like(&(s2, H, K / H))?
             .try_permute::<_, Axes3<1, 2, 0>>()?;
 
         let q = self
             .w_q
             .try_forward(q)?
-            .try_reshape_like(&(s1, H, K / H))
-            .unwrap()?
+            .try_reshape_like(&(s1, H, K / H))?
             .try_permute::<_, Axes3<1, 0, 2>>()?;
 
         // Get weights
@@ -187,19 +197,19 @@ where
         let weights = q
             .try_matmul(k)?
             .try_mul(scalar)?
-            .try_add(self.biases
-                .clone()
-                .try_slice((.., ..s1.size(), ..s2.size()))?
-                .realize::<(usize, S1, S2)>()
-                .unwrap())?
+            .try_add(
+                self.biases
+                    .clone()
+                    .try_slice((.., ..s1.size(), ..s2.size()))?
+                    .realize::<(usize, S1, S2)>(),
+            )?
             .try_softmax::<Axis<2>>()?;
 
         // Get new tokens
         let tokens = weights
             .try_matmul(v)?
             .try_permute::<_, Axes3<1, 0, 2>>()?
-            .try_reshape_like(&(s1, Const::<V>))
-            .unwrap()?;
+            .try_reshape_like(&(s1, Const::<V>))?;
 
         self.w_o.try_forward(tokens)
     }
@@ -250,22 +260,19 @@ where
         let v = self
             .w_v
             .try_forward(v.retaped::<T>())?
-            .try_reshape_like(&(b, s2, H, V / H))
-            .unwrap()?
+            .try_reshape_like(&(b, s2, H, V / H))?
             .try_permute::<_, Axes4<0, 2, 1, 3>>()?;
 
         let k = self
             .w_k
             .try_forward(k.retaped::<T>())?
-            .try_reshape_like(&(b, s2, H, K / H))
-            .unwrap()?
+            .try_reshape_like(&(b, s2, H, K / H))?
             .try_permute::<_, Axes4<0, 2, 3, 1>>()?;
 
         let q = self
             .w_q
             .try_forward(q)?
-            .try_reshape_like(&(b, s1, H, K / H))
-            .unwrap()?
+            .try_reshape_like(&(b, s1, H, K / H))?
             .try_permute::<_, Axes4<0, 2, 1, 3>>()?;
 
         // Get weights
@@ -278,7 +285,6 @@ where
                     .clone()
                     .try_slice((.., ..s1.size(), ..s2.size()))?
                     .realize::<(usize, S1, S2)>()
-                    .unwrap()
                     .try_broadcast_like(&(b, H, s1, s2))?,
             )?
             .try_softmax::<Axis<3>>()?;
@@ -287,8 +293,7 @@ where
         let tokens = weights
             .try_matmul(v)?
             .try_permute::<_, Axes4<0, 2, 1, 3>>()?
-            .try_reshape_like(&(b, s1, Const::<V>))
-            .unwrap()?;
+            .try_reshape_like(&(b, s1, Const::<V>))?;
 
         self.w_o.try_forward(tokens)
     }

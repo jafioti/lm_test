@@ -25,7 +25,7 @@ pub struct LearnedPositionalEmbedding<
     const MAX_LEN: usize,
     const DIM: usize,
     E: Dtype,
-    D: DeviceStorage,
+    D: Storage<E>,
 > {
     /// Learned positonal embeddings
     pub weight: Tensor<Rank2<MAX_LEN, DIM>, E, D>,
@@ -47,7 +47,7 @@ impl<const MAX_LEN: usize, const DIM: usize, SEQ: Dim, D: Device<f32>, T: Tape<f
             .clone()
             .put_tape(tape)
             .try_slice((..input.shape().0.size(), ..))?
-            .realize::<(SEQ, Const<DIM>)>().unwrap()
+            .realize::<(SEQ, Const<DIM>)>()
             .try_add(input)
     }
 }
@@ -73,33 +73,35 @@ impl<
             .clone()
             .put_tape(tape)
             .try_slice((..input.shape().1.size(), ..))?
-            .realize::<(SEQ, Const<DIM>)>().unwrap()
+            .realize::<(SEQ, Const<DIM>)>()
             .try_broadcast_like(input.shape())?
             .try_add(input)
     }
 }
 
-impl<const V: usize, const M: usize, E: Dtype, D: DeviceStorage> NonMutableModule
+impl<const V: usize, const M: usize, E: Dtype, D: Storage<E>> NonMutableModule
     for LearnedPositionalEmbedding<V, M, E, D>
 {
 }
-
 
 impl<const C: usize, const M: usize, D: SampleTensor<f32> + Device<f32>> TensorCollection<f32, D>
     for LearnedPositionalEmbedding<C, M, f32, D>
 {
     type To<E2: Dtype, D2: Device<E2>> = LearnedPositionalEmbedding<C, M, E2, D2>;
-    fn iter_tensors<V: ModuleVisitor<Self, f32, D>>(visitor: &mut V) -> Result<Option<Self::To<V::E2, V::D2>>, V::Err> {
+    fn iter_tensors<V: ModuleVisitor<Self, f32, D>>(
+        visitor: &mut V,
+    ) -> Result<Option<Self::To<V::E2, V::D2>>, V::Err> {
         visitor.visit_fields(
-            Self::tensor("weight",
+            Self::tensor(
+                "weight",
                 |s| &s.weight,
                 |s| &mut s.weight,
                 TensorOptions::reset_with(|t| {
                     let b = 1. / (C as f32).sqrt();
                     t.try_fill_with_distr(Uniform::new(-b, b))
-                })
-            ), 
-            |weight| LearnedPositionalEmbedding {weight}
+                }),
+            ),
+            |weight| LearnedPositionalEmbedding { weight },
         )
     }
 }

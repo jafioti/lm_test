@@ -5,8 +5,8 @@ use dataflow_nlp::{
 use dfdx::prelude::*;
 
 use lm_test::{
-    bar::*,
     model::{BuiltModel, Model},
+    utils::*,
 };
 
 use crossterm::{

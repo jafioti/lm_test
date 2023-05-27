@@ -23,13 +23,13 @@ where
 }
 
 #[derive(Debug, Clone)]
-pub struct ReverseEmbedding<const VOCAB: usize, const DIM: usize, E: Dtype, D: DeviceStorage, I> {
+pub struct ReverseEmbedding<const VOCAB: usize, const DIM: usize, E: Dtype, D: Storage<E>, I> {
     /// Transposed weight matrix, shape (I, O)
     pub weight: Tensor<Rank2<VOCAB, DIM>, E, D>,
     pub inner: I,
 }
 
-impl<const V: usize, const M: usize, E: Dtype, D: DeviceStorage, I> NonMutableModule
+impl<const V: usize, const M: usize, E: Dtype, D: Storage<E>, I> NonMutableModule
     for ReverseEmbedding<V, M, E, D, I>
 {
 }
@@ -44,19 +44,23 @@ impl<
 {
     type To<E2: Dtype, D2: Device<E2>> = ReverseEmbedding<C, M, E2, D2, I::To<E2, D2>>;
 
-    fn iter_tensors<V: ModuleVisitor<Self, E, D>>(visitor: &mut V) -> Result<Option<Self::To<V::E2, V::D2>>, V::Err> {
+    fn iter_tensors<V: ModuleVisitor<Self, E, D>>(
+        visitor: &mut V,
+    ) -> Result<Option<Self::To<V::E2, V::D2>>, V::Err> {
         visitor.visit_fields(
             (
                 Self::module("inner", |s| &s.inner, |s| &mut s.inner),
-                Self::tensor("weight",
-                |s| &s.weight,
-                |s| &mut s.weight,
-                TensorOptions::reset_with(|t| {
-                    let b: E = E::ONE / E::from_usize(C).unwrap().sqrt();
-                    t.try_fill_with_distr(Uniform::new(-b, b))
-                }))
+                Self::tensor(
+                    "weight",
+                    |s| &s.weight,
+                    |s| &mut s.weight,
+                    TensorOptions::reset_with(|t| {
+                        let b: E = E::ONE / E::from_usize(C).unwrap().sqrt();
+                        t.try_fill_with_distr(Uniform::new(-b, b))
+                    }),
+                ),
             ),
-            |(inner, weight)| ReverseEmbedding {inner, weight}
+            |(inner, weight)| ReverseEmbedding { inner, weight },
         )
     }
 }
@@ -82,7 +86,7 @@ impl<
         let (input, tape) = input.split_tape();
         let embedded = self.weight.clone().put_tape(tape).try_gather(input)?;
         let output = self.inner.try_forward(embedded)?;
-        output.try_matmul(self.weight.clone().permute())
+        output.try_matmul(self.weight.clone().try_permute()?)
     }
 }
 
@@ -111,6 +115,6 @@ impl<
         let (input, tape) = input.split_tape();
         let embedded = self.weight.clone().put_tape(tape).try_gather(input)?;
         let output = self.inner.try_forward(embedded)?;
-        output.try_matmul(self.weight.clone().permute())
+        output.try_matmul(self.weight.clone().try_permute()?)
     }
 }
