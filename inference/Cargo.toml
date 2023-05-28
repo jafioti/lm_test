@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 lm_test = {path="../"}
-dataflow_nlp = "0.1.0"
+dataflow_nlp = {git="https://github.com/Sidekick-AI/dataflow", rev="c5a71b4a30ced7fc765977345d3c73bf89888b08"}
 
 # For interface
 tui = {version="0.19.0"}

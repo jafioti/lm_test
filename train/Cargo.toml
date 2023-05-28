@@ -7,8 +7,10 @@ edition = "2021"
 
 [dependencies]
 lm_test = {path="../"}
-dataflow = {git="https://github.com/Sidekick-AI/dataflow", rev="938220899eb6055dd35d85e468a2827a55f73a82"}
-dataflow_nlp = "0.1.0"
+#dataflow = {git="https://github.com/Sidekick-AI/dataflow", rev="c5a71b4a30ced7fc765977345d3c73bf89888b08"}
+#dataflow_nlp = {git="https://github.com/Sidekick-AI/dataflow", rev="c5a71b4a30ced7fc765977345d3c73bf89888b08"}
+dataflow = {path="../../../Documents/other/dataflow"}
+dataflow_nlp = {path="../../../Documents/other/dataflow/dataflow_nlp"}
 colored = "2.0.0"
 itertools = "0.10.5"
 num = "0.2.1"

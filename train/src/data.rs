@@ -1,8 +1,9 @@
 #![allow(unused)]
 
 use colored::Colorize;
-use dataflow::{dataloader::Dataloader, pipeline::*};
+use dataflow::prelude::*;
 use dataflow_nlp::{
+    pipelines::RandomLoader,
     tokenization::{Tokenizer, WordpieceTokenizer},
     vocab::{Vocab, WordPieceVocab},
 };
@@ -24,51 +25,60 @@ pub fn openwebtext(
     max_sequence_length: usize,
     batch_size: usize,
 ) -> Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)> {
-    let pipeline =
-    // Random loader from files
-    // OpenWebTextLoader::new(path, max_sequence_length, min_index, max_index)
-    RandomLoader::from_directory(path).min_index(min_index).max_index(max_index)
+    let pipeline = RandomLoader::from_directory(path)
+        .min_index(min_index)
+        .max_index(max_index)
         // Filter + tokenize + index
-        .node(Stateful::new(
-            (WordpieceTokenizer::load(), WordPieceVocab::load()),
-            move |strings: Vec<String>, (tokenizer, vocab)| {
-                // Filter / preprocess
-                let strings = strings.into_iter()
-                    .filter(|s| !s.is_empty() && !s.contains("\\00"))
-                    .map(|s| s.to_lowercase().replace(['\\', '/', '"'], "")).collect();
-                // Tokenize
-                let tokens = tokenizer.batch_tokenize(strings);
-                // Convert to indexes
-                let indexes = vocab.batch_indexes_from_tokens(&tokens).unwrap();
+        .chain(
+            Stateful::new(
+                (WordpieceTokenizer::load(), WordPieceVocab::load()),
+                move |strings: Vec<String>, (tokenizer, vocab)| {
+                    // Filter / preprocess
+                    let strings = strings
+                        .into_iter()
+                        .filter(|s| !s.is_empty() && !s.contains("\\00"))
+                        .map(|s| s.to_lowercase().replace(['\\', '/', '"'], ""))
+                        .collect();
+                    // Tokenize
+                    let tokens = tokenizer.batch_tokenize(strings);
+                    // Convert to indexes
+                    let indexes = vocab.batch_indexes_from_tokens(&tokens).unwrap();
 
-                indexes
-                    .into_iter()
-                    // Filter out sequences shorter than max_sequence_length
-                    .filter(|i| i.len() != max_sequence_length)
-                    // Sort
-                    .sorted_by_key(|a| a.len())
-                    // Batch
-                    .chunks(batch_size)
-                    .into_iter()
-                    .map(|batch| {
-                        // Limit the length of the vectors and pad out ones that need it
-                        let mut reference_length = 0;
-                        batch.map(|s| {
-                            if reference_length == 0 {
-                                reference_length = s.len().min(max_sequence_length + 1);
-                            }
-                            let mut seq = s[..reference_length].to_vec();
-                            seq.append(&mut vec![0; (reference_length).checked_sub(seq.len()).unwrap_or_default()]);
-                            (
-                                seq[..seq.len() - 1].to_vec(),
-                                seq[1..].to_vec()
-                            )
-                        }).collect()
-                    }).collect()
-            },
-        ).remaining(move |i| i / batch_size))
+                    indexes
+                        .into_iter()
+                        // Filter out sequences shorter than max_sequence_length
+                        .filter(|i| i.len() != max_sequence_length)
+                        // Sort
+                        .sorted_by_key(|a| a.len())
+                        // Batch
+                        .chunks(batch_size)
+                        .into_iter()
+                        .map(|batch| {
+                            // Limit the length of the vectors and pad out ones that need it
+                            let mut reference_length = 0;
+                            batch
+                                .map(|s| {
+                                    if reference_length == 0 {
+                                        reference_length = s.len().min(max_sequence_length + 1);
+                                    }
+                                    let mut seq = s[..reference_length].to_vec();
+                                    seq.append(&mut vec![
+                                        0;
+                                        (reference_length)
+                                            .checked_sub(seq.len())
+                                            .unwrap_or_default()
+                                    ]);
+                                    (seq[..seq.len() - 1].to_vec(), seq[1..].to_vec())
+                                })
+                                .collect()
+                        })
+                        .collect()
+                },
+            )
+            .remaining(move |i| i / batch_size),
+        )
         // Re-shuffle
-        .node(Shuffle::default())
+        .chain(Shuffle::default())
         // Unzip inputs and targets
         .map(|indexes: Vec<(Vec<usize>, Vec<usize>)>| indexes.into_iter().unzip());
     Dataloader::new(pipeline).load_block_size(100_000)
@@ -83,7 +93,7 @@ pub fn simple_openwebtext(
 ) -> Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)> {
     let pipeline = OpenWebTextLoader::new(path, sequence_length + 1, min_index, max_index)
         .map(|seq: Vec<usize>| (seq[..seq.len() - 1].to_vec(), seq[1..].to_vec()))
-        .node(Batch::new(batch_size))
+        .chain(Batch::new(batch_size))
         // Unzip inputs and targets
         .map(|indexes: Vec<(Vec<usize>, Vec<usize>)>| indexes.into_iter().unzip());
 
@@ -136,8 +146,7 @@ impl OpenWebTextLoader {
     }
 }
 
-impl Node for OpenWebTextLoader {
-    type Input = Vec<()>;
+impl Node<Vec<()>> for OpenWebTextLoader {
     type Output = Vec<Vec<usize>>;
 
     fn data_remaining(&self, _: usize) -> usize {
@@ -148,7 +157,7 @@ impl Node for OpenWebTextLoader {
         self.current_iter = 0;
     }
 
-    fn process(&mut self, input: Self::Input) -> Self::Output {
+    fn process(&mut self, input: Vec<()>) -> Self::Output {
         self.current_iter += input.len();
         let mut rng = thread_rng();
         input
@@ -170,9 +179,9 @@ pub fn wikitext103(
     // Random loader from files
     RandomLoader::new(&[path]).min_index(min_index).max_index(max_index)
         // Filter for length
-        .node(|lines: Vec<String>| lines.into_iter().filter(|i| i.len() > 100).collect::<Vec<_>>())
+        .chain(|lines: Vec<String>| lines.into_iter().filter(|i| i.len() > 100).collect::<Vec<_>>())
         // Filter + tokenize + index
-        .node(Stateful::new(
+        .chain(Stateful::new(
             (WordpieceTokenizer::load(), WordPieceVocab::load()),
             move |strings: Vec<String>, (tokenizer, vocab)| {
                 // Tokenize
@@ -208,8 +217,32 @@ pub fn wikitext103(
             },
         ).remaining(move |i| i / batch_size))
         // Re-shuffle
-        .node(Shuffle::default())
+        .chain(Shuffle::default())
         // Unzip inputs and targets
         .map(|indexes: Vec<(Vec<usize>, Vec<usize>)>| indexes.into_iter().unzip());
+    Dataloader::new(pipeline).load_block_size(100_000)
+}
+
+pub fn tinystories(
+    path: &str,
+    min_index: usize,
+    max_index: usize,
+    max_sequence_length: usize,
+    batch_size: usize,
+) -> Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)> {
+    let pipeline = RandomLoader::new(&[path])
+        .with_delimeter("<|endoftext|>".to_string())
+        // Tokenize
+        .chain(WordpieceTokenizer::load())
+        .filter(|line| line.len() >= 100)
+        .chain(WordPieceVocab::load())
+        .map(|seq: Vec<usize>| (seq[..seq.len() - 2].to_vec(), seq[1..].to_vec()))
+        // Batch
+        .chain(Batch::new(batch_size))
+        // Shuffle
+        .chain(Shuffle::default())
+        // Unzip inputs and targets
+        .map(|indexes: Vec<(Vec<usize>, Vec<usize>)>| indexes.into_iter().unzip());
+
     Dataloader::new(pipeline).load_block_size(100_000)
 }
