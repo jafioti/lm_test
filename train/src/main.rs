@@ -20,7 +20,7 @@ use rand_distr::Distribution;
 // Training
 const BATCH_SIZE: usize = 4;
 const BATCH_ACCUM: (usize, usize) = (1, 1);
-const MAX_TRAIN_SEQ_LEN: usize = 64;
+const MAX_TRAIN_SEQ_LEN: usize = 124;
 const LR: (f64, f64) = (6e-4, 6e-4);
 
 // Model
