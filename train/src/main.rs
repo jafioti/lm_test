@@ -18,13 +18,13 @@ use rand::{distributions::WeightedIndex, thread_rng};
 use rand_distr::Distribution;
 
 // Training
-const BATCH_SIZE: usize = 24;
+const BATCH_SIZE: usize = 4;
 const BATCH_ACCUM: (usize, usize) = (1, 1);
 const MAX_TRAIN_SEQ_LEN: usize = 64;
 const LR: (f64, f64) = (6e-4, 6e-4);
 
 // Model
-const LAYERS: usize = 8;
+const LAYERS: usize = 2;
 const MAX_SEQ_LEN: usize = 512;
 const EMBED_DIM: usize = 512;
 const FF_DIM: usize = EMBED_DIM * 4;
@@ -35,21 +35,21 @@ type Model = lm_test::model::Model<VOCAB, EMBED_DIM, FF_DIM, LAYERS, HEADS, MAX_
 type BuiltModel<E, D> = <Model as BuildOnDevice<D, E>>::Built;
 
 fn main() {
-    let mut train_dataset = data::simple_openwebtext(
-        "/home/jafioti/Datasets/openwebtext",
-        1_000,
-        100_000,
+    let mut train_dataset = data::tinystories(
+        "/Users/jafioti/Downloads/TinyStories-valid.txt",
+        0,
+        10_000,
         MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
-    let mut test_dataset = data::simple_openwebtext(
-        "/home/jafioti/Datasets/openwebtext",
+    let mut test_dataset = data::tinystories(
+        "/Users/jafioti/Downloads/TinyStories-valid.txt",
         0,
         1_000,
         MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
-    let dev: Cuda = Default::default();
+    let dev = Cpu::default();
     let mut model = Model::build_on_device(&dev);
 
     let mut opt = Adam::new(
@@ -115,7 +115,7 @@ fn main() {
             5,
         );
 
-        if let Err(e) = model.save(&format!("../checkpoints/epoch-{epoch}.npz")) {
+        if let Err(e) = model.save(format!("../checkpoints/epoch-{epoch}.npz")) {
             println!("{} {e:?}", "Error Saving Model:".bold().red());
         }
     }
@@ -145,10 +145,8 @@ where
     let mut loss_ema = ExponentialAverage::<f32>::new();
     let bar = train_progress_bar(dataset.len() as u64);
     let mut gradients = Some(model.alloc_grads());
-    let mut epoch_iter = 0;
     let mut loss_accum = 0.;
-    for ((input, target), left) in dataset.iter_len() {
-        epoch_iter += 1;
+    for (epoch_iter, ((input, target), left)) in dataset.iter_len().enumerate() {
         // Setup input
         let (batch_size, seq_len) = (input.len(), input[0].len());
         let flat_vec: Vec<usize> = input.into_iter().flatten().collect();
@@ -208,8 +206,8 @@ where
         }
 
         // Save every 10_000 steps
-        if epoch_iter % 10_000 == 0 {
-            if let Err(e) = model.save(&format!("../checkpoints/step_{}.npz", tensorboard.iter)) {
+        if epoch_iter % 10_000 == 0 && epoch_iter > 0 {
+            if let Err(e) = model.save(format!("../checkpoints/step_{}.npz", tensorboard.iter)) {
                 println!("{} {e:?}\n", "Error Saving Model:".bold().red());
             }
 

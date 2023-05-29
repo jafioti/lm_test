@@ -66,7 +66,7 @@ const HEADS: usize = 8;
 const MAX_TRAIN_SEQ_LEN: usize = 45;
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let dev: Cuda = Default::default();
+    let dev = Cpu::default();
     let mut model =
         Model::<30528, EMBED_DIM, FF_DIM, LAYERS, HEADS, MAX_SEQ_LEN>::build_on_device(&dev);
     model.load("../checkpoints/new_best.npz").unwrap();

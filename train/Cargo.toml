@@ -19,4 +19,4 @@ rand_distr = { version = "0.4.3", default-features = false, features = ["std_mat
 
 #dfdx = {path="../dfdx-even-newer", features=["cuda", "numpy", "safetensors"]}
 #dfdx = {path="../../dfdx-main", features=["cuda", "numpy", "safetensors"]}
-dfdx = {path="../../dfdx", features=["cudnn", "numpy", "f16"]}
+dfdx = {git="https://github.com/jafioti/dfdx", features=["numpy", "f16"]}

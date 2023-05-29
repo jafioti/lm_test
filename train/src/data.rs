@@ -231,14 +231,38 @@ pub fn tinystories(
     batch_size: usize,
 ) -> Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)> {
     let pipeline = RandomLoader::new(&[path])
+        .max_index(max_index)
+        .min_index(min_index)
         .with_delimeter("<|endoftext|>".to_string())
         // Tokenize
+        .map(|s: String| s.to_ascii_lowercase())
         .chain(WordpieceTokenizer::load())
-        .filter(|line| line.len() >= 100)
+        .filter(|line| line.len() >= 10)
+        .map(move |mut l: Vec<_>| {
+            l.truncate(max_sequence_length);
+            l
+        })
         .chain(WordPieceVocab::load())
-        .map(|seq: Vec<usize>| (seq[..seq.len() - 2].to_vec(), seq[1..].to_vec()))
+        .map(|mut s: Vec<usize>| {
+            s.push(1);
+            s
+        })
+        // Sort
+        .chain(|mut seqs: Vec<Vec<usize>>| {
+            seqs.sort_by_key(|s| s.len());
+            seqs
+        })
+        .map(|seq: Vec<usize>| (seq[..seq.len() - 1].to_vec(), seq[1..].to_vec()))
         // Batch
         .chain(Batch::new(batch_size))
+        .map(|mut batch: Vec<(Vec<usize>, Vec<usize>)>| {
+            let max_len = batch.iter().map(|(i, _)| i.len()).max().unwrap();
+            for (inp, trg) in &mut batch {
+                inp.append(&mut vec![0; max_len - inp.len()]);
+                trg.append(&mut vec![0; max_len - trg.len()]);
+            }
+            batch
+        })
         // Shuffle
         .chain(Shuffle::default())
         // Unzip inputs and targets
