@@ -45,7 +45,7 @@ fn main() {
     let mut test_dataset = data::tinystories(
         "/home/jafioti/Downloads/TinyStoriesV2-GPT4-valid.txt",
         0,
-        10_000,
+        usize::MAX,
         MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
@@ -121,7 +121,12 @@ fn main() {
     }
 }
 
-fn train_epoch<D: Device<f32>, O, L: Scheduler<f64>, A: Scheduler<usize>>(
+fn train_epoch<
+    D: Device<f32>,
+    O: Optimizer<BuiltModel<f32, D>, D, f32> + LearningRate,
+    L: Scheduler<f64>,
+    A: Scheduler<usize>,
+>(
     model: &mut BuiltModel<f32, D>,
     dataset: &mut Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)>,
     test_dataset: &mut Dataloader<(Vec<Vec<usize>>, Vec<Vec<usize>>)>,
@@ -132,14 +137,12 @@ fn train_epoch<D: Device<f32>, O, L: Scheduler<f64>, A: Scheduler<usize>>(
     tensorboard: &mut Tensorboard,
 ) -> f32
 where
-    D: Device<f32>,
     BuiltModel<f32, D>: Module<
             Tensor<(usize, usize), usize, D, OwnedTape<f32, D>>,
             Output = Tensor<(usize, usize, Const<VOCAB>), f32, D, OwnedTape<f32, D>>,
         > + Module<Tensor<(usize,), usize, D>, Output = Tensor<(usize, Const<VOCAB>), f32, D>>,
     Tensor<(), f32, D, OwnedTape<f32, D>>: AsArray<Array = f32>,
     Tensor<(), f32, D, NoneTape>: AsArray<Array = f32>,
-    O: Optimizer<BuiltModel<f32, D>, D, f32> + LearningRate,
 {
     let total_len = dataset.len();
     let mut loss_ema = ExponentialAverage::<f32>::new();
@@ -215,7 +218,7 @@ where
         }
 
         // Save every 10_000 steps
-        if epoch_iter % 10_000 == 0 && epoch_iter > 0 {
+        if epoch_iter % 1_000 == 0 && epoch_iter > 0 {
             if let Err(e) = model.save(format!("../checkpoints/step_{}.npz", tensorboard.iter)) {
                 println!("{} {e:?}\n", "Error Saving Model:".bold().red());
             }
@@ -246,7 +249,6 @@ fn test_epoch<D: Device<f32>>(
     dev: &D,
 ) -> f32
 where
-    D: Device<f32>,
     Tensor<(), f32, D, NoneTape>: AsArray<Array = f32>,
     BuiltModel<f32, D>: Module<
         Tensor<(usize, usize), usize, D, NoneTape>,
@@ -300,7 +302,6 @@ fn generate<D: Device<f32>>(
 ) where
     BuiltModel<f32, D>:
         Module<Tensor<(usize,), usize, D>, Output = Tensor<(usize, Const<VOCAB>), f32, D>>,
-    D: Device<f32>,
 {
     let (tokenizer, vocab) = (
         <WordpieceTokenizer as Tokenizer>::load(),

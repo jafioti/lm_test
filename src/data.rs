@@ -244,7 +244,7 @@ pub fn tinystories(
         })
         .chain(WordPieceVocab::load())
         .map(|mut s: Vec<usize>| {
-            s.push(1);
+            s.push(1); // EOS token
             s
         })
         // Sort
@@ -252,7 +252,7 @@ pub fn tinystories(
             seqs.sort_by_key(|s| s.len());
             seqs
         })
-        .map(|seq: Vec<usize>| (seq[..seq.len() - 1].to_vec(), seq[1..].to_vec()))
+        .map(|seq: Vec<_>| (seq[..seq.len() - 1].to_vec(), seq[1..].to_vec()))
         // Batch
         .chain(Batch::new(batch_size))
         .map(|mut batch: Vec<(Vec<usize>, Vec<usize>)>| {
