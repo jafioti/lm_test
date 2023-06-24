@@ -2,14 +2,15 @@
 name = "lm_test"
 version = "0.1.0"
 edition = "2021"
+default-run = "train"
 
-[workspace]
+[[bin]]
+name = "infer"
+path = "binaries/infer.rs"
 
-members = [
-    "train",
-    "inference",
-]
-
+[[bin]]
+name = "train"
+path = "src/train.rs"
 
 [dependencies]
 zip = "0.6.2"
@@ -21,7 +22,7 @@ lazy_static = "1.0"
 number_prefix = "0.4"
 console = { version = ">=0.9.1, <1.0.0", default-features = false }
 unicode-segmentation = { version = "1.6.0", optional = true }
-unicode-width = { version = "0.1.7", optional = true }
+unicode-width = "0.1.7"
 rayon = { version = "1.0", optional = true }
 tensorboard-rs = "0.5.9"
 itertools = "0.10.5"
@@ -30,7 +31,11 @@ num = "0.2.1"
 rand = "0.8.5"
 rand_distr = { version = "0.4.3", default-features = false, features = ["std_math"] }
 
-#dfdx = {path="dfdx-even-newer", features=["cuda", "numpy", "safetensors"]}
-#dfdx = {path="../dfdx-main", features=["cuda", "numpy"]}
-dfdx = {git="https://github.com/jafioti/dfdx", features=["numpy", "f16"]}
+dfdx = {git="https://github.com/coreylowman/dfdx", features=["cudnn", "numpy", "f16"]}
 half = {git = "https://github.com/starkat99/half-rs.git", branch = "main", features = ["num-traits", "rand_distr"]}
+colored = "2.0.0"
+dataflow = "0.4"
+dataflow_nlp = "0.1.1"
+tui = {version="0.19.0"}
+crossterm = "0.26.1"
+pulldown-cmark = "0.9.2"

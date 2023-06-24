@@ -18,17 +18,17 @@ use rand::{distributions::WeightedIndex, thread_rng};
 use rand_distr::Distribution;
 
 // Training
-const BATCH_SIZE: usize = 4;
+const BATCH_SIZE: usize = 48;
 const BATCH_ACCUM: (usize, usize) = (1, 1);
-const MAX_TRAIN_SEQ_LEN: usize = 64;
-const LR: (f64, f64) = (6e-4, 6e-4);
+const MAX_TRAIN_SEQ_LEN: usize = 128;
+const LR: (f64, f64) = (1e-3, 1e-3);
 
 // Model
 const LAYERS: usize = 2;
-const MAX_SEQ_LEN: usize = 512;
-const EMBED_DIM: usize = 512;
-const FF_DIM: usize = EMBED_DIM * 4;
-const HEADS: usize = 8;
+const MAX_SEQ_LEN: usize = 128;
+const EMBED_DIM: usize = 128;
+const FF_DIM: usize = EMBED_DIM * 2;
+const HEADS: usize = 4;
 const VOCAB: usize = 30528;
 
 type Model = lm_test::model::Model<VOCAB, EMBED_DIM, FF_DIM, LAYERS, HEADS, MAX_SEQ_LEN>;
@@ -36,20 +36,20 @@ type BuiltModel<E, D> = <Model as BuildOnDevice<D, E>>::Built;
 
 fn main() {
     let mut train_dataset = data::tinystories(
-        "/Users/jafioti/Downloads/TinyStories-valid.txt",
+        "/home/jafioti/Downloads/TinyStoriesV2-GPT4-train.txt",
+        0,
+        2_000_000,
+        MAX_TRAIN_SEQ_LEN,
+        BATCH_SIZE,
+    );
+    let mut test_dataset = data::tinystories(
+        "/home/jafioti/Downloads/TinyStoriesV2-GPT4-valid.txt",
         0,
         10_000,
         MAX_TRAIN_SEQ_LEN,
         BATCH_SIZE,
     );
-    let mut test_dataset = data::tinystories(
-        "/Users/jafioti/Downloads/TinyStories-valid.txt",
-        0,
-        1_000,
-        MAX_TRAIN_SEQ_LEN,
-        BATCH_SIZE,
-    );
-    let dev = Cpu::default();
+    let dev = Cuda::default();
     let mut model = Model::build_on_device(&dev);
 
     let mut opt = Adam::new(
@@ -63,7 +63,7 @@ fn main() {
     let mut lr_scheduler = OneCycleScheduler::new(LR.0, LR.1, train_dataset.len()).set_peak(0.2);
     let mut accum_scheduler =
         LinearScheduler::new(BATCH_ACCUM.0, BATCH_ACCUM.1, train_dataset.len());
-    let mut tensorboard = Tensorboard::new("../logdir");
+    let mut tensorboard = Tensorboard::new("logdir");
 
     println!(
         "Model Parameters: {}",
@@ -79,7 +79,7 @@ fn main() {
         0.5,
         1,
     );
-    for epoch in 0..3 {
+    for epoch in 0..10 {
         println!("{}", format!("Epoch {}", epoch + 1).bold().cyan());
         println!(
             "Train Loss: {}",
@@ -146,6 +146,7 @@ where
     let bar = train_progress_bar(dataset.len() as u64);
     let mut gradients = Some(model.alloc_grads());
     let mut loss_accum = 0.;
+    let mut example_accum = 0;
     for (epoch_iter, ((input, target), left)) in dataset.iter_len().enumerate() {
         // Setup input
         let (batch_size, seq_len) = (input.len(), input[0].len());
@@ -177,11 +178,18 @@ where
         loss_accum += loss.array();
 
         // Backprop and optimize
-        gradients = Some((loss / accum_scheduler.get() as f32).backward());
+        gradients = match (loss / accum_scheduler.get() as f32).try_backward() {
+            Ok(g) => Some(g),
+            Err(e) => {
+                println!("{} {e:?}\n", "Backward Error:".bold().red());
+                continue;
+            }
+        };
 
         bar.set_position((total_len - left) as u64);
         accum_scheduler.step(batch_size);
         scheduler.step(batch_size);
+        example_accum += seq_len * batch_size;
         if epoch_iter % accum_scheduler.get() == 0 {
             // Update status
             loss_ema.update(loss_accum / accum_scheduler.get() as f32);
@@ -189,8 +197,9 @@ where
             tensorboard.record(
                 "loss",
                 loss_accum / accum_scheduler.get() as f32,
-                BATCH_SIZE * accum_scheduler.get() * MAX_TRAIN_SEQ_LEN,
+                example_accum,
             );
+            example_accum = 0;
 
             if let Some(mut grads) = Option::take(&mut gradients) {
                 *opt.learning_rate() = scheduler.get();
